@@ -1,0 +1,426 @@
+@import 'assets/scss/componants/variable';
+@import 'assets/scss/componants/fonts';
+@import 'assets/scss/componants/mixins';
+@import "~bootstrap/dist/css/bootstrap.min.css";
+.section-title {
+  text-align: center;
+  padding-bottom: 30px;
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  position: relative;
+  color: #2c4964;
+}
+.section-title h2::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 1px;
+  background: #ddd;
+  bottom: 1px;
+  left: calc(50% - 60px);
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 40px;
+  height: 3px;
+  background: #1977cc;
+  bottom: 0;
+  left: calc(50% - 20px);
+}
+.section-title p {
+  margin-bottom: 0;
+}
+
+
+
+.btn-action {
+  margin-left: 15px;
+  background:$brand-primary;
+  color: #fff;
+  height: 40px;
+  padding: 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 5px;
+  i{
+      margin: 1px 5px;
+      scale: (1.1);
+  }
+ &:hover {
+  background: #022646;
+  color: #fff;
+}
+
+}
+
+
+form .button {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 40px;
+  margin-right: 1px;
+  height: 46px;
+  outline: none;
+  border-radius: 50px;
+  border:none;
+  background-color: #285192;
+  color: #fff;
+  &:hover{
+      background-color:gray;
+      color:#fff;
+
+  }
+}
+
+/* login-form */
+.login-btn{
+position: relative;
+display: inline-flex;
+width: 150px;
+height: 40px;
+
+perspective: 1000px;
+
+a{
+font-size: 19px;
+letter-spacing: 1px;
+transform-style: preserve-3d;
+transform: translateZ(-25px);
+transition: transform .25s;
+font-family: 'Montserrat', sans-serif;
+
+
+&:before,&:after{
+position: absolute;
+content: "LOGIN";
+height: 40px;
+width: 150px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid #1977cc;
+box-sizing: border-box;
+border-radius: 5px;
+}
+&:before{
+color: #fff;
+background: gray;
+transform: rotateY(0deg) translateZ(0);
+}
+
+&:after{
+color: gray;
+transform: rotateX(90deg) translateZ(0);
+}
+
+&:hover{
+transform: translateZ(-25px) rotateX(-90deg);
+}
+
+}
+}
+
+
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+border-radius: 5px;
+position: fixed;
+visibility: hidden;
+opacity: 0;
+right: 24px;
+bottom: 225px;
+z-index: 996;
+background: #1976ca;
+width: 30px;
+height: 30px;
+border-radius: 47px;
+transition: all 0.4s;
+&:hover {
+background: #092f50;
+color: #fff;
+}
+
+&.active {
+visibility: visible;
+opacity: 1;
+}
+i {
+font-size: 28px;
+color: #fff;
+line-height: 0;
+}
+}
+@media (max-width: 992px) {
+
+
+form .button {
+  min-width: 60%;
+  font-size: 25px;
+}
+}
+@media (max-width: 767px) {
+  .btn-action {
+    margin: 0 15px 0 0;
+    padding: 6px 18px;
+  }
+
+  form .button {
+
+    width: 20%;
+    margin: 20px auto;
+  }
+}
+@media (max-width: 558px) {
+
+
+  form .button {
+
+
+    margin-top:40px;
+    margin-left: 80px;
+  }
+}
+
+.back-to-top {
+border-radius: 5px;
+position: fixed;
+visibility: hidden;
+opacity: 0;
+right: 24px;
+bottom: 225px;
+z-index: 996;
+background: #1976ca;
+width: 30px;
+height: 30px;
+border-radius: 47px;
+transition: all 0.4s;
+
+&:hover {
+background: #092f50;
+color: #fff;
+}
+
+&.active {
+visibility: visible;
+opacity: 1;
+}
+
+
+
+i {
+font-size: 28px;
+color: #fff;
+line-height: 0;
+}
+
+}
+
+
+
+
+
+@media (max-width: 992px) {
+
+
+form .button {
+  min-width: 60%;
+  font-size: 25px;
+}
+}
+@media (max-width: 767px) {
+  .btn-action {
+    margin: 0 15px 0 0;
+    padding: 6px 18px;
+  }
+
+  form .button {
+
+    width: 20%;
+    margin: 20px auto;
+  }
+}
+@media (max-width: 558px) {
+
+
+  form .button {
+
+
+    margin-top:40px;
+    margin-left: 80px;
+  }
+}
+
+
+//custom
+
+.log-out i {
+  transform: rotate(180deg);
+  font-size: 25px;
+}
+
+.log-out {
+  color: tomato;
+  padding: 15px 20px 10px 0;
+  background-color: transparent;
+}
+.log-out:hover {
+  transition: all 0.3s ease-in-out;
+  background-color: transparent !important;
+  color: teal;
+}
+
+/*profile-nav*/
+.profile-nav {
+  margin-left: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+  color: #111;
+  text-decoration: none;
+}
+.profile-nav .pic {
+  width: 50px;
+  height: 50px;
+  margin: 0 5px 0;
+}
+.profile-nav .pic img {
+  border-radius: 50%;
+  border: 2px solid transparent;
+  width: 100%;
+  height: 100%;
+}
+.profile-nav:hover h5 {
+  color: #00317e;
+  transition: all 0.3s ease-in-out;
+}
+
+.profile-nav:hover .pic img {
+  border-color: #00317e;
+  transition: all 0.5s ease-in-out;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  text-decoration: none;
+  color: #00317e;
+  padding: 5px 25px;
+  border: 2px solid #000;
+  font-family: "Lato", sans-serif;
+  font-weight: 500;
+  margin: 0 5px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+.btn-10 {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.btn-10:after {
+  position: absolute;
+  content: " ";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  transition: all 0.3s ease;
+  -webkit-transform: scale(0.1);
+  transform: scale(0.1);
+}
+.btn-10:hover {
+  color: #fff;
+}
+.btn-10:hover:after {
+  background: #000;
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
+
+/* 6 */
+.btn-6 {
+  background: #000;
+  color: #fff;
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-6 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-6:before,
+.btn-6:after {
+  position: absolute;
+  content: "";
+  height: 0%;
+  width: 2px;
+  background: #000;
+}
+.btn-6:before {
+  right: 0;
+  top: 0;
+  transition: all 500ms ease;
+}
+.btn-6:after {
+  left: 0;
+  bottom: 0;
+  transition: all 500ms ease;
+}
+.btn-6:hover {
+  color: #000;
+  background: transparent;
+}
+.btn-6:hover:before {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6:hover:after {
+  transition: all 500ms ease;
+  height: 100%;
+}
+.btn-6 span:before,
+.btn-6 span:after {
+  position: absolute;
+  content: "";
+  background: #000;
+}
+.btn-6 span:before {
+  left: 0;
+  top: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-6 span:after {
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  transition: all 500ms ease;
+}
+.btn-6 span:hover:before {
+  width: 100%;
+}
+.btn-6 span:hover:after {
+  width: 100%;
+}
+

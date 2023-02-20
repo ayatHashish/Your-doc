@@ -1,0 +1,87 @@
+<main>
+  <!-- start home Section -->
+  <div class="home-page">
+    <div class="content">
+      <div class="row" style="--bs-gutter-x:0">
+        <div class="col-md-12">
+          <section id="hero" class="d-flex align-items-center">
+            <div class="container">
+              <h1>Welcome to <span class="header-wr">YOUR</span> Doctor</h1>
+              <h2>We are here to help <span>you</span></h2>
+            </div>
+          </section>
+          <!-- End Hero -->
+        </div>
+        <div class="col-md-12">
+          <!--  form search  -->
+          <div class="container">
+            <form id="search-form" class="main-search-form">
+              <div class="main-search-input">
+                <!-- Type your Doctor Name -->
+                <div class="row">
+                  <div class="col-lg-4 col-md-12 col-sm-9">
+                    <div class="main-search-input-item  ">
+
+                      <input class="form-control form-control-lg text keyword_search no_focus" type="text"
+                        placeholder="Type your Doctor Name" aria-label=".form-control-lg example"
+                        data-toggle="tooltip" title="Type your Doctor Name">
+
+
+                    </div>
+
+                  </div>
+                  <div class="col-lg-3 col-md-12 col-sm-9">
+                    <!--  governorate_search -->
+
+                    <div class="main-search-input-item">
+
+                      <select class="form-select form-select-lg no_focus" aria-label="Default select example"
+                        data-toggle="tooltip" title="Default select example">
+                        <option value="0">Governorate</option>
+                        <option value="apartments">Cairo</option>
+                        <option value="classifieds">matroh</option>
+                        <option value="coaching">Kidney disease</option>
+                        <option value="eat-drink">Orthopedics, joints and cartilage</option>
+                        <option value="events">Internal medicine and gastroenterology</option>
+                        <option value="fitness">Optical medicine</option>
+                        <option value="other">skin diseases</option>
+                        <option value="services">Obstetrics and Gynecology</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-12 col-sm-9 ">
+                    <!--  All Specialties_search -->
+                    <div class="main-search-input-item">
+
+                      <select class="form-select form-select-lg no_focus" aria-label="Default select example"
+                        data-toggle="tooltip" title="Default select example">
+                        <option value="0">All Specialties</option>
+                        <option value="apartments">dentist</option>
+                        <option value="classifieds">Thoracic surgery</option>
+                        <option value="coaching">Kidney disease</option>
+                        <option value="eat-drink">Orthopedics, joints and cartilage</option>
+                        <option value="events">Internal medicine and gastroenterology</option>
+                        <option value="fitness">Optical medicine</option>
+                        <option value="other">skin diseases</option>
+                        <option value="services">Obstetrics and Gynecology</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-2 col-md-12 col-sm-3 but-d">
+                    <div class="main-search-input-item">
+                      <button class="button" data-toggle="tooltip" title="Search">Search</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- start about Section -->
+  <app-about></app-about>
+  <!-- Doctors Section-->
+  <app-doctors></app-doctors>
+</main>
