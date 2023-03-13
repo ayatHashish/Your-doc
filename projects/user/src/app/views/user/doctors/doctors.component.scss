@@ -1,0 +1,63 @@
+
+.doctors-page {
+  padding: 100px 0;
+  .doctors {
+    background: #fff;
+    .doctor-card {
+      text-decoration: none;
+      cursor: pointer;
+      color: #000;
+      .member {
+        position: relative;
+        box-shadow: 0px 2px 15px rgba(44, 73, 100, 0.08);
+        padding: 30px;
+        border-radius: 10px;
+        h4 {
+          font-weight: 700;
+          margin-bottom: 5px;
+          font-size: 20px;
+          /*  color: $brand-primary; */
+        }
+        .pic {
+          overflow: hidden;
+          width: 180px;
+          border-radius: 50%;
+
+          img {
+            transition: ease-in-out 0.3s;
+
+            :hover img {
+              transform: scale(1.1);
+            }
+          }
+        }
+        p {
+          margin: 10px 0 0 0;
+          font-size: 14px;
+        }
+
+        .member-info {
+          padding-left: 30px;
+        }
+        span {
+          display: block;
+          font-size: 15px;
+          padding-bottom: 10px;
+          position: relative;
+          font-weight: 500;
+
+          &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 50px;
+            height: 1px;
+            background: #b2c8dd;
+            bottom: 0;
+            left: 0;
+          }
+        }
+      }
+    }
+  }
+}

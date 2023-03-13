@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg text-light bg-light fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img width="100" src="../../../assets/images/your-doc/logo.png" alt="" routerLink="/home">
+    </a>
+    <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#main_nav"
+    aria-controls="main_nav" aria-expanded="false">
+    <i class='bx bx-menu'></i>
+  </button>
+    <div class="collapse navbar-collapse" id="main_nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/doctors">Doctors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/user/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link custom-btn btn-6" routerLink="/user/appointment"> Appointment</a>
+        </li>
+
+        <li class="nav-item">
+          <a id="registerModel" type="button" class="nav-link custom-btn btn-10" aria-label="open" (click)="openRegisterModal()">
+                Register</a>
+        </li>
+        <li class="nav-item">
+          <a id="registerModel" type="button" class="nav-link custom-btn btn-10" aria-label="open"
+            (click)="openLoginModal()">
+            Login</a>
+        </li>
+      </ul>
+    </div>
+    <div class="d-flex">
+      <a class="profile-nav" routerLink="/user/profile">
+        <div class="pic d-inline-block">
+          <img width="50" class="img-fluid" src="../../../assets/images/doctors/doctors-1.jpg" alt="User Avatar">
+        </div>
+        <h5 class="d-inline-block"> Ayat Hashish</h5>
+      </a>
+      <a href="log-out" class="nav-link btn-action scrollto log-out">
+        <i class='bx bx-log-out-circle'></i>
+      </a>
+    </div>
+
+  </div>
+</nav>

@@ -1,7 +1,17 @@
-@import 'assets/scss/componants/variable';
-@import 'assets/scss/componants/fonts';
-@import 'assets/scss/componants/mixins';
+@import "assets/scss/componants/variable";
+@import "assets/scss/componants/fonts";
+@import "assets/scss/componants/mixins";
 @import "~bootstrap/dist/css/bootstrap.min.css";
+
+.modal {
+  background: rgba(221, 221, 221, 0.5);
+  .modal-content {
+    background: transparent !important;
+    border: none;
+    z-index: 0111;
+  }
+}
+
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -38,11 +48,9 @@
   margin-bottom: 0;
 }
 
-
-
 .btn-action {
   margin-left: 15px;
-  background:$brand-primary;
+  background: $brand-primary;
   color: #fff;
   height: 40px;
   padding: 8px 25px;
@@ -52,17 +60,15 @@
   display: inline-block;
   text-decoration: none;
   border-radius: 5px;
-  i{
-      margin: 1px 5px;
-      scale: (1.1);
+  i {
+    margin: 1px 5px;
+    scale: (1.1);
   }
- &:hover {
-  background: #022646;
-  color: #fff;
+  &:hover {
+    background: #022646;
+    color: #fff;
+  }
 }
-
-}
-
 
 form .button {
   font-size: 18px;
@@ -72,104 +78,98 @@ form .button {
   height: 46px;
   outline: none;
   border-radius: 50px;
-  border:none;
+  border: none;
   background-color: #285192;
   color: #fff;
-  &:hover{
-      background-color:gray;
-      color:#fff;
-
+  &:hover {
+    background-color: gray;
+    color: #fff;
   }
 }
 
 /* login-form */
-.login-btn{
-position: relative;
-display: inline-flex;
-width: 150px;
-height: 40px;
+.login-btn {
+  position: relative;
+  display: inline-flex;
+  width: 150px;
+  height: 40px;
 
-perspective: 1000px;
+  perspective: 1000px;
 
-a{
-font-size: 19px;
-letter-spacing: 1px;
-transform-style: preserve-3d;
-transform: translateZ(-25px);
-transition: transform .25s;
-font-family: 'Montserrat', sans-serif;
+  a {
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform 0.25s;
+    font-family: "Montserrat", sans-serif;
 
+    &:before,
+    &:after {
+      position: absolute;
+      content: "LOGIN";
+      height: 40px;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #1977cc;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+    &:before {
+      color: #fff;
+      background: gray;
+      transform: rotateY(0deg) translateZ(0);
+    }
 
-&:before,&:after{
-position: absolute;
-content: "LOGIN";
-height: 40px;
-width: 150px;
-display: flex;
-align-items: center;
-justify-content: center;
-border: 1px solid #1977cc;
-box-sizing: border-box;
-border-radius: 5px;
+    &:after {
+      color: gray;
+      transform: rotateX(90deg) translateZ(0);
+    }
+
+    &:hover {
+      transform: translateZ(-25px) rotateX(-90deg);
+    }
+  }
 }
-&:before{
-color: #fff;
-background: gray;
-transform: rotateY(0deg) translateZ(0);
-}
-
-&:after{
-color: gray;
-transform: rotateX(90deg) translateZ(0);
-}
-
-&:hover{
-transform: translateZ(-25px) rotateX(-90deg);
-}
-
-}
-}
-
-
 
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
 .back-to-top {
-border-radius: 5px;
-position: fixed;
-visibility: hidden;
-opacity: 0;
-right: 24px;
-bottom: 225px;
-z-index: 996;
-background: #1976ca;
-width: 30px;
-height: 30px;
-border-radius: 47px;
-transition: all 0.4s;
-&:hover {
-background: #092f50;
-color: #fff;
-}
+  border-radius: 5px;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 24px;
+  bottom: 225px;
+  z-index: 996;
+  background: #1976ca;
+  width: 30px;
+  height: 30px;
+  border-radius: 47px;
+  transition: all 0.4s;
+  &:hover {
+    background: #092f50;
+    color: #fff;
+  }
 
-&.active {
-visibility: visible;
-opacity: 1;
-}
-i {
-font-size: 28px;
-color: #fff;
-line-height: 0;
-}
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
 }
 @media (max-width: 992px) {
-
-
-form .button {
-  min-width: 60%;
-  font-size: 25px;
-}
+  form .button {
+    min-width: 60%;
+    font-size: 25px;
+  }
 }
 @media (max-width: 767px) {
   .btn-action {
@@ -178,67 +178,53 @@ form .button {
   }
 
   form .button {
-
     width: 20%;
     margin: 20px auto;
   }
 }
 @media (max-width: 558px) {
-
-
   form .button {
-
-
-    margin-top:40px;
+    margin-top: 40px;
     margin-left: 80px;
   }
 }
 
 .back-to-top {
-border-radius: 5px;
-position: fixed;
-visibility: hidden;
-opacity: 0;
-right: 24px;
-bottom: 225px;
-z-index: 996;
-background: #1976ca;
-width: 30px;
-height: 30px;
-border-radius: 47px;
-transition: all 0.4s;
+  border-radius: 5px;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 24px;
+  bottom: 225px;
+  z-index: 996;
+  background: #1976ca;
+  width: 30px;
+  height: 30px;
+  border-radius: 47px;
+  transition: all 0.4s;
 
-&:hover {
-background: #092f50;
-color: #fff;
+  &:hover {
+    background: #092f50;
+    color: #fff;
+  }
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
 }
-
-&.active {
-visibility: visible;
-opacity: 1;
-}
-
-
-
-i {
-font-size: 28px;
-color: #fff;
-line-height: 0;
-}
-
-}
-
-
-
-
 
 @media (max-width: 992px) {
-
-
-form .button {
-  min-width: 60%;
-  font-size: 25px;
-}
+  form .button {
+    min-width: 60%;
+    font-size: 25px;
+  }
 }
 @media (max-width: 767px) {
   .btn-action {
@@ -247,22 +233,16 @@ form .button {
   }
 
   form .button {
-
     width: 20%;
     margin: 20px auto;
   }
 }
 @media (max-width: 558px) {
-
-
   form .button {
-
-
-    margin-top:40px;
+    margin-top: 40px;
     margin-left: 80px;
   }
 }
-
 
 //custom
 
@@ -423,4 +403,3 @@ form .button {
 .btn-6 span:hover:after {
   width: 100%;
 }
-

@@ -1,0 +1,10 @@
+<app-navbar></app-navbar>
+<div class="bred" [style.display]="(pageUrl == '/' || pageUrl == '/home') ? 'none!important' : 'block' ">
+  <div class="container">
+    <div class="section-title text-center">
+      <h2>{{pageTitle}}</h2>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+<app-footer></app-footer>

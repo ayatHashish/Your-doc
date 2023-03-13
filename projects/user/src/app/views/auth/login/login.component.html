@@ -1,0 +1,54 @@
+<div class="login m-4">
+
+ <h2>login </h2>
+<div class="login-doc">
+  <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img class="d-block w-100" src="../../../../assets/images/login/img1.jpg" alt="First slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../../../../assets/images/login/img2.jpg" alt="Second slide">
+      </div>
+      <div class="carousel-item">
+        <img class="d-block w-100" src="../../../../assets/images/login/img3.jpg" alt="Third slide">
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <div>
+        <h2>Login to Your Doctor's </h2>
+        <a routerLink="/auth/register"> Don't have an account ?
+          <span> create Free Account </span>
+        </a>
+      </div>
+      <form class="mb-3" [formGroup]="loginForm" (ngSubmit)="handlelogin()">
+        <!-- email -->
+        <div class="form-group">
+          <input type="email" class="mt-5 button-mm" placeholder="Your Email" formControlName="email" id="email" />
+        </div>
+        <!--  password  doc-->
+        <div class="fadeIn third">
+          <input type="password" class="button-mm" placeholder="Password" formControlName="password" id="password" />
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+          <label class="form-check-label" for="flexCheckChecked">
+            Remember me
+          </label>
+
+          <a class="underlineHover" routerLink="/auth/forgot-password">Forgot Password?</a>
+
+        </div>
+
+
+
+        <button class="btn-lo fadeIn mt-2 fourth">Sign In</button>
+      </form>
+      <!-- Remind Passowrd -->
+
+    </div>
+  </div>
+</div>
