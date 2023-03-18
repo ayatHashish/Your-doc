@@ -27,10 +27,12 @@
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
             ],
-            "styles": [
-           
-            "projects/user/src/styles.scss"],
-            "scripts": []
+            "styles": ["projects/user/src/styles.scss"],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/particles.js/particles.js",
+              "./projects/user/src/assets/js/app.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -84,18 +86,14 @@
             "tsConfig": "projects/user/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-
-
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
             ],
-            "styles": [
-
-
-            ],
+            "styles": [],
             "scripts": [
-
-              "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/particles.js/particles.js",
+              "./projects/user/src/assets/js/app.js"
           ]
           }
         }
@@ -189,5 +187,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "13f08d79-72a1-48d0-80e2-20f3fd66ed36"
   }
 }
