@@ -2,15 +2,44 @@
 @import "assets/scss/componants/fonts";
 @import "assets/scss/componants/mixins";
 @import "~bootstrap/dist/css/bootstrap.min.css";
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
-.modal {
-  background: rgba(221, 221, 221, 0.5);
-  .modal-content {
-    background: transparent !important;
-    border: none;
-    z-index: 0111;
-  }
+
+
+a {
+  text-decoration: none;
+  // &:after {
+  //   display: block;
+  //   left: 0;
+  //   bottom: -10px;
+  //   width: 0;
+  //   height: 2px;
+  //   background-color:#283e69;
+  //   content: "";
+  //   transition: width 1s;
+  // }
+
+  // &:hover {
+  //   color: #1976ca;
+  // }
+
+  // &:hover:after {
+  //   width: 100%;
+  // }
 }
+
+
+.modal-dialog{
+
+  max-width: 100% !important;
+  margin: 10% ;
+/*   margin-left:unset; */
+  background-color: #ddd;
+
+}
+
+
 
 .section-title {
   text-align: center;

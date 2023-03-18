@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
 import { Router } from '@angular/router';
-
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { NavbarComponent } from '../../../share/components/navbar/navbar.component';
 import { AuthService } from '../../../share/services/auth.service';
@@ -12,7 +10,7 @@ import { AuthService } from '../../../share/services/auth.service';
 })
 export class RegisterComponent {
 
-  constructor(public modalRef: MdbModalRef<RegisterComponent>,
+  constructor(
     private _auth: AuthService,
     private _router: Router,
     private formBuilder: FormBuilder) { }

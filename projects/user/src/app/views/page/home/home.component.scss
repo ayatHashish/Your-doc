@@ -1,4 +1,4 @@
-
+@import "../../../../assets/scss/componants/variable";
 
 .home-page {
   padding-bottom: 100px 0;
@@ -21,11 +21,11 @@
         font-weight: 700;
         line-height: 56px;
         text-transform: uppercase;
-        color: #fff;
+        color: $pure-white;
       }
 
       h2 {
-        color: #fff;
+        color: $pure-white;
         margin: 10px 0 0 0;
         font-size: 24px;
       }
@@ -42,20 +42,20 @@
     margin-top: 30px;
     border-radius: 50px;
     transition: 0.5s;
-    color: #fff;
-    background: #1977cc;
+    color: $pure-white;
+    background: $brand-primary;
 
     &:hover {
-      background: #3291e6;
+      background: $brand-primary;
     }
   }
   .header-wr {
-    color: gray;
+    color: $brand-gray;
   }
   .main-search-form {
     border-radius: 50px;
     width: 100%;
-    background-color: #fff;
+    background-color: $pure-white;
     padding: 10px;
     text-align: end;
     .main-search-input {

@@ -27,7 +27,9 @@
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
             ],
-            "styles": ["projects/user/src/styles.scss"],
+            "styles": [
+           
+            "projects/user/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -82,12 +84,17 @@
             "tsConfig": "projects/user/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
+
+
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
             ],
-            "styles": [],
+            "styles": [
+
+
+            ],
             "scripts": [
-           
+
               "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
           ]
           }

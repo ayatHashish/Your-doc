@@ -10,6 +10,8 @@ import { ShareModule } from '../../share/share.module';
 import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 import {  ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { TestComponent } from './test/test.component';
+import { UserModule } from '../user/user.module';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent ,
     ForgetpassComponent,
     LoginComponent,
-  
+    TestComponent,
+
   ],
   imports: [
     CommonModule,
@@ -27,6 +30,7 @@ import { HttpClientModule } from '@angular/common/http';
     ShareModule,
     ReactiveFormsModule,
     HttpClientModule,
+    UserModule
   ],
   exports:[
      VerificationCodeComponent,

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MdbModalRef } from 'mdb-angular-ui-kit/modal';
+
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../share/services/auth.service';
@@ -11,9 +11,7 @@ import { AuthService } from '../../../share/services/auth.service';
 })
 export class LoginComponent {
 
-  constructor(public modalRef: MdbModalRef<LoginComponent>,
-    private _auth: AuthService,
-    private _router: Router) { }
+  constructor( private _auth: AuthService,private _router: Router) { }
 
   isSubmitted = false;
   errorMsg = '';
