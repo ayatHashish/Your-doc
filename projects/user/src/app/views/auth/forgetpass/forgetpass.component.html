@@ -1,34 +1,31 @@
-
-  <div class="forget-pass-page">
-<div class="container">
-  <div class="content-wrapper">
-          <div class="row ">
-              <div class="col-lg-12">
-                  <div class="p-5">
-                      <div class="brand-logo" >
-                          <img src="../../../../assets/images/your-doc/logo.png" alt="your-doctor" width="150">
-                      </div>
-                      <h4>Forget your password?</h4>
-                      <h6 class="font-weight-light">please enter the email you use </h6>
-                      <form class="">
-                          <div class="form-group">
-                              <input type="email" class="form-control form-control-lg" id="exampleInputEmail1"
-                                  placeholder="Your Email">
-                          </div>
-                          <div class="mt-3">
-                              <a class="btn btn-block btn-gradient-primary btn-lg font-weight-medium auth-form-btn text-uppercase"
-                                  href="#">Request password reset</a>
-                          </div>
-                          <div class="text-center mt-4 font-weight-light">
-                              <a routerLink="/auth/login">Back to Login</a>
-                          </div>
-
-                     </form>
+<div class="login">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="wrapper fadeInDown">
+          <div id="formContent" class="forget-content">
+            <div class="login-dic">
+              <h2>Forget password </h2>
+              <!-- <a routerLink="/auth/signup"> Don't have an account ?
+                <br>
+                <span class="underlineHover"> Create Free Account </span>
+              </a> -->
+            </div>
+            <form>
+              <!-- email -->
+              <div class="form-group">
+                <input class="input-group" type="email" formControlName="email" id="email" required>
+                <label>Your Email</label>
               </div>
+              <button class="btn-lo fadeIn" routerLink="/auth/verifycode">Request password reset</button>
+              <div>
+                <a class="underlineHover" routerLink="/auth/login">Back to login</a>
+              </div>
+            </form>
+            <!-- Remind Passowrd -->
           </div>
+        </div>
       </div>
+    </div>
   </div>
-  <!-- content-wrapper ends -->
-</div>
-
 </div>

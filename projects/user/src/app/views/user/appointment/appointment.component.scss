@@ -1,3 +1,7 @@
+
+@import "../../../../assets/scss/componants/variable";
+
+
 .appointment-page {
   padding: 100px 0;
   h1,
@@ -53,7 +57,7 @@
     list-style-type: none;
     margin: 0;
     padding: 0;
-    background-color: #fff;
+    background-color: $pure-white;
     text-align: center;
 
     li {
@@ -63,8 +67,8 @@
       padding-bottom: 5px;
 
       li.is-active {
-        border-bottom: 1px solid #3498db;
-        color: #3498db;
+        border-bottom: 1px solid $brand-primary;
+        color: $brand-primary;
       }
     }
   }
@@ -76,7 +80,7 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: $pure-white;
     opacity: 0;
     -webkit-transform: scale(1, 0);
     -ms-transform: scale(1, 0);
@@ -112,7 +116,7 @@
     /*       background-color: $brand-primary;
  */
     display: inline-block;
-    color: #fff;
+    color: $pure-white;
     cursor: pointer;
     width: 20% !important;
     margin: 25px auto;
@@ -120,7 +124,7 @@
     border-radius: 5px;
     height: 40px;
     &:hover {
-      color: #fff;
+      color: $pure-white;
       background-color: gray;
     }
   }
@@ -141,7 +145,7 @@
     display: block;
     padding: 10px;
     margin: 10px auto;
-    background-color: #f1f1f1;
+    background-color: $pure-white;
     border: none;
     width: 50%;
     outline: none;
@@ -155,7 +159,7 @@
     display: block;
     padding: 14px;
     margin: 0 auto;
-    background-color: #f1f1f1;
+    background-color: $pure-white;
     border: none;
     width: 100%;
     outline: none;

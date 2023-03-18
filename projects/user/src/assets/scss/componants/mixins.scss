@@ -129,24 +129,25 @@
   }
 
   /* Simple CSS3 Fade-in Animation */
-  .underlineHover:after {
-    display: block;
-    left: 0;
-    bottom: -10px;
-    width: 0;
-    height: 2px;
-    background-color: #1976ca;
-    content: "";
-    transition: width 0.2s;
-  }
 
-  .underlineHover:hover {
-    color: #1976ca;
-  }
+  // .underlineHover:after {
+  //   display: block;
+  //   left: 0;
+  //   bottom: -10px;
+  //   width: 0;
+  //   height: 2px;
+  //   background-color: #1976ca;
+  //   content: "";
+  //   transition: width 0.2s;
+  // }
 
-  .underlineHover:hover:after {
-    width: 100%;
-  }
+  // .underlineHover:hover {
+  //   color: #1976ca;
+  // }
+
+  // .underlineHover:hover:after {
+  //   width: 100%;
+  // }
 
   /* OTHERS */
 
