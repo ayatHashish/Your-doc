@@ -273,53 +273,6 @@ form .button {
   }
 }
 
-//custom
-
-.log-out i {
-  transform: rotate(180deg);
-  font-size: 25px;
-}
-
-.log-out {
-  color: tomato;
-  padding: 15px 20px 10px 0;
-  background-color: transparent;
-}
-.log-out:hover {
-  transition: all 0.3s ease-in-out;
-  background-color: transparent !important;
-  color: teal;
-}
-
-/*profile-nav*/
-.profile-nav {
-  margin-left: 10px;
-  padding: 5px 10px;
-  cursor: pointer;
-  color: #111;
-  text-decoration: none;
-}
-.profile-nav .pic {
-  width: 50px;
-  height: 50px;
-  margin: 0 5px 0;
-}
-.profile-nav .pic img {
-  border-radius: 50%;
-  border: 2px solid transparent;
-  width: 100%;
-  height: 100%;
-}
-.profile-nav:hover h5 {
-  color: #00317e;
-  transition: all 0.3s ease-in-out;
-}
-
-.profile-nav:hover .pic img {
-  border-color: #00317e;
-  transition: all 0.5s ease-in-out;
-}
-
 .custom-btn {
   width: 130px;
   height: 40px;

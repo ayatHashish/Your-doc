@@ -1,13 +1,79 @@
-.nav-container {
-  height: 58px;
-  width: 100%;
-  position: fixed;
-  color: white;
-  //text-transform: uppercase;
-  letter-spacing: 0.025em;
-  transition: background-color 0.2s linear;
+@import "../../../../assets/scss/componants/variable";
 
-  &.solid-nav {
-    background-color: #aaa;
-    transition: background-color 0.2s linear;
-  } }
+nav {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  .navbar-brand {
+    transition: color 0.2s ease;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.475rem;
+    padding: 2px 10px;
+  }
+  .navbar-nav {
+    align-items: center;
+    li {
+      a {
+        font-family: Inter, Helvetica, "sans-serif";
+        color: $pure-white;
+        font-size: 13px;
+        font-weight: 500;
+        &:hover,
+        &.active {
+          transition: color 0.2s ease;
+          background-color: rgba(255, 255, 255, 0.1);
+          color: $pure-white;
+          border-radius: 0.475rem;
+        }
+      }
+    }
+  }
+  .profile_menu {
+    display: flex;
+    align-items: center;
+    min-height: 46px;
+    .profile_nav {
+      display: flex;
+      align-items: end;
+      padding: 5px 10px;
+      cursor: pointer;
+      text-decoration: none;
+      &:hover {
+        transition: color 0.2s ease;
+        background-color: rgba(255, 255, 255, 0.1);
+        color: $pure-white;
+        border-radius: 0.475rem;
+      }
+      &:hover h5 {
+        color: $th-brand;
+        transition: all 0.3s ease-in-out;
+      }
+      .pic {
+        width: 40px;
+        height: 40px;
+        margin: 0 5px 0 0;
+        img {
+          border-radius: 50%;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      h5 {
+        color: $pure-white;
+        font-family: Inter, Helvetica, "sans-serif";
+      }
+    }
+    .logout {
+      color: $th-brand;
+      padding: 0 4px;
+      background-color: transparent;
+      &:hover {
+        transition: all 0.3s ease-in-out;
+        background-color: transparent !important;
+        color: #2DD37C;
+      }
+      i {
+        transform: rotate(180deg);
+        font-size: 25px;
+      }
+    }
+  }
+}
