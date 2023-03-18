@@ -11,6 +11,7 @@ nav {
   .navbar-nav {
     align-items: center;
     li {
+      padding: 0 4px;
       a {
         font-family: Inter, Helvetica, "sans-serif";
         color: $pure-white;
@@ -68,7 +69,7 @@ nav {
       &:hover {
         transition: all 0.3s ease-in-out;
         background-color: transparent !important;
-        color: #2DD37C;
+        color: #2dd37c;
       }
       i {
         transform: rotate(180deg);
