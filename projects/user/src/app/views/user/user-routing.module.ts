@@ -9,6 +9,7 @@ import { AddressComponent } from './profile/address/address.component';
 import { SecurityComponent } from './profile/security/security.component';
 import { SettingComponent } from './profile/setting/setting.component';
 import { BookingComponent } from './profile/booking/booking.component';
+import { DetailsComponent } from './profile/details/details.component';
 const routes: Routes = [
 
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
@@ -20,6 +21,7 @@ const routes: Routes = [
       { path: 'book', component: BookingComponent},
       { path: 'security', component: SecurityComponent },
       { path: 'setting', component: SettingComponent },
+      { path: 'details', component: DetailsComponent },
     ],
   },
 

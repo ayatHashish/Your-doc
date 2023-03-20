@@ -11,6 +11,7 @@ import { SettingComponent } from './profile/setting/setting.component';
 import { SecurityComponent } from './profile/security/security.component';
 import { AddressComponent } from './profile/address/address.component';
 import { BookingComponent } from './profile/booking/booking.component';
+import { DetailsComponent } from './profile/details/details.component';
 
 
 
@@ -25,6 +26,7 @@ import { BookingComponent } from './profile/booking/booking.component';
     SecurityComponent,
     AddressComponent,
     BookingComponent,
+    DetailsComponent,
 
   ],
   imports: [
@@ -40,6 +42,7 @@ import { BookingComponent } from './profile/booking/booking.component';
     AppointmentComponent,
     AddressComponent,
     BookingComponent,
+    DetailsComponent
   ]
 })
 export class UserModule { }
