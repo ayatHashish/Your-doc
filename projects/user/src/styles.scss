@@ -5,6 +5,10 @@
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
+* {
+  font-family: Inter, Helvetica, "sans-serif";
+}
+
 body {
   background-color: #f9f9f9;
   background-image: url(/../../assets/images/header-bg.jpg);
@@ -12,6 +16,7 @@ body {
   background-position: center top;
   background-size: 100% 350px;
 }
+
 
 a {
   text-decoration: none;
