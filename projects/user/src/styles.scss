@@ -2,19 +2,15 @@
 @import "assets/scss/componants/fonts";
 @import "assets/scss/componants/mixins";
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
-@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 * {
   font-family: Inter, Helvetica, "sans-serif";
 }
 
 body {
-  background-color: #f9f9f9;
-  background-image: url(/../../assets/images/header-bg.jpg);
-  background-repeat: no-repeat;
-  background-position: center top;
-  background-size: 100% 350px;
+
 }
 
 
@@ -397,3 +393,64 @@ form .button {
   width: 100%;
   height: 350px;
 }
+
+
+
+
+.view-all{
+  color: #3E3E3E;
+  margin: 20px 0 ;
+      font-weight: 300;
+      text-decoration: none;
+      font-size: 1.125rem;
+      -webkit-transition-duration: 300ms;
+      transition-duration: 300ms;
+      font-weight: 500;
+      position: relative;
+      display: -webkit-inline-box;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;  color: #3E3E3E;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1.125rem;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+    font-weight: 500;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;     color: #3E3E3E;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1.125rem;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+    font-weight: 500;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;   color: #3E3E3E;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 1.125rem;
+    -webkit-transition-duration: 300ms;
+    transition-duration: 300ms;
+    font-weight: 500;
+    position: relative;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    float: right;
+  }

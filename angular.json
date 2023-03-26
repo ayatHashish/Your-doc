@@ -27,9 +27,16 @@
               "projects/user/src/favicon.ico",
               "projects/user/src/assets"
             ],
-            "styles": ["projects/user/src/styles.scss"],
+            "styles": [
+              "node_modules/animate.css/animate.css",
+              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
+              "./node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "projects/user/src/styles.scss"
+            ],
             "scripts": [
+
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
+              "./node_modules/wowjs/dist/wow.js",
               "./node_modules/particles.js/particles.js",
               "./projects/user/src/assets/js/app.js"
             ]
@@ -94,7 +101,7 @@
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "./node_modules/particles.js/particles.js",
               "./projects/user/src/assets/js/app.js"
-          ]
+            ]
           }
         }
       }

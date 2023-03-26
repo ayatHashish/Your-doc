@@ -1,48 +1,88 @@
 <main>
-  <div class="card mb-3">
-    <div class="card-body">
-      <div class="row">
-        <div class="col-sm-9">
-          <h4>Profile Details</h4>
+  <div class="card mb-5 mb-xl-10" id="kt_profile_details_view">
+    <!--begin::Card header-->
+    <div class="card-header cursor-pointer">
+        <!--begin::Card title-->
+        <div class="card-title m-0">
+            <h3 class="fw-bold m-0">Profile Details</h3>
         </div>
-        <div class="col-sm-3" >
-          <a class="btn btn-info" target="__blank"
-            href="">Edit Profile</a>
-        </div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-sm-3">
-          <h6 class="mb-0">Your Name</h6>
-        </div>
-        <div class="col-sm-9 text-secondary">Ayat Hashish</div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-sm-3">
-          <h6 class="mb-0">Your Email</h6>
-        </div>
-        <div class="col-sm-9 text-secondary">ayat@mail.com</div>
-      </div>
-      <hr />
-      <div class="row">
-        <div class="col-sm-3">
-          <h6 class="mb-0">Phone</h6>
-        </div>
-        <div class="col-sm-9 text-secondary">(+20) 816-9029</div>
-      </div>
-      <hr />
+        <!--end::Card title-->
 
-      <div class="row">
-        <div class="col-sm-3">
-          <h6 class="mb-0">Address</h6>
+        <!--begin::Action-->
+        <a routerLink="/setting" class="btn btn-sm btn-primary align-self-center">Edit Profile</a>
+        <!--end::Action-->
+    </div>
+    <!--begin::Card header-->
+
+    <!--begin::Card body-->
+    <div class="card-body p-9">
+        <!--begin::Row-->
+        <div class="row mb-7">
+            <!--begin::Label-->
+            <label class="col-lg-4 fw-semibold text-muted">Full Name</label>
+            <!--end::Label-->
+
+            <!--begin::Col-->
+            <div class="col-lg-8">
+                <span class="fw-bold fs-6 text-gray-800">Ayat Hashish </span>
+            </div>
+            <!--end::Col-->
         </div>
-        <div class="col-sm-9 text-secondary">
-          Bay Area, San Francisco, CA
+        <!--end::Row-->
+  <!--begin::Input group-->
+  <div class="row mb-7">
+    <!--begin::Label-->
+    <label class="col-lg-4 fw-semibold text-muted">
+      Your Mail
+       <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Country of origination" data-bs-original-title="Country of origination" data-kt-initialized="1"></i>
+   </label>
+   <!--end::Label-->
+
+   <!--begin::Col-->
+   <div class="col-lg-8">
+       <span class="fw-bold fs-6 text-gray-800">ayat@gmail.com</span>
+   </div>
+   <!--end::Col-->
+</div>
+<!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div class="row mb-7">
+           <!--begin::Label-->
+           <label class="col-lg-4 fw-semibold text-muted">
+                Contact Phone
+                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Phone number must be active" data-bs-original-title="Phone number must be active" data-kt-initialized="1"></i>
+            </label>
+            <!--end::Label-->
+
+            <!--begin::Col-->
+            <div class="col-lg-8 d-flex align-items-center">
+                <span class="fw-bold fs-6 text-gray-800 me-2">044 3276 454 935</span>
+
+            </div>
+            <!--end::Col-->
         </div>
-      </div>
+        <!--end::Input group-->
+
+        <!--begin::Input group-->
+        <div class="row mb-7">
+            <!--begin::Label-->
+            <label class="col-lg-4 fw-semibold text-muted">Address</label>
+            <!--end::Label-->
+
+            <!--begin::Col-->
+            <div class="col-lg-8">
+                <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">el_slam city </a>
+            </div>
+            <!--end::Col-->
+        </div>
+        <!--end::Input group-->
+
+
+
 
     </div>
-  </div>
+    <!--end::Card body-->
+</div>
 </main>
 

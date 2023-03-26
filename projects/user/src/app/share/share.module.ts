@@ -1,18 +1,25 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
+
+
+import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
-import { RouterModule } from '@angular/router';
+
+
 
 @NgModule({
   declarations: [
     NotfoundComponent,
     NavbarComponent,
     FooterComponent,
-/*     UserlayoutsComponent, */
+
+    /* UserlayoutsComponent, */
 
   ],
   imports: [
@@ -20,12 +27,15 @@ import { RouterModule } from '@angular/router';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-    
+
+
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     NotfoundComponent,
+
+
   ]
 })
 export class ShareModule { }
