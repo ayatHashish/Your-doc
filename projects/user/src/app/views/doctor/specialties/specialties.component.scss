@@ -1,0 +1,69 @@
+@import "../../../../assets/scss/componants/variable.scss";
+
+.specialist {
+  width: 350px;
+  display: inline-block;
+  margin-left: 50px;
+  margin-top: 50px;
+  .card {
+    position: relative;
+    overflow: hidden;
+    width: 350px;
+    margin: 0 auto;
+    background:&pure-white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    .layer {
+      z-index: 1;
+      position: absolute;
+      top: calc(100% - 2px);
+      height: 100%;
+      width: 100%;
+      left: 0;
+      background: linear-gradient(to left, $th-brand ,$th-brand);
+      transition: 0.5s;
+
+    }
+    &:hover{
+      .layer {
+            top: 0;
+      }
+          }
+    .content {
+      z-index: 2;
+      position: relative;
+      p {
+        font-size: 14px;
+        line-height: 24px;
+        // color: #fff;
+      }
+
+      .details h2 {
+        font-size: 18px;
+        // color: white;
+
+        span {
+          font-size: 18px;
+          color: purple;
+          transition: 0.5s;
+
+          &:hover {
+            color: white;
+            position: relative;
+          }
+        }
+      }
+
+
+      .image {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+        overflow: hidden;
+        border: 4px solid white;
+      }
+
+    }
+  }
+}

@@ -18,13 +18,18 @@ const routes: Routes = [
     path: 'user', component: UserlayoutsComponent,
     loadChildren: () => import('./views/user/user.module').then((m) => m.UserModule),
   },
+  {
+    path: 'doctor', component: UserlayoutsComponent,
+    loadChildren: () => import('./views/doctor/doctor.module').then((m) => m.DoctorModule),
+  },
+
 
   { path: '**', component: NotfoundComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, {
-   
+
   })],
   exports: [RouterModule]
 })
