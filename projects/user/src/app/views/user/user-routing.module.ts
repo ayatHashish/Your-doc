@@ -1,29 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { DoctorsComponent } from "./doctors/doctors.component";
 import { ProfileComponent } from '../user/profile/profile.component';
 import { AddressComponent } from './profile/address/address.component';
-
 import { SecurityComponent } from './profile/security/security.component';
 import { SettingComponent } from './profile/setting/setting.component';
-// import { BookingComponent } from './profile/booking/booking.component';
 import { DetailsComponent } from './profile/details/details.component';
-import { BredbunnerComponent } from './bredbunner/bredbunner.component';
-import { DoctorsDetailsComponent } from './doctors/doctors-details/doctors-details.component';
 import { TermsComponent } from './terms/terms.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
 const routes: Routes = [
-
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
-
   { path: 'terms', component: TermsComponent },
- { path: 'doctorsdetails', component: DoctorsDetailsComponent },
-  { path: 'doctors', component: DoctorsComponent,
-  children: [
-    // { path: 'doctorsdetails', component: DoctorsDetailsComponent },
-  ],
-   },
   {path: 'profile', component: ProfileComponent,
     children: [
       { path: 'address', component: AddressComponent },
