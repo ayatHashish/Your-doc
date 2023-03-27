@@ -8,10 +8,14 @@ import { UserModule } from '../user/user.module';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { SpcialistComponent } from './home/spcialist/spcialist.component';
+import { SearchComponent } from './home/search/search.component';
 @NgModule({
   declarations: [
     HomeComponent,
     BannerComponent,
+    SpcialistComponent,
+    SearchComponent,
 
   ],
   imports: [

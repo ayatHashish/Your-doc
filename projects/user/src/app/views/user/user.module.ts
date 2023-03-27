@@ -12,6 +12,9 @@ import { AddressComponent } from './profile/address/address.component';
 import { BookingComponent } from './profile/booking/booking.component';
 import { DetailsComponent } from './profile/details/details.component';
 import { BredbunnerComponent } from './bredbunner/bredbunner.component';
+import { DoctorsDetailsComponent } from './doctors/doctors-details/doctors-details.component';
+import { TermsComponent } from './terms/terms.component';
+import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
 
 
 
@@ -26,7 +29,10 @@ import { BredbunnerComponent } from './bredbunner/bredbunner.component';
     AddressComponent,
     BookingComponent,
     DetailsComponent,
-    BredbunnerComponent
+    BredbunnerComponent,
+    DoctorsDetailsComponent,
+    TermsComponent,
+    AppoinmentComponent
 
   ],
   imports: [
@@ -39,11 +45,12 @@ import { BredbunnerComponent } from './bredbunner/bredbunner.component';
     ProfileComponent,
     SettingComponent,
     SecurityComponent,
-
     AddressComponent,
     BookingComponent,
     DetailsComponent,
-    BredbunnerComponent
+    BredbunnerComponent,
+    TermsComponent,
+    AppoinmentComponent
 
 
   ]

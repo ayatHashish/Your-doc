@@ -7,24 +7,32 @@ import { AddressComponent } from './profile/address/address.component';
 
 import { SecurityComponent } from './profile/security/security.component';
 import { SettingComponent } from './profile/setting/setting.component';
-import { BookingComponent } from './profile/booking/booking.component';
+// import { BookingComponent } from './profile/booking/booking.component';
 import { DetailsComponent } from './profile/details/details.component';
 import { BredbunnerComponent } from './bredbunner/bredbunner.component';
+import { DoctorsDetailsComponent } from './doctors/doctors-details/doctors-details.component';
+import { TermsComponent } from './terms/terms.component';
+import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
 const routes: Routes = [
 
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
-  { path: 'doctors', component: DoctorsComponent },
-  { path: 'bredbunner', component: BredbunnerComponent },
+
+  { path: 'terms', component: TermsComponent },
+ { path: 'doctorsdetails', component: DoctorsDetailsComponent },
+  { path: 'doctors', component: DoctorsComponent,
+  children: [
+    // { path: 'doctorsdetails', component: DoctorsDetailsComponent },
+  ],
+   },
   {path: 'profile', component: ProfileComponent,
     children: [
       { path: 'address', component: AddressComponent },
-      { path: 'book', component: BookingComponent },
+      { path: 'appoinment', component:AppoinmentComponent},
       { path: 'security', component: SecurityComponent },
       { path: 'setting', component: SettingComponent },
       { path: 'details', component: DetailsComponent },
     ],
   },
-
 ];
 
 @NgModule({
