@@ -13,63 +13,7 @@
   }
 }
 
-}
-
-
-.main-user {
-  // margin-top:15%;
-  .symbol {
-    display: inline-block;
-    flex-shrink: 0;
-    position: relative;
-    border-radius: 0.475rem;
-  }
-}
-
-.name {
-  color: $black;
-  font-size: 1.5rem;
-  font-weight: 500;
-}
-.shrot_info {
-  flex-direction: column;
-  font-family: Inter, Helvetica, "sans-serif";
-  a {
-    color: $gray0;
-    font-size: 1.075rem;
-    font-weight: 400;
-  }
-}
-.card,
-.card-body {
-  border-color: $border;
-  padding-bottom: 0
-}
-ul {
-  li {
-    margin-top: 10px;
-    button {
-      background-color: transparent;
-      color:$gray0;
-      padding: 1rem 5px;
-      border-radius: 0;
-      margin: 0 1rem;
-      font-weight: 550;
-      border-bottom: 2px solid transparent;
-      &:hover,
-      &.active {
-        color: $th-brand;
-
-    img {
-      width: 160px;
-      height: 160px;
-      max-width: none;
-      display: inline-block;
-      border-radius: 0.475rem;
-    }
-  }
-
-  .name {
+ .name {
     color: #181c32;
     font-size: 1.5rem;
     font-weight: 500;
