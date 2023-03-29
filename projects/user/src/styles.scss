@@ -2,17 +2,15 @@
 @import "assets/scss/componants/fonts";
 @import "assets/scss/componants/mixins";
 @import "~bootstrap/dist/css/bootstrap.min.css";
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
-@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
+@import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
 * {
   font-family: Inter, Helvetica, "sans-serif";
 }
 
 body {
-
 }
-
 
 a {
   text-decoration: none;
@@ -394,63 +392,77 @@ form .button {
   height: 350px;
 }
 
+.view-all {
+  color: #3e3e3e;
+  margin: 20px 0;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.125rem;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  font-weight: 500;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #3e3e3e;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.125rem;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  font-weight: 500;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #3e3e3e;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.125rem;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  font-weight: 500;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #3e3e3e;
+  font-weight: 300;
+  text-decoration: none;
+  font-size: 1.125rem;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  font-weight: 500;
+  position: relative;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  float: right;
+}
 
+//Vendor
 
-
-.view-all{
-  color: #3E3E3E;
-  margin: 20px 0 ;
-      font-weight: 300;
-      text-decoration: none;
-      font-size: 1.125rem;
-      -webkit-transition-duration: 300ms;
-      transition-duration: 300ms;
-      font-weight: 500;
-      position: relative;
-      display: -webkit-inline-box;
-      display: -ms-inline-flexbox;
-      display: inline-flex;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;  color: #3E3E3E;
-    font-weight: 300;
-    text-decoration: none;
-    font-size: 1.125rem;
-    -webkit-transition-duration: 300ms;
-    transition-duration: 300ms;
-    font-weight: 500;
-    position: relative;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;     color: #3E3E3E;
-    font-weight: 300;
-    text-decoration: none;
-    font-size: 1.125rem;
-    -webkit-transition-duration: 300ms;
-    transition-duration: 300ms;
-    font-weight: 500;
-    position: relative;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;   color: #3E3E3E;
-    font-weight: 300;
-    text-decoration: none;
-    font-size: 1.125rem;
-    -webkit-transition-duration: 300ms;
-    transition-duration: 300ms;
-    font-weight: 500;
-    position: relative;
-    display: -webkit-inline-box;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    float: right;
-  }
+.card.card-dashed > .card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+  min-height: 70px px;
+  padding: 0 2.25rem;
+  color: var(--bs-card-cap-color);
+  background-color: transparent;
+  border-bottom: 1px solid #f4f4f4;
+}
