@@ -1,7 +1,12 @@
-
-
 <main>
-  <div class="card mb-3">
+  <div class="card mb-4">
+    <div class="card-header cursor-pointer">
+      <!--begin::Card title-->
+      <div class="card-title m-0">
+          <h3 class="m-0">Settings</h3>
+      </div>
+
+  </div>
     <div class="card-body">
       <div class="row mb-6">
         <!--begin::Label-->
@@ -10,43 +15,46 @@
 
         <!--begin::Col-->
         <div class="col-lg-9">
-            <!--begin::Image input-->
-            <div class="image-input image-input-outline" data-kt-image-input="true">
+          <!--begin::Image input-->
+          <div class="image-input image-input-outline" data-kt-image-input="true">
 
-                <div class="image-input-wrapper">
+            <div class="image-input-wrapper">
 
-                </div>
-
-
-                <!--begin::Label-->
-                <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar" data-bs-original-title="Change avatar" data-kt-initialized="1">
-                    <i class="bi bi-pencil-fill fs-7"></i>
-                    <!--begin::Inputs-->
-                    <input type="file" name="avatar" accept=".png, .jpg, .jpeg">
-                    <input type="hidden" name="avatar_remove">
-                    <!--end::Inputs-->
-                </label>
-                <!--end::Label-->
-                <!--begin::Cancel-->
-                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="cancel" data-bs-toggle="tooltip" aria-label="Cancel avatar" data-bs-original-title="Cancel avatar" data-kt-initialized="1">
-
-                </span>
-                <!--end::Cancel-->
-                <!--begin::Remove-->
-                <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow" data-kt-image-input-action="remove" data-bs-toggle="tooltip" aria-label="Remove avatar" data-bs-original-title="Remove avatar" data-kt-initialized="1">
-                    <i class='bx bx-x fs-2'></i>
-                </span>
-                <!--end::Remove-->
             </div>
-            <!--end::Image input-->
 
-            <!--begin::Hint-->
-            <div class="form-text">Allowed file types:  png, jpg, jpeg.</div>
-            <!--end::Hint-->
+            <!--begin::Label-->
+            <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+              data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar"
+              data-bs-original-title="Change avatar" data-kt-initialized="1">
+              <!-- <i class="bi bi-pencil-fill fs-7"></i> -->
+              <i class='bx bx-pencil'></i>
+              <!--begin::Inputs-->
+              <input type="file" name="avatar" accept=".png, .jpg, .jpeg">
+              <input type="hidden" name="avatar_remove">
+              <!--end::Inputs-->
+            </label>
+            <!--end::Label-->
+            <!--begin::Cancel-->
+            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+              data-kt-image-input-action="cancel" data-bs-toggle="tooltip" aria-label="Cancel avatar"
+              data-bs-original-title="Cancel avatar" data-kt-initialized="1">
+            </span>
+            <!--end::Cancel-->
+            <!--begin::Remove-->
+            <span class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+              data-kt-image-input-action="remove" data-bs-toggle="tooltip" aria-label="Remove avatar"
+              data-bs-original-title="Remove avatar" data-kt-initialized="1">
+              <i class='bx bx-x fs-2'></i>
+            </span>
+            <!--end::Remove-->
+          </div>
+          <!--end::Image input-->
+          <!--begin::Hint-->
+          <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+          <!--end::Hint-->
         </div>
         <!--end::Col-->
       </div>
-
       <div class="row mb-6">
         <!--begin::Label-->
         <label class="col-lg-3 col-form-label required fw-semibold fs-6">Full Name</label>
@@ -54,58 +62,49 @@
 
         <!--begin::Col-->
         <div class="col-lg-9">
-            <!--begin::Row-->
-            <div class="row">
-                <!--begin::Col-->
-                <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                    <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="First name">
-                <div class="fv-plugins-message-container invalid-feedback"></div></div>
-                <!--end::Col-->
-
-                <!--begin::Col-->
-                <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                    <input type="text" name="lname" class="form-control form-control-lg form-control-solid" placeholder="Last name">
-                <div class="fv-plugins-message-container invalid-feedback"></div></div>
-                <!--end::Col-->
-            </div>
-            <!--end::Row-->
-        </div>
-        <!--end::Col-->
-    </div>
-
-
-    <div class="row mb-6">
-      <!--begin::Label-->
-      <label class="col-lg-3 col-form-label required fw-semibold fs-6">Your Email</label>
-      <!--end::Label-->
-
-      <!--begin::Col-->
-      <div class="col-lg-9">
-
-    <input type="text" name="email" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Your Email" >
+          <!--begin::Row-->
+          <div class="row">
+            <!--begin::Col-->
+            <div class="col-lg-6 fv-row fv-plugins-icon-container">
+              <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                placeholder="First name">
               <div class="fv-plugins-message-container invalid-feedback"></div>
             </div>
+            <!--end::Col-->
 
-
-  </div>
-
-
-
-  <div class="row mb-6">
-    <label class="col-lg-3 col-form-label required fw-semibold fs-6"> Phone </label>
-    <div class="col-lg-9">
-  <input type="text" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="phone" >
-            <div class="fv-plugins-message-container invalid-feedback"></div>
+            <!--begin::Col-->
+            <div class="col-lg-6 fv-row fv-plugins-icon-container">
+              <input type="text" name="lname" class="form-control form-control-lg form-control-solid"
+                placeholder="Last name">
+              <div class="fv-plugins-message-container invalid-feedback"></div>
+            </div>
+            <!--end::Col-->
           </div>
-
-
-</div>
-
-<div class=" d-flex justify-content-end mt-5">
-  <button type="reset" class="btn btn-light btn-active-light-primary me-2">Discard</button>
-  <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">Save Changes</button>
-</div>
-
+          <!--end::Row-->
+        </div>
+        <!--end::Col-->
+      </div>
+      <div class="row mb-6">
+        <!--begin::Label-->
+        <label class="col-lg-3 col-form-label required fw-semibold fs-6">Your Email</label>
+        <!--end::Label-->
+        <!--begin::Col-->
+        <div class="col-lg-9">
+          <input type="text" name="email" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Your Email">
+          <div class="fv-plugins-message-container invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="row mb-6">
+        <label class="col-lg-3 col-form-label required fw-semibold fs-6"> Phone </label>
+        <div class="col-lg-9">
+          <input type="text" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="phone">
+          <div class="fv-plugins-message-container invalid-feedback"></div>
+        </div>
+      </div>
+      <div class="footer-card d-flex justify-content-end mt-5">
+        <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2">Discard</button>
+        <button type="submit" class="btn btn-sm align-self-center" id="kt_account_profile_details_submit">Save Changes</button>
+      </div>
     </div>
   </div>
 </main>
