@@ -1,0 +1,10 @@
+
+@import "../../../../../assets/scss/componants/variable";
+.card{
+  border: none;
+
+  .card-header{
+    background-color: $pure-white;
+    border-bottom: $border;
+  }
+}

@@ -17,8 +17,19 @@
   background-repeat: no-repeat;
   background-position: center top;
   background-size: 100% 350px;
-  h2 {
-    color: white;
-    text-transform: uppercase;
+  .section-title {
+    padding-bottom: 40px;
+
+    h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+     color: white;
+      text-transform: uppercase;
   }
+  }
+
 }

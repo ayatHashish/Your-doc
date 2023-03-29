@@ -1,13 +1,11 @@
 @import "../../../../assets/scss/componants/variable";
 
 .main-user{
-  // margin-top:15%;
 .symbol {
   display: inline-block;
   flex-shrink: 0;
   position: relative;
   border-radius: 0.475rem;
-
   img {
     width: 160px;
     height: 160px;
@@ -16,9 +14,8 @@
     border-radius: 0.475rem;
   }
 }
-
 .name {
-  color: #181c32;
+  color: $black;
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -26,21 +23,22 @@
   flex-direction: column;
   font-family: Inter, Helvetica, "sans-serif";
   a {
-    color: #b5b5c3;
+    color: $gray0;
     font-size: 1.075rem;
     font-weight: 400;
   }
 }
 .card,
 .card-body {
-  border-color: #f4f4f4;
+  border-color: $border;
+  padding-bottom: 0
 }
 ul {
   li {
     margin-top: 10px;
     button {
       background-color: transparent;
-      color: #b5b5c3;
+      color:$gray0;
       padding: 1rem 5px;
       border-radius: 0;
       margin: 0 1rem;
