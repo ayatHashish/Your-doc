@@ -8,7 +8,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 export class SpecialtiesComponent {
   customOptions: OwlOptions = {
     loop: true,
-    margin: 5,
+    margin:15,
     autoplay: true,
     autoplayTimeout: 7000,
     nav: true,
