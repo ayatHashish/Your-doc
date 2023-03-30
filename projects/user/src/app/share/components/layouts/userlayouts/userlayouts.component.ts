@@ -8,14 +8,14 @@ import { filter } from 'rxjs/operators';
 })
 export class UserlayoutsComponent {
   pageUrl: String = ""
-  pageTitle: String = ""
+  pageTitle: any = ""
 
   constructor(private router: Router) {
     router.events.pipe(
       filter(res => res instanceof NavigationEnd)
     ).subscribe(res => {
       this.pageUrl = Object.values(res)[1];
-      this.pageTitle = this.pageUrl.substring(6);
+      this.pageTitle = this.pageUrl.split('/')[2];
       // console.log(this.pageUrl);
     });
   }

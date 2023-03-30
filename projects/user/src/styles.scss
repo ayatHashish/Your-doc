@@ -64,16 +64,19 @@ a {
 }
 
 form .button {
-  font-size: 18px;
-  font-weight: 600;
   padding: 0 40px;
   margin-right: 1px;
-  height: 46px;
+  height: 43px;
   outline: none;
-  border-radius: 50px;
   border: none;
   background-color: #285192;
+  display: flex;
   color: #fff;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 1.125rem;
+  justify-content: center;
+
   &:hover {
     background-color: gray;
     color: #fff;
@@ -127,6 +130,17 @@ form .button {
   }
 }
 
+
+.navigation{
+  padding: 0 20px !important;
+ .pagination {
+    .page-item {
+      .page-link{
+        color:$pure-white !important;
+      }
+    }
+  }
+}
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/

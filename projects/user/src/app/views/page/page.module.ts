@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SpcialistComponent } from './home/spcialist/spcialist.component';
 import { SearchComponent } from './home/search/search.component';
+import { SpecialtiesComponent } from './home/specialties/specialties.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,7 @@ import { SearchComponent } from './home/search/search.component';
     BannerComponent,
     SpcialistComponent,
     SearchComponent,
-
+    SpecialtiesComponent
   ],
   imports: [
     ShareModule,

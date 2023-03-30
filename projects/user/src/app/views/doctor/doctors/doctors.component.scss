@@ -1,9 +1,10 @@
 @import "../../../../assets/scss/componants/variable.scss";
 .vco-page {
-  margin: 60px auto 0;
+  // margin: 60px auto 0;
+  padding-bottom: 20px;
 
   .consultant-wrapper {
-    margin: 80px 0;
+    // margin: 80px 0;
     h2 {
       color: $brand-primary;
       font-weight: bold;
@@ -11,7 +12,7 @@
     }
 
     .consultant-list {
-      margin-top: 30px;
+      // margin-top: 30px;
       .consultant-card {
         position: relative;
         background-color: $brand-white-shade;
@@ -63,12 +64,12 @@ padding: 5px 15px;
               border: none;
               }
               .action.border {
-                border: solid 2px #fff;
+                border: solid 2px $pure-white;
                 background-color: transparent;
-                color: #fff;
+                color: $pure-white;
                &:hover {
-                  border: solid 2px #76AE8C !important;
-                  background-color: #76AE8C;
+                  border: solid 2px $brand-green !important;
+                  background-color: $brand-green;
               }
             }
             }
@@ -85,7 +86,7 @@ padding: 5px 15px;
                   min-height: 50px;
                   min-width: 50px;
                   border-radius: 100%;
-                  background-color: $th-brand;
+                  background-color: $brand-green;
                   font-size: 2rem;
                 }
                 .data {
@@ -128,7 +129,7 @@ padding: 5px 15px;
             a {
               color: $brand-primary;
               &:hover {
-                color: $th-brand;
+                color: $brand-green;
               }
             }
           }
@@ -158,12 +159,15 @@ padding: 5px 15px;
             }
           }
           &::after {
-            background-color: $th-brand;
+            background-color: $brand-green;
           }
         }
       }
     }
   }
+
+
+ 
 }
 
 @media screen and (max-width: 991px) {

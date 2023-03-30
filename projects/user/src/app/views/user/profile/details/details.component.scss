@@ -2,6 +2,7 @@
 .card {
   border: none;
   padding: 0;
+  border-radius: 15px !important; 
   .card-title {
     h3 {
       font-size: 1.35rem;
@@ -36,7 +37,7 @@
           background-color: $brand-blue-hover;
         }
       }
-      
+
       font-size: 0.95rem !important;
     }
   }
