@@ -457,12 +457,41 @@ form .button {
         font-size: 30px;
         margin: 0;
         padding: 2px;
-        background: #FFF;
-          color: $th-brand;
+        background: #fff;
+        color: $th-brand;
         display: flex;
         cursor: pointer;
         border-radius: 3px;
-        &:hover{
+        &:hover {
+          opacity: 0.8;
+        }
+      }
+    }
+  }
+}
+
+.banner_section {
+  position: relative;
+  .owl-theme {
+    .owl-nav {
+      margin-top: 0;
+      transform: translate(-50%, -50%);
+      justify-content: flex-start;
+      position: absolute;
+      width: 103%;
+      top: 75%;
+      left: 57%;
+      display: flex;
+      [class*="owl-"] {
+        font-size: 30px;
+        margin: 0 5px;
+        padding: 2px;
+        background: #fff;
+        color: $th-brand;
+        display: flex;
+        cursor: pointer;
+        border-radius: 3px;
+        &:hover {
           opacity: 0.8;
         }
       }
