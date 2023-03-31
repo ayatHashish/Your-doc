@@ -484,10 +484,10 @@ form .button {
       display: flex;
       [class*="owl-"] {
         font-size: 30px;
-        margin: 0 5px;
+        margin: 0;
         padding: 2px;
-        background: #fff;
-        color: $th-brand;
+        background: transparent;
+        color: $pure-white;
         display: flex;
         cursor: pointer;
         border-radius: 3px;

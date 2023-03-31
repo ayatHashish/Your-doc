@@ -15,8 +15,8 @@ export class BannerComponent {
     nav: true,
     dots: false,
     navText: [
-      "<i class='bx bx-chevron-left' data-toggle='tooltip' title='previous'></i>",
-      "<i class='bx bx-chevron-right' data-toggle='tooltip' title='next'></i>",
+      "<i class='bx bx-left-arrow-circle' data-toggle='tooltip' title='previous'></i>",
+      "<i class='bx bx-right-arrow-circle' data-toggle='tooltip' title='next'></i>",
     ],
     responsive: {
       0: {
