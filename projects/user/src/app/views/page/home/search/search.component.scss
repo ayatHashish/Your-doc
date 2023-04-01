@@ -22,13 +22,13 @@ main {
   .form {
     flex: 1;
     display: flex;
-    background-color: rgba(255, 255, 255, 0.2);
+    // background-color: rgba(255, 255, 255, 0.2);
     justify-content: center;
     flex-flow: row wrap;
     align-items: center;
     border-radius: 10px;
     padding: 1% 2%;
-    width: 70%;
+    width: 75%;
   }
   input,
   .search-submit,

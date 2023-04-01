@@ -10,7 +10,7 @@ export class SpecialtiesComponent {
     loop: true,
     margin: 15,
     autoplay: true,
-    autoplayTimeout: 7000,
+    autoplayTimeout: 5000,
     nav: true,
     dots: false,
     navText: [

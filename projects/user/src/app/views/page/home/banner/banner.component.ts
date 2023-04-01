@@ -11,7 +11,7 @@ export class BannerComponent {
     loop: true,
     margin: 0,
     autoplay: true,
-    autoplayTimeout: 7000,
+    autoplayTimeout: 3000,
     nav: true,
     dots: false,
     navText: [
