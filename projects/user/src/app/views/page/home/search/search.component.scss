@@ -1,9 +1,59 @@
-
 @import "../../../../../assets/scss/componants/variable.scss";
-.search-componant{
+.search-componant {
   background: $blue09;
   padding: 50px;
   border-radius: 15px;
+}
+
+main {
+  background-color: #dee2e6;
+  padding: 50px 0;
+  margin-bottom: 20px;
+}
+
+// search-banner
+.search-banner {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  .form {
+    flex: 1;
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.2);
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: center;
+    border-radius: 10px;
+    padding: 1% 2%;
+    width: 70%;
+  }
+  input,
+  .search-submit,
+  .specialties-selection {
+    margin-right: 10px;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    outline: 0;
+    flex: 1;
+  }
+  input {
+    flex: 4;
+  }
+  .search-submit {
+    background-color: $th-brand;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $pure-white;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 15px;
+  }
 }
 
 
