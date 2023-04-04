@@ -9,6 +9,9 @@ import { AddressComponent } from './profile/address/address.component';
 import { DetailsComponent } from './profile/details/details.component';
 import { TermsComponent } from './terms/terms.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
+import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
+import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +21,9 @@ import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
     AddressComponent,
     DetailsComponent,
     TermsComponent,
-    AppoinmentComponent
+    AppoinmentComponent,
+    TimeslotsComponent,
+    EditslotComponent
   ],
   imports: [
     ShareModule,

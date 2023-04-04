@@ -9,7 +9,6 @@ import { DoctorModule } from '../doctor/doctor.module';
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { SpcialistComponent } from './home/spcialist/spcialist.component';
 import { SearchComponent } from './home/search/search.component';
 import { SpecialtiesComponent } from './home/specialties/specialties.component';
 
@@ -17,7 +16,6 @@ import { SpecialtiesComponent } from './home/specialties/specialties.component';
   declarations: [
     HomeComponent,
     BannerComponent,
-    SpcialistComponent,
     SearchComponent,
     SpecialtiesComponent
   ],

@@ -1,0 +1,23 @@
+@import "../../../../../../assets/scss/componants/variable";
+.modal-content{
+
+  .modal-header {
+    border-bottom: none !important;
+  }
+
+  .modal-body {
+
+    p , h3{
+      padding-top:10px ;
+    }
+  }
+  .modal-footer {
+    border-top: none !important;
+    align-items: center;
+    justify-content:center !important;
+
+  }
+  .btn-edit{
+    margin: auto !important;
+  }
+}

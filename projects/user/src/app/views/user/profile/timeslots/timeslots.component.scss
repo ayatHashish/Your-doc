@@ -1,0 +1,31 @@
+.card-header {
+  margin-bottom: 0 !important;
+}
+
+td {
+  a {
+    padding: 7px 10px !important;
+    margin: 0 3px;
+    background-color: rgba(246, 92, 92, 10%);
+    color: #f65c5c;
+    &:hover {
+      background-color: #f65c5c;
+      color: #f65c5c1a;
+      i{
+         color: rgba(246, 92, 92, 10%);
+      }
+    }
+    // &:first-child {
+    //   background-color: #138fc21a;
+    //   color: #138fc2;
+    //   &:hover {
+    //     background-color: #138fc2;
+    //     color: #138fc21a;
+    //   }
+    // }
+    i {
+      padding-right: 0 !important;
+      font-size: 16px;
+    }
+  }
+}

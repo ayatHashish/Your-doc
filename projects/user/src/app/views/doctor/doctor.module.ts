@@ -7,7 +7,7 @@ import { DoctorsDetailsComponent } from './doctors-details/doctors-details.compo
 import { ModelComponent } from './model/model.component';
 import { TimeslotComponent } from './timeslot/timeslot.component';
 import { AllTimeComponent } from './timeslot/all-time/all-time.component';
-import { EditslotComponent } from './timeslot/editslot/editslot.component';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +16,7 @@ import { EditslotComponent } from './timeslot/editslot/editslot.component';
     ModelComponent,
     TimeslotComponent,
     AllTimeComponent,
-    EditslotComponent,
+   
 
   ],
   imports: [

@@ -5,7 +5,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { ModelComponent } from './model/model.component';
 import { TimeslotComponent } from './timeslot/timeslot.component';
 import { AllTimeComponent } from './timeslot/all-time/all-time.component';
-import { EditslotComponent } from './timeslot/editslot/editslot.component';
+
 
 const routes: Routes = [
   { path: 'doctors', component: DoctorsComponent },
@@ -13,7 +13,7 @@ const routes: Routes = [
   { path: 'model', component: ModelComponent },
   { path: 'timeSlots', component: TimeslotComponent },
   { path: 'AllSlots', component: AllTimeComponent },
-  { path: 'editslot', component: EditslotComponent },
+
 ];
 
 @NgModule({

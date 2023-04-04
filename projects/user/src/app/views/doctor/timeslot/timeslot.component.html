@@ -7,7 +7,7 @@
     <div class="container">
       <div class="time-slot">
           <form>
-            <div class="form-group">
+   <div class="form-group">
 
               <select class="form-select input-group" id="week_day" name="week_day" aria-label="Default select example"  required>
                 <option selected disabled>Select Day</option>
@@ -23,35 +23,64 @@
               <!-- <div class="alert alert-danger"> </div> -->
 
             </div>
-            <div class="form-group">
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-3 col-form-label required fw-semibold fs-6">number</label>
+              <!--end::Label-->
 
-              <input type="time" class="input-group" id="start_time" name="start_time" required>
-              <label for="start_time">Start Time</label>
-              <!-- <div class="alert alert-danger"></div> -->
+              <!--begin::Col-->
+              <div class="col-lg-9">
+                <!--begin::Row-->
+                <div class="row">
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                    <input type="text" name="number" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                      placeholder="number">
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                  <!--end::Col-->
 
+
+                </div>
+                <!--end::Row-->
+              </div>
+              <!--end::Col-->
             </div>
-            <div class="form-group">
+            <div class="row mb-6">
+              <!--begin::Label-->
+              <label class="col-lg-3 col-form-label required fw-semibold fs-6">Time</label>
+              <!--end::Label-->
 
-              <input type="time" class="form-control" id="end_time"  name="end_time" required>
-              <label for="end_time">End Time</label>
-              <!-- <div class="alert alert-danger"> </div> -->
+              <!--begin::Col-->
+              <div class="col-lg-9">
+                <!--begin::Row-->
+                <div class="row">
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                    <input type="text" name="Start_Time" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                      placeholder="Start_Time">
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                  <!--end::Col-->
 
+                  <!--begin::Col-->
+                  <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                    <input type="text" name="End-time" class="form-control form-control-lg form-control-solid"
+                      placeholder="End-time">
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                  <!--end::Col-->
+                </div>
+                <!--end::Row-->
+              </div>
+              <!--end::Col-->
             </div>
-            <div class="form-group">
 
-              <input type="number" class="form-control" id="num_of_booking" name="num_of_booking" required>
-              <label for="num_of_booking">Number of Booking</label>
-              <!-- <div class="alert alert-danger"></div> -->
-
-            </div>
-            <div class="form-group">
-
-              <input type="number" class="form-control" id="doctor_id" required>
-              <label for="doctor_id">Doctor ID</label>
-            </div>
             <div>
               <button type="submit" class="button mt-1">Add Slot</button>
             </div>
+
+
 
           </form>
       </div>

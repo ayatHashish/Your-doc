@@ -37,7 +37,6 @@
 
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
               "./node_modules/wowjs/dist/wow.js",
-              "./node_modules/particles.js/particles.js",
               "./projects/user/src/assets/js/app.js"
             ]
           },
@@ -99,7 +98,6 @@
             "styles": [],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js",
-              "./node_modules/particles.js/particles.js",
               "./projects/user/src/assets/js/app.js"
             ]
           }

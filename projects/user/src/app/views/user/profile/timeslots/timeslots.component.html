@@ -1,0 +1,83 @@
+<main>
+  <div class="card ">
+    <div class="card-header cursor-pointer">
+      <!--begin::Card title-->
+      <div class="card-title m-0">
+        <h3 class="m-0"> Time Slots </h3>
+      </div>
+      <!--begin::Action-->
+      <a routerLink="/user/profile/setting" class="btn btn-sm align-self-center">Add Time</a>
+      <!--end::Action-->
+    </div>
+    <!--end::Card header-->
+
+    <!--begin::Tab Content-->
+    <div class="tab-content">
+      <!--begin::Tab panel-->
+      <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active" role="tabpanel"
+        aria-labelledby="kt_billing_months">
+        <!--begin::Table container-->
+        <div class="table-responsive">
+          <!--begin::Table-->
+          <table class="table table-row-bordered align-middle gy-4 gs-9">
+            <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
+              <tr>
+                <td class="min-w-150px">ID</td>
+                <td class="min-w-150px">Day</td>
+                <td class="min-w-150px">Start Time</td>
+                <td class="min-w-150px">End Time</td>
+                <td class="min-w-150px">Number of Bookings</td>
+                <td class="min-w-150px">Action</td>
+
+              </tr>
+            </thead>
+            <tbody class="fw-semibold text-gray-600">
+              <!--begin::Table row-->
+              <tr>
+                <td>#1</td>
+                <td>Saturday</td>
+                <td>01:00 PM</td>
+                <td>01:00 PM</td>
+                <td>123</td>
+                <td>
+
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class='bx bx-edit-alt'></i>
+                    </a>
+
+                    <a type="button" class="btn btn-sm" >  <i class='bx bx-trash'></i></a>
+
+
+
+                </td>
+              </tr>
+              <!--end::Table row-->
+
+
+
+            </tbody>
+          </table>
+          <!--end::Table-->
+        </div>
+        <!--end::Table container-->
+      </div>
+      <!--end::Tab panel-->
+
+
+    </div>
+    <!--end::Tab Content-->
+  </div>
+</main>
+
+
+
+<!-- Button trigger modal -->
+
+  <!-- edit -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+
+      <app-editslot></app-editslot>
+
+    </div>
+ 
