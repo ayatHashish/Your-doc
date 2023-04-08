@@ -1,43 +1,5 @@
 
-.nav-tabs {
-  background-color: var(--section-bg-color);
-  border-radius: var(--border-radius-large);
-  border-bottom: 0;
-  padding: 15px;
-}
-
-.nav-tabs .nav-link {
-  border-radius: var(--border-radius-large);
-  border: 0;
-  padding: 15px 25px;
-  transition: all 0.3s;
-}
-
-.nav-tabs .nav-link:first-child {
-  margin-right: 15px;
-}
-
-.nav-tabs .nav-item.show .nav-link,
-.nav-tabs .nav-link.active,
-.nav-tabs .nav-link:focus,
-.nav-tabs .nav-link:hover {
-  background: var(--white-color);
-  box-shadow: 0 1rem 3rem rgba(0,0,0,.175);
-  color: var(--primary-color);
-}
-
-.nav-tabs h5 {
-  color: var(--p-color);
-  margin-bottom: 0;
-}
-
-.nav-tabs .nav-link.active h5,
-.nav-tabs .nav-link:focus h5,
-.nav-tabs .nav-link:hover h5 {
-  color: var(--primary-color);
-}
 @import "../../../../assets/scss/componants/variable";
-
 nav {
   border: 1px solid rgba(255, 255, 255, 0.1);
   background-color: black;
@@ -50,7 +12,6 @@ nav {
   .navbar-nav {
     align-items: center;
     li {
-      padding: 0 4px;
       a {
         font-family: Inter, Helvetica, "sans-serif";
         color: $pure-white;
@@ -108,7 +69,7 @@ nav {
       &:hover {
         transition: all 0.3s ease-in-out;
         background-color: transparent !important;
-        color: #2dd37c;
+        color: #2DD37C;
       }
       i {
         transform: rotate(180deg);

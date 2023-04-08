@@ -11,6 +11,8 @@ import { TermsComponent } from './terms/terms.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
 import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
 import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
+import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
+import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { EditslotComponent } from './profile/timeslots/editslot/editslot.compone
     TermsComponent,
     AppoinmentComponent,
     TimeslotsComponent,
-    EditslotComponent
+    EditslotComponent,
+    DelslotsComponent,
+    AddTimeComponent
   ],
   imports: [
     ShareModule,

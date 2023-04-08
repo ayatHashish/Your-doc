@@ -18,7 +18,6 @@ export class RegisterComponent {
   errorMsg = '';
   isSubmitted = false;
   regesterForm = new FormGroup({
-
     name: new FormControl('', [
       Validators.required,
       Validators.minLength(3),
@@ -27,21 +26,20 @@ export class RegisterComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/),
+      // Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/),
     ]),
     password_confirmation: new FormControl('', [
-      Validators.required,
-      Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/),
+      Validators.required
     ]),
-
     phone: new FormControl('', [Validators.required]),
     user_type: new FormControl('', [Validators.required]),
-    gender: new FormControl('', [Validators.required]),
-    birth_date: new FormControl('', [Validators.required]),
-    address: new FormControl('', [Validators.required]),
-    state: new FormControl('', [Validators.required]),
-    country: new FormControl('', [Validators.required]),
-    avatar: new FormControl('', [Validators.required]),
+
+    // gender: new FormControl('', [Validators.required]),
+    // birth_date: new FormControl('', [Validators.required]),
+    // address: new FormControl('', [Validators.required]),
+    // state: new FormControl('', [Validators.required]),
+    // country: new FormControl('', [Validators.required]),
+    // avatar: new FormControl('', [Validators.required]),
 
   });
 
@@ -50,13 +48,13 @@ export class RegisterComponent {
   get password() { return this.regesterForm.get('password') }
   get confPass() { return this.regesterForm.get('password_confirmation') }
   get phone() { return this.regesterForm.get('phone') }
-  get gender() { return this.regesterForm.get('gender') }
-  get age() { return this.regesterForm.get('age') }
   get user_type() { return this.regesterForm.get('user_type') }
-  get address() { return this.regesterForm.get('address') }
-  get state() { return this.regesterForm.get('state') }
-  get country() { return this.regesterForm.get('country') }
-  get avatar() { return this.regesterForm.get('avatar') }
+  // get gender() { return this.regesterForm.get('gender') }
+  // get age() { return this.regesterForm.get('age') }
+  // get address() { return this.regesterForm.get('address') }
+  // get state() { return this.regesterForm.get('state') }
+  // get country() { return this.regesterForm.get('country') }
+  // get avatar() { return this.regesterForm.get('avatar') }
 
   checkPasswordForm = this.formBuilder.group(
     {
@@ -87,25 +85,37 @@ export class RegisterComponent {
   }
 
   handleRegister() {
+    this._auth.register(this.regesterForm.value).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (e) => {
+
+        this.errorMsg = e.error.error;
+        console.log(e);
+      },
+      () => {
+        this._router.navigateByUrl('auth/login');
+      }
+    );
     // console.log(this.checkPasswordForm);
     // if (!this.checkPasswordForm?.valid) {
     //   return;
     // }
-    if (this.regesterForm.valid && this.checkPasswordForm.valid) {
-      this._auth.register(this.regesterForm.value).subscribe(
-        (res) => {
-          console.log(res);
-        },
-        (e) => {
+    // if (this.regesterForm.valid && this.checkPasswordForm.valid) {
+    //   this._auth.register(this.regesterForm.value).subscribe(
+    //     (res) => {
+    //       console.log(res);
+    //     },
+    //     (e) => {
 
-          this.errorMsg = e;
-          console.log(e);
-        },
-        () => {
-          this._router.navigateByUrl('/login');
-        }
-      );
-    }
-
+    //       // this.errorMsg = e.error.error;
+    //       console.log(e);
+    //     },
+    //     () => {
+    //       this._router.navigateByUrl('/login');
+    //     }
+    //   );
+    // }
   }
 }

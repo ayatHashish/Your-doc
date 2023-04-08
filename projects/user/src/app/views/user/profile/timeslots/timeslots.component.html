@@ -6,7 +6,9 @@
         <h3 class="m-0"> Time Slots </h3>
       </div>
       <!--begin::Action-->
-      <a routerLink="/user/profile/setting" class="btn btn-sm align-self-center">Add Time</a>
+      <a type="button" class="btn btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#addTime">
+        Add Time
+      </a>
       <!--end::Action-->
     </div>
     <!--end::Card header-->
@@ -43,12 +45,11 @@
 
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i class='bx bx-edit-alt'></i>
-                    </a>
+                  </a>
 
-                    <a type="button" class="btn btn-sm" >  <i class='bx bx-trash'></i></a>
-
-
-
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#delete">
+                    <i class='bx bx-trash'></i>
+                  </a>
                 </td>
               </tr>
               <!--end::Table row-->
@@ -73,11 +74,20 @@
 
 <!-- Button trigger modal -->
 
-  <!-- edit -->
-  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+<!-- Add time -->
+<div class="modal fade" id="addTime" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <app-add-time></app-add-time>
+</div>
 
+<!-- edit -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <app-editslot></app-editslot>
+</div>
 
-      <app-editslot></app-editslot>
-
-    </div>
- 
+<!-- Delete -->
+<div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <app-delslots></app-delslots>
+</div>

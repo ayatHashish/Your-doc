@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { AuthService } from '../../../share/services/auth.service';
+import { Router } from '@angular/router';
 
 
 
@@ -8,26 +10,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-/*
-  constructor( puplic model:ModalDismissReasons) { } */
+  constructor(private _auth: AuthService , private _router: Router,){}
+  logout() {
+    this._auth.logout().then(() => {
+      this._router.navigateByUrl('auth/login');
+    });
 
-  // modalRef: MdbModalRef<LoginComponent> | null = null;
-  // modalRegest: MdbModalRef<RegisterComponent> | null = null;
-
-  // constructor(public modalService: MdbModalService) { }
-  // openLoginModal() {
-  //   this.modalRef = this.modalService.open(LoginComponent, {
-  //     modalClass: 'modal-dialog-centered login_model'
-  //   })
-  // }
-  // openRegisterModal() {
-
-  //   this.modalRegest = this.modalService.open(RegisterComponent, {
-  //     modalClass: 'modal-dialog-centered register_model'
-  //   })
-  // }
-
-
-
-
+}
 }

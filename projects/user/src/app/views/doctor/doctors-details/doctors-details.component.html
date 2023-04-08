@@ -55,12 +55,27 @@
                           hospital from 29-30 September 2021</p>
                       </div>
                     </div>
-
-
                   </div>
                 </div>
-                <div class="dr-available">
-                  <div class="date-show">
+                <div class="date-show">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <p class="title">Clinic Address: Adsdfd</p>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                      <p class="title">Day</p>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                      <p class="title">Start Time</p>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                      <p class="title">End Time</p>
+                    </div>
+                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
+                      <p class="title">no-of booking</p>
+                    </div>
+                  </div>
+                  <div class="dr-available" *ngFor="let da of Data">
                     <div class="row">
                       <div class="col-lg-2 col-md-3 col-sm-6 col-12">
                         <div class="available-item">
@@ -69,8 +84,8 @@
                           </div>
 
                           <div class="content">
-                            <p class="title">Visit Location</p>
-                            <p class="data">Saqr Hospital</p>
+
+                            <p class="data">{{da.day}}</p>
                           </div>
                         </div>
                       </div>
@@ -82,8 +97,7 @@
                           </div>
 
                           <div class="content">
-                            <p class="title">Visit From</p>
-                            <p class="data">26 Sep 2021</p>
+                            <p class="data">{{da.start_time}}</p>
                           </div>
                         </div>
                       </div>
@@ -95,8 +109,7 @@
                           </div>
 
                           <div class="content">
-                            <p class="title">Visit End</p>
-                            <p class="data">27 Sep 2021</p>
+                            <p class="data">{{da.end_time}}</p>
                           </div>
                         </div>
                       </div>
@@ -108,8 +121,8 @@
                           </div>
 
                           <div class="content">
-                            <p class="title">Contact number</p>
-                            <p class="data"><a href="tel:80011111">80011111</a></p>
+                            <p class="title"></p>
+                            <p class="data">{{da.num_bookings}}</p>
                           </div>
                         </div>
                       </div>
@@ -122,79 +135,16 @@
                           </div>
 
                           <div class="content">
-                            <a class="btn btn-success  button mt-1 text-center my-4" routerLink="/doctor/timeSlots">Booking</a>
+                            <a class="btn btn-success  button mt-1 text-center my-4"
+                              routerLink="/doctor/timeSlots">Booking</a>
                           </div>
                         </div>
                       </div>
                     </div>
+
+
                   </div>
 
-                  <div class="date-show">
-                    <div class="row">
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-address"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="title">Visit Location</p>
-                            <p class="data">Khorfakkan Hospital</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-calendar-2"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="title">Visit From</p>
-                            <p class="data">28 Sep 2021</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-calendar-2"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="title">Visit End</p>
-                            <p class="data">30 Sep 2021</p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-toll-free"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="title">Contact number</p>
-                            <p class="data"><a href="tel:80011111">80011111</a></p>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-toll-free"></i>
-                          </div>
-
-                          <div class="content">
-                            <a class="btn button mt-1 text-center my-4" routerLink="/doctor/timeSlots">Booking</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

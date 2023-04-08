@@ -7,8 +7,8 @@ import { SettingComponent } from './profile/setting/setting.component';
 import { DetailsComponent } from './profile/details/details.component';
 import { TermsComponent } from './terms/terms.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
-import { TimeslotComponent } from '../doctor/timeslot/timeslot.component';
 import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
+import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
   { path: 'terms', component: TermsComponent },
@@ -19,7 +19,7 @@ const routes: Routes = [
       { path: 'security', component: SecurityComponent },
       { path: 'settings', component: SettingComponent },
       { path: 'details', component: DetailsComponent },
-      { path: 'timeslots', component: TimeslotComponent },
+      { path: 'timeslots', component: TimeslotsComponent },
       { path: 'edit', component: EditslotComponent },
     ],
   },

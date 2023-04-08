@@ -56,7 +56,10 @@
                 <a routerLink="/auth/signup"> Join us </a>
               </div>
             </div>
-            <form>
+            <form [formGroup]="loginForm" (ngSubmit)="handlelogin()">
+              <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
+
+
               <!-- email -->
               <div class="form-group">
                 <input class="input-group" type="email" formControlName="email" id="email" required>
@@ -66,6 +69,7 @@
               <div class="form-group">
                 <input class="input-group" type="password" formControlName="password" id="password" required>
                 <label>Password</label>
+
               </div>
               <div class="form-check">
                 <div class="form-check-content">
@@ -76,9 +80,10 @@
                 </div>
                 <a class="underlineHover" routerLink="/auth/forgotPassword">Forgot Password?</a>
               </div>
-              <button class="btn-lo fadeIn">Sign In</button>
+              <input type="submit" class="btn-lo fadeIn" value="sign in">
+      
             </form>
-            <!-- Remind Passowrd -->
+
           </div>
         </div>
       </div>

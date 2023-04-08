@@ -10,8 +10,7 @@ import { AuthService } from '../../../share/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
-  constructor( private _auth: AuthService,private _router: Router) { }
+  constructor(private _auth: AuthService, private _router: Router) { }
 
   isSubmitted = false;
   errorMsg = '';
@@ -19,7 +18,6 @@ export class LoginComponent {
     email: new FormControl('', [Validators.required, Validators.email]),
     password: new FormControl('', [
       Validators.required,
-      // Validators.pattern(/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/),
     ]),
   });
 
@@ -28,14 +26,15 @@ export class LoginComponent {
 
   handlelogin() {
     if (this.loginForm.valid) {
-      // console.log(this.loginForm.value)
+      console.log(this.loginForm.value)
       this._auth.login(this.loginForm.value).subscribe(
         (res) => {
-          console.log(res);
+          // console.log(res)
+          localStorage.setItem("token", res.token);
         },
         (e) => {
-          console.log(e);
-          this.errorMsg = "bye-bye";
+
+          this.errorMsg = e.error.error;
         },
         () => {
           this._router.navigateByUrl('/home');

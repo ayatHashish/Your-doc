@@ -55,58 +55,71 @@
                 <a routerLink="/auth/login"> Sign In </a>
               </div>
             </div>
-            <form [formGroup]="regesterForm" (ngSubmit)="handleRegister()">
+            <form [formGroup]= "regesterForm" (ngSubmit)="handleRegister()">
+              <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
               <!-- name -->
               <div class="form-group">
                 <input type="text" class="form-control" name="name" formControlName="name">
                 <label>Your Name</label>
-                <!-- <div class="alert alert-danger"></div> -->
+                <div class="alert alert-danger my-2" *ngIf="name?.invalid &&(name?.dirty || name?.touched ||
+                isSubmitted)">
+                  <li *ngIf="name?.errors?.['required']">name is required</li>
+                  <li *ngIf="name?.errors?.['minlength']">name min len 3</li>
+                  <li *ngIf="name?.errors?.['maxlength']">name max len 20</li>
+                </div>
               </div>
               <!-- email -->
               <div class="form-group">
                 <input class="input-group form-control" type="text" name="email" formControlName="email">
                 <label>Your Email</label>
-                <!--  <div class="alert alert-danger"></div> -->
+                <div class="alert alert-danger my-2"
+                  *ngIf="email?.invalid&&(email?.dirty || email?.touched || isSubmitted)">
+                  <!-- {{name?.errors|json}} -->
+                  <li *ngIf="email?.errors?.['required']">email is required</li>
+                  <li *ngIf="email?.errors?.['email']">invalid format</li>
+                </div>
               </div>
               <!-- password -->
               <div class="form-group">
                 <input class="input-group form-control" type="password" formControlName="password">
                 <label>password</label>
-                <!-- <div class="alert alert-danger"></div> -->
+                <div class="alert alert-danger my-2"
+                  *ngIf="password?.invalid&&(password?.dirty || password?.touched || isSubmitted)">
+                  <!-- {{name?.errors|json}} -->
+                  <li *ngIf="password?.errors?.['required']">password is required</li>
+                  <li *ngIf="password?.errors?.['pattern']">invalid format</li>
+                </div>
               </div>
               <!-- Confirm Passwprd -->
               <div class="form-group">
                 <input class="input-group form-control" type="password" formControlName="password_confirmation">
                 <label>Confirm Password</label>
-                <!-- <div class="alert alert-danger"></div> -->
+                <div class="alert alert-danger my-2"
+                  *ngIf="confPass?.invalid&&(confPass?.dirty || confPass?.touched || isSubmitted)">
+                  <!-- {{name?.errors|json}} -->
+                  <li *ngIf="confPass?.errors?.['required']">password is required</li>
+                  <li *ngIf="checkPasswordForm?.invalid">Confirm Password didn't matche</li>
+                </div>
               </div>
               <!-- phone -->
               <div class="form-group">
                 <input type="phone" class="form-control" formControlName="phone">
                 <label>phone</label>
-                <!-- <div class="alert alert-danger"></div> -->
+                <div class="alert alert-danger my-2"
+                  *ngIf="phone?.invalid&&(phone?.dirty || phone?.touched || isSubmitted)">
+                  <!-- {{name?.errors|json}} -->
+                  <li *ngIf="phone?.errors?.['required']">password is required</li>
+                </div>
               </div>
-              <!-- date -->
-              <!-- <div class="form-group">
-                <input class="input-group form-control" type="date" formControlName="birth_date" required><br> -->
-              <!-- <label>Birth_date</label> -->
-              <!--  <div class="alert alert-danger"></div> -->
-              <!-- </div> -->
-              <!-- file -->
-              <!-- <div class="form-group"> -->
-              <!-- <input class="input-group form-control" type="file" formControlName="avatar"><br> -->
-              <!-- <div class="alert alert-danger"></div> -->
-              <!-- </div> -->
-              <!--   Choose Type-->
               <div>
                 <ul class="user_type_list">
                   <li>
-                    <input type="radio" id="f-option" name="user_type" value="1" checked>
+                    <input type="radio" id="f-option" name="user_type"  formControlName="user_type" value="user" checked>
                     <label for="f-option">Patient</label>
                     <div class="check"></div>
                   </li>
                   <li>
-                    <input type="radio" id="s-option" name="user_type" value="2">
+                    <input type="radio" id="s-option" name="user_type" formControlName="user_type" value="doctor">
                     <label for="s-option">Doctor</label>
                     <div class="check">
                       <div class="inside"></div>
@@ -124,7 +137,7 @@
                   </label>
                 </div>
               </div>
-              <button class="btn-lo fadeIn">Create Free Account </button>
+              <input type="submit" class="btn-lo fadeIn" value="Create Free Account">
             </form>
             <!-- Remind Passowrd -->
           </div>

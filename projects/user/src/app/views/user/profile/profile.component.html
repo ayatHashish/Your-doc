@@ -40,7 +40,7 @@
             <li class="nav-item" role="presentation" routerLink="/user/profile/details">
               <button class="nav-link" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button"
                 role="tab" aria-controls="profile" aria-selected="false"
-                [ngClass]="pageUrl == 'details' || pageUrl == '' ? 'show active' : ''">
+                [ngClass]="pageUrl == 'details' || pageUrl == undefined ? 'show active' : ''">
                 Profile
               </button>
             </li>
@@ -87,7 +87,7 @@
         <div class="tab-content" id="pills-tabContent">
 
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"
-            [ngClass]="pageUrl == 'details' || pageUrl == '' ? 'show active' : ''">
+            [ngClass]="pageUrl == 'details' || pageUrl == undefined ? 'show active' : ''">
             <app-details></app-details>
           </div>
           <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0"

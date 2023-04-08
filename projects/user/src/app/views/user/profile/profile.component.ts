@@ -12,6 +12,6 @@ export class ProfileComponent {
 
   constructor() {
     this.pageUrl = window.location.href.split('/')[5];
-    // console.log(this.pageUrl)
+    console.log(this.pageUrl)
   }
 }

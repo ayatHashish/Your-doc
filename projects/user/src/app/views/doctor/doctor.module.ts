@@ -5,8 +5,7 @@ import { DoctorRoutingModule } from './doctor-routing.module';
 import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorsDetailsComponent } from './doctors-details/doctors-details.component';
 import { ModelComponent } from './model/model.component';
-import { TimeslotComponent } from './timeslot/timeslot.component';
-import { AllTimeComponent } from './timeslot/all-time/all-time.component';
+
 
 
 @NgModule({
@@ -14,10 +13,6 @@ import { AllTimeComponent } from './timeslot/all-time/all-time.component';
     DoctorsDetailsComponent,
     DoctorsComponent,
     ModelComponent,
-    TimeslotComponent,
-    AllTimeComponent,
-   
-
   ],
   imports: [
     CommonModule,
