@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { ProfileService } from '../../../share/services/profile.service';
+import {profile} from '../../date';
 
 @Component({
   selector: 'app-profile',
@@ -9,9 +9,24 @@ import { filter } from 'rxjs/operators';
 })
 export class ProfileComponent {
   pageUrl: String = ""
+  profiles: any = " "
 
-  constructor() {
-    this.pageUrl = window.location.href.split('/')[5];
+  constructor(public _profileService: ProfileService) {
+
+    this.profile()
+    this.editurl()
+  }
+
+
+  editurl(){
+ this.pageUrl = window.location.href.split('/')[5];
     console.log(this.pageUrl)
+  }
+
+  profile(){
+    this._profileService.profile().subscribe((res) =>{
+     this.profiles=res.data
+     console.log(res.data)
+    });
   }
 }

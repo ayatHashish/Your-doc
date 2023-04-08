@@ -10,6 +10,7 @@ import { AuthService } from '../../../share/services/auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
+
   constructor(private _auth: AuthService, private _router: Router) { }
 
   isSubmitted = false;
@@ -26,15 +27,17 @@ export class LoginComponent {
 
   handlelogin() {
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value)
+      // console.log(this.loginForm.value)
       this._auth.login(this.loginForm.value).subscribe(
         (res) => {
           // console.log(res)
           localStorage.setItem("token", res.token);
+          this._auth.isLoggedIn = true;
         },
         (e) => {
 
           this.errorMsg = e.error.error;
+          this._auth.isLoggedIn = false;
         },
         () => {
           this._router.navigateByUrl('/home');

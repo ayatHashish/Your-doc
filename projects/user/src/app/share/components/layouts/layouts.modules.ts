@@ -8,7 +8,6 @@ import { UserlayoutsComponent } from './userlayouts/userlayouts.component';
 import { UserModule } from '../../../views/user/user.module';
 import { UserRoutingModule } from '../../../views/user/user-routing.module';
 
-
 @NgModule({
   declarations: [
     BlanklayoutComponent,

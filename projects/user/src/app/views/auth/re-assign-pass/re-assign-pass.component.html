@@ -14,18 +14,19 @@
               </a> -->
             </div>
 
-            <form>
+            <form [formGroup]="passwordChangeForm"  (ngSubmit)="changePassword()">
+              <!-- <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div> -->
               <div class="form-group">
-                <input  class="input-group" required id="password"/>
+                <input  class="input-group" formControlName="newPassword" required id="password"/>
                 <label > New Password</label>
               </div>
 
               <div class="form-group">
-                <input class="input-group" required>
+                <input class="input-group" formControlName="confirmPassword" required>
                 <label >Confirm new password</label>
               </div>
 
-              <button class="btn-lo fadeIn" >
+              <button type="submit" class="btn-lo fadeIn" >
                 change password
               </button>
             </form>

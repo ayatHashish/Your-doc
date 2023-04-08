@@ -1,15 +1,15 @@
 <main class="main-user">
   <div class="container">
     <div class="content flex-row-fluid">
-      <div class="card mb-5 mb-xl-10">
-        <div class="card-body pt-9 pb-0">
+      <div class="card mb-5 mb-xl-10" >
+        <div class="card-body pt-9 pb-0" >
           <!--begin::Details-->
           <div class="d-flex flex-wrap flex-sm-nowrap">
             <!--begin: Pic-->
             <div class="me-7 mb-4 ms-6">
               <div class="symbol">
                 <img
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog"
+                  [src]=[profiles.avatar]
                   alt="Profile Avatar" />
               </div>
 
@@ -20,15 +20,18 @@
               <!--begin::User-->
               <div class="d-flex flex-column">
                 <!--begin::Name-->
-                <h3 class="name">Ayat Hashish</h3>
+                <h3 class="name">{{profiles.full_name
+                }}</h3>
+
+
                 <!--end::Name-->
                 <!--begin::Info-->
                 <div class="shrot_info">
                   <h6>
                     <i class="bx bx-location-plus"></i>
-                    SF, Bay Area
+                    <!-- {{profiles.first_name}} -->
                   </h6>
-                  <h6><i class="bx bx-envelope"></i> Ayat Hashish</h6>
+                  <h6><i class="bx bx-envelope"></i></h6>
                 </div>
                 <!--end::Info-->
               </div>
