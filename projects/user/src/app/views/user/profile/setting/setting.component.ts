@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component ,Input  } from '@angular/core';
 
 @Component({
   selector: 'app-setting',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./setting.component.scss','./../details/details.component.scss'],
 })
 export class SettingComponent {
-
+ 
 }

@@ -91,11 +91,11 @@
 
           <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"
             [ngClass]="pageUrl == 'details' || pageUrl == undefined ? 'show active' : ''">
-            <app-details></app-details>
+            <app-details [profileDetails]="profiles"></app-details>
           </div>
           <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0"
             [ngClass]="pageUrl == 'settings' ? 'show active' : ''">
-            <app-setting></app-setting>
+            <app-setting ></app-setting>
           </div>
           <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" tabindex="0"
             [ngClass]="pageUrl == 'security' ? 'show active' : ''">

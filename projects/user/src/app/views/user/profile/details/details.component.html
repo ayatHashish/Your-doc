@@ -2,80 +2,81 @@
   <div class="card ">
     <!--begin::Card header-->
     <div class="card-header cursor-pointer">
-        <!--begin::Card title-->
-        <div class="card-title m-0">
-            <h3 class="m-0">Profile Details</h3>
-        </div>
-        <!--end::Card title-->
-        <!--begin::Action-->
-        <a routerLink="/user/profile/setting" class="btn btn-sm align-self-center">Edit Profile</a>
-        <!--end::Action-->
+      <!--begin::Card title-->
+      <div class="card-title m-0">
+        <h3 class="m-0">Profile Details</h3>
+      </div>
+      <!--end::Card title-->
+      <!--begin::Action-->
+      <a routerLink="/user/profile/setting" class="btn btn-sm align-self-center">Edit Profile</a>
+      <!--end::Action-->
     </div>
     <!--begin::Card header-->
 
     <!--begin::Card body-->
     <div class="card-body">
-        <!--begin::Row-->
-        <div class="row mb-7">
-            <!--begin::Label-->
-            <label class="col-lg-3 fw-semibold text-muted">Full Name</label>
-            <!--end::Label-->
+      <!--begin::Row-->
+      <div class="row mb-7">
+        <!--begin::Label-->
+        <label class="col-lg-3 fw-semibold text-muted">Full Name</label>
+        <!--end::Label-->
 
-            <!--begin::Col-->
-            <div class="col-lg-9">
-                <span class="fw-bold fs-6 text-gray-800">Ayat Hashish </span>
-            </div>
-            <!--end::Col-->
+        <!--begin::Col-->
+        <div class="col-lg-9">
+          <span class="fw-bold fs-6 text-gray-800">Ayat Hashish </span>
         </div>
-        <!--end::Row-->
-  <!--begin::Input group-->
-  <div class="row mb-7">
-    <!--begin::Label-->
-    <label class="col-lg-3 fw-semibold text-muted">
-      Your Mail
-       <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Country of origination" data-bs-original-title="Country of origination" data-kt-initialized="1"></i>
-   </label>
-   <!--end::Label-->
+        <!--end::Col-->
+      </div>
+      <!--end::Row-->
+      <!--begin::Input group-->
+      <div class="row mb-7">
+        <!--begin::Label-->
+        <label class="col-lg-3 fw-semibold text-muted">
+          Your Mail
+          <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Country of origination"
+            data-bs-original-title="Country of origination" data-kt-initialized="1"></i>
+        </label>
+        <!--end::Label-->
 
-   <!--begin::Col-->
-   <div class="col-lg-9">
-       <span class="fw-bold fs-6 text-gray-800">ayat@gmail.com</span>
-   </div>
-   <!--end::Col-->
-</div>
-<!--end::Input group-->
-        <!--begin::Input group-->
-        <div class="row mb-7">
-           <!--begin::Label-->
-           <label class="col-lg-3 fw-semibold text-muted">
-                Contact Phone
-                <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip" aria-label="Phone number must be active" data-bs-original-title="Phone number must be active" data-kt-initialized="1"></i>
-            </label>
-            <!--end::Label-->
-
-            <!--begin::Col-->
-            <div class="col-lg-9 d-flex align-items-center">
-                <span class="fw-bold fs-6 text-gray-800 me-2">044 3276 454 935</span>
-
-            </div>
-            <!--end::Col-->
+        <!--begin::Col-->
+        <div class="col-lg-9">
+          <span class="fw-bold fs-6 text-gray-800">{{profileDetails.email}}</span>
         </div>
-        <!--end::Input group-->
-        <!--begin::Input group-->
-        <div class="row mb-7">
-            <!--begin::Label-->
-            <label class="col-lg-3 fw-semibold text-muted">Address</label>
-            <!--end::Label-->
+        <!--end::Col-->
+      </div>
+      <!--end::Input group-->
+      <!--begin::Input group-->
+      <div class="row mb-7">
+        <!--begin::Label-->
+        <label class="col-lg-3 fw-semibold text-muted">
+          Contact Phone
+          <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+            aria-label="Phone number must be active" data-bs-original-title="Phone number must be active"
+            data-kt-initialized="1"></i>
+        </label>
+        <!--end::Label-->
 
-            <!--begin::Col-->
-            <div class="col-lg-9">
-                <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">el_slam city </a>
-            </div>
-            <!--end::Col-->
+        <!--begin::Col-->
+        <div class="col-lg-9 d-flex align-items-center">
+          <span class="fw-bold fs-6 text-gray-800 me-2">{{profileDetails.phone}}</span>
         </div>
-        <!--end::Input group-->
+        <!--end::Col-->
+      </div>
+      <!--end::Input group-->
+      <!--begin::Input group-->
+      <div class="row mb-7">
+        <!--begin::Label-->
+        <label class="col-lg-3 fw-semibold text-muted">Address</label>
+        <!--end::Label-->
+
+        <!--begin::Col-->
+        <div class="col-lg-9">
+          <a href="#" class="fw-semibold fs-6 text-gray-800 text-hover-primary">{{profileDetails.address}}</a>
+        </div>
+        <!--end::Col-->
+      </div>
+      <!--end::Input group-->
     </div>
     <!--end::Card body-->
- </div>
+  </div>
 </main>
-
