@@ -19,6 +19,9 @@ export class TimeslotService {
   updateSlots(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `${'update_slot'}`, data)
   }
+  getAddress(): Observable<any> {
+    return this._http.get(this.baseUrl + `${'get_my_addresses'}`,)
+  }
 
 }
 

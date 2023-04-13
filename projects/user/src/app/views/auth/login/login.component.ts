@@ -37,7 +37,6 @@ export class LoginComponent {
           this._auth.isLoggedIn = true;
         },
         (e) => {
-
           this.errorMsg = e.error.error;
           this._auth.isLoggedIn = false;
         },

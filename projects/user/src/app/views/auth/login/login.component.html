@@ -56,7 +56,7 @@
                 <a routerLink="/auth/signup"> Join us </a>
               </div>
             </div>
-            <form [formGroup]="loginForm" (ngSubmit)="handlelogin()">
+            <form [formGroup]= "loginForm" (ngSubmit)="handlelogin()">
               <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
 
 
@@ -81,7 +81,7 @@
                 <a class="underlineHover" routerLink="/auth/forgotPassword">Forgot Password?</a>
               </div>
               <input type="submit" class="btn-lo fadeIn" value="sign in">
-      
+
             </form>
 
           </div>

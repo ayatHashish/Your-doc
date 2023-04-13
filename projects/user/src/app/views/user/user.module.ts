@@ -13,6 +13,7 @@ import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
 import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
 import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
 import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { AddTimeComponent } from './profile/timeslots/add-time/add-time.componen
     ShareModule,
     CommonModule,
     UserRoutingModule,
+    ReactiveFormsModule,
   ],
   exports: [
     ProfileComponent,
