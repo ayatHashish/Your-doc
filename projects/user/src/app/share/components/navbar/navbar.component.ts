@@ -10,11 +10,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor(private _auth: AuthService , private _router: Router,){}
+  constructor(public _auth: AuthService , private _router: Router,){}
+  ngOnInit(): void {
+
+    if (localStorage.getItem('token')) {
+      this._auth.isLoggedIn = true;
+    }
+  }
   logout() {
-    this._auth.logout().then(() => {
-      this._router.navigateByUrl('auth/login');
-    });
+    this._auth.logout().subscribe(
+      (res) => {
+        localStorage.clear();
+        this._auth.isLoggedIn = false;
+      },
+      (e) => {
+        console.log(e.error.message);
+        this._auth.isLoggedIn = true;
+      },
+      () => {
+        console.log('done');
+        this._router.navigateByUrl('auth/login');
+      }
+    );
+  }
+
+
 
 }
-}
+

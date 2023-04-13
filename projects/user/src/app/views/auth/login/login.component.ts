@@ -32,6 +32,8 @@ export class LoginComponent {
         (res) => {
           // console.log(res)
           localStorage.setItem("token", res.token);
+          localStorage.setItem("user_role", res.user_data.user_type);
+          // console.log(res)
           this._auth.isLoggedIn = true;
         },
         (e) => {

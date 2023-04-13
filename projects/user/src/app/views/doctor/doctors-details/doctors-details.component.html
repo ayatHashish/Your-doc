@@ -10,142 +10,72 @@
                 <div class="row">
                   <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-12 mb-4">
                     <div class="dr-img">
-                      <img src="../../../../../assets/images/doctors/doctors-2.jpg" alt="Dr. Stephanie Muh"
-                        title="Dr. Stephanie Muh" />
+                      <img [src]=[doctorDetails.avatar] alt="Dr. {{doctorDetails.name}}"
+                        title="Dr. {{doctorDetails.name}}" />
                     </div>
                   </div>
                   <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-12 mb-4">
                     <div class="dr-intro">
                       <div class="top-wrapper">
                         <div class="dr-title">
-                          <h2>Dr. Stephanie Muh</h2>
-                          <p>Orthopedic Surgery - Shoulder and Elbow</p>
-                          <p class="title">25 Years of Experience</p>
-
+                          <h2>Dr. {{doctorDetails.name}}</h2>
+                          <a href="tel:{{doctorDetails.phone}}"><i class='bx bxs-phone-call'></i>
+                            {{doctorDetails.phone}}</a>
+                          <h5><i class='bx bxs-purchase-tag-alt'></i> {{doctorDetails.fees}} $</h5>
                         </div>
 
                         <div class="surgeon">
                           <div class="data">
-                            <span>Surgeon</span>
+                            <h5>{{doctorDetails.specialty}}</h5>
                           </div>
 
                           <div class="icon">
-                            <i class="fi-surgeon"></i>
+                            <i class='bx bx-check-circle'></i>
                           </div>
                         </div>
+
+
 
                       </div>
 
                       <div class="dr-dis">
-                        <p>Dr. Stephanie Muh received her medical degree from Drexel University College of Medicine and
-                          then completed her training in Orthopaedic Surgery at Henry Ford Health System (Detroit,
-                          Michigan). </p>
+                        <p class="title"><i class='bx bxs-info-circle'></i> About The Doctor</p>
 
-                        <p>Dr Muh pursued a fellowship specialization in shoulder and elbow at Case Western Reserve
-                          University (Cleveland, Ohio). </p>
-
-                        <p>As the Service Chief of the Shoulder and Elbow Service Line at Henry Ford Hospital, she also
-                          plays an integral role in educating medical students, residents, and fellows.</p>
-
-                        <p>She is also the Associate Program Director for the Sports Medicine Fellowship program, as
-                          well as the Deputy Service Chief for the Department of Orthopaedics at Henry Ford-West
-                          Bloomfield Hospital.</p>
-
-                        <p>Doctor Stephanie will visit Khorfakkan Hospital from 26 to 28 September 2021 and Sqer
-                          hospital from 29-30 September 2021</p>
+                        <p>{{doctorDetails.bio}} </p>
                       </div>
+
                     </div>
                   </div>
                 </div>
-                <div class="date-show">
-                  <div class="row">
-                    <div class="col-lg-12">
-                      <p class="title">Clinic Address: Adsdfd</p>
+                <div class="row">
+                  <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12">
+                    <div class="address">
+                      <p> Clinic Address : </p>
                     </div>
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                      <p class="title">Day</p>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                      <p class="title">Start Time</p>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                      <p class="title">End Time</p>
-                    </div>
-                    <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                      <p class="title">no-of booking</p>
-                    </div>
-                  </div>
-                  <div class="dr-available" >
-                    <div class="row">
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-address"></i>
-                          </div>
-
-                          <div class="content">
-
-                            <p class="data"></p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-calendar-2"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="data"></p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-calendar-2"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="data"></p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-toll-free"></i>
-                          </div>
-
-                          <div class="content">
-                            <p class="title"></p>
-                            <p class="data"></p>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="col-lg-2 col-md-3 col-sm-6 col-12">
-                        <div class="available-item">
-                          <div class="icon">
-                            <i class="fi-toll-free"></i>
-                          </div>
-
-                          <div class="content">
-                            <a class="btn btn-success  button mt-1 text-center my-4"
-                              routerLink="/doctor/timeSlots">Booking</a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-
+                    <table class="table">
+                      <thead class="table-light">
+                        <tr>
+                          <th scope="col">Day</th>
+                          <th scope="col"> Start Time</th>
+                          <th scope="col"> End Time</th>
+                          <th scope="col"> Action </th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let slot of  doctorDetails.slots">
+                        <tr>
+                          <th scope="row">{{slot.day}}</th>
+                          <td> {{slot.start_time}}</td>
+                          <td>{{slot.start_time}}</td>
+                          <td>
+                            <a class="btn btn-success" routerLink="/doctor/timeSlots"><i class='bx bx-plus'></i> Booking</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
                   </div>
 
                 </div>
+
               </div>
             </div>
           </div>

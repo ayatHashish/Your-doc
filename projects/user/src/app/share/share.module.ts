@@ -23,7 +23,7 @@ import { FooterComponent } from './components/footer/footer.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-
+   
 
   ],
   exports: [

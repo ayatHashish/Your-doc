@@ -8,9 +8,9 @@ import { ModelComponent } from './model/model.component';
 
 const routes: Routes = [
   { path: 'doctors', component: DoctorsComponent },
-  { path: 'details', component: DoctorsDetailsComponent },
+  { path: 'details/:id', component: DoctorsDetailsComponent },
   { path: 'model', component: ModelComponent },
-  
+
 
 ];
 

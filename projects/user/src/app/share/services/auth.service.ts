@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AuthService {
   public isLoggedIn = false;
-  baseUrl = 'http://127.0.0.1:8000/user/'
+  baseUrl = 'http://ydoctor.atwebpages.com/user/'
   constructor(private _http: HttpClient) { }
 
   register(data: any): Observable<any> {
@@ -18,14 +18,13 @@ export class AuthService {
   }
 
   changePassword(data: any): Observable<any> {
-    return this._http.post(this.baseUrl + `${'auth/change_password'}`, data)}
-
-  // logout(): Observable<any> {
-  //   return this._http.post(this.baseUrl + `${'auth/logout'}`, null).toPromise()
-  // }
-  logout() {
-    return this._http.post(this.baseUrl, {}).toPromise();
+    return this._http.post(this.baseUrl + `${'auth/change_password'}`, data)
   }
 
-
+  logout(): Observable<any> {
+    return this._http.post(this.baseUrl + `${'logout'}`, null)
+  }
+  userLoggedIn(): boolean {
+    return localStorage.getItem('token') !== null;
+  }
 }

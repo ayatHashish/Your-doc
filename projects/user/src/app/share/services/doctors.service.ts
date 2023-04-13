@@ -5,13 +5,18 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class DoctorsService {
-  baseUrl = 'http://127.0.0.1:8000/user/'
+  baseUrl = 'http://ydoctor.atwebpages.com/user/'
   constructor(private _http: HttpClient) { }
-
-
 
   allDoctors(): Observable<any> {
     return this._http.get(this.baseUrl + `${'get_all_doctors'}`)
+  }
+
+  getDoctorsDetails(id:number): Observable<any> {
+    const data = {
+      doctor_id: id,
+      details: true
+    }; return this._http.post(this.baseUrl + `${'get_doctor_details'}`, data)
   }
 
 }

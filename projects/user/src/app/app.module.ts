@@ -7,6 +7,7 @@ import { ShareModule } from './share/share.module';
 import { LayoutsModule } from './share/components/layouts/layouts.modules';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './share/auth.interceptor';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { AuthInterceptor } from './share/auth.interceptor';
     AppRoutingModule,
     ShareModule,
     LayoutsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
 
   ],
   providers: [

@@ -28,19 +28,18 @@
                 <td class="min-w-150px">Day</td>
                 <td class="min-w-150px">Start Time</td>
                 <td class="min-w-150px">End Time</td>
-                <td class="min-w-150px">Number of Bookings</td>
                 <td class="min-w-150px">Action</td>
 
               </tr>
             </thead>
-            <tbody class="fw-semibold text-gray-600">
+            <tbody class="fw-semibold text-gray-600"  *ngFor="let slots of allSlots">
               <!--begin::Table row-->
               <tr>
-                <td>#1</td>
-                <td>Saturday</td>
-                <td>01:00 PM</td>
-                <td>01:00 PM</td>
-                <td>123</td>
+                <td>{{slots.id}}</td>
+                <td>{{slots.day}}</td>
+                <td>{{slots.start_time}}</td>
+                <td>{{slots.end_time}}</td>
+
                 <td>
 
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">

@@ -4,6 +4,7 @@ import { AuthlayoutComponent } from './share/components/layouts/authlayout/authl
 import { BlanklayoutComponent } from './share/components/layouts/blanklayout/blanklayout.component';
 import { UserlayoutsComponent } from './share/components/layouts/userlayouts/userlayouts.component';
 import { NotfoundComponent } from './share/components/notfound/notfound.component';
+import { AuthGuard } from './share/auth.guard';
 
 const routes: Routes = [
   {
@@ -11,11 +12,11 @@ const routes: Routes = [
     loadChildren: () => import('./views/page/page.module').then((m) => m.PageModule),
   },
   {
-    path: 'auth', component: AuthlayoutComponent,
+    path: 'auth', canActivate: [AuthGuard], component: AuthlayoutComponent,
     loadChildren: () => import('./views/auth/auth.module').then((m) => m.AuthModule),
   },
   {
-    path: 'user', component: UserlayoutsComponent,
+    path: 'user', canActivate: [AuthGuard], component: UserlayoutsComponent,
     loadChildren: () => import('./views/user/user.module').then((m) => m.UserModule),
   },
   {

@@ -1,4 +1,5 @@
 import { Component ,Input  } from '@angular/core';
+import { ProfileService } from 'projects/user/src/app/share/services/profile.service';
 
 @Component({
   selector: 'app-setting',
@@ -6,5 +7,6 @@ import { Component ,Input  } from '@angular/core';
   styleUrls: ['./setting.component.scss','./../details/details.component.scss'],
 })
 export class SettingComponent {
- 
+  @Input() profilesetting: any;
+
 }

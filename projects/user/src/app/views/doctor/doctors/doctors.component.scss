@@ -48,32 +48,31 @@
             top: 0;
             left: 0;
             .action-wrapper {
-
-              .action{
-padding: 5px 15px;
-              height: 50px;
-              display: -webkit-box;
-              display: -ms-flexbox;
-              display: flex;
-              -webkit-box-align: center;
-              -ms-flex-align: center;
-              align-items: center;
-              border-radius: 10px;
-              font-size: 1.125rem;
-              -webkit-box-pack: center;
-              -ms-flex-pack: center;
-              justify-content: center;
-              border: none;
+              .action {
+                padding: 5px 15px;
+                height: 50px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                border-radius: 10px;
+                font-size: 1.125rem;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                border: none;
               }
               .action.border {
                 border: solid 2px $pure-white;
                 background-color: transparent;
                 color: $pure-white;
-               &:hover {
+                &:hover {
                   border: solid 2px $brand-green !important;
                   background-color: $brand-green;
+                }
               }
-            }
             }
             .top {
               flex-grow: 1;
@@ -115,29 +114,44 @@ padding: 5px 15px;
                 }
               }
             }
-
-            .action-wrapper {
-              .action {
-                width: 100%;
-              }
-            }
           }
         }
         .consultant-info {
           margin-top: 30px;
           z-index: 1;
           position: relative;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
           h4 {
+         font-size: 1.20rem;
+        //  max-width: 130px;
+
             a {
               color: $brand-primary;
               &:hover {
-                color: $brand-green;
+                color: $th-brand;
               }
             }
           }
           p {
             font-size: 1.125rem;
             margin: 0;
+          }
+          .doc_details {
+            font-size: 20px;
+            background-color: #fff;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            transition: all 0.2s ease-in-out;
+            &:hover{
+              background-color: $brand-green;
+              color: #fff;
+            }
           }
         }
         &::after {
@@ -161,15 +175,12 @@ padding: 5px 15px;
             }
           }
           &::after {
-            background-color: $brand-green;
+            background-color: $th-brand;
           }
         }
       }
     }
   }
-
-
-
 }
 
 @media screen and (max-width: 991px) {
