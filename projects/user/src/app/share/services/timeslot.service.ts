@@ -17,8 +17,14 @@ export class TimeslotService {
   }
 
 
+  // deleteslots(id:number): Observable<any> {
+  //   return this._http.delete(`${this.baseUrl}delete_slot/${id}`)
+  // }
+
+
   deleteslots(id: number): Observable<any> {
-    return this._http.post(this.baseUrl + `${'delete_slot'}`, id)
+    const isDelete = { slot_id: id };
+    return this._http.delete(this.baseUrl + `${'delete_slot'}`, { body: isDelete })
   }
 
   updateSlots(data: any): Observable<any> {

@@ -39,22 +39,16 @@
                 <td>{{slots.day}}</td>
                 <td>{{slots.start_time}}</td>
                 <td>{{slots.end_time}}</td>
-
                 <td>
-
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i class='bx bx-edit-alt'></i>
                   </a>
-
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#delete">
+                  <a type="button" (click)="openModal(slots.id)" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#delete">
                     <i class='bx bx-trash'></i>
                   </a>
                 </td>
               </tr>
               <!--end::Table row-->
-
-
-
             </tbody>
           </table>
           <!--end::Table-->
@@ -88,5 +82,6 @@
 <!-- Delete -->
 <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <app-delslots></app-delslots>
+  <app-delslots [slotId]="selectedItemId"></app-delslots>
 </div>
+<!-- <button (click)="deleteSlot(2)">Delete Resource</button> -->

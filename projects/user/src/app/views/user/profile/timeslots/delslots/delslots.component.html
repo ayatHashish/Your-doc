@@ -1,4 +1,4 @@
-<main>
+<main id="myModal">
   <div class="modal-dialog modal-dialog-centered align-center">
     <div class="modal-content deletslots-page">
       <div class="modal-header">
@@ -13,7 +13,7 @@
       </div>
       <div class="modal-footer">
         <button  class="btn btn-sm">Cansle</button>
-        <button  class="btn btn-sm ">Delete</button>
+        <button  (click)="deleteSlot(slotId)" class="btn btn-sm ">Delete</button>
       </div>
 
     </div>

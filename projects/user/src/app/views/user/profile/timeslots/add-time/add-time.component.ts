@@ -3,6 +3,7 @@ import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.s
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Slots } from '../../../../../interfaces/slots';
 import { Router } from '@angular/router';
+import { TimeslotsComponent } from '../timeslots.component';
 
 @Component({
   selector: 'app-add-time',
@@ -15,9 +16,8 @@ export class AddTimeComponent {
   addresses: [] = []
   errorMsg = '';
 
-  constructor(private _addTime: TimeslotService, private _router: Router) {
+  constructor(private _addTime: TimeslotService, private _router: Router, private timeslotsComponent: TimeslotsComponent) {
     this.addrees()
-    // this.createSlot()
   }
 
   creatSlotForm = new FormGroup({
@@ -43,7 +43,7 @@ export class AddTimeComponent {
   createSlot() {
     this._addTime.addSlot(this.creatSlotForm.value).subscribe(
       (res) => {
-        // console.log(res)
+        this.timeslotsComponent.allTime();
       },
       (e) => {
         this.errorMsg = e.error.error;
@@ -53,7 +53,6 @@ export class AddTimeComponent {
 
       });
   }
-
 
 }
 
