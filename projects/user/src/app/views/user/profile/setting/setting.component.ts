@@ -9,4 +9,10 @@ import { ProfileService } from 'projects/user/src/app/share/services/profile.ser
 export class SettingComponent {
   @Input() profilesetting: any;
 
+  constructor (){
+    console.log(this.profilesetting);
+  }
+
+
+
 }

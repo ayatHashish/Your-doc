@@ -14,7 +14,7 @@ import { EditslotComponent } from './profile/timeslots/editslot/editslot.compone
 import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
 import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { OwlDateTimeModule, OwlNativeDateTimeModule } from 'ng-pick-datetime';
 
 @NgModule({
   declarations: [
@@ -35,6 +35,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
+    OwlDateTimeModule,
+    OwlNativeDateTimeModule,
   ],
   exports: [
     ProfileComponent,

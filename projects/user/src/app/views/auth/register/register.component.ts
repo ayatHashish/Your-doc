@@ -2,17 +2,27 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../share/services/auth.service';
+import { DoctorsService } from '../../../share/services/doctors.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss', './../login/login.component.scss']
 })
 export class RegisterComponent {
+  selectedOption = 'user';
+  role:any = ""
+  specialties :any
 
+  isVisible = false;
   constructor(
     private _auth: AuthService,
     private _router: Router,
-    private formBuilder: FormBuilder) { }
+    private formBuilder: FormBuilder,
+    private _specialty:DoctorsService) {
+      this.role= localStorage.getItem("user_role");
+
+      this. getAllSpecialties()
+    }
 
   errorMsg = '';
   isSubmitted = false;
@@ -33,7 +43,7 @@ export class RegisterComponent {
     phone: new FormControl('', [Validators.required]),
     user_type: new FormControl('', [Validators.required]),
 
-    // gender: new FormControl('', [Validators.required]),
+    specialty_id: new FormControl('', [Validators.required]),
     // birth_date: new FormControl('', [Validators.required]),
     // address: new FormControl('', [Validators.required]),
     // state: new FormControl('', [Validators.required]),
@@ -48,7 +58,7 @@ export class RegisterComponent {
   get confPass() { return this.regesterForm.get('password_confirmation') }
   get phone() { return this.regesterForm.get('phone') }
   get user_type() { return this.regesterForm.get('user_type') }
-  // get gender() { return this.regesterForm.get('gender') }
+  get specialty() { return this.regesterForm.get('specialty_id') }
   // get age() { return this.regesterForm.get('age') }
   // get address() { return this.regesterForm.get('address') }
   // get state() { return this.regesterForm.get('state') }
@@ -97,24 +107,20 @@ export class RegisterComponent {
         this._router.navigateByUrl('auth/login');
       }
     );
-    // console.log(this.checkPasswordForm);
-    // if (!this.checkPasswordForm?.valid) {
-    //   return;
-    // }
-    // if (this.regesterForm.valid && this.checkPasswordForm.valid) {
-    //   this._auth.register(this.regesterForm.value).subscribe(
-    //     (res) => {
-    //       console.log(res);
-    //     },
-    //     (e) => {
+   // console.log(this.regesterForm.value)
 
-    //       // this.errorMsg = e.error.error;
-    //       console.log(e);
-    //     },
-    //     () => {
-    //       this._router.navigateByUrl('/login');
-    //     }
-    //   );
-    // }
+  }
+  getAllSpecialties(){
+    this._specialty.allSpatialists().subscribe((res) => {
+      this.specialties = res.data
+    });
+
+  }
+
+  onDependentInputChange(){
+    this.isVisible = true;
+  }
+  onDependentInputChangeUser(){
+    this.isVisible = false;
   }
 }

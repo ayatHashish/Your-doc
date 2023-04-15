@@ -21,7 +21,6 @@ import { UserModule } from '../user/user.module';
     ForgetpassComponent,
     LoginComponent,
     TestComponent,
-
   ],
   imports: [
     CommonModule,
@@ -29,7 +28,8 @@ import { UserModule } from '../user/user.module';
     ShareModule,
     ReactiveFormsModule,
     HttpClientModule,
-    UserModule
+    UserModule,
+
   ],
   exports:[
      VerificationCodeComponent,

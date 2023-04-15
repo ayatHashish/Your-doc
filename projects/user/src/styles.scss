@@ -4,6 +4,7 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "~ng-pick-datetime/assets/style/picker.min.css";
 
 * {
   font-family: Inter, Helvetica, "sans-serif";
@@ -12,7 +13,6 @@
 body {
   // background-color: #f9f9f9;
   background-image: url(assets/images/bg.jpg);
-
 }
 
 a {
@@ -139,9 +139,8 @@ form .button {
   }
 }
 
-
 .dr-dis {
-  .title{
+  .title {
     font-size: 18px;
   }
   p {
@@ -150,16 +149,15 @@ form .button {
   }
 }
 
-.table{
-  thead{
+.table {
+  thead {
     font-weight: 500;
     font-size: 1.1rem;
     text-align: center;
-
   }
-  tbody{
+  tbody {
     text-align: center;
-    padding: 15px 0 ;
+    padding: 15px 0;
   }
 }
 /*--------------------------------------------------------------
@@ -524,3 +522,8 @@ form .button {
     }
   }
 }
+// owl-date-time-container {
+//   background-color: red !important;
+//   z-index: 9999999999 !important;
+//   position: absolute;
+// }

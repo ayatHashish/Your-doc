@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './share/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -18,8 +19,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-
   ],
+
+
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

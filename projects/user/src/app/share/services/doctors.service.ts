@@ -19,4 +19,8 @@ export class DoctorsService {
     }; return this._http.post(this.baseUrl + `${'get_doctor_details'}`, data)
   }
 
+  allSpatialists(): Observable<any> {
+    return this._http.get(this.baseUrl + `${'get_all_specialties'}`)
+  }
+
 }

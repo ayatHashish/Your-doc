@@ -61,7 +61,7 @@
                     <div class="row">
                       <!--begin::Col-->
                       <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                        <input type="text" name="start_time"
+                        <input type="time" name="start_time"
                           class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="start_time"
                           formControlName="start_time">
                         <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -69,8 +69,15 @@
                       <!--end::Col-->
 
                       <!--begin::Col-->
+
                       <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                        <input type="text" name="end_time" class="form-control form-control-lg form-control-solid"
+
+                        <!-- <label>
+                          Time
+                          <input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4"  class="datePike">
+                          <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+                      </label> -->
+                        <input type="time" name="end_time" class="form-control form-control-lg form-control-solid"
                           placeholder="End-time" formControlName="end_time">
                         <div class="fv-plugins-message-container invalid-feedback"></div>
                       </div>
