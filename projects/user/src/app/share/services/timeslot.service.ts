@@ -16,6 +16,11 @@ export class TimeslotService {
     return this._http.post(this.baseUrl + `${'add_slot'}`, data)
   }
 
+
+  deleteslots(id: number): Observable<any> {
+    return this._http.post(this.baseUrl + `${'delete_slot'}`, id)
+  }
+
   updateSlots(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `${'update_slot'}`, data)
   }

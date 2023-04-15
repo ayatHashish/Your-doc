@@ -25,6 +25,13 @@ export class TimeslotsComponent {
   }
 
 
+  deleteSlot(id: number): void {
+    this._addTime.deleteslots(id).subscribe(
+      () => console.log("ddddd"),
+
+      error => console.error(error)
+    );
+  }
     // createSlot(){
     // slot.id = this.slots.length + 1;
     // slot.startTime = this.creatForm.value;

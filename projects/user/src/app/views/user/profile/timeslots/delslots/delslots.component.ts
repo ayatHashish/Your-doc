@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.service';
 
 @Component({
   selector: 'app-delslots',
@@ -7,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class DelslotsComponent {
 
+
+  constructor (private _deleteSlots :TimeslotService){
+
+  }
+ 
 }
