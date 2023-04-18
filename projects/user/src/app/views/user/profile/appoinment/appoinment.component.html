@@ -20,21 +20,48 @@
           <table class="table table-row-bordered align-middle gy-4 gs-9">
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
               <tr>
-                <td class="min-w-150px">Date</td>
-                <td class="min-w-250px">Description</td>
-                <td class="min-w-150px">Amount</td>
-                <td class="min-w-150px">Invoice</td>
+                <td class="min-w-250px">ID</td>
+                <td class="min-w-250px">Name</td>
+                <td class="min-w-150px">Booking Day</td>
+                <td class="min-w-150px">Booking Date</td>
+                <td class="min-w-150px">Status</td>
+                <td class="min-w-150px">patient Name</td>
+                <td class="min-w-150px">patient Age</td>
+                <td class="min-w-150px">disease Dec</td>
                 <td></td>
               </tr>
             </thead>
-            <tbody class="fw-semibold text-gray-600">
+            <!-- <tbody class="fw-semibold text-gray-600" *ngFor=" let appoint of appoinments">
               <tr>
-                <td>Nov 01, 2020</td>
-                <td><a href="#">Invoice for Ocrober 2023</a></td>
-                <td>$123.79</td>
-                <td><a href="#" class="btn btn-sm btn-light btn-active-light-primary">PDF</a></td>
-                <td class="text-right"><a href="#" class="btn btn-sm btn-light btn-active-light-primary">View</a></td>
+                <td><a>{{appoint.id}}</a></td>
+                <td><a>{{appoint.user_name}}</a></td>
+                <td><a>{{appoint.booking_day}}</a></td>
+                <td>{{appoint.booking_date}}</td>
+                <td><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.status}}</a></td>
+                <td class="text-right"><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.patient_name}}</a></td>
+                <td class="text-right"><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.patient_age}}</a></td>
+                <td class="text-right"><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.disease_dec}}</a></td>
               </tr>
+            </tbody> -->
+
+            <tbody class="fw-semibold text-gray-600">
+              <!-- <ng-container *ngFor="let content  of returnedArray">
+                <tr>
+                  <td><a>{{content}}</a></td>
+                  <td><a>{{content}}</a></td>
+                  <td><a>{{content.id}}</a></td>
+                  <td><a>{{content.user_name}}</a></td>
+                  <td><a>{{content.booking_day}}</a></td> -->
+                  <!-- <td>{{content .booking_date}}</td> -->
+                  <!-- <td><a class="btn btn-sm btn-light btn-active-light-primary">{{content.status}}</a></td> --> -->
+                  <!--<td class="text-right"><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.patient_name}}</a></td>
+                      <td class="text-right"><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.patient_age}}</a></td>
+                      <td class="text-right"><a class="btn btn-sm btn-light btn-active-light-primary">{{appoint.disease_dec}}</a></td> -->
+                <!-- </tr>
+
+              </ng-container> -->
+              <!-- <pagination [totalItems]="contentArray.length" (pageChanged)="pageChanged($event)"></pagination> -->
+
             </tbody>
           </table>
           <!--end::Table-->
@@ -42,8 +69,30 @@
         <!--end::Table container-->
       </div>
 
+
       <!--end::Tab panel-->
     </div>
     <!--end::Tab Content-->
   </div>
 </main>
+
+
+<table class="table">
+  <!-- define your table columns here -->
+  <thead>
+    <tr>
+      <th scope="col" *ngFor="let col of displayedColumns">{{col}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of visibleData">
+      <td>{{item.column1}}</td>
+      <td>{{item.column2}}</td>
+      <!-- display more columns -->
+    </tr>
+  </tbody>
+</table>
+<!-- <pagination [totalItems]="appoinments.length" [itemsPerPage]="pageSize" [(ngModel)]="page"
+  (pageChanged)="onPageChanged($event)" [maxSize]="paginationConfig.maxSize"
+  [boundaryLinks]="paginationConfig.boundaryLinks" [rotate]="false" [firstText]="'First'" [lastText]="'Last'"
+  [nextText]="'Next'" [previousText]="'Previous'" [showFirstLastButtons]="true"></pagination> -->

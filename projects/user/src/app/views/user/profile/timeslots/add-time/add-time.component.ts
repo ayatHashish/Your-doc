@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.service';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Slots } from '../../../../../interfaces/slots';
@@ -11,7 +11,7 @@ import { TimeslotsComponent } from '../timeslots.component';
   styleUrls: ['./add-time.component.scss', '../editslot/editslot.component.scss',]
 })
 export class AddTimeComponent {
-
+  @ViewChild('myModal') myModal: any;
   @Input() myData: any;
   addresses: [] = []
   errorMsg = '';
@@ -44,6 +44,7 @@ export class AddTimeComponent {
     this._addTime.addSlot(this.creatSlotForm.value).subscribe(
       (res) => {
         this.timeslotsComponent.allTime();
+        this.myModal.hide();
       },
       (e) => {
         this.errorMsg = e.error.error;

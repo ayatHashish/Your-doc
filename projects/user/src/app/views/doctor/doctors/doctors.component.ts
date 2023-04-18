@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { DoctorsService } from '../../../share/services/doctors.service'
 import { ActivatedRoute, Router } from '@angular/router';
+
 @Component({
   selector: 'app-doctors',
   templateUrl: './doctors.component.html',
@@ -15,8 +16,10 @@ export class DoctorsComponent {
   doctors() {
     this._doctors.allDoctors().subscribe((res) => {
       this.doctor = res.data
-    
+
     })
   };
+
+
 
 }

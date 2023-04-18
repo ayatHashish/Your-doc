@@ -14,6 +14,7 @@ import { EditslotComponent } from './profile/timeslots/editslot/editslot.compone
 import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
 import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaginationModule } from 'ngx-bootstrap/pagination';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UserRoutingModule,
     ReactiveFormsModule,
+    PaginationModule
 
   ],
   exports: [

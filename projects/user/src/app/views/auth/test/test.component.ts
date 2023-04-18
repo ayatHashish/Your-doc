@@ -8,10 +8,22 @@ import { Component } from '@angular/core';
 })
 export class TestComponent {
   constructor() { }
+  currentPage = 0;
+  empNames = ['Mohd', 'Saad', 'Bader'];
+  images = [
+    {
+    title: 'Beach',
+    url: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'},
 
-  ngOnInit() {
+  { title: 'Sunset',
+    url: 'https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60'  },
 
-  }
+  { title: 'Flowers', url: 'https://images.unsplash.com/photo-1533907650686-70576141c030?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' },
+  { title: 'Ice', url: 'https://images.unsplash.com/photo-1548097160-627fd636ee56?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' },
+  { title: 'Desert', url: 'https://images.unsplash.com/photo-1488197047962-b48492212cda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' },
+  { title: 'Jungle', url: 'https://images.unsplash.com/photo-1564460549828-f0219a31bf90?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60' },];
+}
+
 
 
   // slots: Slots[] = [];
@@ -48,7 +60,7 @@ export class TestComponent {
   //   const index = this.slots.findIndex(s => s.id === slot.id);
   //   this.slots.splice(index, 1);
   // }
-}
+
 // addSlots() {
 //   this._addTime.addSlots("data").subscribe((res) => {
 //     this.slots = res.data

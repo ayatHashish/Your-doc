@@ -1,6 +1,7 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, Output, ViewChild } from '@angular/core';
 import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.service';
 import { TimeslotsComponent } from '../timeslots.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-delslots',
@@ -8,9 +9,10 @@ import { TimeslotsComponent } from '../timeslots.component';
   styleUrls: ['./delslots.component.scss', '../editslot/editslot.component.scss',]
 })
 export class DelslotsComponent {
+  @ViewChild('myModal') myModal: any;
   @Input() slotId: any;
-
-  constructor(private _deleteSlots: TimeslotService, private timeslotsComponent: TimeslotsComponent) { }
+  // @Input() isVisible = false;
+  constructor(private _deleteSlots: TimeslotService, private timeslotsComponent: TimeslotsComponent, private _router: Router) { }
 
   // @ViewChild('myModal') myModal: ElementRef;
 
@@ -18,15 +20,23 @@ export class DelslotsComponent {
   //   this.myModal.nativeElement.modal('hide');
   // }
 
-
   deleteSlot(id: number) {
     this._deleteSlots.deleteslots(id).subscribe(
-      () => this.timeslotsComponent.allTime(),
+      () => {
+        // this.isVisible = true;
+        this.myModal.hide();
+        this._router.navigate(['/timeslots']);
+      },
       (e) => console.error(e.error.error),
-      ()=> {}
+      () => { this.timeslotsComponent.allTime(); }
     );
   }
+  // onDependentInputChange(){
 
+  // }
+  // onDependentInputChangeUser(){
+  //   this.isVisible = false;
+  // }
 
 
 }
