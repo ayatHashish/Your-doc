@@ -1,4 +1,4 @@
-import { Component,OnInit  } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { PageChangedEvent } from 'ngx-bootstrap/pagination';
 import { BookingService } from 'projects/user/src/app/share/services/booking.service';
 
@@ -7,41 +7,33 @@ import { BookingService } from 'projects/user/src/app/share/services/booking.ser
   templateUrl: './appoinment.component.html',
   styleUrls: ['./appoinment.component.scss', './../details/details.component.scss'],
 })
+
 export class AppoinmentComponent {
-  appoinments: any[] = []; // your data
-  page = 1; // current page number
-  pageSize = 10; // number of items to display per page
-  pageCount: any; // total number of pages
-  visibleData: any[] = []; // data to display on the current page
-  // column names to display in the table
-  displayedColumns: string[] = ['column1', 'column2',];
-  constructor( private _book: BookingService) {
+  appoinments: any[] = [];
+  rowsCount: number = 0;
+  counter = 1;
 
-    // this.paginat.boundaryLinks = true;
-    // this.paginat.maxSize = 5;
-    this.getAppoinment()
+  constructor(private _book: BookingService,) {
+    this.getAppoinment(this.counter)
+    console.log(this.counter);
+
   }
 
-  ngOnInit() {
-
-    this.getAppoinment()
-    // set the total page count
-    this.pageCount = Math.ceil(this.appoinments.length / this.pageSize);
-    // set the data to display on the first page
-    this.visibleData = this.appoinments.slice(0, this.pageSize);
+  pageChanged(event: PageChangedEvent): void {
+    const startItem = (event.page - 1) * event.itemsPerPage;
+    const endItem = event.page * event.itemsPerPage;
+    this.getAppoinment(this.counter ++)
+    console.log(this.counter);
   }
-getAppoinment() {
-    this._book.getMyAppointment().subscribe((res) => {
-      this.appoinments = res.data
+
+  getAppoinment(ali:number) {
+    this._book.getMyAppointment(ali).subscribe((res) => {
+      this.appoinments = res.data;
+      this.rowsCount = res.rows_count
+      //10 / 10 = 1 + 10 = 11 currnt + 1
 
     });
   }
-  onPageChanged(event: any) {
-    // calculate the starting index and ending index of the data to display on the current page
-    const startIndex = (event.page - 1) * this.pageSize;
-    const endIndex = Math.min(startIndex + this.pageSize, this.appoinments.length);
-    // set the data to display on the current page
-    this.visibleData = this.appoinments.slice(startIndex, endIndex);
-  }
+
 }
 

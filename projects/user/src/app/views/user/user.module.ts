@@ -37,7 +37,6 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     UserRoutingModule,
     ReactiveFormsModule,
     PaginationModule
-
   ],
   exports: [
     ProfileComponent,

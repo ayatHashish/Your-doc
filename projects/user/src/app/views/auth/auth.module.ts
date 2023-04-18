@@ -7,7 +7,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { ShareModule } from '../../share/share.module';
 import { ForgetpassComponent } from './forgetpass/forgetpass.component';
-import {  ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TestComponent } from './test/test.component';
 import { UserModule } from '../user/user.module';
@@ -17,24 +17,24 @@ import { UserModule } from '../user/user.module';
   declarations: [
     VerificationCodeComponent,
     ReAssignPassComponent,
-    RegisterComponent ,
+    RegisterComponent,
     ForgetpassComponent,
     LoginComponent,
     TestComponent,
   ],
   imports: [
     CommonModule,
-    AuthRoutingModule ,
+    AuthRoutingModule,
     ShareModule,
     ReactiveFormsModule,
     HttpClientModule,
     UserModule,
 
   ],
-  exports:[
-     VerificationCodeComponent,
+  exports: [
+    VerificationCodeComponent,
     ReAssignPassComponent,
-    RegisterComponent ,
+    RegisterComponent,
     ForgetpassComponent,
     LoginComponent
   ]
