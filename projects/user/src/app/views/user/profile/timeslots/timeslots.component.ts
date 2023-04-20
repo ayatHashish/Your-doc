@@ -29,6 +29,4 @@ export class TimeslotsComponent {
   openModal(itemId: number) {
     this.selectedItemId = itemId;
   }
-
 }
-

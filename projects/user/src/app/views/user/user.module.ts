@@ -14,8 +14,6 @@ import { EditslotComponent } from './profile/timeslots/editslot/editslot.compone
 import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
 import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { PaginationModule } from 'ngx-bootstrap/pagination';
-
 
 @NgModule({
   declarations: [
@@ -29,15 +27,9 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     TimeslotsComponent,
     EditslotComponent,
     DelslotsComponent,
-    AddTimeComponent
+    AddTimeComponent,
   ],
-  imports: [
-    ShareModule,
-    CommonModule,
-    UserRoutingModule,
-    ReactiveFormsModule,
-    PaginationModule
-  ],
+  imports: [ShareModule, CommonModule, UserRoutingModule, ReactiveFormsModule],
   exports: [
     ProfileComponent,
     SettingComponent,
@@ -45,8 +37,7 @@ import { PaginationModule } from 'ngx-bootstrap/pagination';
     AddressComponent,
     DetailsComponent,
     TermsComponent,
-    AppoinmentComponent
-
-  ]
+    AppoinmentComponent,
+  ],
 })
-export class UserModule { }
+export class UserModule {}
