@@ -15,14 +15,12 @@
 
     <!--begin::Tab Content-->
     <div class="tab-content">
-      <!--begin::Tab panel-->
       <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active" role="tabpanel"
         aria-labelledby="kt_billing_months">
         <!--begin::Table container-->
         <div class="table-responsive" *ngFor="let clinic of allSlots">
-          <!--begin::Table-->
-          <h5>Clinic: {{clinic.clinic_address}}</h5>
-          <table class="table table-row-bordered align-middle gy-4 gs-9">
+          <h5 class="py-3 ms-4 clinic-title">Clinic: <span>{{clinic.clinic_address}}</span></h5>
+          <table class="table table-row-bordered align-middle gy-4 gs-9 table-hover">
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
               <tr>
                 <td class="min-w-150px">ID</td>
@@ -33,7 +31,6 @@
               </tr>
             </thead>
             <tbody class="fw-semibold text-gray-600" *ngFor="let slot of clinic.slots">
-              <!--begin::Table row-->
               <tr>
                 <td>{{slot.id}}</td>
                 <td>{{slot.day}}</td>
@@ -49,14 +46,11 @@
                   </a>
                 </td>
               </tr>
-              <!--end::Table row-->
             </tbody>
           </table>
-          <!--end::Table-->
         </div>
         <!--end::Table container-->
       </div>
-      <!--end::Tab panel-->
     </div>
     <!--end::Tab Content-->
   </div>

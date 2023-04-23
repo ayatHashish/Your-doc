@@ -1,4 +1,4 @@
-<main>
+<main class="modal-handle">
   <div class="modal-dialog modal-dialog-centered align-center">
     <div class="modal-content ">
       <div class="modal-header">
@@ -9,19 +9,24 @@
           <div class="container">
             <form [formGroup]="creatSlotForm" (ngSubmit)="createSlot()">
               <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
+              <div class="row mb-6">
+                <label class="col-lg-12 col-form-label required fw-semibold fs-6">Clinic</label>
+                <div class="col-lg-12">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+                    <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
+                        id="week_day" name="week_day" required formControlName="address_id">
+                        <option [value]="address['id']" *ngFor=" let address of addresses">{{address["address"]}}</option>
+                      </select>
+                      <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
 
               <div class="row mb-6">
                 <div class="col-md-12">
                   <div class="form-group">
-
-                    <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                      <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
-                        id="week_day" name="week_day" required formControlName="address_id"
-                        *ngFor=" let address of addresses">
-                        <option selected [value]="address['id']">{{address["address"]}}</option>
-                      </select>
-                    </div>
-
                     <label class="col-form-label required fw-semibold fs-6">Select Day</label>
                     <div class="row">
                       <!--begin::Col-->
@@ -67,11 +72,8 @@
                         <div class="fv-plugins-message-container invalid-feedback"></div>
                       </div>
                       <!--end::Col-->
-
                       <!--begin::Col-->
-
                       <div class="col-lg-6 fv-row fv-plugins-icon-container">
-
                         <!-- <label>
                           Time
                           <input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4"  class="datePike">
@@ -87,7 +89,7 @@
                 </div>
               </div>
               <div class="modal-footer">
-                <input type="submit" class="btn-lo fadeIn" value="Add">
+                <input type="submit" class="btn btn-sm btn-primary btn_font" value="Add">
               </div>
             </form>
           </div>

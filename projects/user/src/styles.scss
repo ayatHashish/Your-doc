@@ -5,7 +5,6 @@
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
 
-
 * {
   font-family: Inter, Helvetica, "sans-serif";
 }
@@ -527,3 +526,14 @@ form .button {
 //   z-index: 9999999999 !important;
 //   position: absolute;
 // }
+.btn_font {
+  font-size: 0.95rem !important;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+}
+.modal-handle {
+  height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
