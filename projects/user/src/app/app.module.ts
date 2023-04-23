@@ -8,7 +8,7 @@ import { LayoutsModule } from './share/components/layouts/layouts.modules';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './share/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,8 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     LayoutsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    TimepickerModule.forRoot()
   ],
-
 
   providers: [
     {
@@ -28,8 +28,6 @@ import { ReactiveFormsModule } from '@angular/forms';
       useClass: AuthInterceptor,
       multi: true
     }
-
-
   ],
   bootstrap: [AppComponent]
 })

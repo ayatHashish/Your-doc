@@ -16,6 +16,8 @@ import { AddTimeComponent } from './profile/timeslots/add-time/add-time.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewAppoinmentComponent } from './profile/appoinment/view-appoinment/view-appoinment.component';
 import { CancelComponent } from './profile/appoinment/cancel/cancel.component';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,14 @@ import { CancelComponent } from './profile/appoinment/cancel/cancel.component';
     ViewAppoinmentComponent,
     CancelComponent,
   ],
-  imports: [ShareModule, CommonModule, UserRoutingModule, ReactiveFormsModule],
+  imports: [
+    ShareModule,
+    CommonModule,
+    UserRoutingModule,
+    ReactiveFormsModule,
+    TimepickerModule.forRoot(),
+    FormsModule,
+  ],
   exports: [
     ProfileComponent,
     SettingComponent,
