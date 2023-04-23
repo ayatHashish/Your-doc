@@ -7,7 +7,6 @@
       </div>
     </div>
     <!--end::Card header-->
-
     <!--begin::Tab Content-->
     <div class="tab-content">
       <!--begin::Tab panel-->
@@ -19,11 +18,13 @@
           <table class="table table-row-bordered align-middle gy-4 gs-9">
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
               <tr>
-                <td class="min-w-250px">ID</td>
-                <td class="min-w-250px">Name</td>
-                <td class="min-w-150px">Booking Day</td>
-                <td class="min-w-150px">Booking Date</td>
-                <td class="min-w-150px">Status</td>
+                <td>ID</td>
+                <td>Name</td>
+                <td>Booking Day</td>
+                <td>Booking Date</td>
+                <td>Status</td>
+                <td>View</td>
+                <td>Action</td>
               </tr>
             </thead>
             <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments">
@@ -33,6 +34,19 @@
                 <td>{{ appoint.booking_day }}</td>
                 <td>{{ appoint.booking_date }}</td>
                 <td>{{ appoint.status }}</td>
+                <td>
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class='bx bx-edit-alt'></i>
+                  </a>
+                </td>
+                <td>
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class='bx bx-edit-alt'></i>
+                  </a>
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#delete">
+                    <i class='bx bx-trash'></i>
+                  </a>
+                </td>
               </tr>
             </tbody>
 
