@@ -46,7 +46,9 @@ export class AddTimeComponent {
     private timeslotsComponent: TimeslotsComponent
   ) {}
   ngOnInit(): void {
-    this.addrees();
+    this._addTime.getAddress().subscribe((res) => {
+      this.addresses = res.data;
+    });
   }
   creatSlotForm = new FormGroup({
     address_id: new FormControl('', [Validators.required]),
@@ -55,27 +57,7 @@ export class AddTimeComponent {
     start_time: new FormControl('', [Validators.required]),
     end_time: new FormControl('', [Validators.required]),
   });
-  get address() {
-    return this.creatSlotForm.get('address_id');
-  }
-  get day_en() {
-    return this.creatSlotForm.get('day_en');
-  }
-  get day_ar() {
-    return this.creatSlotForm.get('day_ar');
-  }
-  get startTime() {
-    return this.creatSlotForm.get('start_time');
-  }
-  get endTime() {
-    return this.creatSlotForm.get('end_time');
-  }
 
-  addrees() {
-    this._addTime.getAddress().subscribe((res) => {
-      this.addresses = res.data;
-    });
-  }
   createSlot() {
     this.creatSlotForm.patchValue({
       start_time: format(new Date(this.startTimeSelected), 'h:mm a'),
