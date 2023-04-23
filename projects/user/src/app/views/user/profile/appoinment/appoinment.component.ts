@@ -14,9 +14,11 @@ export class AppoinmentComponent {
   appoinments: any[] = [];
   currentPage = 1;
   totalPages: number = 10;
+  role:any = ""
   // pageSize = Array.from({ length: this.totalPages }, (_, index) => index);
 
   constructor(private _book: BookingService) {
+    this.role= localStorage.getItem("user_role");
     this.getAppoinment(this.currentPage);
     // console.log(this.pageSize);
   }

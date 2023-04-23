@@ -19,7 +19,8 @@
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
               <tr>
                 <td>ID</td>
-                <td>Name</td>
+                <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">Doctor Name</td>
+                <td [ngClass]="role == 'User' ? 'd-none' : ''">User Name</td>
                 <td>Booking Day</td>
                 <td>Booking Date</td>
                 <td>Status</td>
@@ -30,18 +31,19 @@
             <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments">
               <tr>
                 <td>{{ appoint.id }}</td>
-                <td>{{ appoint.user_name }}</td>
+                <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">{{ appoint.doctor_name }}</td>
+                <td [ngClass]="role == 'User' ? 'd-none' : ''">{{ appoint.user_name }}</td>
                 <td>{{ appoint.booking_day }}</td>
                 <td>{{ appoint.booking_date }}</td>
                 <td>{{ appoint.status }}</td>
                 <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
                     <i class='bx bx-edit-alt'></i>
                   </a>
 
                 </td>
                 <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#cancel">
                     <i class='bx bx-edit-alt'></i>
                   </a>
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#cancel">
@@ -84,8 +86,8 @@
   </div>
 
   <!-- cansel -->
-<div class="modal fade" id="cansel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
-aria-labelledby="cansel" aria-hidden="true" >
+<div class="modal fade" id="cancel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
+aria-labelledby="cancel" aria-hidden="true" >
 <!-- [ngClass]="isVisible == false ? 'd-block' :'d-none' " -->
 <app-cancel></app-cancel>
 </div>
