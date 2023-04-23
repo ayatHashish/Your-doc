@@ -14,6 +14,8 @@ import { EditslotComponent } from './profile/timeslots/editslot/editslot.compone
 import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
 import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ViewAppoinmentComponent } from './profile/appoinment/view-appoinment/view-appoinment.component';
+import { CancelComponent } from './profile/appoinment/cancel/cancel.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     EditslotComponent,
     DelslotsComponent,
     AddTimeComponent,
+    ViewAppoinmentComponent,
+    CancelComponent,
   ],
   imports: [ShareModule, CommonModule, UserRoutingModule, ReactiveFormsModule],
   exports: [

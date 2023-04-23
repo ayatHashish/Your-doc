@@ -17,25 +17,12 @@
               <div class="d-flex flex-column">
                 <!--begin::Name-->
                 <h3 class="name">{{profiles.full_name }}</h3>
-
-
-
-
                 <!--end::Name-->
                 <!--begin::Info-->
                 <div class="shrot_info">
-
                   <h6 class="name">{{profiles.email }}</h6>
                 <h6 class="name">{{profiles.birth_date }}</h6>
-                <h6 class="name">{{profiles.gender }}</h6>
-                  <h6>
-                    <i class="bx bx-location-plus"></i>
-                    <!-- {{profiles.first_name}} -->
-                  </h6>
-                  <h6><i class="bx bx-envelope"></i>
-
-
-                  </h6>
+                <h6 class="gender">{{profiles.gender }}</h6>
                 </div>
                 <!--end::Info-->
               </div>
@@ -56,6 +43,15 @@
                 role="tab" aria-controls="settings" aria-selected="true"
                 [ngClass]="pageUrl == 'settings' ? 'show active' : ''">
                 Settings
+              </button>
+            </li>
+
+            <li class="nav-item" role="presentation" routerLink="/user/profile/address">
+              <button class="nav-link" id="address-tab" data-bs-toggle="pill" data-bs-target="#address" type="button"
+                role="tab" aria-controls="address" aria-selected="true"
+                [ngClass]="pageUrl == 'address' ? 'show active' : ''"
+                [ngClass]="role == 'User' ? 'd-none' : ''">
+                Address
               </button>
             </li>
             <li class="nav-item" role="presentation" routerLink="/user/profile/security">
@@ -102,6 +98,12 @@
             [ngClass]="pageUrl == 'settings' ? 'show active' : ''">
             <app-setting  [profilesetting]="profiles"></app-setting>
           </div>
+
+
+          <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab" tabindex="0"
+          [ngClass]="pageUrl == 'address' ? 'show active' : ''">
+          <app-address></app-address>
+        </div>
           <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" tabindex="0"
             [ngClass]="pageUrl == 'security' ? 'show active' : ''">
             <app-security></app-security>

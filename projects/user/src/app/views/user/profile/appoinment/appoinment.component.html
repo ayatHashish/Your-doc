@@ -38,12 +38,13 @@
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i class='bx bx-edit-alt'></i>
                   </a>
+
                 </td>
                 <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
                     <i class='bx bx-edit-alt'></i>
                   </a>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#delete">
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#cancel">
                     <i class='bx bx-trash'></i>
                   </a>
                 </td>
@@ -74,4 +75,18 @@
     </div>
     <!--end::Tab Content-->
   </div>
+
+  <!-- view -->
+  <div class="modal fade" id="view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
+  aria-labelledby="view" aria-hidden="true" >
+  <!-- [ngClass]="isVisible == false ? 'd-block' :'d-none' " -->
+  <app-view-appoinment></app-view-appoinment>
+  </div>
+
+  <!-- cansel -->
+<div class="modal fade" id="cansel" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
+aria-labelledby="cansel" aria-hidden="true" >
+<!-- [ngClass]="isVisible == false ? 'd-block' :'d-none' " -->
+<app-cancel></app-cancel>
+</div>
 </main>

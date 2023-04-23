@@ -23,10 +23,15 @@
       color: #b5b5c3;
       font-size: 1.075rem;
       font-weight: 400;
+
+
       i {
         color: #a1a5b7;
       }
     }
+    .gender{
+       text-transform: capitalize;
+      }
   }
   .card,
   .card-body {
