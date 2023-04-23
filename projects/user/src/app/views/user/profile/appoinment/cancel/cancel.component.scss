@@ -11,10 +11,17 @@
       padding-top:10px ;
     }
   }
-  .modal-footer {
-    border-top: none !important;
-    align-items: end;
-    justify-content:end;
-
+.cansel-page{
+  h1{
+    font-size: 1.5rem !important;
+    margin: 50px !important;
   }
+
+}
+.my-red-class {
+  color: red;
+}
+.my-blue-class {
+  color: blue;
+}
 }

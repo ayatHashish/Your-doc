@@ -17,8 +17,8 @@ export class BookingService {
     return this._http.post(this.baseUrl + `${'booking_details'}`, data)
   }
 
-  canselBooking(data: any): Observable<any> {
-    return this._http.post(this.baseUrl + `${'cancel_booking'}`, data)
+  cancelBooking(id: number): Observable<any> {
+    return this._http.post(this.baseUrl + `${'cancel_booking'}`, id)
   }
 
   acceptBooking(data: any): Observable<any> {

@@ -15,6 +15,10 @@ export class AppoinmentComponent {
   currentPage = 1;
   totalPages: number = 10;
   role:any = ""
+  cansled: string = '';
+  accept: string = '';
+  showIcon: boolean = true;
+
   // pageSize = Array.from({ length: this.totalPages }, (_, index) => index);
 
   constructor(private _book: BookingService) {
@@ -27,7 +31,6 @@ export class AppoinmentComponent {
     this._book.getMyAppointment(page).subscribe((res) => {
       this.appoinments = res.data;
       this.totalPages = res.count_pages;
-      console.log(res);
     });
   }
 
@@ -42,4 +45,39 @@ export class AppoinmentComponent {
       this.getAppoinment(this.currentPage);
     }
   }
+
+toggleIcon() {
+
+}
+
+toggleAccept() {
+  this.showIcon = !this.showIcon;
+  this.accept = this.showIcon ? '' : 'Accepted';
+}
+
+cancel(id: number) {
+  this._book.cancelBooking(id).subscribe(
+    (res) => {
+
+    },
+    (e) => console.error(e.error.error) ,
+    ()=> {
+      
+       this.showIcon = !this.showIcon;
+       this.cansled = this.showIcon ? '' : 'Canseled';
+    }
+
+
+
+    )
+
+}
+// getAppoinment(page: number) {
+//   this._book.getMyAppointment(page).subscribe((res) => {
+//     this.appoinments = res.data;
+//     this.totalPages = res.count_pages;
+//   });
+// }
+// (click)="deleteSlot(slotId)"
+
 }

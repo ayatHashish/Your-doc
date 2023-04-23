@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./cancel.component.scss',]
 })
 export class CancelComponent {
-
+ 
 }
