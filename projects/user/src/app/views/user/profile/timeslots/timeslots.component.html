@@ -30,12 +30,10 @@
                 <td class="min-w-150px">Start Time</td>
                 <td class="min-w-150px">End Time</td>
                 <td class="min-w-150px">Action</td>
-
               </tr>
             </thead>
-            <tbody class="fw-semibold text-gray-600"  *ngFor="let slot of clinic.slots">
+            <tbody class="fw-semibold text-gray-600" *ngFor="let slot of clinic.slots">
               <!--begin::Table row-->
-
               <tr>
                 <td>{{slot.id}}</td>
                 <td>{{slot.day}}</td>
@@ -45,7 +43,8 @@
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
                     <i class='bx bx-edit-alt'></i>
                   </a>
-                  <a type="button" (click)="openModal(slot.id)" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#delete">
+                  <a type="button" (click)="openModal(slot.id)" class="btn btn-sm" data-bs-toggle="modal"
+                    data-bs-target="#delete">
                     <i class='bx bx-trash'></i>
                   </a>
                 </td>
@@ -58,33 +57,25 @@
         <!--end::Table container-->
       </div>
       <!--end::Tab panel-->
-
-
     </div>
     <!--end::Tab Content-->
   </div>
 </main>
-
-
-
-<!-- Button trigger modal -->
 
 <!-- Add time -->
 <div class="modal fade" id="addTime" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true" #myModal>
   <app-add-time></app-add-time>
 </div>
-
 <!-- edit -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <app-editslot></app-editslot>
 </div>
-
 <!-- Delete -->
 <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
-  aria-labelledby="staticBackdropLabel" aria-hidden="true" >
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <!-- [ngClass]="isVisible == false ? 'd-block' :'d-none' " -->
-  <app-delslots [slotId]="selectedItemId" ></app-delslots>
+  <app-delslots [slotId]="selectedItemId"></app-delslots>
 </div>
 <!-- <button (click)="deleteSlot(2)">Delete Resource</button> -->
