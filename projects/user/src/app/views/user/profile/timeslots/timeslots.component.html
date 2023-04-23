@@ -30,9 +30,9 @@
                 <td class="min-w-150px">Action</td>
               </tr>
             </thead>
-            <tbody class="fw-semibold text-gray-600" *ngFor="let slot of clinic.slots">
+            <tbody class="fw-semibold text-gray-600" *ngFor="let slot of clinic.slots; let i = index">
               <tr>
-                <td>{{slot.id}}</td>
+                <td>#{{i+1}}</td>
                 <td>{{slot.day}}</td>
                 <td>{{slot.start_time}}</td>
                 <td>{{slot.end_time}}</td>

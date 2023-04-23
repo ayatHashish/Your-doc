@@ -10,7 +10,7 @@ export class SettingComponent {
   @Input() profilesetting: any;
 
   constructor (){
-    console.log(this.profilesetting);
+    // console.log(this.profilesetting);
   }
 
 
