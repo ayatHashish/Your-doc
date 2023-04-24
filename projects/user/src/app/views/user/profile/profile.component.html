@@ -1,14 +1,15 @@
 <main class="main-user">
   <div class="container">
     <div class="content flex-row-fluid">
-      <div class="card mb-5 mb-xl-10" >
-        <div class="card-body pt-9 pb-0" >
+      <div class="card mb-5 mb-xl-10">
+        <div class="card-body pt-9 pb-0">
           <!--begin::Details-->
           <div class="d-flex flex-wrap flex-sm-nowrap">
             <!--begin: Pic-->
             <div class="me-7 mb-4 ms-6">
               <div class="symbol">
-                <img [src]=[profiles.avatar] alt="Profile Avatar" /> </div>
+                <img [src]=[profiles.avatar] alt="Profile Avatar" />
+              </div>
             </div>
             <!--end::Pic-->
             <!--begin::Info-->
@@ -21,8 +22,8 @@
                 <!--begin::Info-->
                 <div class="shrot_info">
                   <h6 class="name">{{profiles.email }}</h6>
-                <h6 class="name">{{profiles.birth_date }}</h6>
-                <h6 class="gender">{{profiles.gender }}</h6>
+                  <h6 class="name">{{profiles.birth_date }}</h6>
+                  <h6 class="gender">{{profiles.gender }}</h6>
                 </div>
                 <!--end::Info-->
               </div>
@@ -49,8 +50,7 @@
             <li class="nav-item" role="presentation" routerLink="/user/profile/address">
               <button class="nav-link" id="address-tab" data-bs-toggle="pill" data-bs-target="#address" type="button"
                 role="tab" aria-controls="address" aria-selected="true"
-                [ngClass]="pageUrl == 'address' ? 'show active' : ''"
-                [ngClass]="role == 'User' ? 'd-none' : ''">
+                [ngClass]="pageUrl == 'address' ? 'show active' : ''" [ngClass]="role == 'User' ? 'd-none' : ''">
                 Address
               </button>
             </li>
@@ -72,7 +72,7 @@
               <button class="nav-link" id="timeslots-tab" data-bs-toggle="pill" data-bs-target="#timeslots"
                 type="button" role="tab" aria-controls="timeslots" aria-selected="true"
                 [ngClass]="pageUrl == 'timeslots' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
-               Time slots
+                Time slots
               </button>
             </li>
           </ul>
@@ -88,12 +88,12 @@
           </div>
           <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0"
             [ngClass]="pageUrl == 'settings' ? 'show active' : ''">
-            <app-setting  [profilesetting]="profiles"></app-setting>
+            <app-setting [profilesetting]="profiles"></app-setting>
           </div>
           <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab" tabindex="0"
-          [ngClass]="pageUrl == 'address' ? 'show active' : ''">
-          <app-address></app-address>
-        </div>
+            [ngClass]="pageUrl == 'address' ? 'show active' : ''">
+            <app-address></app-address>
+          </div>
           <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" tabindex="0"
             [ngClass]="pageUrl == 'security' ? 'show active' : ''">
             <app-security></app-security>
@@ -102,10 +102,10 @@
             tabindex="0" [ngClass]="pageUrl == 'appointments' ? 'show active' : ''">
             <app-appoinment></app-appoinment>
           </div>
-          <div class="tab-pane fade show" id="timeslots" role="tabpanel" aria-labelledby="timeslots-tab"
-          tabindex="0" [ngClass]="pageUrl == 'timeslots' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
-          <app-timeslots [myData]="addTime"></app-timeslots>
-        </div>
+          <div class="tab-pane fade show" id="timeslots" role="tabpanel" aria-labelledby="timeslots-tab" tabindex="0"
+            [ngClass]="pageUrl == 'timeslots' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
+            <app-timeslots [myData]="addTime"></app-timeslots>
+          </div>
 
         </div>
       </div>
