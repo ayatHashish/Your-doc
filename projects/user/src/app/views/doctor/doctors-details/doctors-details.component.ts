@@ -20,6 +20,8 @@ export class DoctorsDetailsComponent {
     this.id = this._ActivatedRoute.snapshot.params['id'];
     this._doctors.getDoctorsDetails(this.id).subscribe((res) => {
       this.doctorDetails = res.data
+      console.log(this.doctorDetails);
+
     });
   }
 }

@@ -9,9 +9,11 @@ import { TermsComponent } from './terms/terms.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
 import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
 import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
+import { BookingComponent } from './booking/booking.component';
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
   { path: 'terms', component: TermsComponent },
+   { path: 'booking', component: BookingComponent },
   {path: 'profile', component: ProfileComponent,
     children: [
       { path: 'address', component: AddressComponent },
@@ -21,6 +23,7 @@ const routes: Routes = [
       { path: 'details', component: DetailsComponent },
       { path: 'timeslots', component: TimeslotsComponent },
       { path: 'edit', component: EditslotComponent },
+
     ],
   },
 ];

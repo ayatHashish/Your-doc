@@ -29,7 +29,6 @@ export class ProfileComponent {
   profile(){
     this._profileService.profile().subscribe((res) =>{
      this.profiles=res.data
-    //  console.log(res.data)
     });
   }
   // update(){

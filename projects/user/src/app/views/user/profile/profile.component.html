@@ -50,7 +50,7 @@
             <li class="nav-item" role="presentation" routerLink="/user/profile/address">
               <button class="nav-link" id="address-tab" data-bs-toggle="pill" data-bs-target="#address" type="button"
                 role="tab" aria-controls="address" aria-selected="true"
-                [ngClass]="pageUrl == 'address' ? 'show active' : ''" [ngClass]="role == 'User' ? 'd-none' : ''">
+                [ngClass]="pageUrl == 'address' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
                 Address
               </button>
             </li>
@@ -92,7 +92,7 @@
           </div>
           <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab" tabindex="0"
             [ngClass]="pageUrl == 'address' ? 'show active' : ''">
-            <app-address></app-address>
+            <app-address [profileaddress]="profiles"></app-address>
           </div>
           <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" tabindex="0"
             [ngClass]="pageUrl == 'security' ? 'show active' : ''">

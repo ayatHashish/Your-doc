@@ -8,9 +8,9 @@ import { SpatialistDostorsComponent } from './spatialist-dostors/spatialist-dost
 
 
 const routes: Routes = [
-  { path: 'doctors', component: DoctorsComponent },
+  { path: 'all', component: DoctorsComponent },
   { path: 'details/:id', component: DoctorsDetailsComponent },
-  { path: 'spcialisets/:id', component: SpatialistDostorsComponent },
+  { path: 'spcialiset/:id', component: SpatialistDostorsComponent },
   { path: 'model', component: ModelComponent },
 
 

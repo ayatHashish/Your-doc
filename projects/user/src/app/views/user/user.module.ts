@@ -18,6 +18,10 @@ import { ViewAppoinmentComponent } from './profile/appoinment/view-appoinment/vi
 import { CancelComponent } from './profile/appoinment/cancel/cancel.component';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { FormsModule } from '@angular/forms';
+import { AddNewAddressComponent } from './profile/address/add-new-address/add-new-address.component';
+import { DeleteAddressComponent } from './profile/address/delete-address/delete-address.component';
+import { EditAddressComponent } from './profile/address/edit-address/edit-address.component';
+import { BookingComponent } from './booking/booking.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +38,10 @@ import { FormsModule } from '@angular/forms';
     AddTimeComponent,
     ViewAppoinmentComponent,
     CancelComponent,
+    AddNewAddressComponent,
+    DeleteAddressComponent,
+    EditAddressComponent,
+    BookingComponent,
   ],
   imports: [
     ShareModule,
