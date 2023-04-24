@@ -1,92 +1,23 @@
 <main>
   <div class="container">
-    <div class="specialisties_section">
+    <div class="specialisties_sg ection" >
       <h2>Book from top specialties</h2>
-      <owl-carousel-o [options]="customOptions">
-        <ng-template carouselSlide>
-          <div class="specialist">
+      <owl-carousel-o [options]="customOptions" >
+        <ng-template carouselSlide *ngFor="let item of spacialistes">
+          <div class="specialist" routerLink="/doctor/spcialisets/{{item.id}}">
             <div class="overlay"></div>
             <div class="image">
               <img
-                src="../../../../../assets/images/doctors/doctors-3.jpg"
-                alt=""
+                [src]="item.image"
+                alt="{{item.title}}"
               />
             </div>
             <div class="content">
-              <h3>Bones</h3>
+              <h3>{{item.title}}</h3>
             </div>
           </div>
         </ng-template>
-        <ng-template carouselSlide>
-          <div class="specialist">
-            <div class="overlay"></div>
-            <div class="image">
-              <img
-                src="../../../../../assets/images/doctors/doctors-2.jpg"
-                alt=""
-              />
-            </div>
-            <div class="content">
-              <h3>Bones</h3>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="specialist">
-            <div class="overlay"></div>
-            <div class="image">
-              <img
-                src="../../../../../assets/images/doctors/doctors-1.jpg"
-                alt=""
-              />
-            </div>
-            <div class="content">
-              <h3>Bones</h3>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="specialist">
-            <div class="overlay"></div>
-            <div class="image">
-              <img
-                src="../../../../../assets/images/doctors/doctors-1.jpg"
-                alt=""
-              />
-            </div>
-            <div class="content">
-              <h3>Bones</h3>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="specialist">
-            <div class="overlay"></div>
-            <div class="image">
-              <img
-                src="../../../../../assets/images/doctors/doctors-1.jpg"
-                alt=""
-              />
-            </div>
-            <div class="content">
-              <h3>Bones</h3>
-            </div>
-          </div>
-        </ng-template>
-        <ng-template carouselSlide>
-          <div class="specialist">
-            <div class="overlay"></div>
-            <div class="image">
-              <img
-                src="../../../../../assets/images/doctors/doctors-1.jpg"
-                alt=""
-              />
-            </div>
-            <div class="content">
-              <h3>Bones</h3>
-            </div>
-          </div>
-        </ng-template>
+
       </owl-carousel-o>
     </div>
   </div>

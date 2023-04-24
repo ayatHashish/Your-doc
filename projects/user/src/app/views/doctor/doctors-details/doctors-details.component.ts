@@ -22,5 +22,4 @@ export class DoctorsDetailsComponent {
       this.doctorDetails = res.data
     });
   }
-
 }

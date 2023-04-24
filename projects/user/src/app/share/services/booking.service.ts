@@ -5,7 +5,7 @@ import { Observable, BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class BookingService {
-  baseUrl = 'http://ydoctor.atwebpages.com/user/'
+  baseUrl = 'http://ydoctor.atwebpages.com/user/';
 
   constructor(private _http: HttpClient) { }
 
@@ -24,8 +24,12 @@ export class BookingService {
   acceptBooking(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `${'accept_booking'}`, data)
   }
-  getMyAppointment(pageNum:number): Observable<any> {
+
+  getMyAppointment(pageNum: number): Observable<any> {
     return this._http.get(this.baseUrl + `get_my_appointments?page=${pageNum}`)
   }
 
+  allSpatialistsDostors(id: number, pageNum: number): Observable<any> {
+    return this._http.get(this.baseUrl + `get_doctors_by_specialty?page=${pageNum}&specialty_id=${id}`)
+  }
 }

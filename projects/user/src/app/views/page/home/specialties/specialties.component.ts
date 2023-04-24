@@ -1,11 +1,19 @@
 import { Component } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { ActivatedRoute } from '@angular/router';
+import { DoctorsService } from 'projects/user/src/app/share/services/doctors.service';
 @Component({
   selector: 'app-specialties',
   templateUrl: './specialties.component.html',
   styleUrls: ['./specialties.component.scss'],
 })
 export class SpecialtiesComponent {
+
+  id :any
+  spacialistes: any
+  constructor( private _spacialist: DoctorsService ,private _ActivatedRoute: ActivatedRoute) {this.spacialist()}
+
+
   customOptions: OwlOptions = {
     loop: true,
     margin: 15,
@@ -29,4 +37,12 @@ export class SpecialtiesComponent {
       },
     },
   };
+  spacialist(){
+    // this.id = this._ActivatedRoute.snapshot.params['id'];
+    this._spacialist.allSpatialists().subscribe((res) => {
+    this.spacialistes = res.data
+  })}
+
+
+
 }

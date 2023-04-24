@@ -28,9 +28,9 @@
                 <td>Action</td>
               </tr>
             </thead>
-            <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments">
+            <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments; let i = index">
               <tr>
-                <td>{{ appoint.id }}</td>
+                <td>#{{i+1}}</td>
                 <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">{{ appoint.doctor_name }}</td>
                 <td [ngClass]="role == 'User' ? 'd-none' : ''">{{ appoint.user_name }}</td>
                 <td>{{ appoint.booking_day }}</td>
