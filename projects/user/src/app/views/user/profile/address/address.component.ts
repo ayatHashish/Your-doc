@@ -8,18 +8,19 @@ import { AddressDoctorService } from 'projects/user/src/app/share/services/addre
 })
 export class AddressComponent {
   @Input() profileaddress: any;
-selectedItemId: any;
+  addresses: any;
+  selectedItemId: any;
   address : any
 constructor( private _allAddress: AddressDoctorService){}
 
 alladdress() {
   this._allAddress.getMyAddresses().subscribe((res) => {
     this._allAddress = res.data
-
   })
 };
 
 openModal(itemId: number) {
   this.selectedItemId = itemId;
 }
+
 }

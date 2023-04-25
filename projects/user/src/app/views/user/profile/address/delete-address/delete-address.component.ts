@@ -6,27 +6,25 @@ import { AddressComponent } from '../address.component';
 @Component({
   selector: 'app-delete-address',
   templateUrl: './delete-address.component.html',
-  styleUrls: ['./delete-address.component.scss',
-  '../../timeslots/delslots/delslots.component.scss'
-]
+  styleUrls: [
+    './delete-address.component.scss',
+    '../../timeslots/delslots/delslots.component.scss',
+  ],
 })
 export class DeleteAddressComponent {
-  @Input() slotDleted: any;
-  @Input() profileaddress :any
-constructor (private _deleteAddress: AddressDoctorService, private _router: Router , private addressComponent: AddressComponent){
+  @Input() addressDleted: any;
+  @Input() profileaddress: any;
+  constructor(
+    private _deleteAddress: AddressDoctorService,
+    private addressComponent: AddressComponent
+  ) {}
 
-}
   deleteAddress(id: number) {
     this._deleteAddress.deleteAddress(id).subscribe(
       (res) => {
         this.addressComponent.alladdress();
       },
-      (e) => console.error(e.error.error),
-
+      (e) => console.error(e.error.error)
     );
-
-
   }
-
-
 }
