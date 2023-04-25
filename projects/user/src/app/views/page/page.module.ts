@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SearchComponent } from './home/search/search.component';
 import { SpecialtiesComponent } from './home/specialties/specialties.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SpecialtiesComponent } from './home/specialties/specialties.component';
     LayoutsModule,
     UserModule,
     CarouselModule,
-    DoctorModule
+    DoctorModule,
+    ReactiveFormsModule
   ],
 })
 export class PageModule { }

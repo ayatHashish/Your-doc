@@ -28,13 +28,11 @@ export class AddNewAddressComponent {
   addNewAdress() {
      this._add.addNewAddress(this.addNewAddress.value).subscribe(
      (res) => {
-
         this.addressComponent.alladdress();
      },
      (e) => {
        this.errorMsg = e.error.error;
       },
-     
      );
   }
 

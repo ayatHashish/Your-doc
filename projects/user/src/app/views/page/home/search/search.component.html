@@ -4,31 +4,14 @@
 
 
     </div>
-    <form class="form">
-      <input type="text" list="mylist" placeholder="Where would you like to go?" />
-      <datalist id="mylist">
-        <option>Dr. Mohamed Ahmed</option>
-        <option>Dr. Ayat Hashish</option>
-        <option>Dr. Ahmed Elgamal</option>
-        <option>Dr. Fatma Ahmed</option>
-      </datalist>
+    <form class="form" [formGroup]="searchForm" (ngSubmit)="search()">
+      <input type="text" list="mylist" placeholder="Doctor Name" formControlName="doctor_name" />
 
-      <select id="mylist" class="specialties-selection">
+      <select id="mylist" class="specialties-selection" formControlName="specialty_id">
         <option value="0">All Specialties</option>
-        <option value="apartments">dentist</option>
-        <option value="classifieds">Thoracic surgery</option>
-        <option value="coaching">Kidney disease</option>
-        <option value="eat-drink">Orthopedics, joints and cartilage</option>
-        <option value="events">Internal medicine and gastroenterology</option>
-        <option value="fitness">Optical medicine</option>
-        <option value="other">skin diseases</option>
-        <option value="services">Obstetrics and Gynecology</option>
+        <option value="{{specialties.id}}" *ngFor="let specialty of specialties">{{specialty.title}}</option>
       </select>
-      <a href="#" class="search-submit">Search</a>
+      <a type="submit" class="search-submit">Search</a>
     </form>
   </section>
 </main>
-
-
-
-

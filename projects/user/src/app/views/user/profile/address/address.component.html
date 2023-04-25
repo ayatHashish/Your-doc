@@ -48,7 +48,7 @@
 <!-- Delete -->
 <div class="modal fade" id="deleteAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <app-delete-address></app-delete-address>
+  <app-delete-address [slotDleted]="selectedItemId"></app-delete-address>
 </div>
 <!-- edit -->
 <div class="modal fade" id="editAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal

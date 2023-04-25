@@ -21,4 +21,9 @@ export class DoctorsService {
   allSpatialists(): Observable<any> {
     return this._http.get(this.baseUrl + `${'get_all_specialties'}`)
   }
+
+  search(data :any): Observable<any> {
+    return this._http.post(this.baseUrl + `${'search'}` , data)
+  }
+
 }

@@ -8,7 +8,7 @@ import { AddressDoctorService } from 'projects/user/src/app/share/services/addre
 })
 export class AddressComponent {
   @Input() profileaddress: any;
-
+selectedItemId: any;
   address : any
 constructor( private _allAddress: AddressDoctorService){}
 
@@ -18,4 +18,8 @@ alladdress() {
 
   })
 };
+
+openModal(itemId: number) {
+  this.selectedItemId = itemId;
+}
 }
