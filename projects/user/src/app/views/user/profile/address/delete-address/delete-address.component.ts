@@ -25,9 +25,7 @@ constructor (private _deleteAddress: AddressDoctorService, private _router: Rout
       (e) => console.error(e.error.error),
 
     );
-    this._deleteAddress.getMyAddresses().subscribe((res)=>
-    this.address_id = res.data.address_id
-    );
+   
 
   }
 

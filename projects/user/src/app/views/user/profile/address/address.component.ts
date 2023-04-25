@@ -8,8 +8,14 @@ import { AddressDoctorService } from 'projects/user/src/app/share/services/addre
 })
 export class AddressComponent {
   @Input() profileaddress: any;
-constructor(){}
 
+  address : any
+constructor( private _allAddress: AddressDoctorService){}
 
+alladdress() {
+  this._allAddress.getMyAddresses().subscribe((res) => {
+    this._allAddress = res.data
 
+  })
+};
 }

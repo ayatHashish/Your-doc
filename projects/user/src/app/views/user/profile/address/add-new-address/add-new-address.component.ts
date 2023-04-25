@@ -24,23 +24,23 @@ export class AddNewAddressComponent {
     state: new FormControl('', [Validators.required]),
     country: new FormControl('', [Validators.required]),
   });
+
   addNewAdress() {
-    // this._add.addNewAddress(this.addNewAddress.value).subscribe(
-      // (res) => {
-        // this.addressComponent();
+     this._add.addNewAddress(this.addNewAddress.value).subscribe(
+     (res) => {
 
-        // console.log(res);
+        this.addressComponent.alladdress();
+     },
+     (e) => {
+       this.errorMsg = e.error.error;
+      },
+     
+     );
+  }
 
-      // },
-      // (e) => {
-        // this.errorMsg = e.error.error;
-      // },
-      // () => {
-        // this._router.navigate(['/user/profile/timeslots']);
-      // }
-    // );
-  // }
+
 }
-}
+
+
 
 
