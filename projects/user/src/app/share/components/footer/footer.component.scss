@@ -40,4 +40,11 @@ footer {
       }
     }
   }
+  .footer-middle{
+    a{
+      &:hover{
+        color: #1da1f2 !important;
+      }
+    }
+  }
 }
