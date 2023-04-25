@@ -103,7 +103,7 @@
 
         <div class="col-lg-9">
           <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
-          name="gender" required formControlName="gender" [(ngModel)]="profilesetting.gender">
+          name="gender" required formControlName="gender">
           <option [value]="'female'" [selected]="profilesetting.gender === 'female'">Female</option>
           <option [value]="'male'" [selected]="profilesetting.gender === 'male'">Male</option>
         </select>
@@ -124,8 +124,6 @@
         <button type="submit" class="btn btn-sm align-self-center" id="kt_account_profile_details_submit">Save Changes</button>
       </div>
     </div>
-
-
   </form>
 
   </div>

@@ -10,14 +10,10 @@ import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.s
 export class TimeslotsComponent {
   @Input() myData: any;
   selectedItemId: any;
-  // modvisible: boolean = false;
   allSlots: any;
-  // @Input() isVisible: any;
 
   constructor(private _addTime: TimeslotService) {
     this.allTime()
-  // console.log(this.isVisible);
-
   }
 
   allTime() {

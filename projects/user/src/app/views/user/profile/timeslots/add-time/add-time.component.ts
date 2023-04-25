@@ -39,24 +39,27 @@ export class AddTimeComponent {
     'الخميس',
     'الجمعه',
   ];
+  creatSlotForm: FormGroup;
 
   constructor(
     private _addTime: TimeslotService,
     private _router: Router,
     private timeslotsComponent: TimeslotsComponent
-  ) {}
+  ) {
+    this.creatSlotForm = new FormGroup({
+      address_id: new FormControl('', [Validators.required]),
+      day_ar: new FormControl('', [Validators.required]),
+      day_en: new FormControl('', [Validators.required]),
+      start_time: new FormControl('', [Validators.required]),
+      end_time: new FormControl('', [Validators.required]),
+    });
+  }
   ngOnInit(): void {
     this._addTime.getAddress().subscribe((res) => {
       this.addresses = res.data;
     });
   }
-  creatSlotForm = new FormGroup({
-    address_id: new FormControl('', [Validators.required]),
-    day_ar: new FormControl('', [Validators.required]),
-    day_en: new FormControl('', [Validators.required]),
-    start_time: new FormControl('', [Validators.required]),
-    end_time: new FormControl('', [Validators.required]),
-  });
+  
 
   createSlot() {
     this.creatSlotForm.patchValue({

@@ -12,7 +12,6 @@ export class RegisterComponent {
   selectedOption = 'user';
   role:any = ""
   specialties :any
-
   isVisible = false;
   constructor(
     private _auth: AuthService,
