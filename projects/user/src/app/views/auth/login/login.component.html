@@ -58,8 +58,6 @@
             </div>
             <form [formGroup]= "loginForm" (ngSubmit)="handlelogin()">
               <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
-
-
               <!-- email -->
               <div class="form-group">
                 <input class="input-group" type="email" formControlName="email" id="email" required>
@@ -69,7 +67,6 @@
               <div class="form-group">
                 <input class="input-group" type="password" formControlName="password" id="password" required>
                 <label>Password</label>
-
               </div>
               <div class="form-check">
                 <div class="form-check-content">
@@ -81,7 +78,6 @@
                 <a class="underlineHover" routerLink="/auth/forgotPassword">Forgot Password?</a>
               </div>
               <input type="submit" class="btn-lo fadeIn" value="sign in">
-
             </form>
             <label>
               Time
