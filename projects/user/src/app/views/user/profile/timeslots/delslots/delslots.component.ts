@@ -23,7 +23,6 @@ export class DelslotsComponent {
   deleteSlot(id: number) {
     this._deleteSlots.deleteslots(id).subscribe(
       () => {
-        // this.isVisible = true;
         this.myModal.hide();
         this._router.navigate(['/timeslots']);
       },

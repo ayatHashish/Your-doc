@@ -7,15 +7,55 @@
       <div class="modal-body">
         <div class="time-slot-page">
           <div class="container">
-            <form>
+            <form  (ngSubmit)="addNewAdress()">
+              <div class="alert alert-danger" *ngIf="errorMsg != ''" (input)="errorMsg = ''">
+                {{ errorMsg }}
+              </div>
               <div class="row mb-6">
-                <label class="col-md-3 col-form-label required fw-semibold fs-6" for="day_ar">Day AR</label>
-                <div class="col-md-9">
-                  <div class="form-group">
+                <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">Address</label>
+                <div class="col-lg-9">
+                  <div class="row">
 
+                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+
+                    <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" formControlName="Address">
+                      <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
                   </div>
                 </div>
               </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">State</label>
+                <div class="col-lg-9">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+
+                      <input type="text"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="state">
+
+                      <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row mb-6">
+                <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">Country</label>
+                <div class="col-lg-9">
+                  <div class="row">
+                    <div class="col-lg-12 fv-row fv-plugins-icon-container">
+
+                      <input type="text"class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="country">
+
+                      <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
               <div class="modal-footer">
                 <button type="submit" class="btn btn-sm btn-primary btn_font">Add</button>
               </div>

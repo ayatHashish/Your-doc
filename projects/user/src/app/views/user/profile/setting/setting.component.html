@@ -6,7 +6,10 @@
           <h3 class="m-0">Settings</h3>
       </div>
   </div>
-    <div class="card-body">
+
+  <form [formGroup]= "updatedForm" (ngSubmit)="updated()">
+
+  <div class="card-body">
       <div class="row mb-6">
         <!--begin::Label-->
         <label class="col-lg-3 col-form-label fw-semibold fs-6">Avatar</label>
@@ -24,7 +27,7 @@
               data-bs-original-title="Change avatar" data-kt-initialized="1">
               <i class='bx bx-pencil'></i>
               <!--begin::Inputs-->
-              <input type="file" name="avatar" accept=".png, .jpg, .jpeg">
+              <input type="file" name="avatar" accept=".png, .jpg, .jpeg" formControlName="avatar">
               <input type="hidden" name="avatar_remove">
               <!--end::Inputs-->
             </label>
@@ -60,14 +63,14 @@
           <div class="row">
             <!--begin::Col-->
             <div class="col-lg-6 fv-row fv-plugins-icon-container">
-              <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              <input type="text" name="fname" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" formControlName="first_name"
                 placeholder="First name" value="{{profilesetting.first_name}}">
               <div class="fv-plugins-message-container invalid-feedback"></div>
             </div>
             <!--end::Col-->
             <!--begin::Col-->
             <div class="col-lg-6 fv-row fv-plugins-icon-container">
-              <input type="text" name="lname" class="form-control form-control-lg form-control-solid"
+              <input type="text" formControlName="last_name"name="lname" class="form-control form-control-lg form-control-solid"
                 placeholder="Last name" value="{{profilesetting.last_name}}">
               <div class="fv-plugins-message-container invalid-feedback"></div>
             </div>
@@ -83,14 +86,14 @@
         <!--end::Label-->
         <!--begin::Col-->
         <div class="col-lg-9">
-          <input type="text" name="email" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Your Email" value="{{profilesetting.email}}">
+          <input type="text" name="email" formControlName="email" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Your Email" value="{{profilesetting.email}}">
           <div class="fv-plugins-message-container invalid-feedback"></div>
         </div>
       </div>
       <div class="row mb-6">
         <label class="col-lg-3 col-form-label required fw-semibold fs-6"> Phone </label>
         <div class="col-lg-9">
-          <input type="text" name="phone" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="phone" value="{{profilesetting.phone}}">
+          <input type="text" name="phone" formControlName="phone"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="phone" value="{{profilesetting.phone}}">
           <div class="fv-plugins-message-container invalid-feedback" ></div>
         </div>
       </div>
@@ -111,7 +114,7 @@
       <div class="row mb-6">
         <label class="col-lg-3 col-form-label required fw-semibold fs-6"> Birth_date </label>
         <div class="col-lg-9">
-          <input type="text" name="birth_date" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Birth_date " value="{{profilesetting.birth_date}}">
+          <input type="text" name="birth_date"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Birth_date" formControlName="birth_date" value="{{profilesetting.birth_date}}">
           <div class="fv-plugins-message-container invalid-feedback" ></div>
         </div>
       </div>
@@ -121,5 +124,9 @@
         <button type="submit" class="btn btn-sm align-self-center" id="kt_account_profile_details_submit">Save Changes</button>
       </div>
     </div>
+
+
+  </form>
+
   </div>
 </main>

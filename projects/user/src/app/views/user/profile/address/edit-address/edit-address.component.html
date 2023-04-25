@@ -5,9 +5,50 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-   يااااااااااااااااااااااااااااااالهووووووووى 
-      </div>
-      <div class="modal-footer">
+        <form >
+
+          <div class="row mb-6">
+            <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">Address</label>
+            <div class="col-lg-9">
+              <div class="row">
+
+                <div class="col-lg-12 fv-row fv-plugins-icon-container">
+
+                <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" formControlName="Address">
+                  <div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">State</label>
+            <div class="col-lg-9">
+              <div class="row">
+                <div class="col-lg-12 fv-row fv-plugins-icon-container">
+
+                  <input type="text"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="state">
+
+                  <div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-6">
+            <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">Country</label>
+            <div class="col-lg-9">
+              <div class="row">
+                <div class="col-lg-12 fv-row fv-plugins-icon-container">
+
+                  <input type="text"class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="country">
+
+                  <div class="fv-plugins-message-container invalid-feedback"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <div class="modal-footer">
         <button class="btn btn-sm btn-light btn_font" data-bs-dismiss="modal" aria-label="Close">
           Cancel
         </button>
@@ -15,6 +56,9 @@
           Edit
         </button>
       </div>
+        </form>
+      </div>
+
     </div>
   </div>
 </main>

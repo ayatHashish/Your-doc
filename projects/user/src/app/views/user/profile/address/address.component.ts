@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { AddressDoctorService } from 'projects/user/src/app/share/services/address-doctor.service';
 
 @Component({
   selector: 'app-address',
@@ -7,4 +8,8 @@ import { Component, Input } from '@angular/core';
 })
 export class AddressComponent {
   @Input() profileaddress: any;
+constructor(){}
+
+
+
 }
