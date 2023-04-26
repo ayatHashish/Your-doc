@@ -27,7 +27,7 @@
                 <button class="btn btn-sm button_custom me-3" data-kt-billing-action="card-delete"
                   data-bs-toggle="modal" data-bs-target="#deleteAddress" (click)='openModal(address["id"])'>Delete</button>
                 <button class="btn btn-sm button_custom" data-bs-toggle="modal"
-                  data-bs-target="#editAddress">Edit</button>
+                  data-bs-target="#editAddress" (click)='openUpdateModal(address["id"], address["address"], address["state"], address["country"])'>Edit</button>
               </div>
             </div>
           </div>
@@ -51,5 +51,5 @@
 <!-- edit -->
 <div class="modal fade" id="editAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <app-edit-address></app-edit-address>
+  <app-edit-address [addressedit]="getAddressEdit()"></app-edit-address>
 </div>

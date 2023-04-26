@@ -1,11 +1,11 @@
-<!-- <main class="modal-handle">
+<main class="modal-handle">
   <div class="modal-dialog modal-dialog-centered align-center">
     <div class="modal-content deletslots-page">
       <div class="modal-header">
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form (submit)="updateAddress()">
+        <form [formGroup]="updateAddressForm" (ngSubmit)="updateAddress()">
 
           <div class="row mb-6">
             <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="address_id">Address</label>
@@ -14,7 +14,8 @@
 
                 <div class="col-lg-12 fv-row fv-plugins-icon-container">
 
-                <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"  [(ngModel)]="address.address">
+                  <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" id="address"
+                    name="address" formControlName="address" value="{{addressedit.itemAddress}}">
                   <div class="fv-plugins-message-container invalid-feedback"></div>
                 </div>
               </div>
@@ -27,7 +28,8 @@
               <div class="row">
                 <div class="col-lg-12 fv-row fv-plugins-icon-container">
 
-                  <input type="text"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="state" [(ngModel)]="address.state">
+                  <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                    formControlName="state" id="state" name="state" value="{{addressedit.itemState}}">
 
                   <div class="fv-plugins-message-container invalid-feedback"></div>
                 </div>
@@ -41,24 +43,25 @@
               <div class="row">
                 <div class="col-lg-12 fv-row fv-plugins-icon-container">
 
-                  <input type="text"class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"[(ngModel)]="address.country">
+                  <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                    formControlName="country" id="country" name="country" value="{{addressedit.itemCountry}}">
 
                   <div class="fv-plugins-message-container invalid-feedback"></div>
                 </div>
               </div>
             </div>
           </div>
-        <div class="modal-footer">
-        <button class="btn btn-sm btn-light btn_font" data-bs-dismiss="modal" aria-label="Close">
-          Cancel
-        </button>
-        <button  class="btn btn-sm btn-danger btn_font">
-          Edit
-        </button>
-      </div>
+          <div class="modal-footer">
+            <button class="btn btn-sm btn-light btn_font" data-bs-dismiss="modal" aria-label="Close" >
+              Cancel
+            </button>
+            <button class="btn btn-sm btn-danger btn_font">
+              Edit
+            </button>
+          </div>
         </form>
       </div>
 
     </div>
   </div>
-</main> -->
+</main>
