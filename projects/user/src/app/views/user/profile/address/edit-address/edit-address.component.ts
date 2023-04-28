@@ -8,11 +8,17 @@ import { AddressDoctorService } from 'projects/user/src/app/share/services/addre
   styleUrls: ['./edit-address.component.scss']
 })
 export class EditAddressComponent {
-  @Input() addressedit!: { itemId: number, itemAddress: any, itemState: any, itemCountry: any };
+  @Input() addressedit!:
+    {
+      itemId: number,
+      itemAddress: any,
+      itemState: any,
+      itemCountry: any
+    };
   updateDataJson: any = { address_id: '' };
 
   constructor(private _update: AddressDoctorService) { }
-  
+
   onchangeInput(e: any) {
     e.stopPropagation();
     this.updateDataJson[`${e.target.name}`] = e.target.value;
@@ -28,14 +34,6 @@ export class EditAddressComponent {
   get address() { return this.updateAddressForm.get('address') }
   get state() { return this.updateAddressForm.get('state') }
   get country() { return this.updateAddressForm.get('country') }
-
-
-  //edit for make data at input to update it
-  // onedit() {
-  //   this.updateAddressForm.controls['address'].setValue(this.userdata[0]?.address);
-  //   this.updateAddressForm.controls['state'].setValue(this.userdata[0]?.state);
-  //   this.updateAddressForm.controls['country'].setValue(this.userdata[0]?.country);
-  // }
 
   updateAddress() {
     if (this.updateAddressForm.valid) {

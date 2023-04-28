@@ -16,7 +16,7 @@ export class AddressComponent {
   itemState: any;
   itemCountry: any;
   item = { id: 1, address: '' };
-  address: any
+  // address: any
   constructor(private _allAddress: AddressDoctorService) { }
 
   alladdress() {
@@ -36,7 +36,11 @@ export class AddressComponent {
     this.itemCountry = country;
   }
   getAddressEdit() {
-    return { itemId: this.itemId, itemAddress: this.itemAddress, itemState: this.itemState, itemCountry: this.itemCountry };
+    return {
+      itemId: this.itemId,
+       itemAddress: this.itemAddress,
+        itemState: this.itemState,
+        itemCountry: this.itemCountry };
   }
 
 }

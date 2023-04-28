@@ -10,7 +10,6 @@ import { CustomValidators } from 'ng2-validation';
   styleUrls: ['./security.component.scss', './../details/details.component.scss']
 })
 export class SecurityComponent {
-  // @Input() securityedit!: { itemId: number, itemAddress: string, itemState: string, itemCountry: string };
 
   constructor(private _update: ProfileService) { }
   errorMsg: string = '';

@@ -37,7 +37,8 @@
                 <td>{{slot.start_time}}</td>
                 <td>{{slot.end_time}}</td>
                 <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                    (click)='openUpdateModal(slot, clinic.id)'>
                     <i class='bx bx-edit-alt'></i>
                   </a>
                   <a type="button" (click)="openModal(slot.id)" class="btn btn-sm" data-bs-toggle="modal"
@@ -64,7 +65,7 @@
 <!-- edit -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <app-editslot></app-editslot>
+  <app-editslot [slotedit]="item"></app-editslot>
 </div>
 <!-- Delete -->
 <div class="modal fade" id="delete" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
