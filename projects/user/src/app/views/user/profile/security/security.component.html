@@ -3,50 +3,62 @@
     <div class="card-header cursor-pointer">
       <!--begin::Card title-->
       <div class="card-title m-0">
-          <h3 class="m-0">Security</h3>
+        <h3 class="m-0">Security</h3>
       </div>
-  </div>
-    <div class="card-body">
-  <div class="row mb-6">
-    <label class="col-lg-3 col-form-label required fw-semibold fs-6"> Current Password </label>
-    <div class="col-lg-9">
-  <input type="password" name="password" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Current Password ">
-
-  
-            <div class="fv-plugins-message-container invalid-feedback"></div>
-          </div>
-</div>
-
-<div class="row mb-6">
-  <!--begin::Label-->
-  <label class="col-lg-3 col-form-label required fw-semibold fs-6">New password</label>
-  <!--end::Label-->
-
-  <!--begin::Col-->
-  <div class="col-lg-9">
-      <!--begin::Row-->
-      <div class="row">
-          <!--begin::Col-->
-          <div class="col-lg-6 fv-row fv-plugins-icon-container">
-              <input type="text" name="newpPassword" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="New password">
-          <div class="fv-plugins-message-container invalid-feedback"></div></div>
-          <!--end::Col-->
-
-          <!--begin::Col-->
-          <div class="col-lg-6 fv-row fv-plugins-icon-container">
-              <input type="text" name="confirmPassword" class="form-control form-control-lg form-control-solid" placeholder="confirm New password">
-          <div class="fv-plugins-message-container invalid-feedback"></div></div>
-          <!--end::Col-->
-      </div>
-      <!--end::Row-->
-  </div>
-  <!--end::Col-->
-</div>
-
-<div class="footer-card d-flex justify-content-end mt-5">
-  <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2">Discard</button>
-  <button type="submit" class="btn btn-sm align-self-center" id="kt_account_profile_details_submit">Save Changes</button>
-</div>
     </div>
+    <form [formGroup]="updatePassword" (ngSubmit)="updatedpass()">
+      <div class="card-body">
+        <div class="row mb-6">
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6"> Current Password </label>
+          <div class="col-lg-9">
+            <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
+
+            <input type="password" name="password" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              placeholder="Current Password " formControlName="current_password">
+              <!-- The current password field is required. -->
+              <div class="alert alert-danger my-2" *ngIf="current_password?.invalid &&(current_password?.dirty || current_password?.touched)">
+                <li *ngIf="current_password?.errors?.['required']">Current password irequired</li>
+              </div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6">New password</label>
+          <div class="col-lg-9">
+            <!--begin::Row-->
+            <div class="row">
+              <!--begin::Col-->
+              <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                <input type="text" name="newpPassword"
+                  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="New password"
+                  formControlName="password">
+                  <div class="alert alert-danger my-2" *ngIf="newPassword?.invalid &&(newPassword?.dirty || newPassword?.touched)">
+                    <li *ngIf="newPassword?.errors?.['min']">Password must be at least 8 characters</li>
+                  </div>
+              </div>
+              <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                <input type="text" name="confirmPassword" class="form-control form-control-lg form-control-solid"
+                  placeholder="Confirm New password" formControlName="password_confirmation">
+                  <div class="alert alert-danger my-2" *ngIf="password_confirm?.invalid &&(password_confirm?.dirty || password_confirm?.touched)">
+                    <li *ngIf="password_confirm?.errors?.['required']">Password is required</li>
+                    <li *ngIf="password_confirm?.errors?.['equalTo']">Confirm Password didn't matche</li>
+                  </div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+        </div>
+
+        <div class="footer-card d-flex justify-content-end mt-5">
+          <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2">Discard</button>
+          <button type="submit" class="btn btn-sm align-self-center" id="kt_account_profile_details_submit">Save
+            Changes</button>
+        </div>
+      </div>
+
+
+    </form>
+
   </div>
 </main>

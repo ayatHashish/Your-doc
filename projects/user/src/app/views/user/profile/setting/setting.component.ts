@@ -31,25 +31,15 @@ export class SettingComponent {
     this.updateDataJson[`${e.target.name}`] = e.target.value;
     console.log(this.updateDataJson);
   }
-
   updatedForm: FormGroup = new FormGroup({
-    first_name: new FormControl(null, [Validators.required]), // form control in angular mean input
-    last_name: new FormControl(null, [Validators.required]),
-    email: new FormControl(null, [Validators.required]),
-    phone: new FormControl(null, [Validators.required]),
-    avatar: new FormControl(null, [Validators.required]),
-    password: new FormControl(null, [Validators.required]),
-    current_password: new FormControl(null, [Validators.required]),
-    password_confirmation: new FormControl(null, [Validators.required]),
-    gender: new FormControl(null, [Validators.required]),
-    birth_date: new FormControl(null, [Validators.required]),
-    address: new FormControl(null, [Validators.required]),
-    state: new FormControl(null, [Validators.required]),
-    country: new FormControl(null, [Validators.required]),
-    // password: this.password,
-    // password_confirmation: this.password_confirmation,
+    first_name: new FormControl(''),
+    last_name: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    // avatar: new FormControl(''),
+    gender: new FormControl(''),
+    birth_date: new FormControl(''),
   });
-
   // getuserdata() {
   //   this._AuthService.getuserdata().subscribe((res) => {
   //     this.userdata = res.data;
@@ -58,32 +48,36 @@ export class SettingComponent {
   //   });
   // }
   //edit for make data at input to update it
-  onedit() {
-    this.updatedForm.controls['first_name'].setValue(
-      this.userdata[0]?.first_name
-    );
-    this.updatedForm.controls['last_name'].setValue(
-      this.userdata[0]?.last_name
-    );
-    this.updatedForm.controls['phone'].setValue(this.userdata[0]?.phone);
-    this.updatedForm.controls['email'].setValue(this.userdata[0]?.email);
-    this.updatedForm.controls['country_id'].setValue(
-      this.userdata[0]?.country_id
-    );
-    this.updatedForm.controls['address'].setValue(
-      this.userdata[0].address[0]?.address
-    );
-    // this.updatedForm.controls['address2'].setValue(
-    //   this.userdata[0].address[0]?.address2
-    // );
-    this.updatedForm.controls['city'].setValue(
-      this.userdata[0].address[0]?.city
-    );
-  }
-
+  // onedit() {
+  //   this.updatedForm.controls['first_name'].setValue(
+  //     this.userdata[0]?.first_name
+  //   );
+  //   this.updatedForm.controls['last_name'].setValue(
+  //     this.userdata[0]?.last_name
+  //   );
+  //   this.updatedForm.controls['phone'].setValue(this.userdata[0]?.phone);
+  //   this.updatedForm.controls['email'].setValue(this.userdata[0]?.email);
+  //   this.updatedForm.controls['country_id'].setValue(
+  //     this.userdata[0]?.country_id
+  //   );
+  //   this.updatedForm.controls['address'].setValue(
+  //     this.userdata[0].address[0]?.address
+  //   );
+  //   // this.updatedForm.controls['address2'].setValue(
+  //   //   this.userdata[0].address[0]?.address2
+  //   // );
+  //   this.updatedForm.controls['city'].setValue(
+  //     this.userdata[0].address[0]?.city
+  //   );
+  // }
   updated() {
-    this._update.update('data:any').subscribe((res) => {
-      console.log(res);
+    this.updatedForm.patchValue({
+      //12/02/1998
+      // address_id: this.addressedit.itemId
+    });
+    this._update.update(this.updatedForm.value).subscribe((res) => {
+      console.log('address updated successfully');
     });
   }
+
 }

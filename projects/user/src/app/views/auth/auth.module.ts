@@ -9,7 +9,7 @@ import { ShareModule } from '../../share/share.module';
 import { ForgetpassComponent } from './forgetpass/forgetpass.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { TestComponent } from './test/test.component';
+// import { TestComponent } from './test/test.component';
 import { UserModule } from '../user/user.module';
 
 
@@ -20,7 +20,7 @@ import { UserModule } from '../user/user.module';
     RegisterComponent,
     ForgetpassComponent,
     LoginComponent,
-    TestComponent,
+    // TestComponent,
   ],
   imports: [
     CommonModule,

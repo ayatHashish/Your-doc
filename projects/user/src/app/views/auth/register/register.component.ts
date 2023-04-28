@@ -8,6 +8,7 @@ import { DoctorsService } from '../../../share/services/doctors.service';
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss', './../login/login.component.scss']
 })
+
 export class RegisterComponent {
   selectedOption = 'user';
   role:any = ""
@@ -98,7 +99,6 @@ export class RegisterComponent {
         console.log(res);
       },
       (e) => {
-
         this.errorMsg = e.error.error;
         console.log(e);
       },

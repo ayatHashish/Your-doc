@@ -1,7 +1,5 @@
-import { Component, Inject, Input } from '@angular/core';
-import { inject } from '@angular/core/testing';
+import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { TimeScale } from 'chart.js';
 import { AddressDoctorService } from 'projects/user/src/app/share/services/address-doctor.service';
 
 @Component({
@@ -10,22 +8,40 @@ import { AddressDoctorService } from 'projects/user/src/app/share/services/addre
   styleUrls: ['./edit-address.component.scss']
 })
 export class EditAddressComponent {
-  @Input() addressedit!: { itemId: number, itemAddress: string, itemState: string, itemCountry: string };
+  @Input() addressedit!: { itemId: number, itemAddress: any, itemState: any, itemCountry: any };
+  updateDataJson: any = { address_id: '' };
 
-  constructor(private _update: AddressDoctorService) {}
+  constructor(private _update: AddressDoctorService) { }
+  
+  onchangeInput(e: any) {
+    e.stopPropagation();
+    this.updateDataJson[`${e.target.name}`] = e.target.value;
+    // console.log(this.updateDataJson);
+  }
 
-  updateAddressForm = new FormGroup({
+  updateAddressForm: FormGroup = new FormGroup({
     address_id: new FormControl(),
-    address: new FormControl(''),
-    state: new FormControl(''),
-    country: new FormControl(''),
+    address: new FormControl(null, [Validators.required]),
+    state: new FormControl(null, [Validators.required]),
+    country: new FormControl(null, [Validators.required])
   });
+  get address() { return this.updateAddressForm.get('address') }
+  get state() { return this.updateAddressForm.get('state') }
+  get country() { return this.updateAddressForm.get('country') }
+
+
+  //edit for make data at input to update it
+  // onedit() {
+  //   this.updateAddressForm.controls['address'].setValue(this.userdata[0]?.address);
+  //   this.updateAddressForm.controls['state'].setValue(this.userdata[0]?.state);
+  //   this.updateAddressForm.controls['country'].setValue(this.userdata[0]?.country);
+  // }
 
   updateAddress() {
-    this.updateAddressForm.patchValue({
-      address_id: this.addressedit.itemId
-    });
-    this._update.updateAddress(this.updateAddressForm.value)
-      .subscribe(() => console.log('address updated successfully'));
+    if (this.updateAddressForm.valid) {
+      this.updateDataJson.address_id = this.addressedit.itemId
+      this._update.updateAddress(this.updateDataJson)
+        .subscribe(() => console.log('address updated successfully'));
+    }
   }
 }

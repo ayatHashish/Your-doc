@@ -22,6 +22,7 @@ import { AddNewAddressComponent } from './profile/address/add-new-address/add-ne
 import { DeleteAddressComponent } from './profile/address/delete-address/delete-address.component';
 import { EditAddressComponent } from './profile/address/edit-address/edit-address.component';
 import { BookingComponent } from './booking/booking.component';
+import { CustomFormsModule } from 'ng2-validation';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { BookingComponent } from './booking/booking.component';
     ReactiveFormsModule,
     TimepickerModule.forRoot(),
     FormsModule,
+    CustomFormsModule
   ],
   exports: [
     ProfileComponent,
