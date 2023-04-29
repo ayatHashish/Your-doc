@@ -14,8 +14,6 @@ export class ProfileComponent {
   profiles: any = " "
   updates: any = " "
   role: any = ""
-
-
   itemId: any;
   itemfirstName: any;
   itemlastName: any;
@@ -24,7 +22,6 @@ export class ProfileComponent {
   itemgender: any;
   itembirthDate: any;
   item = { id: 1 };
-
 
   constructor(public _profileService: ProfileService) {
     this.role = localStorage.getItem("user_role");
