@@ -2,7 +2,18 @@
 @import "../../../../assets/scss/componants/variable";
 nav {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  background-color: black;
+  // background-color: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  background-color: transparent;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  transition: background-color 0.5s ease;
   .navbar-brand {
     transition: color 0.2s ease;
     background-color: rgba(255, 255, 255, 0.1);
@@ -77,4 +88,8 @@ nav {
       }
     }
   }
+}
+
+nav.scrolled {
+  background-color: #333;
 }
