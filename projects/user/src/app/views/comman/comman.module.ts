@@ -28,7 +28,6 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     DoctorPrivacyPolicyComponent,
     AllSpecialistesComponent,
     TermsComponent
-
   ]
 })
 export class CommanModule { }

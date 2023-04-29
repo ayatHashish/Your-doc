@@ -5,7 +5,6 @@ import { ShareModule } from '../../share/share.module';
 import { LayoutsModule } from '../../share/components/layouts/layouts.modules';
 import { UserModule } from '../user/user.module';
 import { DoctorModule } from '../doctor/doctor.module';
-
 import { BannerComponent } from './home/banner/banner.component';
 import { HomeComponent } from './home/home.component';
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -23,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SpecialtiesComponent,
 
   ],
+
   imports: [
     ShareModule,
     CommonModule,
@@ -33,7 +33,5 @@ import { ReactiveFormsModule } from '@angular/forms';
     DoctorModule,
     ReactiveFormsModule
   ],
-
-
 })
 export class PageModule { }
