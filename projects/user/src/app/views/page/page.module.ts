@@ -12,7 +12,7 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SearchComponent } from './home/search/search.component';
 import { SpecialtiesComponent } from './home/specialties/specialties.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { TermsComponent } from '../comman/terms/terms.component';
+
 
 
 @NgModule({
@@ -21,7 +21,7 @@ import { TermsComponent } from '../comman/terms/terms.component';
     BannerComponent,
     SearchComponent,
     SpecialtiesComponent,
-    TermsComponent,
+
   ],
   imports: [
     ShareModule,
