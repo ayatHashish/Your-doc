@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../../../share/services/auth.service';
 import { Router } from '@angular/router';
+import { ProfileService } from '../../services/profile.service';
 
 
 
@@ -10,7 +11,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-  constructor(public _auth: AuthService , private _router: Router,){}
+
+  isScrolled = false;
+  profiles:any 
+  constructor(public _auth: AuthService , private _router: Router, private _profileService: ProfileService){
+
+    this.profile()
+  }
   ngOnInit(): void {
 
     if (localStorage.getItem('token')) {
@@ -34,7 +41,16 @@ export class NavbarComponent {
     );
   }
 
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
 
-
+ // getprofilpic
+  profile() {
+    this._profileService.profile().subscribe((res) => {
+      this.profiles = res.data
+    });
+  }
 }
 

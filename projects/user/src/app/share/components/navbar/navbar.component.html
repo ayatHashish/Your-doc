@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg fixed-top">
+<nav class="navbar navbar-expand-lg fixed-top" [ngClass]="{'scrolled': isScrolled}">
   <div class="container">
     <a class="navbar-brand" href="#">
       <img width="100" src="../../../assets/images/your-doc/logo.png" alt="" routerLink="/home" />
@@ -39,12 +39,10 @@
     <div class="profile_menu" *ngIf="_auth.isLoggedIn">
       <a class="profile_nav" routerLink="/user/profile">
         <div class="pic">
-          <img alt="User Avatar" src="../../../assets/images/doctors/doctors-1.jpg" />
+          <img alt="User Avatar" [src]="[profiles.avatar]" />
         </div>
-        <h5>Ayat Hashish</h5>
+        <h5>{{profiles.full_name}}</h5>
       </a>
-
-
       <a (click)="logout()" class="nav-link scrollto logout">
         <i class="bx bx-log-out"></i>
       </a>
