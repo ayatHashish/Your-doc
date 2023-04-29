@@ -8,11 +8,11 @@ import { AllSpecialistesComponent } from '../comman/all-specialistes/all-special
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full', },
-  {
-    path: 'home', component: HomeComponent,
-    children: [
+  { path: 'home', component: HomeComponent,
+  children: [
       { path: 'banner', component: BannerComponent },
       { path: 'specialties', component: SpecialtiesComponent },]
+
   },
 
 

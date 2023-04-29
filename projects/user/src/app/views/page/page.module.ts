@@ -34,5 +34,6 @@ import { TermsComponent } from '../comman/terms/terms.component';
     ReactiveFormsModule
   ],
 
+
 })
 export class PageModule { }
