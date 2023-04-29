@@ -8,7 +8,6 @@ import { MedicalqustionComponent } from './medicalqustion/medicalqustion.compone
 import { DoctorPrivacyPolicyComponent } from './doctor-privacy-policy/doctor-privacy-policy.component';
 import { TermsComponent } from './terms/terms.component';
 
-
 @NgModule({
   declarations: [
     AboutUsComponent,
@@ -27,6 +26,7 @@ import { TermsComponent } from './terms/terms.component';
     DoctorPrivacyPolicyComponent,
     AllSpecialistesComponent,
     TermsComponent
+
   ]
 })
 export class CommanModule { }
