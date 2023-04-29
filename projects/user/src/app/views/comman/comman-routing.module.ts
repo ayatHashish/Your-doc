@@ -7,11 +7,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { MedicalqustionComponent } from './medicalqustion/medicalqustion.component';
 
 const routes: Routes = [
-  { path: 'terms', component: TermsComponent },
+  { path: 'terms-of-use', component: TermsComponent },
   { path: 'allspcialistes', component: AllSpecialistesComponent },
   { path: 'about-us', component: AboutUsComponent },
-  { path: 'privacyPolicy', component: DoctorPrivacyPolicyComponent },
-  { path: 'medicalqustion', component: MedicalqustionComponent },
+  { path: 'medical-questions', component: MedicalqustionComponent },
+  { path: 'doctors-policy', component: DoctorPrivacyPolicyComponent },
 ];
 
 @NgModule({
