@@ -26,7 +26,6 @@ import { TermsComponent } from './terms/terms.component';
     DoctorPrivacyPolicyComponent,
     AllSpecialistesComponent,
     TermsComponent
-
   ]
 })
 export class CommanModule { }

@@ -42,8 +42,6 @@ import { CustomFormsModule } from 'ng2-validation';
     DeleteAddressComponent,
     EditAddressComponent,
     BookingComponent,
-
-
   ],
   imports: [
     ShareModule,
