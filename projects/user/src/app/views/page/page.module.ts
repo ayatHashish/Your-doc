@@ -12,13 +12,21 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SearchComponent } from './home/search/search.component';
 import { SpecialtiesComponent } from './home/specialties/specialties.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { MedicalqustionComponent } from './medicalqustion/medicalqustion.component';
+import { DoctorPrivacyPolicyComponent } from './doctor-privacy-policy/doctor-privacy-policy.component';
+import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
     BannerComponent,
     SearchComponent,
-    SpecialtiesComponent
+    SpecialtiesComponent,
+    AboutUsComponent,
+    MedicalqustionComponent,
+    DoctorPrivacyPolicyComponent,
+    AllSpecialistesComponent
   ],
   imports: [
     ShareModule,
