@@ -13,15 +13,17 @@ import { ProfileService } from '../../services/profile.service';
 export class NavbarComponent {
 
   isScrolled = false;
-  profiles:any 
+  profiles:any
   constructor(public _auth: AuthService , private _router: Router, private _profileService: ProfileService){
 
-    this.profile()
   }
   ngOnInit(): void {
 
     if (localStorage.getItem('token')) {
       this._auth.isLoggedIn = true;
+    }
+    if(this._auth.isLoggedIn == true){
+      this.profile()
     }
   }
   logout() {
