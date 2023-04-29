@@ -7,7 +7,6 @@ import { SettingComponent } from './profile/setting/setting.component';
 import { SecurityComponent } from './profile/security/security.component';
 import { AddressComponent } from './profile/address/address.component';
 import { DetailsComponent } from './profile/details/details.component';
-import { TermsComponent } from './terms/terms.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
 import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
 import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
@@ -24,6 +23,7 @@ import { EditAddressComponent } from './profile/address/edit-address/edit-addres
 import { BookingComponent } from './booking/booking.component';
 import { CustomFormsModule } from 'ng2-validation';
 
+
 @NgModule({
   declarations: [
     ProfileComponent,
@@ -31,7 +31,6 @@ import { CustomFormsModule } from 'ng2-validation';
     SecurityComponent,
     AddressComponent,
     DetailsComponent,
-    TermsComponent,
     AppoinmentComponent,
     TimeslotsComponent,
     EditslotComponent,
@@ -43,6 +42,8 @@ import { CustomFormsModule } from 'ng2-validation';
     DeleteAddressComponent,
     EditAddressComponent,
     BookingComponent,
+
+
   ],
   imports: [
     ShareModule,
@@ -59,8 +60,7 @@ import { CustomFormsModule } from 'ng2-validation';
     SecurityComponent,
     AddressComponent,
     DetailsComponent,
-    TermsComponent,
     AppoinmentComponent,
   ],
 })
-export class UserModule {}
+export class UserModule { }

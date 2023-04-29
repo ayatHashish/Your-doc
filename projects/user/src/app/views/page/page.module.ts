@@ -12,10 +12,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SearchComponent } from './home/search/search.component';
 import { SpecialtiesComponent } from './home/specialties/specialties.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { AboutUsComponent } from './about-us/about-us.component';
-import { MedicalqustionComponent } from './medicalqustion/medicalqustion.component';
-import { DoctorPrivacyPolicyComponent } from './doctor-privacy-policy/doctor-privacy-policy.component';
-import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.component';
+import { TermsComponent } from '../comman/terms/terms.component';
+
 
 @NgModule({
   declarations: [
@@ -23,10 +21,7 @@ import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.co
     BannerComponent,
     SearchComponent,
     SpecialtiesComponent,
-    AboutUsComponent,
-    MedicalqustionComponent,
-    DoctorPrivacyPolicyComponent,
-    AllSpecialistesComponent
+    TermsComponent,
   ],
   imports: [
     ShareModule,
@@ -38,5 +33,6 @@ import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.co
     DoctorModule,
     ReactiveFormsModule
   ],
+
 })
 export class PageModule { }

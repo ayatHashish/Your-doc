@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./views/page/page.module').then((m) => m.PageModule),
   },
   {
+    path: '',  component: UserlayoutsComponent,
+    loadChildren: () => import('./views/comman/comman.module').then((m) => m.CommanModule),
+  },
+  {
     path: 'auth', canActivate: [AuthGuard], component: AuthlayoutComponent,
     loadChildren: () => import('./views/auth/auth.module').then((m) => m.AuthModule),
   },
@@ -19,6 +23,7 @@ const routes: Routes = [
     path: 'user', canActivate: [AuthGuard], component: UserlayoutsComponent,
     loadChildren: () => import('./views/user/user.module').then((m) => m.UserModule),
   },
+
   {
     path: 'doctor', component: UserlayoutsComponent,
     loadChildren: () => import('./views/doctor/doctor.module').then((m) => m.DoctorModule),
