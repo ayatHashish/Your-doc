@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../../../share/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
+
+  isScrolled = false;
   constructor(public _auth: AuthService , private _router: Router,){}
   ngOnInit(): void {
 
@@ -34,6 +36,10 @@ export class NavbarComponent {
     );
   }
 
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 0;
+  }
 
 
 }
