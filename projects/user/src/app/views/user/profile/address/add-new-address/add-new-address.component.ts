@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
+import { Location } from '@angular/common';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AddressDoctorService } from 'projects/user/src/app/share/services/address-doctor.service';
 import { AddressComponent } from '../address.component';
 AddressComponent
@@ -13,7 +13,10 @@ export class AddNewAddressComponent {
   // @ViewChild('myModal') myModal: any;
   @Input() myData: any;
   errorMsg = '';
-  constructor(private _add :AddressDoctorService,  private _router: Router, private addressComponent: AddressComponent) {}
+  constructor(private _add :AddressDoctorService,
+
+      private addressComponent: AddressComponent ,
+      private location: Location) {}
   // ngOnInit(): void {
   //   this._addTime.getAddress().subscribe((res) => {
   //     this.addresses = res.data;
@@ -33,6 +36,10 @@ export class AddNewAddressComponent {
      (e) => {
        this.errorMsg = e.error.error;
       },
+      ()=> {
+        this.location.go(this.location.path());
+        window.location.reload();
+      }
      );
   }
 

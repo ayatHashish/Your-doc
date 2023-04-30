@@ -1,8 +1,5 @@
 import { Component } from '@angular/core';
 import { ProfileService } from '../../../share/services/profile.service';
-import { profile } from '../../date';
-import { ThisReceiver } from '@angular/compiler';
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -36,19 +33,5 @@ export class ProfileComponent {
       this.profiles = res.data
     });
   }
-
-  // getprofileEdit() {
-  //   return {
-  //     itemId: this.itemId,
-  //     first_name: this.itemfirstName,
-  //     last_name: this.itemlastName,
-  //     email: this.itemEmail,
-  //     phone: this.itemlastName,
-  //     gender: this.itemgender,
-  //     birth_date: this.itembirthDate,
-
-  //   };
-  // }
-
 
 }

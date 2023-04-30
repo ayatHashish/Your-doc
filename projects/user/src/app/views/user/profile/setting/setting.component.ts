@@ -1,7 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ProfileService } from 'projects/user/src/app/share/services/profile.service';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
 @Component({
   selector: 'app-setting',
@@ -17,8 +16,9 @@ export class SettingComponent {
   image: string = '';
   base64: string = '';
   imagediplay: any;
-
-  constructor(private _update: ProfileService) {}
+  cacheBuster: number = Date.now();
+  constructor(private _update: ProfileService,
+) {}
   updatedForm: FormGroup = new FormGroup({
     first_name: new FormControl(null),
     last_name: new FormControl(null),
@@ -82,6 +82,10 @@ export class SettingComponent {
         console.log('Data updated successfully');
       });
     }
+  }
+
+  refreshImage() {
+    this.cacheBuster = Date.now();
   }
 
 }

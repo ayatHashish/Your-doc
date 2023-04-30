@@ -11,9 +11,8 @@ export class SpecialtiesComponent {
 
   id :any
   spacialistes: any
+
   constructor( private _spacialist: DoctorsService ,private _ActivatedRoute: ActivatedRoute) {this.spacialist()}
-
-
   customOptions: OwlOptions = {
     loop: true,
     margin: 15,

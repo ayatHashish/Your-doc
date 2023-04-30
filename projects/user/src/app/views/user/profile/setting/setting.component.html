@@ -20,58 +20,31 @@
               class="image-input image-input-outline"
               data-kt-image-input="true"
             >
-              <div
+              <img
                 class="image-input-wrapper"
-                [ngStyle]="{
-                  'background-image': 'url(' + profilesetting.avatar + ')'
-                }"
-              ></div>
-              <!--begin::Label-->
+                [src]="profilesetting.avatar + '?' + cacheBuster"
+              />
               <label
                 class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
                 data-kt-image-input-action="change"
                 data-bs-toggle="tooltip"
                 aria-label="Change avatar"
                 data-bs-original-title="Change avatar"
-                data-kt-initialized="1"
               >
                 <i class="bx bx-pencil"></i>
-                <!--begin::Inputs-->
                 <input
                   type="file"
                   name="avatar"
                   accept=".png, .jpg, .jpeg"
                   formControlName="avatar"
                   (change)="selectimage($event)"
+
                 />
+                
                 <input type="hidden" name="avatar_remove" />
-                <!--end::Inputs-->
               </label>
-              <!--end::Label-->
-              <!--begin::Cancel-->
-              <span
-                class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                data-kt-image-input-action="cancel"
-                data-bs-toggle="tooltip"
-                aria-label="Cancel avatar"
-                data-bs-original-title="Cancel avatar"
-                data-kt-initialized="1"
-              >
-              </span>
-              <!--end::Cancel-->
-              <!--begin::Remove-->
-              <span
-                class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
-                data-kt-image-input-action="remove"
-                data-bs-toggle="tooltip"
-                aria-label="Remove avatar"
-                data-bs-original-title="Remove avatar"
-                data-kt-initialized="1"
-              >
-                <i class="bx bx-x fs-2"></i>
-              </span>
-              <!--end::Remove-->
             </div>
+
             <!--end::Image input-->
             <!--begin::Hint-->
             <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
@@ -81,7 +54,9 @@
         </div>
         <div class="row mb-6">
           <!--begin::Label-->
-          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Name</label>
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6"
+            >Name</label
+          >
           <div class="col-lg-9">
             <!--begin::Row-->
             <div class="row">
@@ -93,7 +68,7 @@
                   class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
                   formControlName="first_name"
                   placeholder="First name"
-                  value="{{ profilesetting.first_name}}"
+                  value="{{ profilesetting.first_name }}"
                   (change)="onchangeInput($event)"
                 />
                 <div

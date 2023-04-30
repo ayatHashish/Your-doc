@@ -57,18 +57,12 @@ toggleAccept() {
 
 cancel(id: number) {
   this._book.cancelBooking(id).subscribe(
-    (res) => {
-
-    },
+    (res) => {},
     (e) => console.error(e.error.error) ,
     ()=> {
-      
        this.showIcon = !this.showIcon;
        this.cansled = this.showIcon ? '' : 'Canseled';
     }
-
-
-
     )
 
 }

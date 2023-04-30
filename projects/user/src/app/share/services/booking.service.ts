@@ -32,4 +32,6 @@ export class BookingService {
   allSpatialistsDostors(id: number, pageNum: number): Observable<any> {
     return this._http.get(this.baseUrl + `get_doctors_by_specialty?page=${pageNum}&specialty_id=${id}`)
   }
+
+
 }

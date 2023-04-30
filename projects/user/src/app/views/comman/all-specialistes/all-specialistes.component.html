@@ -7,11 +7,8 @@
         <div class="specialist" routerLink="/doctor/spcialiset/{{item.id}}">
           <div class="overlay"></div>
           <div class="image">
-            <img
-              [src]="item.image"
-              alt="{{item.title}}"
-            />
-          </div>
+            <img  [src]="item.image" alt="{{item.title}}"/>
+           </div>
           <div class="content">
             <h3>{{item.title}}</h3>
           </div>
@@ -21,7 +18,8 @@
   </div>
    </div>
     </div>
-
+    <!-- <button *ngIf="(page * pageSize) < spacialistes.length" (click)="showMore()">Show More</button> -->
+    <button (click)="loadItems()">Show More</button>
 </div>
 
 

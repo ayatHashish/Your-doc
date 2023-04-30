@@ -1,7 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
+import { Location } from '@angular/common';
 import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { TimeslotsComponent } from '../timeslots.component';
 import { format } from 'date-fns';
 
@@ -43,8 +43,9 @@ export class AddTimeComponent {
 
   constructor(
     private _addTime: TimeslotService,
-    private _router: Router,
-    private timeslotsComponent: TimeslotsComponent
+    private timeslotsComponent: TimeslotsComponent,
+    private location: Location
+    ,
   ) {
     this.creatSlotForm = new FormGroup({
       address_id: new FormControl('', [Validators.required]),
@@ -59,7 +60,7 @@ export class AddTimeComponent {
       this.addresses = res.data;
     });
   }
-  
+
 
   createSlot() {
     this.creatSlotForm.patchValue({
@@ -75,8 +76,9 @@ export class AddTimeComponent {
       (e) => {
         this.errorMsg = e.error.error;
       },
-      () => {
-        this._router.navigate(['/user/profile/timeslots']);
+      ()=> {
+        this.location.go(this.location.path());
+        window.location.reload();
       }
     );
   }

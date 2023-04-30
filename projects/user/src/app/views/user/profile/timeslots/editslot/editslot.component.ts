@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TimeslotService } from 'projects/user/src/app/share/services/timeslot.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-editslot',
@@ -16,7 +17,9 @@ export class EditslotComponent {
   daysEN = ['Saturday', 'Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday',];
   daysAR = ['السبت', 'الأحد', 'الأثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعه'];
   errorMsg: any
-  constructor(private _addTime: TimeslotService) { }
+  constructor(
+    private _addTime: TimeslotService ,
+    private location: Location) { }
 
   editSlotForm = new FormGroup({
     day_ar: new FormControl(),
@@ -35,7 +38,6 @@ export class EditslotComponent {
     this.updateDataJson[`${e.target.name}`] = e.target.value;
 
   }
-
   editSlot() {
     if (this.editSlotForm.valid) {
       this.updateDataJson.slot_id = this.slotedit.id
@@ -50,8 +52,9 @@ export class EditslotComponent {
           (e) => {
             this.errorMsg = e.error.error;
           },
-          () => {
-            // this._router.navigate(['/user/profile/timeslots']);
+          ()=> {
+            this.location.go(this.location.path());
+            window.location.reload();
           }
         );
     }

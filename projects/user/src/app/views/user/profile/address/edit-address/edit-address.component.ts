@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AddressDoctorService } from 'projects/user/src/app/share/services/address-doctor.service';
+import { Location } from '@angular/common';
+
 
 @Component({
   selector: 'app-edit-address',
@@ -17,7 +19,7 @@ export class EditAddressComponent {
     };
   updateDataJson: any = { address_id: '' };
 
-  constructor(private _update: AddressDoctorService) { }
+  constructor(private _update: AddressDoctorService ,private location: Location) { }
 
   onchangeInput(e: any) {
     e.stopPropagation();
@@ -36,10 +38,21 @@ export class EditAddressComponent {
   get country() { return this.updateAddressForm.get('country') }
 
   updateAddress() {
+
+
+
     if (this.updateAddressForm.valid) {
       this.updateDataJson.address_id = this.addressedit.itemId
       this._update.updateAddress(this.updateDataJson)
-        .subscribe(() => console.log('address updated successfully'));
+        .subscribe(() => console.log('address updated successfully')
+
+        );
     }
+
+    this.location.go(this.location.path());
+    window.location.reload();
   }
+
+
+
 }

@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { Location } from '@angular/common';
+
 import { AddressDoctorService } from 'projects/user/src/app/share/services/address-doctor.service';
 import { AddressComponent } from '../address.component';
 
@@ -16,7 +17,8 @@ export class DeleteAddressComponent {
   @Input() profileaddress: any;
   constructor(
     private _deleteAddress: AddressDoctorService,
-    private addressComponent: AddressComponent
+    private addressComponent: AddressComponent ,
+    private location: Location
   ) {}
 
   deleteAddress(id: number) {
@@ -24,7 +26,12 @@ export class DeleteAddressComponent {
       (res) => {
         this.addressComponent.alladdress();
       },
-      (e) => console.error(e.error.error)
+      (e) => {console.error(e.error.error) ;},
+      ()=> {
+        this.location.go(this.location.path());
+        window.location.reload();
+      }
+
     );
   }
 }

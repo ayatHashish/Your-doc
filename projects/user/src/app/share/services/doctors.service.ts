@@ -18,10 +18,12 @@ export class DoctorsService {
       details: true
     }; return this._http.post(this.baseUrl + `${'get_doctor_details'}`, data)
   }
+  allSpatialistsPage(page: number): Observable<any> {
+    return this._http.get(this.baseUrl + `get_all_specialties?page=${page}`)
+  }
   allSpatialists(): Observable<any> {
     return this._http.get(this.baseUrl + `${'get_all_specialties'}`)
   }
-
   search(data :any): Observable<any> {
     return this._http.post(this.baseUrl + `${'search'}` , data)
   }
