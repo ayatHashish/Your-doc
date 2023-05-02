@@ -18,11 +18,14 @@ export class BookingService {
   }
 
   cancelBooking(id: number): Observable<any> {
-    return this._http.post(this.baseUrl + `${'cancel_booking'}`, id)
+
+    const body = { booking_id: id };
+    return this._http.post(this.baseUrl + `${'cancel_booking'}`, body)
   }
 
-  acceptBooking(data: any): Observable<any> {
-    return this._http.post(this.baseUrl + `${'accept_booking'}`, data)
+  acceptBooking(id: number): Observable<any> {
+    const body = { booking_id: id };
+    return this._http.post(this.baseUrl + `${'accept_booking'}`, body)
   }
 
   getMyAppointment(pageNum: number): Observable<any> {

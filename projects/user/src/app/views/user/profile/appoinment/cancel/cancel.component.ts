@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { BookingService } from 'projects/user/src/app/share/services/booking.service';
 
 @Component({
   selector: 'app-cancel',
@@ -6,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./cancel.component.scss',]
 })
 export class CancelComponent {
- 
+
 }
+
+
+
+
+

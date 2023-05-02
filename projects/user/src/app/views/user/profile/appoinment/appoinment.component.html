@@ -19,7 +19,9 @@
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
               <tr>
                 <td>ID</td>
-                <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">Doctor Name</td>
+                <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">
+                  Doctor Name
+                </td>
                 <td [ngClass]="role == 'User' ? 'd-none' : ''">User Name</td>
                 <td>Booking Day</td>
                 <td>Booking Date</td>
@@ -30,32 +32,36 @@
             </thead>
             <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments; let i = index">
               <tr>
-                <td>#{{i+1}}</td>
-                <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">{{ appoint.doctor_name }}</td>
-                <td [ngClass]="role == 'User' ? 'd-none' : ''">{{ appoint.user_name }}</td>
+                <td>#{{ i + 1 }}</td>
+                <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">
+                  {{ appoint.doctor_name }}
+                </td>
+                <td [ngClass]="role == 'User' ? 'd-none' : ''">
+                  {{ appoint.user_name }}
+                </td>
                 <td>{{ appoint.booking_day }}</td>
                 <td>{{ appoint.booking_date }}</td>
                 <td>{{ appoint.status }}</td>
                 <td>
                   <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
-                    <i class='bx bx-show-alt' ></i>
-
+                    <i class="bx bx-show-alt"></i>
                   </a>
                 </td>
                 <td>
-                  <a type="button" class="btn btn-sm" [ngClass]="role == 'User' ? 'd-none' : ''">
-                    {{ accept }}
-                    <i class='bx bx-error-circle'*ngIf="showIcon"></i>
+                  <!--  -->
+                  <a type="button" class="btn btn-sm" (click)="acceptBookings(appoint.id)"
+                    [ngClass]="role == 'User' ? 'd-none' : ''">
+                    <!-- {{ accept }} -->
+                    <i class="bx bx-error-circle" *ngIf=""></i>
                   </a>
-                  <a type="button" (click)="cancel(appoint.id)" class="btn btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#cancel">
-                    {{ cansled }}
-                    <i class='bx bx-x-circle' *ngIf="showIcon"></i>
+<!-- data-bs-toggle="modal" -->
+                  <a type="button" class="btn btn-sm" data-bs-target="#cancel"
+                    (click)="cancel($event, appoint.id)">
+                    <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
                   </a>
                 </td>
               </tr>
             </tbody>
-
           </table>
           <div class="custom_pagination my-3">
             <ul class="pagination">

@@ -20,8 +20,9 @@ import { FormsModule } from '@angular/forms';
 import { AddNewAddressComponent } from './profile/address/add-new-address/add-new-address.component';
 import { DeleteAddressComponent } from './profile/address/delete-address/delete-address.component';
 import { EditAddressComponent } from './profile/address/edit-address/edit-address.component';
-import { BookingComponent } from './booking/booking.component';
+
 import { CustomFormsModule } from 'ng2-validation';
+import { UserBookingComponent } from './user-booking/user-booking.component';
 
 
 @NgModule({
@@ -41,7 +42,7 @@ import { CustomFormsModule } from 'ng2-validation';
     AddNewAddressComponent,
     DeleteAddressComponent,
     EditAddressComponent,
-    BookingComponent,
+    UserBookingComponent,
   ],
   imports: [
     ShareModule,

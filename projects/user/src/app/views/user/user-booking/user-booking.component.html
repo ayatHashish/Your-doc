@@ -1,0 +1,83 @@
+<main class="main" data-icms-placeholder="main">
+  <div class="dynamic-page" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
+    <div class="container">
+      <div class="vco-details-page">
+        <section class="vco-details-content">
+          <div class="container-fluid">
+            <div class="details-wrapper">
+              <form [formGroup]="bookingForm" (ngSubmit)="(bookingFunction)">
+                <div class="dr-details">
+                  <div class="row mb-6">
+                    <div class="col-lg-9">
+                      <!--begin::Row-->
+                      <div class="row">
+                        <!--begin::Col-->
+                        <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Doctor Name</label>
+                          <input type="text" name="fname"
+                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                            placeholder="Doctor Name"  />
+                          <div class="fv-plugins-message-container invalid-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="row mb-6">
+                    <div class="col-lg-9">
+                      <!--begin::Row-->
+                      <div class="row">
+                        <!--begin::Col-->
+                        <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Patient Name</label>
+                          <input type="text" name="patient_name" formControlName="patient_name"
+                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                            placeholder="Patient Name" value="" />
+                          <div class="fv-plugins-message-container invalid-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-6">
+                    <div class="col-lg-9">
+                      <!--begin::Row-->
+                      <div class="row">
+                        <!--begin::Col-->
+                        <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Date</label>
+                          <input type="date" name="" formControlName="booking_date"
+                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                            placeholder="Booking Date" value="" />
+                          <div class="fv-plugins-message-container invalid-feedback"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row mb-6">
+                    <div class="col-lg-6">
+                      <label class="col-lg-3 col-form-label required fw-semibold fs-6">
+                        age</label>
+                <input type="number"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" name="age" formControlName="age" placeholder="Age">
+
+
+                      <div class="fv-plugins-message-container invalid-feedback"></div>
+                    </div>
+                  </div>
+                  <div class="row mb-6">
+                    <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                      <label class="col-lg-3 col-form-label required fw-semibold fs-6">Disease Dec</label>
+                      <textarea id="message" name="message" formControlName="disease_dec"
+                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"></textarea>
+                    </div>
+                  </div>
+
+                </div>
+                <button type="submit" class="btn-lo fadeIn">Send</button>
+              </form>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>

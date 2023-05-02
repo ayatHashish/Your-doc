@@ -15,63 +15,55 @@ export class AppoinmentComponent {
   currentPage = 1;
   totalPages: number = 10;
   role:any = ""
-  cansled: string = '';
-  accept: string = '';
-  showIcon: boolean = true;
+  showIcon = true;
+  cancelText = 'Cancel';
 
-  // pageSize = Array.from({ length: this.totalPages }, (_, index) => index);
+  isCanceled: boolean = false;
 
   constructor(private _book: BookingService) {
     this.role= localStorage.getItem("user_role");
     this.getAppoinment(this.currentPage);
-    // console.log(this.pageSize);
   }
-
   getAppoinment(page: number) {
     this._book.getMyAppointment(page).subscribe((res) => {
       this.appoinments = res.data;
       this.totalPages = res.count_pages;
     });
   }
-
   nextPage(): void {
     this.currentPage++;
     this.getAppoinment(this.currentPage);
   }
-
   previousPage(): void {
     if (this.currentPage > 1) {
       this.currentPage--;
       this.getAppoinment(this.currentPage);
     }
   }
+ acceptBookings(id: number) {
+  this._book.acceptBooking(id).subscribe(
+    (res) => {
+         console.log('Booking cancelled successfully.');
+    },
+    error => {
+      console.error('Error cancelling booking:', error);
+    },
+    () => {
 
-toggleIcon() {
-
-}
-
-toggleAccept() {
-  this.showIcon = !this.showIcon;
-  this.accept = this.showIcon ? '' : 'Accepted';
-}
-
-cancel(id: number) {
-  this._book.cancelBooking(id).subscribe(
-    (res) => {},
-    (e) => console.error(e.error.error) ,
-    ()=> {
-       this.showIcon = !this.showIcon;
-       this.cansled = this.showIcon ? '' : 'Canseled';
     }
-    )
-
+  );
 }
-// getAppoinment(page: number) {
-//   this._book.getMyAppointment(page).subscribe((res) => {
-//     this.appoinments = res.data;
-//     this.totalPages = res.count_pages;
-//   });
-// }
-// (click)="deleteSlot(slotId)"
+
+cancel(e: Event,id: number) {
+  e.preventDefault();
+  const target = e.target as HTMLElement;
+  target.innerText = 'Canceling';
+  this._book.cancelBooking(id).subscribe(
+    (res) => {
+        //  this.isCanceled= true
+    },
+  );
+}
+
 
 }
