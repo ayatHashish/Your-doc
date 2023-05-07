@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { DateFormatPipe } from './pipe/date-format.pipe';
 
 
 
@@ -14,6 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
     NotfoundComponent,
     NavbarComponent,
     FooterComponent,
+    DateFormatPipe,
 
     /* UserlayoutsComponent, */
 

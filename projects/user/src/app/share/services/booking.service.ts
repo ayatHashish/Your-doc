@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class BookingService {
-  baseUrl = 'http://ydoctor.atwebpages.com/user/';
-
+  private  baseUrl = environment.baseUrl;
+ 
   constructor(private _http: HttpClient) { }
 
   booking(data: any): Observable<any> {

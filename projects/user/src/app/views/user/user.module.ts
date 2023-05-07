@@ -23,6 +23,7 @@ import { EditAddressComponent } from './profile/address/edit-address/edit-addres
 
 import { CustomFormsModule } from 'ng2-validation';
 import { UserBookingComponent } from './user-booking/user-booking.component';
+import { DateFormatPipe } from '../../share/pipe/date-format.pipe';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { UserBookingComponent } from './user-booking/user-booking.component';
     DeleteAddressComponent,
     EditAddressComponent,
     UserBookingComponent,
+    //  DateFormatPipe
   ],
   imports: [
     ShareModule,
@@ -51,7 +53,8 @@ import { UserBookingComponent } from './user-booking/user-booking.component';
     ReactiveFormsModule,
     TimepickerModule.forRoot(),
     FormsModule,
-    CustomFormsModule
+    CustomFormsModule,
+
   ],
   exports: [
     ProfileComponent,

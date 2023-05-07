@@ -9,10 +9,12 @@ import { Observable, Subscriber } from 'rxjs';
     './setting.component.scss',
     './../details/details.component.scss',
   ],
+
 })
 export class SettingComponent {
   @Input() profilesetting: any;
   updateDataJson: any = {};
+  avatar :any ;
   image: string = '';
   base64: string = '';
   imagediplay: any;

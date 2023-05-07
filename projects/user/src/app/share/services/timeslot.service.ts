@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class TimeslotService {
 
-  baseUrl = 'http://ydoctor.atwebpages.com/user/'
+  private  baseUrl = environment.baseUrl;
   constructor(private _http: HttpClient) { }
 
   getAllSlots(): Observable<any> {

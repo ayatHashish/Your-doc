@@ -5,15 +5,21 @@ import { environment } from '../../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class TestService {
+  projects: any;
   private  baseUrl = environment.baseUrl;
-
   constructor(private _http: HttpClient) { }
-    profile(): Observable<any> {
-    return this._http.get(this.baseUrl + `${'get_profile_data'}`)
-  }
+  
+  getAllbooking(data:any)
+   {
+    return this._http.post(this.baseUrl + `${'booking'}`,data ).subscribe({
+      next: (res) => {this.projects = res,
+        console.log(this.projects)
+      },
+      error: (error) => { },
+      complete: () => {},
 
-  update(data:any): Observable<any> {
-    return this._http.post(this.baseUrl + `${'update_user_info'}`,data)
+
+    });
   }
 }

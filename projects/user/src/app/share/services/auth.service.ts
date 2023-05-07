@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
+  private baseUrl = environment.baseUrl;
+
   public isLoggedIn = false;
-  baseUrl = 'http://ydoctor.atwebpages.com/user/'
   constructor(private _http: HttpClient) { }
 
   register(data: any): Observable<any> {

@@ -1,15 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AddressDoctorService {
-  baseUrl = 'http://ydoctor.atwebpages.com/user/'
+  private  baseUrl = environment.baseUrl;
 
   constructor(private _http: HttpClient) { }
-
   addNewAddress(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `${'add_new_address'}`, data)
   }

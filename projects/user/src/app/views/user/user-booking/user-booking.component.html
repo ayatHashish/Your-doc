@@ -13,14 +13,14 @@
                       <div class="row">
                         <!--begin::Col-->
                         <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Doctor Name</label>
+                          <label class="col-lg-3 col-form-label required fw-semibold fs-6" >Doctor Name</label>
                           <input type="text" name="fname"
                             class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                            placeholder="Doctor Name"  />
-                          <div class="fv-plugins-message-container invalid-feedback"></div>
+                            placeholder="Doctor Name" value="{{doctorDetails.name}}" />
                         </div>
                       </div>
                     </div>
+
 
                   </div>
                   <div class="row mb-6">
@@ -32,7 +32,7 @@
                           <label class="col-lg-3 col-form-label required fw-semibold fs-6">Patient Name</label>
                           <input type="text" name="patient_name" formControlName="patient_name"
                             class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                            placeholder="Patient Name" value="" />
+                            placeholder="Patient Name"  />
                           <div class="fv-plugins-message-container invalid-feedback"></div>
                         </div>
                       </div>
@@ -50,6 +50,15 @@
                             placeholder="Booking Date" value="" />
                           <div class="fv-plugins-message-container invalid-feedback"></div>
                         </div>
+
+
+                        <!-- <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Date</label>
+                          <input type="date" name="" formControlName="booking_date"
+                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                            placeholder="Booking Date" [value]="booking_date | dateFormat" />
+                          <div class="fv-plugins-message-container invalid-feedback"></div>
+                        </div> -->
                       </div>
                     </div>
                   </div>
@@ -76,6 +85,9 @@
               </form>
             </div>
           </div>
+
+          <!-- <p-calendar [(ngModel)]="date" [touchUI]="true" [readonlyInput]="true" dateFormat="dd-mm-yy"></p-calendar> -->
+
         </section>
       </div>
     </div>
