@@ -16,20 +16,14 @@ export class DoctorsService {
     return this._http.get(this.baseUrl + `${'get_all_doctors'}`)
   }
 
-  // doctorsDetails(  id :number )
+  // sendId(id:number,slotId:number)
   //  {
-  //   const data =
-  //   { doctor_id:id , details: true}
 
-  //   this.id = this._ActivatedRoute.snapshot.params['id'];
-  //   return this._http.post(this.baseUrl + `${'get_doctor_details'}`, data)
+  //   console.log(id +"yalllllllllhwi" +slotId );
 
-  //   .subscribe(
-  //     (res:any) => {
-  //     this.doctorDetails = res.data
+  //  }
 
-  //   });
-  // }
+
 
   getDoctorsDetails(id:number): Observable<any> {
     const data = {

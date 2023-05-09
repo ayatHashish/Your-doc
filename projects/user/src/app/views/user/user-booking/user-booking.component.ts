@@ -1,53 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { BookingService } from '../../../share/services/booking.service';
-import { FormControl, FormGroup } from '@angular/forms';
-import { TestService } from '../../../share/services/test.service';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DoctorsService } from '../../../share/services/doctors.service';
-import { DateFormatPipe } from '../../../share/pipe/date-format.pipe';
+import { DoctorsDetailsComponent } from '../../doctor/doctors-details/doctors-details.component';
+import { DataServiceService } from '../../../share/services/data-service.service';
+
 @Component({
   selector: 'app-user-booking',
   templateUrl: './user-booking.component.html',
-  styleUrls: ['./user-booking.component.scss','../../doctor/doctors-details/doctors-details.component.scss']
+  styleUrls: ['./user-booking.component.scss', '../../doctor/doctors-details/doctors-details.component.scss']
 })
 export class UserBookingComponent {
- id: any
+  id: any
+  @Input() slotId: any
   doctorDetails: any
-  constructor(
-    private _booking: BookingService ,
-    private _test:TestService ,
-    private dateFormatPipe: DateFormatPipe,
-    private _doctors: DoctorsService,
-     private _ActivatedRoute: ActivatedRoute)
-     {this.doctorsDetails()}
+  data: any;
 
+  constructor(
+    private _booking: BookingService,
+    private _doctors: DoctorsService,
+    private _ActivatedRoute: ActivatedRoute,
+    private _dataService: DataServiceService) {
+    this.doctorsDetails()
+    this._dataService.selected.subscribe(data => this.data = data);
+  }
 
   bookingForm: FormGroup = new FormGroup({
-    booking_date: new FormControl(),
-    patient_name: new FormControl(),
-    age: new FormControl(),
-    disease_dec: new FormControl(),
+    doctor_id: new FormControl(''),
+    slot_id: new FormControl(''),
+    booking_date: new FormControl(''),
+    patient_name: new FormControl(''),
+    age: new FormControl(''),
+    disease_dec: new FormControl(''),
   });
   doctorsDetails() {
     this.id = this._ActivatedRoute.snapshot.params['id'];
     this._doctors.getDoctorsDetails(this.id).subscribe((res) => {
       this.doctorDetails = res.data
-
-
     });
   }
-  bookingFunction(data:any) {
+  bookingFunction() {
+    if (this.bookingForm.valid) {
+      this.bookingForm.patchValue({
+        doctor_id: this.data.id,
+        slot_id: this.data.slotId,
+      })
 
-    // this.slot_id = this.slotedit.id
-    //   this.address_id = this.slotedit.address_id
-    this._booking.booking(data).subscribe(
-     (res) => console.log('Booking created successfully!'),
-     (e) => console.error('Error creating booking!')
+      this._booking.booking(this.bookingForm.value).subscribe(
+        (res) => {
+          console.log('Booking created successfully!')
+        },
+        (e) => console.error('Error creating booking!')
       );
+    }
+
   }
-
-
-  // formatDate(date: Date): string {
-  //   return this.dateFormatPipe.transform(date, 'dd-MM-yyyy');
-  // }
 }

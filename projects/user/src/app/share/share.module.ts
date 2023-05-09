@@ -6,34 +6,24 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { DateFormatPipe } from './pipe/date-format.pipe';
-
-
 
 @NgModule({
   declarations: [
     NotfoundComponent,
     NavbarComponent,
-    FooterComponent,
-    DateFormatPipe,
-
-    /* UserlayoutsComponent, */
-
+    FooterComponent
   ],
   imports: [
     CommonModule,
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
-   
 
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     NotfoundComponent,
-
-
   ]
 })
 export class ShareModule { }

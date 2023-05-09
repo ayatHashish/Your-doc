@@ -13,8 +13,10 @@
             </div>
             <form>
               <!-- email -->
+
+              <form [formGroup]= "forgotPasswordForm" (ngSubmit)="forgetpassword()"></form>
               <div class="form-group">
-                <input class="input-group" type="email" formControlName="email" id="email" required>
+                <input class="input-group" type="email" formControlName="email" id="email" >
                 <label>Your Email</label>
               </div>
               <button class="btn-lo fadeIn" routerLink="/auth/verifycode">Request password reset</button>

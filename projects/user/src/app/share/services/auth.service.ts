@@ -23,6 +23,10 @@ export class AuthService {
   changePassword(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `${'auth/change_password'}`, data)
   }
+ forgetPassword(email: string): Observable<any> {
+  const body = { email };
+    return this._http.post(this.baseUrl + `${'auth/send_verification_code'}`, body)
+  }
 
   logout(): Observable<any> {
     return this._http.post(this.baseUrl + `${'logout'}`, null)

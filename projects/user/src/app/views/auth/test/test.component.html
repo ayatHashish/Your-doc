@@ -1,0 +1,130 @@
+<form [formGroup]="bookingForm" (ngSubmit)="(bookingFunction)">
+  <div class="dr-details">
+    <div class="row mb-6">
+      <div class="col-lg-9">
+        <!--begin::Row-->
+        <div class="row">
+          <!--begin::Col-->
+
+          <div>ttttt</div>
+
+          <div class="col-lg-6 fv-row fv-plugins-icon-container">
+            <label
+              class="col-lg-3 col-form-label required fw-semibold fs-6"
+              >Doctor Name</label
+            >
+            <input
+              type="text"
+              name="fname"
+              formControlName="doctor_id"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              placeholder="Doctor Name"
+              value="{{ doctorDetails.name }}"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-lg-9">
+        <!--begin::Row-->
+        <div class="row">
+          <!--begin::Col-->
+          <div class="col-lg-6 fv-row fv-plugins-icon-container">
+            <label
+              class="col-lg-3 col-form-label required fw-semibold fs-6"
+              >Patient Name</label
+            >
+            <input
+              type="text"
+              name="patient_name"
+              formControlName="patient_name"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              placeholder="Patient Name"
+            />
+            <div
+              class="fv-plugins-message-container invalid-feedback"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-lg-9">
+        <!--begin::Row-->
+        <div class="row">
+          <!--begin::Col-->
+          <!-- <div class="col-lg-6 fv-row fv-plugins-icon-container">
+            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Date</label>
+            <input type="date" name="" formControlName="booking_date"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              placeholder="Booking Date" value="{{datesByday.day_name}}" />
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div> -->
+
+          <div class="col-lg-6 fv-row fv-plugins-icon-container">
+            <label
+              class="col-lg-3 col-form-label required fw-semibold fs-6"
+              >Date</label
+            >
+            <input
+              type="text"
+              name=""
+              formControlName="booking_date"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              placeholder="Booking Date"
+              value="{{ datesByday.day_name }}"
+            />
+            <div
+              class="fv-plugins-message-container invalid-feedback"
+            ></div>
+          </div>
+
+          <!-- <div class="col-lg-6 fv-row fv-plugins-icon-container">
+            <label class="col-lg-3 col-form-label required fw-semibold fs-6">Date</label>
+            <input type="date" name="" formControlName="booking_date"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+              placeholder="Booking Date" [value]="booking_date | dateFormat" />
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-lg-6">
+        <label
+          class="col-lg-3 col-form-label required fw-semibold fs-6"
+        >
+          age</label
+        >
+        <input
+          type="number"
+          class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+          name="age"
+          formControlName="age"
+          placeholder="Age"
+        />
+
+        <div
+          class="fv-plugins-message-container invalid-feedback"
+        ></div>
+      </div>
+    </div>
+    <div class="row mb-6">
+      <div class="col-lg-6 fv-row fv-plugins-icon-container">
+        <label
+          class="col-lg-3 col-form-label required fw-semibold fs-6"
+          >Disease Dec</label
+        >
+        <textarea
+          id="message"
+          name="message"
+          formControlName="disease_dec"
+          class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+        ></textarea>
+      </div>
+    </div>
+
+    <a type="submit" class="btn-lo fadeIn">Send</a>
+  </div>
+</form>
