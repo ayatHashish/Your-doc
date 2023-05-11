@@ -6,22 +6,18 @@
           <div id="formContent" class="forget-content">
             <div class="login-dic">
               <h2>Forget password </h2>
-              <!-- <a routerLink="/auth/signup"> Don't have an account ?
-                <br>
-                <span class="underlineHover"> Create Free Account </span>
-              </a> -->
             </div>
-            <form>
+            <form [formGroup]= "forgotPasswordForm" (ngSubmit)= "forgetpassword()">
               <!-- email -->
-
-              <form [formGroup]= "forgotPasswordForm" (ngSubmit)="forgetpassword()"></form>
               <div class="form-group">
                 <input class="input-group" type="email" formControlName="email" id="email" >
                 <label>Your Email</label>
               </div>
-              <button class="btn-lo fadeIn" routerLink="/auth/verifycode">Request password reset</button>
+              <!--  routerLink="/auth/verifycode" -->
+              <button type="submit" class="btn-lo fadeIn" >Request password reset</button>
               <div>
-                <a class="underlineHover" routerLink="/auth/login">Back to login</a>
+                <a  class="underlineHover" routerLink="/auth/login">Back to login</a>
+
               </div>
             </form>
             <!-- Remind Passowrd -->
@@ -31,3 +27,4 @@
     </div>
   </div>
 </div>
+

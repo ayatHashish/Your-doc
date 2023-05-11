@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { ProfileService } from 'projects/user/src/app/share/services/profile.service';
 
 import { CustomValidators } from 'ng2-validation';

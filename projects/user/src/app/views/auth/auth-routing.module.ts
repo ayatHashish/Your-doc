@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'forgotPassword', component: ForgetpassComponent,},
   { path: 'verifycode',component: VerificationCodeComponent,},
   {path: 'editpassword',component: ReAssignPassComponent,},
-  // {path: 'test',component: TestComponent,},
+
 
 
 ];

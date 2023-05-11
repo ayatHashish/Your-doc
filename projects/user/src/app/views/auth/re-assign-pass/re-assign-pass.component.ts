@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../share/services/auth.service';
 import { Router } from '@angular/router';
+import { CustomValidators } from 'ng2-validation';
 
 @Component({
   selector: 'app-re-assign-pass',
@@ -11,36 +12,29 @@ import { Router } from '@angular/router';
 })
 export class ReAssignPassComponent {
 
-  constructor(private _auth: AuthService, private _router: Router) { }
-  errorMsg = '';
-  passwordChangeForm = new FormGroup({
-    newPassword: new FormControl('', [Validators.required, Validators.email]),
-    confirmPassword: new FormControl('', [Validators.required,]),
+ constructor(private _auth: AuthService, private _router: Router) { }
+  errorMsg: string = '';
+  // password = new FormControl(null, CustomValidators.min(8));
+  // password_confirmation = new FormControl(
+  //   '', CustomValidators.equalTo(this.password));
 
-  });
+  passwordChangeForm: FormGroup = new FormGroup({
+    password: new FormControl(''),
+    // password: this.password,
+    password_confirmation: new FormControl('')
+  })
 
-  get newPassword() { return this.passwordChangeForm.get("newPassword") }
-  get confirmPassword() { return this.passwordChangeForm.get("confirmPassword") }
+  // get newPassword() { return this.passwordChangeForm.get('password') }
+  // get password_confirm() { return this.passwordChangeForm.get('password_confirmation') }
+
   changePassword() {
-    if (this.newPassword?.value == this.confirmPassword?.value) {
+    if (this.passwordChangeForm.valid) {
       this._auth.changePassword(this.passwordChangeForm.value).subscribe(
         (res) => {
-          console.log('lollllloy')
+          console.log('Password updated successfully');
         },
-        (e) => {
-          console.log('yalllawi')
-          // this.errorMsg = e.error.password
-          // console.log(this.errorMsg)
-        },
-        () => {
-          this._router.navigateByUrl('auth//login');
-        }
-      );
+        (e) => { this.errorMsg = e.error.error }
+      )
     }
-    //  else {
-    //   this._router.navigateByUrl('auth/login');}
-
-
-
   }
 }

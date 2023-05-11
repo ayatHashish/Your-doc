@@ -9,20 +9,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./forgetpass.component.scss' ,'./../login/login.component.scss']
 })
 export class ForgetpassComponent {
-
-
+  errorMsg = ""
   constructor(private _auth: AuthService, private _router: Router) { }
-  forgotPasswordForm: FormGroup = new FormGroup({
-    email: new FormControl(),
-  });
+  forgotPasswordForm = new FormGroup({
+      email: new FormControl(''),
+    });
 
   forgetpassword() {
+
 const email = this.forgotPasswordForm.value.email;
-this._auth.forgetPassword(email).subscribe(
-  (response) => {
-    // Handle successful response
-    console.log(response);
-  },
-)
+    if (this.forgotPasswordForm.valid) {
+      this._auth.forgetPassword(email).subscribe(
+        (res) => {
+
+        },
+        (e) => {
+          this.errorMsg = e.error.error;
+
+        },
+        () => {
+          this._router.navigateByUrl('/auth/verifycode');
+        }
+      );
+    }
   }
 }
