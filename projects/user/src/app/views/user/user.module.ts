@@ -24,7 +24,7 @@ import { EditAddressComponent } from './profile/address/edit-address/edit-addres
 import { CustomFormsModule } from 'ng2-validation';
 import { UserBookingComponent } from './user-booking/user-booking.component';
 
-
+import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 
 @NgModule({
   declarations: [
@@ -54,8 +54,9 @@ import { UserBookingComponent } from './user-booking/user-booking.component';
     TimepickerModule.forRoot(),
     FormsModule,
     CustomFormsModule,
-
+    BsDatepickerModule.forRoot()
   ],
+  providers: [BsDatepickerConfig],
   exports: [
     ProfileComponent,
     SettingComponent,

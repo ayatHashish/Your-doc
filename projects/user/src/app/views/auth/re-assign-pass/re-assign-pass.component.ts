@@ -28,13 +28,13 @@ export class ReAssignPassComponent {
   // get password_confirm() { return this.passwordChangeForm.get('password_confirmation') }
 
   changePassword() {
-    if (this.passwordChangeForm.valid) {
-      this._auth.changePassword(this.passwordChangeForm.value).subscribe(
-        (res) => {
-          console.log('Password updated successfully');
-        },
-        (e) => { this.errorMsg = e.error.error }
-      )
-    }
+    // if (this.passwordChangeForm.valid) {
+    //   this._auth.changePassword(this.passwordChangeForm.value).subscribe(
+    //     (res) => {
+    //       console.log('Password updated successfully');
+    //     },
+    //     (e) => { this.errorMsg = e.error.error }
+    //   )
+    // }
   }
 }

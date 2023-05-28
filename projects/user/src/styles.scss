@@ -36,12 +36,15 @@ a {
   //   width: 100%;
   // }
 }
-i{
+
+i {
   font-size: 16px !important;
 }
+
 .section-title p {
   margin-bottom: 0;
 }
+
 .btn-action {
   margin-left: 15px;
   background: $brand-primary;
@@ -54,10 +57,12 @@ i{
   display: inline-block;
   text-decoration: none;
   border-radius: 5px;
+
   i {
     margin: 1px 5px;
     scale: (1.1);
   }
+
   &:hover {
     background: #022646;
     color: #fff;
@@ -114,6 +119,7 @@ form .button {
       box-sizing: border-box;
       border-radius: 5px;
     }
+
     &:before {
       color: #fff;
       background: gray;
@@ -130,8 +136,10 @@ form .button {
     }
   }
 }
+
 .navigation {
   padding: 0 20px !important;
+
   .pagination {
     .page-item {
       .page-link {
@@ -145,6 +153,7 @@ form .button {
   .title {
     font-size: 18px;
   }
+
   p {
     max-width: 75% !important;
     font-size: 16px;
@@ -157,11 +166,13 @@ form .button {
     font-size: 1.1rem;
     text-align: center;
   }
+
   tbody {
     text-align: center;
     padding: 15px 0;
   }
 }
+
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -178,6 +189,7 @@ form .button {
   height: 30px;
   border-radius: 47px;
   transition: all 0.4s;
+
   &:hover {
     background: #092f50;
     color: #fff;
@@ -187,18 +199,21 @@ form .button {
     visibility: visible;
     opacity: 1;
   }
+
   i {
     font-size: 28px;
     color: #fff;
     line-height: 0;
   }
 }
+
 @media (max-width: 992px) {
   form .button {
     min-width: 60%;
     font-size: 25px;
   }
 }
+
 @media (max-width: 767px) {
   .btn-action {
     margin: 0 15px 0 0;
@@ -210,6 +225,7 @@ form .button {
     margin: 20px auto;
   }
 }
+
 @media (max-width: 558px) {
   form .button {
     margin-top: 40px;
@@ -254,6 +270,7 @@ form .button {
     font-size: 25px;
   }
 }
+
 @media (max-width: 767px) {
   .btn-action {
     margin: 0 15px 0 0;
@@ -265,6 +282,7 @@ form .button {
     margin: 20px auto;
   }
 }
+
 @media (max-width: 558px) {
   form .button {
     margin-top: 40px;
@@ -289,10 +307,12 @@ form .button {
   display: inline-block;
   text-align: center;
 }
+
 .btn-10 {
   transition: all 0.3s ease;
   overflow: hidden;
 }
+
 .btn-10:after {
   position: absolute;
   content: " ";
@@ -305,9 +325,11 @@ form .button {
   -webkit-transform: scale(0.1);
   transform: scale(0.1);
 }
+
 .btn-10:hover {
   color: #fff;
 }
+
 .btn-10:hover:after {
   background: #000;
   -webkit-transform: scale(1);
@@ -322,12 +344,14 @@ form .button {
   padding: 0;
   border: none;
 }
+
 .btn-6 span {
   position: relative;
   display: block;
   width: 100%;
   height: 100%;
 }
+
 .btn-6:before,
 .btn-6:after {
   position: absolute;
@@ -336,34 +360,41 @@ form .button {
   width: 2px;
   background: #000;
 }
+
 .btn-6:before {
   right: 0;
   top: 0;
   transition: all 500ms ease;
 }
+
 .btn-6:after {
   left: 0;
   bottom: 0;
   transition: all 500ms ease;
 }
+
 .btn-6:hover {
   color: #000;
   background: transparent;
 }
+
 .btn-6:hover:before {
   transition: all 500ms ease;
   height: 100%;
 }
+
 .btn-6:hover:after {
   transition: all 500ms ease;
   height: 100%;
 }
+
 .btn-6 span:before,
 .btn-6 span:after {
   position: absolute;
   content: "";
   background: #000;
 }
+
 .btn-6 span:before {
   left: 0;
   top: 0;
@@ -371,6 +402,7 @@ form .button {
   height: 2px;
   transition: all 500ms ease;
 }
+
 .btn-6 span:after {
   right: 0;
   bottom: 0;
@@ -378,9 +410,11 @@ form .button {
   height: 2px;
   transition: all 500ms ease;
 }
+
 .btn-6 span:hover:before {
   width: 100%;
 }
+
 .btn-6 span:hover:after {
   width: 100%;
 }
@@ -454,7 +488,7 @@ form .button {
 }
 
 //Vendor
-.card.card-dashed > .card-header {
+.card.card-dashed>.card-header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -469,6 +503,7 @@ form .button {
 .specialisties_section {
   position: relative;
   padding: 0 20px 30px;
+
   .owl-theme {
     .owl-nav {
       margin-top: 0;
@@ -479,6 +514,7 @@ form .button {
       top: 50%;
       left: 50%;
       display: flex;
+
       [class*="owl-"] {
         font-size: 30px;
         margin: 0;
@@ -488,6 +524,7 @@ form .button {
         display: flex;
         cursor: pointer;
         border-radius: 3px;
+
         &:hover {
           opacity: 0.8;
         }
@@ -498,6 +535,7 @@ form .button {
 
 .banner_section {
   position: relative;
+
   .owl-theme {
     .owl-nav {
       margin-top: 0;
@@ -508,6 +546,7 @@ form .button {
       top: 75%;
       left: 57%;
       display: flex;
+
       [class*="owl-"] {
         font-size: 30px;
         margin: 0;
@@ -517,6 +556,7 @@ form .button {
         display: flex;
         cursor: pointer;
         border-radius: 3px;
+
         &:hover {
           opacity: 0.8;
         }
@@ -524,6 +564,7 @@ form .button {
     }
   }
 }
+
 // owl-date-time-container {
 //   background-color: red !important;
 //   z-index: 9999999999 !important;
@@ -534,11 +575,13 @@ form .button {
   font-weight: 400;
   letter-spacing: 0.8px;
 }
+
 .modal-handle {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
+
   .modal-dialog {
     min-width: 30%;
   }

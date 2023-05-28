@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ProfileService } from 'projects/user/src/app/share/services/profile.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
+
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
@@ -11,16 +12,33 @@ import { Observable, Subscriber } from 'rxjs';
   ],
 
 })
+
 export class SettingComponent {
   @Input() profilesetting: any;
+  profiles: any;
   updateDataJson: any = {};
-  avatar :any ;
+  avatar: any;
   image: string = '';
   base64: string = '';
   imagediplay: any;
   cacheBuster: number = Date.now();
-  constructor(private _update: ProfileService,
-) {}
+
+  birthDate = new Date();
+  // bsRangeValue: Date[];
+  maxDate = new Date();
+  minDate = new Date();
+  enabledDates!: Date[];
+
+  constructor(private _update: ProfileService, public _profileService: ProfileService) {
+    this.profile()
+    this.maxDate.setFullYear(this.maxDate.getFullYear() - 10);
+
+    // this.minDate.setDate(this.minDate.getDate() - 1);
+    // this.maxDate.setDate(this.maxDate.getDate() + 7);
+    // this.bsRangeValue = [this.bsValue, this.maxDate];
+
+  }
+
   updatedForm: FormGroup = new FormGroup({
     first_name: new FormControl(null),
     last_name: new FormControl(null),
@@ -36,6 +54,15 @@ export class SettingComponent {
   // get email() { return this.updatedForm.get('email') }
   // get phone() { return this.updatedForm.get('phone') }
   // get gender() { return this.updatedForm.get('gender') }
+
+  profile() {
+    this._profileService.profile().subscribe((res) => {
+      this.profiles = res.data
+      this.birthDate = new Date(this.profiles.birth_date);
+    });
+  }
+
+
 
   //select image and convert it to base64
   selectimage(e: any) {
@@ -75,7 +102,7 @@ export class SettingComponent {
   onchangeInput(e: any) {
     e.stopPropagation();
     this.updateDataJson[`${e.target.name}`] = e.target.value;
-    // console.log(this.updateDataJson);
+    console.log(this.updateDataJson);
   }
   updated() {
     console.log(this.updateDataJson);
