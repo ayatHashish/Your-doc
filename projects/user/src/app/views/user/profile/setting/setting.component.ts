@@ -22,12 +22,12 @@ export class SettingComponent {
   base64: string = '';
   imagediplay: any;
   cacheBuster: number = Date.now();
-
+  // DatePicker
   birthDate = new Date();
-  // bsRangeValue: Date[];
   maxDate = new Date();
   minDate = new Date();
   enabledDates!: Date[];
+  // bsRangeValue: Date[];
 
   constructor(private _update: ProfileService, public _profileService: ProfileService) {
     this.profile()
@@ -36,7 +36,6 @@ export class SettingComponent {
     // this.minDate.setDate(this.minDate.getDate() - 1);
     // this.maxDate.setDate(this.maxDate.getDate() + 7);
     // this.bsRangeValue = [this.bsValue, this.maxDate];
-
   }
 
   updatedForm: FormGroup = new FormGroup({
@@ -46,7 +45,7 @@ export class SettingComponent {
     phone: new FormControl(null),
     avatar: new FormControl(null),
     gender: new FormControl(null),
-    // birth_date: new FormControl(null),
+    birth_date: new FormControl(null),
   });
 
   // get first_name() { return this.updatedForm.get('first_name') }
@@ -61,8 +60,6 @@ export class SettingComponent {
       this.birthDate = new Date(this.profiles.birth_date);
     });
   }
-
-
 
   //select image and convert it to base64
   selectimage(e: any) {
@@ -105,7 +102,7 @@ export class SettingComponent {
     console.log(this.updateDataJson);
   }
   updated() {
-    console.log(this.updateDataJson);
+    // console.log(this.updateDataJson);
     if (this.updatedForm.valid) {
       this._update.update(this.updateDataJson).subscribe((res) => {
         console.log('Data updated successfully');

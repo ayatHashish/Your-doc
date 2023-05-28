@@ -22,7 +22,7 @@
                 <!--begin::Info-->
                 <div class="shrot_info">
                   <h6 class="name">{{profiles.email }}</h6>
-                  <h6 class="name">{{profiles.birth_date }}</h6>
+                  <h6 class="name">{{ profiles.birth_date | date: 'd, MMM, y' }}</h6>
                   <h6 class="gender">{{profiles.gender }}</h6>
                 </div>
                 <!--end::Info-->
