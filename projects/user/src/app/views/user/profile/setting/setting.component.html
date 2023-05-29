@@ -1,5 +1,18 @@
 <main>
-  <div class="card mb-4">
+  <div class="card mb-4 card-wall">
+    <p id="onUpdating" class="on-updating" [class.d-none]="isUpdating">
+      <span>U</span>
+      <span>p</span>
+      <span>d</span>
+      <span>a</span>
+      <span>t</span>
+      <span>i</span>
+      <span>n</span>
+      <span>g</span>
+      <span>.</span>
+      <span>.</span>
+      <span>.</span>
+    </p>
     <div class="card-header cursor-pointer">
       <!--begin::Card title-->
       <div class="card-title m-0">
@@ -17,7 +30,7 @@
           <div class="col-lg-9">
             <!--begin::Image input-->
             <div class="image-input image-input-outline" data-kt-image-input="true">
-              <img class="image-input-wrapper" [src]="profilesetting.avatar + '?' + cacheBuster" />
+              <img class="image-input-wrapper" [src]="avatarSrc" *ngIf="avatarSrc">
               <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
                 data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar"
                 data-bs-original-title="Change avatar">
@@ -107,8 +120,8 @@
           <div class="col-lg-9">
             <input type="text" placeholder="Pick your birth date" name="birth_date" formControlName="birth_date"
               class="form-control custom-datepicker form-control-lg form-control-solid" bsDatepicker
-              [bsValue]="birthDate" [maxDate]="maxDate" [daysDisabled]="[6,0]" [datesDisabled]="enabledDates"
-              [bsConfig]="{ isAnimated: true, dateInputFormat: 'D, MMM, Y' }" (change)="onchangeInput($event)">
+              [bsValue]="birthDate" [maxDate]="maxDate" [bsConfig]="{ isAnimated: true, dateInputFormat: 'D, MMM, Y' }"
+              (bsValueChange)="onchangeInput($event, $event)">
             <div class="fv-plugins-message-container invalid-feedback"></div>
           </div>
         </div>

@@ -21,13 +21,14 @@ export class SettingComponent {
   image: string = '';
   base64: string = '';
   imagediplay: any;
-  cacheBuster: number = Date.now();
   // DatePicker
-  birthDate = new Date();
+  birthDate!: Date;
   maxDate = new Date();
   minDate = new Date();
   enabledDates!: Date[];
   // bsRangeValue: Date[];
+  avatarSrc!: string;
+  isUpdating: boolean = true;
 
   constructor(private _update: ProfileService, public _profileService: ProfileService) {
     this.profile()
@@ -58,6 +59,7 @@ export class SettingComponent {
     this._profileService.profile().subscribe((res) => {
       this.profiles = res.data
       this.birthDate = new Date(this.profiles.birth_date);
+      this.avatarSrc = this.profiles.avatar;
     });
   }
 
@@ -68,6 +70,11 @@ export class SettingComponent {
       let file = e.target.files[0];
       this.image = file.name;
       this.converttobase64(file);
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.avatarSrc = e.target.result; // Set the selected image as the source
+      };
+      reader.readAsDataURL(file); // Read the selected file as a data URL
     }
   }
   converttobase64(file: File) {
@@ -96,22 +103,27 @@ export class SettingComponent {
     };
   }
 
-  onchangeInput(e: any) {
+  onchangeInput(e: any, birthDate?: any) {
+    if (birthDate) {
+      if (birthDate !== this.birthDate) {
+        const year = birthDate.getFullYear();
+        const month = birthDate.getMonth() + 1; // Note: Month starts from 0, so add 1 to get the actual month number
+        const day = birthDate.getDate();
+        const newBirthDate = `${year}-${month}-${day}`;
+        this.updateDataJson['birth_date'] = newBirthDate;
+      }
+    }
     e.stopPropagation();
     this.updateDataJson[`${e.target.name}`] = e.target.value;
-    console.log(this.updateDataJson);
   }
+
   updated() {
-    // console.log(this.updateDataJson);
     if (this.updatedForm.valid) {
+      this.isUpdating = false;
       this._update.update(this.updateDataJson).subscribe((res) => {
+        this.isUpdating = true;
         console.log('Data updated successfully');
       });
     }
   }
-
-  refreshImage() {
-    this.cacheBuster = Date.now();
-  }
-
 }
