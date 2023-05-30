@@ -1,0 +1,115 @@
+<main class="main-user">
+  <div class="container">
+    <div class="content flex-row-fluid">
+      <div class="card mb-5 mb-xl-10">
+        <div class="card-body pt-9 pb-0">
+          <!--begin::Details-->
+          <div class="d-flex flex-wrap flex-sm-nowrap">
+            <!--begin: Pic-->
+            <div class="me-7 mb-4 ms-6">
+              <div class="symbol">
+                <img [src]=[profiles.avatar] alt="Profile Avatar" />
+              </div>
+            </div>
+            <!--end::Pic-->
+            <!--begin::Info-->
+            <div class="title-row">
+              <!--begin::User-->
+              <div class="d-flex flex-column">
+                <!--begin::Name-->
+                <h3 class="name">{{profiles.full_name }}</h3>
+                <!--end::Name-->
+                <!--begin::Info-->
+                <div class="shrot_info">
+                  <h6 class="name">{{profiles.email }}</h6>
+                  <h6 class="name">{{ profiles.birth_date | date: 'd, MMM, y' }}</h6>
+                  <h6 class="gender">{{profiles.gender }}</h6>
+                </div>
+                <!--end::Info-->
+              </div>
+              <!--end::User-->
+            </div>
+            <!--end::Info-->
+          </div>
+          <ul class="nav nav-pills nav-stretch border-transparent fs-5" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation" routerLink="/user/profile/details">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="pill" data-bs-target="#profile" type="button"
+                role="tab" aria-controls="profile" aria-selected="false"
+                [ngClass]="pageUrl == 'details' || pageUrl == undefined ? 'show active' : ''">
+                Profile
+              </button>
+            </li>
+            <li class="nav-item" role="presentation" routerLink="/user/profile/settings">
+              <button class="nav-link" id="settings-tab" data-bs-toggle="pill" data-bs-target="#settings" type="button"
+                role="tab" aria-controls="settings" aria-selected="true"
+                [ngClass]="pageUrl == 'settings' ? 'show active' : ''">
+                Settings
+              </button>
+            </li>
+
+            <li class="nav-item" role="presentation" routerLink="/user/profile/address">
+              <button class="nav-link" id="address-tab" data-bs-toggle="pill" data-bs-target="#address" type="button"
+                role="tab" aria-controls="address" aria-selected="true"
+                [ngClass]="pageUrl == 'address' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
+                Address
+              </button>
+            </li>
+            <li class="nav-item" role="presentation" routerLink="/user/profile/security">
+              <button class="nav-link" id="security-tab" data-bs-toggle="pill" data-bs-target="#security" type="button"
+                role="tab" aria-controls="security" aria-selected="false"
+                [ngClass]="pageUrl == 'security' ? 'show active' : ''">
+                Security
+              </button>
+            </li>
+            <li class="nav-item" role="presentation" routerLink="/user/profile/appointments">
+              <button class="nav-link" id="appointments-tab" data-bs-toggle="pill" data-bs-target="#appointments"
+                type="button" role="tab" aria-controls="appointments" aria-selected="true"
+                [ngClass]="pageUrl == 'appointments' ? 'show active' : ''">
+                My Appointments
+              </button>
+            </li>
+            <li class="nav-item" role="presentation" routerLink="/user/profile/timeslots">
+              <button class="nav-link" id="timeslots-tab" data-bs-toggle="pill" data-bs-target="#timeslots"
+                type="button" role="tab" aria-controls="timeslots" aria-selected="true"
+                [ngClass]="pageUrl == 'timeslots' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
+                Time slots
+              </button>
+            </li>
+          </ul>
+          <!--begin::Navs-->
+        </div>
+      </div>
+      <div class="card mb-5 mb-xl-10">
+        <div class="tab-content" id="pills-tabContent">
+
+          <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"
+            [ngClass]="pageUrl == 'details' || pageUrl == undefined ? 'show active' : ''">
+            <app-details [profileDetails]="profiles"></app-details>
+          </div>
+          <div class="tab-pane fade" id="settings" role="tabpanel" aria-labelledby="settings-tab" tabindex="0"
+            [ngClass]="pageUrl == 'settings' ? 'show active' : ''">
+            <app-setting [profilesetting]="profiles"></app-setting>
+          </div>
+          <!-- [profilesetting]="profiles" -->
+          <div class="tab-pane fade" id="address" role="tabpanel" aria-labelledby="address-tab" tabindex="0"
+            [ngClass]="pageUrl == 'address' ? 'show active' : ''">
+            <app-address [profileaddress]="profiles"></app-address>
+          </div>
+          <div class="tab-pane fade" id="security" role="tabpanel" aria-labelledby="security-tab" tabindex="0"
+            [ngClass]="pageUrl == 'security' ? 'show active' : ''">
+            <app-security></app-security>
+          </div>
+          <div class="tab-pane fade show" id="appointments" role="tabpanel" aria-labelledby="appointments-tab"
+            tabindex="0" [ngClass]="pageUrl == 'appointments' ? 'show active' : ''">
+            <app-appoinment></app-appoinment>
+          </div>
+          <div class="tab-pane fade show" id="timeslots" role="tabpanel" aria-labelledby="timeslots-tab" tabindex="0"
+            [ngClass]="pageUrl == 'timeslots' ? 'show active' : '' + role == 'User' ? 'd-none' : ''">
+            <app-timeslots [sharetimeslots]="addTime"></app-timeslots>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,120 @@
+<main class="modal-handle">
+  <div class="modal-dialog modal-dialog-centered align-center">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <div class="time-slot-page">
+          <div class="container">
+            <div class="alert alert-danger" *ngIf="errorMsg != ''" (input)="errorMsg = ''">
+              {{ errorMsg }}
+            </div>
+            <form [formGroup]="editSlotForm" (ngSubmit)="editSlot()">
+              <div class="row mb-6">
+                <label
+                  class="col-md-3 col-form-label required fw-semibold fs-6"
+                  for="day_en"
+                  >Day EN</label
+                >
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <select
+                      class="form-select form-select-solid form-select-lg select2-hidden-accessible"
+                      id="day_en"
+                      name="day_en"
+                      formControlName="day_en"
+                      (change)="onchangeInput($event)"
+                    >
+                    <option value="{{day}}" *ngFor="let day of daysEN">{{day}}</option>
+
+
+                      <!-- <option
+                        *ngFor="let day of daysEN"
+                        [value]="day"
+                        [selected]="day == slotedit.day"
+                      >
+                        {{ day }}
+                      </option> -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-6">
+                <label
+                  class="col-md-3 col-form-label required fw-semibold fs-6"
+                  for="day_ar"
+                  >Day AR</label
+                >
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <select
+                      class="form-select form-select-solid form-select-lg select2-hidden-accessible"
+                      id="day_ar" name="day_ar" formControlName="day_ar" (change)="onchangeInput($event)" >
+                      <option value="{{day}}" *ngFor="let day of daysAR">{{day}}</option>
+                      <!-- <option value="{{ day }}" *ngFor="let day of daysAR">
+                        {{ day }}
+                      </option> -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-6">
+                <label
+                  class="col-lg-3 col-form-label required fw-semibold fs-6"
+                  for="start_time"
+                  >Start Time</label
+                >
+                <div class="col-md-9">
+                  <div class="form-group mt2">
+                    <timepicker
+                      name="start_time"
+                      (change)="onchangeInput($event)"
+                      formControlName="start_time"
+                      [(ngModel)]="startTimeSelected"
+                      [arrowkeys]="allowArrowKeys"
+                    ></timepicker>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-6">
+                <label
+                  class="col-lg-3 col-form-label required fw-semibold fs-6"
+                  for="end_time"
+                  >End Time</label
+                >
+                <div class="col-md-9">
+                  <div class="form-group mt2">
+                    <timepicker
+                      formControlName="end_time"
+                      name="end_time"
+                      (change)="onchangeInput($event)"
+                      [(ngModel)]="endTimeSelected"
+                      [arrowkeys]="allowArrowKeys"
+                    ></timepicker>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-sm btn-primary btn_font">
+                  Save
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-sm btn-light btn_font"
+                >
+                  Cancel
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

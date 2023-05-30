@@ -1,0 +1,24 @@
+<main class="modal-handle">
+  <div class="modal-dialog modal-dialog-centered align-center">
+    <div class="modal-content deletslots-page">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="time-slot-page">
+          <div class="container">
+            <h1>Are you sure you want to delete ?</h1>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-sm btn-light btn_font" data-bs-dismiss="modal" aria-label="Close">
+          Cancel
+        </button>
+        <button (click)="deleteAddress(addressDleted)" class="btn btn-sm btn-danger btn_font">
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</main>

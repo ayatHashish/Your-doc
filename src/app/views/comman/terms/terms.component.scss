@@ -1,0 +1,21 @@
+@import "../../../../assets/scss/componants/variable";
+
+.our-terms {
+  .card {
+    border-color: #f4f4f4;
+    .card-body {
+      .content {
+        font-size: 16px;
+        line-height: 1.6;
+        color: #333;
+        .heading {
+          font-size: 1.8rem;
+          color: #333;
+          margin-bottom: 20px;
+          text-align: center;
+          letter-spacing: 2px;
+        }
+      }
+    }
+  }
+}

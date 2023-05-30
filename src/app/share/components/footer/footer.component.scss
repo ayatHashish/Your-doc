@@ -1,0 +1,50 @@
+footer {
+  .footer-top {
+    .social-networks {
+      a {
+        transition: 0.3s ease-in-out;
+        font-size: 18px !important;
+        // font-size: 18px;
+        background-color: #6c757d;
+        color: #f8f9fa !important;
+        // border-radius: 50%;
+        border-radius: 5px;
+        width: 35px;
+        height: 35px;
+      }
+      .facebook {
+        &:hover {
+          background: #1877f2;
+        }
+      }
+      .twitter {
+        &:hover {
+          background: #1da1f2;
+        }
+      }
+      .instagram {
+        &:hover {
+          background: linear-gradient(
+            to right,
+            #833ab4,
+            #f56040,
+            #ffc107,
+            #ffd700
+          );
+        }
+      }
+      .linkedin {
+        &:hover {
+          background: #0077b5;
+        }
+      }
+    }
+  }
+  .footer-middle{
+    a{
+      &:hover{
+        color: #1da1f2 !important;
+      }
+    }
+  }
+}

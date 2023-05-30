@@ -1,0 +1,19 @@
+<main>
+  <section class="search-banner">
+    <div class="contaner">
+    </div>
+    <form class="form" [formGroup]="searchForm" (ngSubmit)="search()">
+        <input type="text" placeholder="Doctor Name" formControlName="doctor_name" />
+      <select id="mylist" class="specialties-selection" formControlName="specialty_id">
+        <option value="{{specialty.id}}" *ngFor="let specialty of specialties">{{specialty.title}}</option>
+      </select>
+      <button type="submit" class="search-submit">Search</button>
+      <div class="alert alert-danger my-2 w-100" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
+      <div class="alert alert-danger my-2 w-100"
+      *ngIf="doctor_name?.invalid&&(doctor_name?.dirty || doctor_name?.touched)">
+      <div *ngIf="doctor_name?.errors?.['required']">Doctor Name is required</div>
+    </div>
+    </form>
+    
+  </section>
+</main>

@@ -1,0 +1,10 @@
+.card-header {
+  margin-bottom: 0 !important;
+}
+.disabled {
+  opacity: 0.5; /* or some other styling */
+  pointer-events: none;
+}
+a {
+  cursor: pointer;
+}

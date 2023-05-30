@@ -1,0 +1,98 @@
+<main class="modal-handle">
+  <div class="modal-dialog modal-dialog-centered align-center">
+    <div class="modal-content ">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="time-slot-page">
+          <div class="container">
+            <form>
+
+
+              <div class="row mb-6">
+                <div class="col-md-12">
+                  <div class="form-group">
+
+                    <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                      <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
+                        id="week_day" name="week_day" required formControlName="address_id"
+                        *ngFor=" let address of">
+
+                      </select>
+                    </div>
+
+                    <label class="col-form-label required fw-semibold fs-6">Select Day</label>
+                    <div class="row">
+                      <!--begin::Col-->
+                      <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                        <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
+                          id="week_day" name="week_day" required formControlName="day_en">
+                          <option selected disabled>Select Day</option>
+                          <option value="Saturday">Saturday</option>
+                          <option value="Sunday">Sunday</option>
+                          <option value="Monday">Monday</option>
+                          <option value="Tuesday">Tuesday</option>
+                          <option value="Wednesday">Wednesday</option>
+                          <option value="Thursday">Thursday</option>
+                          <option value="Friday">Friday</option>
+                        </select>
+                      </div>
+                      <!--end::Col-->
+                      <!--begin::Col-->
+                      <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                        <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
+                          id="week_day" name="day_ar" required formControlName="day_ar">
+                          <option selected disabled>أختر اليوم</option>
+                          <option value="السبت">السبت</option>
+                          <option value="الأحد">الأحد</option>
+                          <option value="الأثنين">الأثنين</option>
+                          <option value="الثلاثاء">الثلاثاء</option>
+                          <option value="الأربعاء">الأربعاء</option>
+                          <option value="الخميس">الخميس</option>
+                          <option value="الجمعه">الجمعه</option>
+                        </select>
+                      </div>
+                      <!--end::Col-->
+                    </div>
+                  </div>
+                  <div class="form-group mt2">
+                    <label class="col-lg-3 col-form-label required fw-semibold fs-6">Time</label>
+                    <div class="row">
+                      <!--begin::Col-->
+                      <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                        <input type="time" name="start_time"
+                          class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="start_time"
+                          formControlName="start_time">
+                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                      </div>
+                      <!--end::Col-->
+
+                      <!--begin::Col-->
+
+                      <div class="col-lg-6 fv-row fv-plugins-icon-container">
+
+                        <!-- <label>
+                          Time
+                          <input [owlDateTimeTrigger]="dt4" [owlDateTime]="dt4"  class="datePike">
+                          <owl-date-time [pickerType]="'timer'" #dt4></owl-date-time>
+                      </label> -->
+                        <input type="time" name="end_time" class="form-control form-control-lg form-control-solid"
+                          placeholder="End-time" formControlName="end_time">
+                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                      </div>
+                      <!--end::Col-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <input type="submit" class="btn-lo fadeIn" value="Add">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

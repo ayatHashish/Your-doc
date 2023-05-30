@@ -1,0 +1,71 @@
+@import "../../../../assets/scss/componants/variable";
+
+.main-user{
+.symbol {
+  display: inline-block;
+  flex-shrink: 0;
+  position: relative;
+  border-radius: 0.475rem;
+  img {
+    width: 160px;
+    height: 160px;
+    max-width: none;
+  }
+}
+ .name {
+    color: #181c32;
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  .shrot_info {
+    font-family: Inter, Helvetica, "sans-serif";
+    h6 {
+      color: #b5b5c3;
+      font-size: 1.075rem;
+      font-weight: 400;
+
+
+      i {
+        color: #a1a5b7;
+      }
+    }
+    .gender{
+       text-transform: capitalize;
+      }
+  }
+  .card,
+  .card-body {
+    border-color: #f4f4f4;
+  }
+  .card {
+    .card-header {
+      .card-title {
+        h3 {
+          font-size: 1.35rem !important;
+        }
+      }
+    }
+  }
+  ul {
+    li {
+      margin-top: 10px;
+      button {
+        background-color: transparent;
+        color: #b5b5c3;
+        padding: 1rem 5px;
+        border-radius: 0;
+        margin: 0 1rem;
+        font-weight: 550;
+        border-bottom: 2px solid transparent;
+        &:hover,
+        &.active {
+          color: $th-brand;
+          background-color: transparent;
+          border-bottom: 2px solid $th-brand !important;
+          transition: color 0.2s ease;
+          border-radius: 0;
+        }
+      }
+    }
+  }
+}

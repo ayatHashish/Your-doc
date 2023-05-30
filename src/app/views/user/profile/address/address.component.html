@@ -1,0 +1,55 @@
+<main>
+  <div class="card mb-4 ">
+    <div class="card-header cursor-pointer">
+      <!--begin::Card title-->
+      <div class="card-title m-0">
+        <h3 class="m-0">My Clinic Addresses</h3>
+      </div>
+      <!--end::Card title-->
+      <!--begin::Action-->
+      <a type="button" class="btn btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#newAddress">Add
+        New</a>
+      <!--end::Action-->
+    </div>
+
+    <!--begin::card body-->
+    <div class="card-body">
+      <div class="row gx-9 gy-6">
+        <div class="col-xl-6 mb-4" *ngFor="let address of profileaddress.addresses">
+          <div class="notice d-flex rounded border-dash h-lg-100 p-6">
+            <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
+              <div class="mb-3 mb-md-0 fw-semibold">
+                <h5 class="text-gray-900 fw-bold pb-3">{{address["address"]}}</h5>
+                <h6>{{address["state"]}}</h6>
+                <h6>{{address["country"]}}</h6>
+              </div>
+              <div class="d-flex align-items-center py-2">
+                <button class="btn btn-sm button_custom me-3" data-kt-billing-action="card-delete"
+                  data-bs-toggle="modal" data-bs-target="#deleteAddress" (click)='openModal(address["id"])'>Delete</button>
+                <button class="btn btn-sm button_custom" data-bs-toggle="modal"
+                  data-bs-target="#editAddress" (click)='openUpdateModal(address["id"], address["address"], address["state"], address["country"])'>Edit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--end::card body-->
+  </div>
+</main>
+
+<!-- Add New -->
+<div class="modal fade" id="newAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+  aria-labelledby="newAddressLabel" aria-hidden="true">
+  <app-add-new-address></app-add-new-address>
+</div>
+<!-- Delete -->
+<div class="modal fade" id="deleteAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <app-delete-address [addressDleted]="selectedItemId"></app-delete-address>
+</div>
+<!-- edit -->
+<div class="modal fade" id="editAddress" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
+  aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <app-edit-address [addressedit]="getAddressEdit()"></app-edit-address>
+</div>

@@ -1,0 +1,23 @@
+
+@import"../../../../assets/scss/componants/variable.scss";
+.all-spcialistes {
+  .card {
+    height: 360px !important;
+    cursor: pointer;
+    .image {
+      img {
+        width: 100%;
+      }
+    }
+    .content {
+      h3 {
+        font-size: 18px !important;
+        text-align: center;
+
+        &:hover {
+          color: $th-brand;
+        }
+      }
+    }
+  }
+}

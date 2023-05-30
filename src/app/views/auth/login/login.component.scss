@@ -1,0 +1,228 @@
+@import "../../../../assets/scss/componants/variable";
+.login {
+  padding: 80px 0;
+  height: 100vh;
+  vertical-align: middle;
+  .login-doc {
+    width: 90%;
+    h2 {
+      color: $brand-primary;
+      font-size: 30px;
+      margin: 5% 0;
+      text-transform: capitalize;
+      font-weight: 800;
+      span {
+        color: $th-brand;
+        font-size: 40px;
+      }
+    }
+    .dic-icon {
+      margin: 20px;
+      font-size: 20px;
+      i {
+        color: $brand-primary;
+        font-size: 25px;
+      }
+    }
+    .custom-carousel {
+      width: 70%;
+      margin: 7% auto;
+      .carousel-item {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        img {
+          width: 100%;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  .wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 19px 0;
+
+    #formContent {
+      padding: 100px 0;
+      border-radius: 10px 10px 10px 10px;
+      background: $brand-primary;
+      padding: 30px;
+      width: 80%;
+      // max-width: 450px;
+      position: relative;
+      // box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+      text-align: center;
+      .login-dic {
+        display: flex;
+        align-items: center;
+        padding: 30px 0px;
+        justify-content: space-between;
+        h2 {
+          font-size: 25px;
+          color: $pure-white;
+          text-align: start;
+        }
+        .go_login {
+          h6{
+            color: $brand-gray;
+            font-size: 14px;
+          }
+          a {
+            color: $pure-white;
+            cursor: pointer;
+            &:hover{
+              color: $th-brand;
+            }
+          }
+        }
+      }
+
+      form {
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          // margin: 30px 0;
+          position: relative;
+          margin: 10px 2.5px 20px 2.5px;
+
+          input,
+          select {
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid $brand-gray;
+            color: $dark-gray;
+            background-color: $brand-primary;
+            padding: 10px 20px;
+            font-size: 16px;
+            transition: all 0.5s ease-in-out;
+            &:focus {
+              border: thin solid $th-brand;
+              border-bottom: solid medium $th-brand;
+              background-color: $pure-white;
+            }
+          }
+          label {
+            color: $brand-gray;
+            position: absolute;
+            pointer-events: none;
+            left: 10px;
+            top: 10px;
+            transition: 0.2s;
+          }
+          input:focus ~ label {
+            top: -10px;
+            left: 15px;
+            border-radius: 5px;
+            color: $th-brand;
+            background-color: $pure-white;
+            padding: 0 5px 0 5px;
+          }
+        }
+        .form-check {
+          display: flex;
+          align-items: baseline;
+          justify-content: space-between;
+          padding-top: 5px;
+          padding-left: 2em;
+          .form-check-input {
+            background-color: $brand-primary;
+            border: 1px solid $pure-white;
+          }
+          .form-check-content {
+            padding: 10px 0;
+            color: $pure-white;
+          }
+          a {
+            color: $th-brand;
+          }
+        }
+        .btn-lo {
+          background-color: $th-brand;
+          border: none;
+          color: $pure-white;
+          padding: 15px 80px;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
+          border-radius: 5px;
+          margin-bottom: 60px;
+          margin-top: 30px;
+          width: 100%;
+          cursor: pointer;
+          transition: all 0.2s ease-in-out;
+          &:hover {
+            background-color: $brand-blue-hover;
+          }
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 580px) {
+  .login {
+    .login-doc {
+      text-align: center;
+      h2 {
+        font-size: 20px;
+        margin: 5% 0;
+        span {
+          color: $th-brand;
+          font-size: 20px;
+        }
+      }
+      .dic-icon {
+        margin: 10px;
+        font-size: 20px;
+        i {
+          font-size: 20px;
+        }
+      }
+      .custom-carousel {
+        .carousel-item {
+          width: 100%;
+        }
+      }
+    }
+    .wrapper {
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+      #formContent {
+        width: 100%;
+        text-align: start;
+
+        .login-dic {
+          text-align: center;
+          flex-direction: column;
+          padding: 20px 0px;
+          h2 {
+            text-align: center;
+          }
+        }
+
+        form {
+          .form-group {
+            flex-direction: column;
+          }
+          .form-check {
+            display: flex;
+            align-items: start;
+            justify-content: start;
+            .form-check-content {
+              padding: 10px 0;
+            }
+          }
+          .btn-lo {
+            padding: 15px 10px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,153 @@
+<main>
+  <div class="card mb-4 card-wall">
+    <p id="onUpdating" class="on-updating" [class.d-none]="isUpdating">
+      <span>U</span>
+      <span>p</span>
+      <span>d</span>
+      <span>a</span>
+      <span>t</span>
+      <span>i</span>
+      <span>n</span>
+      <span>g</span>
+      <span>.</span>
+      <span>.</span>
+      <span>.</span>
+    </p>
+    <div class="card-header cursor-pointer">
+      <!--begin::Card title-->
+      <div class="card-title m-0">
+        <h3 class="m-0">Settings</h3>
+      </div>
+    </div>
+
+    <form [formGroup]="updatedForm" (ngSubmit)="updated()">
+      <div class="card-body">
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-3 col-form-label fw-semibold fs-6">Avatar</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-9">
+            <!--begin::Image input-->
+            <div class="image-input image-input-outline" data-kt-image-input="true">
+              <img class="image-input-wrapper" [src]="avatarSrc" *ngIf="avatarSrc">
+              <label class="btn btn-icon btn-circle btn-active-color-primary w-25px h-25px bg-body shadow"
+                data-kt-image-input-action="change" data-bs-toggle="tooltip" aria-label="Change avatar"
+                data-bs-original-title="Change avatar">
+                <i class="bx bx-pencil"></i>
+                <input type="file" name="avatar" accept=".png, .jpg, .jpeg" formControlName="avatar"
+                  (change)="selectimage($event)" />
+
+                <input type="hidden" name="avatar_remove" />
+              </label>
+            </div>
+            <!--begin::Hint-->
+            <div class="form-text">Allowed file types: png, jpg, jpeg.</div>
+            <!--end::Hint-->
+          </div>
+          <!--end::Col-->
+        </div>
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Name</label>
+          <div class="col-lg-9">
+            <!--begin::Row-->
+            <div class="row">
+              <!--begin::Col-->
+              <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                <input type="text" name="first_name"
+                  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" formControlName="first_name"
+                  placeholder="First name" value="{{ profilesetting.first_name }}" (change)="onchangeInput($event)" />
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+              </div>
+              <div class="col-lg-6 fv-row fv-plugins-icon-container">
+                <input type="text" formControlName="last_name" name="last_name"
+                  class="form-control form-control-lg form-control-solid" placeholder="Last name"
+                  value="{{ profilesetting.last_name }}" (change)="onchangeInput($event)" />
+                <div class="fv-plugins-message-container invalid-feedback"></div>
+              </div>
+              <!--end::Col-->
+            </div>
+            <!--end::Row-->
+          </div>
+          <!--end::Col-->
+        </div>
+        <div class="row mb-6">
+          <!--begin::Label-->
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6">Your Email</label>
+          <!--end::Label-->
+          <!--begin::Col-->
+          <div class="col-lg-9">
+            <input type="text" name="email" formControlName="email"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Your Email"
+              value="{{ profilesetting.email }}" (change)="onchangeInput($event)" />
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6">
+            Phone
+          </label>
+          <div class="col-lg-9">
+            <input type="text" name="phone" formControlName="phone"
+              class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="phone"
+              value="{{ profilesetting.phone }}" (change)="onchangeInput($event)" />
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6">
+            Gender
+          </label>
+
+          <div class="col-lg-9">
+            <select class="form-select form-select-solid form-select-lg select2-hidden-accessible" name="gender"
+              formControlName="gender" (change)="onchangeInput($event)">
+              <option [value]="'female'" [selected]="profilesetting.gender === 'female'">
+                Female
+              </option>
+              <option [value]="'male'" [selected]="profilesetting.gender === 'male'">
+                Male
+              </option>
+            </select>
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="row mb-6">
+          <label class="col-lg-3 col-form-label required fw-semibold fs-6">
+            Birth_date
+          </label>
+          <div class="col-lg-9">
+            <input type="text" placeholder="Pick your birth date" name="birth_date" formControlName="birth_date"
+              class="form-control custom-datepicker form-control-lg form-control-solid" bsDatepicker
+              [bsValue]="birthDate" [maxDate]="maxDate" [bsConfig]="{ isAnimated: true, dateInputFormat: 'D, MMM, Y' }"
+              (bsValueChange)="onchangeInput($event, $event)">
+            <div class="fv-plugins-message-container invalid-feedback"></div>
+          </div>
+        </div>
+        <div class="footer-card d-flex justify-content-end mt-5">
+          <button type="reset" class="btn btn-sm btn-light btn-active-light-primary me-2">
+            Discard
+          </button>
+          <button type="submit" class="btn btn-sm align-self-center" id="kt_account_profile_details_submit">
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>
+
+
+<!-- Example code od datepicker -->
+<!-- <div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text" placeholder="Datepicker" class="form-control custom-datepicker" bsDatepicker [bsValue]="bsValue"
+      [minDate]="minDate" [maxDate]="maxDate" [daysDisabled]="[6,0]" [datesDisabled]="enabledDates"
+      [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }">
+  </div>
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text" placeholder="Daterangepicker" class="form-control custom-daterangepicker" bsDaterangepicker
+      [(ngModel)]="bsRangeValue" [datesEnabled]="enabledDates" [bsConfig]="{ isAnimated: true }">
+  </div>
+</div> -->

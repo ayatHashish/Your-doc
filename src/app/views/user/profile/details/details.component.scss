@@ -1,0 +1,44 @@
+@import "../../../../../assets/scss/componants/variable";
+.card {
+  border: none;
+  padding: 0;
+  border-radius: 15px !important; 
+  .card-title {
+    h3 {
+      font-size: 1.35rem;
+    }
+  }
+  .card-header {
+    background-color: $pure-white;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $border;
+    min-height: 60px;
+    a {
+      background-color: $th-brand;
+      color: white;
+      font-size: 0.95rem !important;
+      &:hover {
+        background-color: $brand-blue-hover;
+      }
+    }
+  }
+  .card-body {
+    padding: 0 2.25rem;
+  }
+
+  .footer-card {
+    border-top: 1px solid $border;
+    padding-top: 20px;
+    button {
+      &:nth-of-type(2) {
+        background-color: $th-brand;
+        color: white;
+        &:hover {
+          background-color: $brand-blue-hover;
+        }
+      }
+
+      font-size: 0.95rem !important;
+    }
+  }
+}
