@@ -1,0 +1,34 @@
+@import "../../../../assets/scss/componants/variable.scss";
+.all-spcialistes {
+  .card {
+    position: relative;
+    background-color: #f2f2f7;
+    border-radius: 15px;
+    height: 100%;
+    padding: 20px;
+    height: 360px !important;
+    cursor: pointer;
+
+    h3 {
+      padding: 2.5rem 0;
+    }
+    .image {
+      padding: 0;
+      border-radius: 15px;
+      img {
+        border-radius: 15px;
+        width: 100%;
+      }
+    }
+    .content {
+      h3 {
+        font-size: 18px !important;
+        text-align: center;
+
+        &:hover {
+          color: $th-brand;
+        }
+      }
+    }
+  }
+}

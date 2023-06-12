@@ -10,7 +10,16 @@
       font-weight: bold;
       margin-bottom: 40px;
     }
-
+    a {
+      i {
+        color: $th-brand;
+      }
+      &:hover {
+        i {
+          color: $pure-white;
+        }
+      }
+    }
     .consultant-list {
       // margin-top: 30px;
       .consultant-card {
@@ -30,7 +39,7 @@
             img {
               width: 100%;
               border-radius: 15px;
-              min-height: 200px;
+              min-height: 240px;
             }
           }
           .ext {
@@ -57,7 +66,7 @@
                 -webkit-box-align: center;
                 -ms-flex-align: center;
                 align-items: center;
-                border-radius: 10px;
+                border-radius: 15px;
                 font-size: 1.125rem;
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
@@ -69,8 +78,8 @@
                 background-color: transparent;
                 color: $pure-white;
                 &:hover {
-                  border: solid 2px $brand-green !important;
-                  background-color: $brand-green;
+                  border: solid 2px $th-brand !important;
+                  background-color: $th-brand;
                 }
               }
             }
@@ -87,7 +96,7 @@
                   min-height: 50px;
                   min-width: 50px;
                   border-radius: 100%;
-                  background-color: $brand-green;
+                  background-color: $th-brand;
                   font-size: 2rem;
                 }
                 .data {
@@ -124,8 +133,8 @@
           justify-content: space-between;
           align-items: center;
           h4 {
-         font-size: 1.20rem;
-        //  max-width: 130px;
+            font-size: 1.2rem;
+            //  max-width: 130px;
 
             a {
               color: $brand-primary;
@@ -140,7 +149,7 @@
           }
           .doc_details {
             font-size: 20px;
-            background-color: #fff;
+            background-color: $pure-white;
             width: 30px;
             height: 30px;
             display: flex;
@@ -148,9 +157,9 @@
             align-items: center;
             border-radius: 50%;
             transition: all 0.2s ease-in-out;
-            &:hover{
-              background-color: $brand-green;
-              color: #fff;
+            &:hover {
+              background-color: $th-brand;
+              color: $pure-white;
             }
           }
         }

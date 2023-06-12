@@ -18,14 +18,9 @@ export class AuthService {
   login(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `${'auth/login'}`, data)
   }
-  changePassword(id: number,password:string ,confirmation:string ): Observable<any> {
-    const body = {
-      user_id: id,
-      password: password,
-      password_confirmation: confirmation
-    };
+  changePasswordUpdata(data:any): Observable<any> {
 
-    return this._http.post(this.baseUrl + `${'auth/change_password'}`, body)
+    return this._http.post(this.baseUrl + `${'auth/change_password'}`, data)
   }
   forgetPassword(email: any): Observable<any> {
     const body = {
@@ -36,7 +31,7 @@ export class AuthService {
 
   verificationCode(code: any): Observable<any> {
     const body = {
-      code: code,
+      verification_code: code,
     };
     return this._http.post(this.baseUrl + `${'auth/validate_verification_code'}`, body)
   }

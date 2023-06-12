@@ -14,22 +14,13 @@ export class ForgetpassComponent {
   forgotPasswordForm = new FormGroup({
       email: new FormControl(''),
     });
-
   forgetpassword() {
-
-const email = this.forgotPasswordForm.value.email;
-    if (this.forgotPasswordForm.valid) {
-      this._auth.forgetPassword(email).subscribe(
-        (res) => {
-
-        },
-        (e) => {
-          this.errorMsg = e.error.error;
-
-        },
-        () => {
-          this._router.navigateByUrl('/auth/verifycode');
-        }
+      const email = this.forgotPasswordForm.value.email;
+       if (this.forgotPasswordForm.valid) {
+        this._auth.forgetPassword(email).subscribe(
+        (res) => {},
+        (e) => {this.errorMsg = e.error.error;},
+        () => { this._router.navigateByUrl('/auth/verifycode');}
       );
     }
   }

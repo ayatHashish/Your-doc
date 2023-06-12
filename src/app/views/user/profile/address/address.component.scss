@@ -1,25 +1,47 @@
 .border-dash{
   border: 1px dashed #e1e3ea;
 }
-.button_custom{
-  color: #7e8299;
-  background-color: #f9f9f9;
-  font-size: 0.95rem;
-  &:hover{
-    color: #009ef7;
-    background-color: #f1faff;
+// .button_custom{
+//   color: #7e8299;
+//   background-color: #f9f9f9;
+//   font-size: 0.95rem;
+//   &:hover{
+//     color: #009ef7;
+//     background-color: #f1faff;
+//   }
+// }
+// .button_edit{
+//   color: #7e8299;
+//   background-color: #f9f9f9;
+// }
+// .button_edit{
+//   color: #7e8299;
+//   background-color: #f9f9f9;
+// }
+// .button_edit{
+//   color: #7e8299;
+//   background-color: #f9f9f9;
+// }
+a {
+  padding: 7px 10px !important;
+  margin: 0 3px;
+  background-color: #f65c5c1a;
+  color: #f65c5c;
+  &:hover {
+    background-color: #f65c5c;
+    color: #feeeeeb3;
   }
-}
-.button_edit{
-  color: #7e8299;
-  background-color: #f9f9f9;
-}
-.button_edit{
-  color: #7e8299;
-  background-color: #f9f9f9;
-}
-.button_edit{
-  color: #7e8299;
-  background-color: #f9f9f9;
+  &:first-child {
+    background-color: #138fc21a;
+    color: #138fc2;
+    &:hover {
+      background-color: #138fc2;
+      color: #feeeeeb3;
+    }
+  }
+  i {
+    padding-right: 0 !important;
+    font-size: 16px;
+  }
 }
 

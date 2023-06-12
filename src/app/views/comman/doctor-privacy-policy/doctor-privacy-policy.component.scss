@@ -2,19 +2,18 @@
 
 .doctor-policy {
   .card {
-    border-color: #f4f4f4;
+    border: none;
     .card-body {
       .content {
         font-size: 16px;
         line-height: 1.6;
         color: #333;
-        .heading {
-          font-size: 1.8rem;
-          color: #333;
-          margin-bottom: 20px;
-          text-align: center;
-          // text-transform: uppercase;
-          letter-spacing: 2px;
+       ul{
+          li{
+            font-size: 16px;
+            margin-bottom: 20px;
+            color: $dark-gray !important;
+          }
         }
         section {
           margin-bottom: 2rem;

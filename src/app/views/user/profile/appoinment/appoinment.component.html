@@ -30,6 +30,29 @@
                 <td>Action</td>
               </tr>
             </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>Test</td>
+                <td>
+                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
+                    <i class="bx bx-show-alt"></i>
+                  </a>
+                </td>
+                <td>
+                  <a type="button" class="btn btn-sm" (click)="acceptBookings(1)"
+                    [ngClass]="role == 'User' ? 'd-none' : ''">
+                    <i class="bx bx-error-circle" *ngIf=""></i>
+                  </a>
+                  <a type="button" class="btn btn-sm" data-bs-target="#cancel" (click)="cancel($event, 1)">
+                    <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
             <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments; let i = index">
               <tr>
                 <td>#{{ i + 1 }}</td>
@@ -54,9 +77,8 @@
                     <!-- {{ accept }} -->
                     <i class="bx bx-error-circle" *ngIf=""></i>
                   </a>
-<!-- data-bs-toggle="modal" -->
-                  <a type="button" class="btn btn-sm" data-bs-target="#cancel"
-                    (click)="cancel($event, appoint.id)">
+                  <!-- data-bs-toggle="modal" -->
+                  <a type="button" class="btn btn-sm" data-bs-target="#cancel" (click)="cancel($event, appoint.id)">
                     <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
                   </a>
                 </td>

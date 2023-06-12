@@ -13,7 +13,7 @@ export class DoctorsDetailsComponent {
   id: any
   doctorDetails: any
   datesByday: any
-
+  selected: object = {}
   constructor(
     private _doctors: DoctorsService,
     private _ActivatedRoute: ActivatedRoute,
@@ -21,8 +21,16 @@ export class DoctorsDetailsComponent {
     private dataService: DataServiceService) {
     this.doctorsDetails()
   }
-  test(id: number, docName: string, slotId: number) {
-    this.dataService.setData({ id, docName, slotId });
+  selectedDoctor(doctor: any, slot: any) {
+    this.selected = {
+      docId: doctor.id,
+      docName: doctor.name,
+      slotId: slot.id
+    }
+    // localStorage.setItem('selected', this.selected)
+
+
+    // this.dataService.setData({ doctor['id'], doctor.name, slot.id });
     this.getDatesByday("Monday")
   }
 

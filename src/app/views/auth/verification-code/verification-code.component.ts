@@ -10,19 +10,22 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class VerificationCodeComponent {
   errorMsg = ""
-
+  user_id: any
   constructor(private _auth: AuthService, private _router: Router) { }
   verificationCodeForm = new FormGroup({
-      verification_code: new FormControl(''),
-    });
+    verification_code: new FormControl(''),
+  });
 
-    verificationCode() {
-const code = this.verificationCodeForm.value.verification_code;
+  verificationCode() {
+    const code = this.verificationCodeForm.value.verification_code;
     if (this.verificationCodeForm.valid) {
       this._auth.verificationCode(code).subscribe(
-        (res) => {},
-        (e) => {this.errorMsg = e.error.error;},
-        () => { this._router.navigateByUrl('/auth/login');}
+        (res) => {
+          this.user_id = res.user_id;
+          // console.log(this.user_id);
+        },
+        (e) => { this.errorMsg = e.error.error; },
+        () => { this._router.navigateByUrl('/auth/editpassword/' + this.user_id); }
       );
     }
   }

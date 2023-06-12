@@ -4,19 +4,12 @@
 
 .our-terms {
   .card {
-    border-color: #f4f4f4;
+    border: none;
     .card-body {
       .content {
         font-size: 16px;
         line-height: 1.6;
         color: #333;
-        .heading {
-          font-size: 1.8rem;
-          color: #333;
-          margin-bottom: 20px;
-          text-align: center;
-          letter-spacing: 2px;
-        }
         .faq-content {
           margin: 0 auto;
           border-radius: 10px;
@@ -33,20 +26,22 @@
           .faq:not(:first-child) {
             border-top: 1px solid #e6e6e6;
           }
+
+       
           .faq-title {
             margin: 0 35px 0 0;
+            color: $brand-green;
           }
           .faq-text {
             margin: 30px 0 0;
             display: none;
-            line-height: 1.5rem;
           }
           .faq.active {
             background-color: #f8f8f8;
-            box-shadow: inset 4px 0px 0px 0px $th-brand;
+            box-shadow: inset 4px 0px 0px 0px $brand-green;
           }
           .faq.active .faq-title {
-            color: $th-brand;
+            color: $black;
           }
           .faq.active .faq-text {
             display: block;
@@ -74,8 +69,8 @@
           }
           .faq.active .faq-toggle {
             transform: rotate(180deg);
-            background-color: $th-brand;
-            border-color: $th-brand;
+            background-color: $brand-green;
+            border-color: $brand-green;
             color: #fff;
           }
         }

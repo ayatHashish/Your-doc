@@ -47,7 +47,7 @@
 
     #formContent {
       padding: 100px 0;
-      border-radius: 10px 10px 10px 10px;
+      border-radius: 15px;
       background: $brand-primary;
       padding: 30px;
       width: 80%;
@@ -139,27 +139,7 @@
             color: $th-brand;
           }
         }
-        .btn-lo {
-          background-color: $th-brand;
-          border: none;
-          color: $pure-white;
-          padding: 15px 80px;
-          text-align: center;
-          text-decoration: none;
-          text-transform: uppercase;
-          border-radius: 5px;
-          margin-bottom: 60px;
-          margin-top: 30px;
-          width: 100%;
-          cursor: pointer;
-          transition: all 0.2s ease-in-out;
-          &:hover {
-            background-color: $brand-blue-hover;
-          }
-          &:active {
-            transform: scale(0.95);
-          }
-        }
+
       }
     }
   }
@@ -217,9 +197,6 @@
             .form-check-content {
               padding: 10px 0;
             }
-          }
-          .btn-lo {
-            padding: 15px 10px;
           }
         }
       }

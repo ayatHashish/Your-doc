@@ -1,0 +1,22 @@
+.modal-content {
+  .modal-header {
+    border-bottom: none !important;
+    .btn-close {
+      margin-right: 25px !important;
+      margin-top: 14px !important;
+    }
+  }
+  .modal-body {
+    p,
+    h3 {
+      padding-top: 10px;
+    }
+  }
+  .modal-footer {
+    // border-top: none !important;
+    align-items: end;
+    justify-content: end;
+  }
+
+
+}

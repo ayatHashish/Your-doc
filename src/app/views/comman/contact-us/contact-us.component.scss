@@ -3,6 +3,9 @@
 
 
 .contact-us {
+  .card{
+    border: none !important;
+  }
   h1,
   h2 {
     font-weight: normal;
@@ -18,61 +21,24 @@
     font-size: 1.5rem;
     margin-top: 2rem;
   }
-
-  /* Form styles */
-  form {
-    margin: 0 auto;
-    max-width: 600px;
-    border: 1px solid $brand-primary;
-    border-radius: 10px;
-    padding: 50px;
-  }
-
-  label,
-  input,
-  textarea {
-    display: block;
-    margin-bottom: 1rem;
-  }
-
-  label {
-    font-weight: bold;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 1rem;
-  }
-
-  textarea {
-    height: 150px;
-  }
-
-  input[type="submit"] {
-    background-color: $brand-primary;
-    border: none;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-size: 1rem;
-  }
-
-  input[type="submit"]:hover {
-    background-color:$blue09;
-  }
-
-  /* Contact info styles */
   p {
     text-align: center;
     font-size: 1rem;
   }
+  /* Form styles */
+  form {
+    margin: 0 auto;
+    max-width: 600px;
+    border-radius: 15px;
+    padding: 50px;
+    h1{
+      text-align: start;
+      font-weight:500;
+     letter-spacing:1px;
+      text-transform: uppercase;
+    }
+  }
+
 
   /* Map styles */
   iframe {
@@ -82,7 +48,7 @@
     max-width: 600px;
     height: 580px;
     border: none;
-    border-radius: 10px;
+
   }
 }
 

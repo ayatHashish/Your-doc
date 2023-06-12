@@ -4,139 +4,44 @@
 @import "~bootstrap/dist/css/bootstrap.min.css";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.carousel";
 @import "ngx-owl-carousel-o/lib/styles/scss/owl.theme.default";
+@import "../src/style/button";
+@import "../src/style/model";
+@import "../src/style/form";
+@import "../src/style/card-content";
 
 * {
-  font-family: Inter, Helvetica, "sans-serif";
+  font-family: "Inter", sans-serif;
 }
-
 body {
-  // background-color: #f9f9f9;
   background-image: url(assets/images/bg.jpg) !important;
-
 }
-
 a {
   text-decoration: none;
-  // &:after {
-  //   display: block;
-  //   left: 0;
-  //   bottom: -10px;
-  //   width: 0;
-  //   height: 2px;
-  //   background-color:#283e69;
-  //   content: "";
-  //   transition: width 1s;
-  // }
-
-  // &:hover {
-  //   color: #1976ca;
-  // }
-
-  // &:hover:after {
-  //   width: 100%;
-  // }
 }
-
 i {
   font-size: 16px !important;
+}
+.heading {
+  font-size: 25px;
+  color: $black;
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: $dark-gray;
+}
+.headingtitle {
+  font-size: 25px;
+  color: $black;
 }
 
 .section-title p {
   margin-bottom: 0;
 }
-
-.btn-action {
-  margin-left: 15px;
-  background: $brand-primary;
-  color: #fff;
-  height: 40px;
-  padding: 8px 25px;
-  white-space: nowrap;
-  transition: 0.3s;
-  font-size: 14px;
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 5px;
-
-  i {
-    margin: 1px 5px;
-    scale: (1.1);
-  }
-
-  &:hover {
-    background: #022646;
-    color: #fff;
-  }
-}
-
-form .button {
-  padding: 0 40px;
-  margin-right: 1px;
-  height: 43px;
-  outline: none;
-  border: none;
-  background-color: #285192;
-  display: flex;
-  color: #fff;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 1.125rem;
-  justify-content: center;
-
-  &:hover {
-    background-color: gray;
-    color: #fff;
-  }
-}
-
-/* login-form */
-.login-btn {
-  position: relative;
-  display: inline-flex;
-  width: 150px;
-  height: 40px;
-
-  perspective: 1000px;
-
-  a {
-    font-size: 19px;
-    letter-spacing: 1px;
-    transform-style: preserve-3d;
-    transform: translateZ(-25px);
-    transition: transform 0.25s;
-    font-family: "Montserrat", sans-serif;
-
-    &:before,
-    &:after {
-      position: absolute;
-      content: "LOGIN";
-      height: 40px;
-      width: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid #1977cc;
-      box-sizing: border-box;
-      border-radius: 5px;
-    }
-
-    &:before {
-      color: #fff;
-      background: gray;
-      transform: rotateY(0deg) translateZ(0);
-    }
-
-    &:after {
-      color: gray;
-      transform: rotateX(90deg) translateZ(0);
-    }
-
-    &:hover {
-      transform: translateZ(-25px) rotateX(-90deg);
-    }
-  }
-}
-
 .navigation {
   padding: 0 20px !important;
 
@@ -148,7 +53,6 @@ form .button {
     }
   }
 }
-
 .dr-dis {
   .title {
     font-size: 18px;
@@ -159,7 +63,6 @@ form .button {
     font-size: 16px;
   }
 }
-
 .table {
   thead {
     font-weight: 500;
@@ -172,260 +75,12 @@ form .button {
     padding: 15px 0;
   }
 }
-
-/*--------------------------------------------------------------
-# Back to top button
---------------------------------------------------------------*/
-.back-to-top {
-  border-radius: 5px;
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 24px;
-  bottom: 225px;
-  z-index: 996;
-  background: #1976ca;
-  width: 30px;
-  height: 30px;
-  border-radius: 47px;
-  transition: all 0.4s;
-
-  &:hover {
-    background: #092f50;
-    color: #fff;
-  }
-
-  &.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  i {
-    font-size: 28px;
-    color: #fff;
-    line-height: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  form .button {
-    min-width: 60%;
-    font-size: 25px;
-  }
-}
-
-@media (max-width: 767px) {
-  .btn-action {
-    margin: 0 15px 0 0;
-    padding: 6px 18px;
-  }
-
-  form .button {
-    width: 20%;
-    margin: 20px auto;
-  }
-}
-
-@media (max-width: 558px) {
-  form .button {
-    margin-top: 40px;
-    margin-left: 80px;
-  }
-}
-
-.back-to-top {
-  border-radius: 5px;
-  position: fixed;
-  visibility: hidden;
-  opacity: 0;
-  right: 24px;
-  bottom: 225px;
-  z-index: 996;
-  background: #1976ca;
-  width: 30px;
-  height: 30px;
-  border-radius: 47px;
-  transition: all 0.4s;
-
-  &:hover {
-    background: #092f50;
-    color: #fff;
-  }
-
-  &.active {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  i {
-    font-size: 28px;
-    color: #fff;
-    line-height: 0;
-  }
-}
-
-@media (max-width: 992px) {
-  form .button {
-    min-width: 60%;
-    font-size: 25px;
-  }
-}
-
-@media (max-width: 767px) {
-  .btn-action {
-    margin: 0 15px 0 0;
-    padding: 6px 18px;
-  }
-
-  form .button {
-    width: 20%;
-    margin: 20px auto;
-  }
-}
-
-@media (max-width: 558px) {
-  form .button {
-    margin-top: 40px;
-    margin-left: 80px;
-  }
-}
-
-.custom-btn {
-  width: 130px;
-  height: 40px;
-  text-decoration: none;
-  color: #00317e;
-  padding: 5px 25px;
-  border: 2px solid #000;
-  font-family: "Lato", sans-serif;
-  font-weight: 500;
-  margin: 0 5px;
-  background: transparent;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
-
-.btn-10 {
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.btn-10:after {
-  position: absolute;
-  content: " ";
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  transition: all 0.3s ease;
-  -webkit-transform: scale(0.1);
-  transform: scale(0.1);
-}
-
-.btn-10:hover {
-  color: #fff;
-}
-
-.btn-10:hover:after {
-  background: #000;
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
-/* 6 */
-.btn-6 {
-  background: #000;
-  color: #fff;
-  line-height: 42px;
-  padding: 0;
-  border: none;
-}
-
-.btn-6 span {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-}
-
-.btn-6:before,
-.btn-6:after {
-  position: absolute;
-  content: "";
-  height: 0%;
-  width: 2px;
-  background: #000;
-}
-
-.btn-6:before {
-  right: 0;
-  top: 0;
-  transition: all 500ms ease;
-}
-
-.btn-6:after {
-  left: 0;
-  bottom: 0;
-  transition: all 500ms ease;
-}
-
-.btn-6:hover {
-  color: #000;
-  background: transparent;
-}
-
-.btn-6:hover:before {
-  transition: all 500ms ease;
-  height: 100%;
-}
-
-.btn-6:hover:after {
-  transition: all 500ms ease;
-  height: 100%;
-}
-
-.btn-6 span:before,
-.btn-6 span:after {
-  position: absolute;
-  content: "";
-  background: #000;
-}
-
-.btn-6 span:before {
-  left: 0;
-  top: 0;
-  width: 0%;
-  height: 2px;
-  transition: all 500ms ease;
-}
-
-.btn-6 span:after {
-  right: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  transition: all 500ms ease;
-}
-
-.btn-6 span:hover:before {
-  width: 100%;
-}
-
-.btn-6 span:hover:after {
-  width: 100%;
-}
-
 .particles-js {
   position: absolute;
   z-index: 9;
   width: 100%;
   height: 350px;
 }
-
 .view-all {
   color: #3e3e3e;
   margin: 20px 0;
@@ -486,9 +141,8 @@ form .button {
   align-items: center;
   float: right;
 }
-
 //Vendor
-.card.card-dashed>.card-header {
+.card.card-dashed > .card-header {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -516,15 +170,17 @@ form .button {
       display: flex;
 
       [class*="owl-"] {
-        font-size: 30px;
+        font-size: 50px;
         margin: 0;
-        padding: 2px;
-        background: #fff;
-        color: $th-brand;
+        padding: 10px;
+        background: $th-brand;
+        color: $pure-white;
         display: flex;
         cursor: pointer;
         border-radius: 3px;
-
+i{
+  font-size: 22px;
+}
         &:hover {
           opacity: 0.8;
         }
@@ -564,11 +220,6 @@ form .button {
   }
 }
 
-// owl-date-time-container {
-//   background-color: red !important;
-//   z-index: 9999999999 !important;
-//   position: absolute;
-// }
 .btn_font {
   font-size: 0.95rem !important;
   font-weight: 400;

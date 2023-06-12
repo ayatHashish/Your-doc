@@ -1,107 +1,49 @@
 <main class="main" data-icms-placeholder="main">
-  <div
-    class="dynamic-page"
-    data-aos="fade-up"
-    data-aos-duration="1200"
-    data-aos-delay="800"
-  >
+  <div class="dynamic-page" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
     <div class="container">
-      <div class="vco-details-page">
         <section class="vco-details-content">
-          <div class="container-fluid">
+          <div class="container">
             <div class="details-wrapper">
               <form [formGroup]="bookingForm" (ngSubmit)="bookingFunction()">
                 <div class="dr-details">
-                  <div class="row mb-6">
-                    <div class="col-lg-9">
-                      <div class="row">
-                        <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                          <label
-                            class="col-lg-3 col-form-label fw-semibold fs-6"
-                            >Doctor Name</label
-                          >
-                          <p
-                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                          >
-                            {{ data.docName }}
-                          </p>
-                        </div>
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-6 my-3">
+                      <label class="col-form-label fw-semibold fs-6">Doctor Name</label>
+                      <input type="text" disabled class="form-control form-control-solid" value="{{data.docName}}" />
                     </div>
-                  </div>
-                  <div class="row mb-6">
-                    <div class="col-lg-9">
-                      <!--begin::Row-->
-                      <div class="row">
-                        <!--begin::Col-->
-                        <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                          <label
-                            class="col-lg-3 col-form-label fw-semibold fs-6"
-                            >Patient Name</label
-                          >
-                          <input
-                            type="text"
-                            name="patient_name"
-                            formControlName="patient_name"
-                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                            placeholder="Patient Name"
-                          />
-                        </div>
-                      </div>
+                    <div class="col-lg-6 my-3">
+                      <label class="col-form-label fw-semibold fs-6">Patient Name</label>
+                      <input type="text" name="patient_name" formControlName="patient_name"
+                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                        placeholder="Patient Name" />
                     </div>
-                  </div>
-                  <div class="row mb-6">
-                    <div class="col-lg-9">
-                      <!--begin::Row-->
-                      <div class="row">
-                        <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                          <label
-                            class="col-lg-3 col-form-label fw-semibold fs-6"
-                            >Date</label
-                          >
-                          <input
-                            type="date"
-                            name=""
-                            formControlName="booking_date"
-                            class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                            placeholder="Booking Date"
-                          />
-                        </div>
-                      </div>
+                    <div class="col-lg-6 my-3">
+                      <label class="col-form-label fw-semibold fs-6">Date</label>
+                      <input type="date" name="" formControlName="booking_date"
+                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                        placeholder="Booking Date" />
                     </div>
+                    <div class="col-lg-6 my-3">
+                      <label class="col-form-label fw-semibold fs-6">Age</label>
+                      <input type="number" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                        formControlName="Age" placeholder="Age" />
+                    </div>
+                    <div class="col-lg-12 my-3">
+                      <label class="col-lg-3 col-form-label fw-semibold fs-6">Disease Dec</label>
+                      <textarea formControlName="disease_dec"
+                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"></textarea>
+                    </div>
+                    <div class="col-lg-12 my-3">
+                      <button type="submit" class="btn-action-sm text-center m-auto mt-4">Send</button>
+                    </div>
+                  
                   </div>
-                  <div class="row mb-6">
-                    <div class="col-lg-6">
-                      <label class="col-lg-3 col-form-label fw-semibold fs-6"
-                        >age</label
-                      >
 
-                      <input
-                        type="number"
-                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        formControlName="age"
-                        placeholder="Age"
-                      />
-                    </div>
-                  </div>
-                  <div class="row mb-6">
-                    <div class="col-lg-6 fv-row fv-plugins-icon-container">
-                      <label class="col-lg-3 col-form-label fw-semibold fs-6"
-                        >Disease Dec</label
-                      >
-                      <textarea
-                        formControlName="disease_dec"
-                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                      ></textarea>
-                    </div>
-                  </div>
-                  <button type="submit" class="btn-lo fadeIn">Send</button>
                 </div>
               </form>
             </div>
           </div>
         </section>
-      </div>
     </div>
   </div>
 </main>

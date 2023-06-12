@@ -14,10 +14,7 @@ const routes: Routes = [
   { path: 'signup', component: RegisterComponent,},
   { path: 'forgotPassword', component: ForgetpassComponent,},
   { path: 'verifycode',component: VerificationCodeComponent,},
-  {path: 'editpassword',component: ReAssignPassComponent,},
-
-
-
+  {path: 'editpassword/:id',component: ReAssignPassComponent,},
 ];
 
 @NgModule({
