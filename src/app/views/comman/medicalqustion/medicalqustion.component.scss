@@ -27,10 +27,10 @@
             border-top: 1px solid #e6e6e6;
           }
 
-       
+
           .faq-title {
             margin: 0 35px 0 0;
-            color: $brand-green;
+            color: $th-brand;
           }
           .faq-text {
             margin: 30px 0 0;
@@ -38,7 +38,7 @@
           }
           .faq.active {
             background-color: #f8f8f8;
-            box-shadow: inset 4px 0px 0px 0px $brand-green;
+            box-shadow: inset 4px 0px 0px 0px $th-brand;
           }
           .faq.active .faq-title {
             color: $black;
@@ -69,8 +69,8 @@
           }
           .faq.active .faq-toggle {
             transform: rotate(180deg);
-            background-color: $brand-green;
-            border-color: $brand-green;
+            background-color: $th-brand;
+            border-color: $th-brand;
             color: #fff;
           }
         }

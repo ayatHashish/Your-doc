@@ -23,7 +23,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
     AboutUsComponent,
     MedicalqustionComponent,
     DoctorPrivacyPolicyComponent,
-  
+    ContactUsComponent,
     TermsComponent
   ]
 })

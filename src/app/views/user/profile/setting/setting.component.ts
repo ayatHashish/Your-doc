@@ -124,6 +124,8 @@ export class SettingComponent {
         this.isUpdating = true;
         console.log('Data updated successfully');
       });
+    }else{
+      console.log('not valid');
     }
   }
 }

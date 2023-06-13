@@ -8,11 +8,10 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: 'terms-of-use', component: TermsComponent },
-
-  { path: 'about-us', component: AboutUsComponent },
+  { path: 'about', component: AboutUsComponent },
   { path: 'medical-questions', component: MedicalqustionComponent },
   { path: 'doctors-policy', component: DoctorPrivacyPolicyComponent },
-  { path: 'contact-us', component: ContactUsComponent },
+  { path: 'contact', component: ContactUsComponent },
 ];
 
 @NgModule({

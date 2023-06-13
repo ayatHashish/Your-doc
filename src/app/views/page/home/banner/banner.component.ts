@@ -7,6 +7,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./banner.component.scss'],
 })
 export class BannerComponent {
+
+ 
   customOptions: OwlOptions = {
     loop: true,
     margin: 0,
@@ -30,4 +32,5 @@ export class BannerComponent {
       },
     },
   };
+
 }

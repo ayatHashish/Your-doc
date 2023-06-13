@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-expand-lg fixed-top" [ngClass]="{'scrolled': isScrolled}">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -17,44 +18,35 @@
         <li class="nav-item">
           <a class="nav-link" routerLink="/doctor/all">Doctors</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link custom-btn btn-6" routerLink="/user/appointment">
+            Appointment</a
+          >
+        </li> -->
 
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/comman/about">About Us</a>
-        </li>
-
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/comman/contact">Contact Us</a>
-        </li>
-
-
-        <li class="nav-item" *ngIf="!_auth.isLoggedIn">
+        <!-- <li class="nav-item">
+          <a class="nav-link custom-btn btn-6" routerLink="/auth/signup">
+            Register
+          </a>
+        </li> -->
+        <li class="nav-item" *ngIf="!_auth.isLoggedIn" >
           <a class="nav-link custom-btn btn-6" routerLink="/auth/login">
             SIGN IN
           </a>
         </li>
-        <li>
-          <div class="profile_menu" *ngIf="_auth.isLoggedIn">
-            <a class="profile_nav" routerLink="/user/profile">
-              <div class="pic">
-                <img alt="User Avatar" [src]="[profiles.avatar]" />
-              </div>
-              <h5>{{profiles.full_name}}</h5>
-            </a>
-          </div>
-        </li>
-        <li>
-          <a (click)="logout()" class="nav-link scrollto logout">
-            <i class="bx bx-log-out"></i>
-          </a>
-        </li>
-      </ul>
-
-      <ul>
 
       </ul>
     </div>
-
-
+    <div class="profile_menu" *ngIf="_auth.isLoggedIn">
+      <a class="profile_nav" routerLink="/user/profile">
+        <div class="pic">
+          <img alt="User Avatar" [src]="[profiles.avatar]" />
+        </div>
+        <h5>{{profiles.full_name}}</h5>
+      </a>
+      <a (click)="logout()" class="nav-link scrollto logout">
+        <i class="bx bx-log-out"></i>
+      </a>
+    </div>
   </div>
-
 </nav>

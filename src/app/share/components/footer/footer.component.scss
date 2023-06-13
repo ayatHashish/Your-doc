@@ -1,3 +1,5 @@
+@import "../../../../assets/scss/componants/variable";
+
 footer {
   .footer-top {
     .social-networks {
@@ -18,12 +20,12 @@ footer {
       }
       .facebook {
         &:hover {
-          background: #1877f2;
+          background: $fo-brand;
         }
       }
       .twitter {
         &:hover {
-          background: #1da1f2;
+          background: $fo-brand;
         }
       }
       .instagram {
@@ -39,7 +41,7 @@ footer {
       }
       .linkedin {
         &:hover {
-          background: #0077b5;
+          background: $fo-brand;
         }
       }
     }
@@ -47,8 +49,12 @@ footer {
   .footer-middle{
     a{
       &:hover{
-        color: #1da1f2 !important;
+        color: $fo-brand !important;
       }
     }
+  }
+
+  .Copyright{
+    background-color:$light-gray0;
   }
 }

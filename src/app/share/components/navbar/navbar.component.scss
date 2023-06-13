@@ -1,8 +1,6 @@
 
 @import "../../../../assets/scss/componants/variable";
 nav {
-  // border: 1px solid rgba(255, 255, 255, 0.1);
-  // background-color: black;
   position: fixed;
   top: 0;
   left: 0;
@@ -25,7 +23,7 @@ nav {
       margin: 10px;
       a {
         font-family: Inter, Helvetica, "sans-serif";
-        color: $pure-white;
+        color: $black;
         font-size: 13px;
         font-weight: 500;
         &:hover,
@@ -41,21 +39,21 @@ nav {
   .profile_menu {
     display: flex;
     align-items: center;
-    min-height: 46px;
+    min-width: 165px;
     .profile_nav {
       display: flex;
       align-items: end;
-      padding: 5px 10px;
+
       cursor: pointer;
       text-decoration: none;
       &:hover {
         transition: color 0.2s ease;
         background-color: rgba(255, 255, 255, 0.1);
-        color: $pure-white;
+        color: $black;
         border-radius: 0.475rem;
       }
       &:hover h5 {
-        color: $th-brand;
+        color: $pure-white;
         transition: all 0.3s ease-in-out;
       }
       .pic {
@@ -69,7 +67,8 @@ nav {
         }
       }
       h5 {
-        color: $pure-white;
+        margin: 10px 2px ;
+        color: $black;
         font-family: Inter, Helvetica, "sans-serif";
       }
     }
@@ -89,7 +88,124 @@ nav {
     }
   }
 }
+// header {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	width: 100%;
+// 	z-index: 5;
 
+// 	padding: 0px 0;
+// 	// @include media-breakpoint-up(md) {
+// 	// 	padding: 30px 0;
+// 	// }
+// 	.navbar-brand {
+// 		text-transform: uppercase;
+// 		letter-spacing: .2em;
+// 		font-weight: 800;
+// 		font-size: 2rem;
+// 		&.absolute {
+// 			position: absolute;
+// 			// @include media-breakpoint-down(md) {
+// 			// 	position: relative;
+// 			// }
+// 		}
+// 		span {
+// 			color: $pure-white;
+// 			// @include media-breakpoint-up(md) {
+// 			// 	color: gray('400');
+// 			// }
+// 		}
+// 	}
+
+
+// 	.navbar {
+// 		background: rgba(0,0,0,1)!important;
+// 		padding-top: .5rem;
+// 		padding-bottom: .5rem;
+// 		// @include media-breakpoint-up(md) {
+// 		// 	padding-top: 0;
+// 		// 	padding-bottom: 0;
+// 		// 	background: none!important;
+// 		// 	position: relative;
+// 		// }
+// 		.nav-link {
+// 			padding: 1.7rem 1rem;
+// 			outline: none!important;
+// 			font-size: 1rem;
+// 			color: rgba(255,255,255,.8)!important;
+// 			// @include media-breakpoint-down(lg) {
+// 			// 	padding: .5rem 0rem;
+// 			// }
+// 			&.active {
+// 				color: $pure-white!important;
+// 			}
+// 		}
+
+// 		.dropdown-menu {
+// 			font-size: 14px;
+// 			border-radius: 4px;
+// 			border: none;
+// 			box-shadow: 0 2px 30px 0px rgba(0,0,0,.2);
+// 			min-width: 13em;
+
+// 			margin-top: -10px;
+
+// 			&:before {
+// 				bottom: 100%;
+// 				left: 10%;
+// 				border: solid transparent;
+// 				content: " ";
+// 				height: 0;
+// 				width: 0;
+// 				position: absolute;
+// 				pointer-events: none;
+// 				border-bottom-color: #fff;
+// 				border-width: 7px;
+// 				// @include media-breakpoint-down(md) {
+// 				// 	display: none;
+// 				// }
+// 			}
+
+// 			.dropdown-item {
+
+// 				&:hover {
+// 					background: theme-color('primary');
+// 					color: $pure-white;
+// 				}
+// 				&.active {
+// 					background: theme-color('primary');
+// 					// background: gray('100');
+// 					color: $pure-white;
+// 				}
+// 			}
+// 			a {
+// 				padding-top: 7px;
+// 				padding-bottom: 7px;
+
+// 			}
+// 		}
+// 		.cta-btn {
+// 			a {
+// 				background: $black;
+// 				color: $pure-white!important;
+
+// 				text-transform: uppercase;
+// 				font-size: .8rem;
+// 				padding: 15px 20px!important;
+// 				line-height: 1;
+// 				font-weight: bold;
+// 				transition: .3s all ease;
+// 				&:hover {
+// 					background: $pure-white;
+// 					color: $black!important;
+// 					box-shadow: 2px 0 30px -5px rgba(0,0,0,.2);
+// 				}
+// 			}
+// 		}
+// 	}
+// }
 nav.scrolled {
-  background-color: #333;
-}
+  background-color: $light-gray0;
+  }
+

@@ -4,7 +4,7 @@
  border-radius: 5px;
 background-color: $th-brand;
  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-   color: $pure-white;
+   color:$pure-white;
    padding: 20px;
   appearance: button;
   backface-visibility: hidden;
@@ -72,14 +72,14 @@ background-color: $th-brand;
 }
 .btn-booking{
   background-color: $th-brand;
-    color: white;
+    color: $pure-white;
     font-size: 14px;
     padding: 13px 20px;
     width: 35%;
     border-radius: 5px;
     &:hover{
-      background-color: #008da1;
-      color: white;
+      background-color: $th-brand;
+      color: $pure-white;
       opacity: 0.9 !important;
     }
 }
@@ -87,10 +87,10 @@ background-color: $th-brand;
 // .btn-action {
 //   margin-left: 15px;
 //   background: $brand-primary;
-//   color: #fff;
+//   color: $pure-white;
 //   height: 40px;
 //   padding: 8px 25px;
-//   white-space: nowrap;
+//   $pure-white-space: nowrap;
 //   transition: 0.3s;
 //   font-size: 14px;
 //   display: inline-block;
@@ -104,7 +104,7 @@ background-color: $th-brand;
 
 //   &:hover {
 //     background: #022646;
-//     color: #fff;
+//     color: $pure-white;
 //   }
 // }
 
@@ -114,17 +114,17 @@ form .button {
   height: 43px;
   outline: none;
   border: none;
-  background-color: #285192;
+  background-color: $th-brand;
   display: flex;
-  color: #fff;
+  color: $pure-white;
   align-items: center;
   border-radius: 10px;
   font-size: 1.125rem;
   justify-content: center;
 
   &:hover {
-    background-color: gray;
-    color: #fff;
+    background-color: $brand-gray;
+    color: $pure-white;
   }
 }
 
@@ -160,13 +160,13 @@ form .button {
 //     }
 
 //     &:before {
-//       color: #fff;
-//       background: gray;
+//       color: $pure-white;
+//       background: $brand-gray;
 //       transform: rotateY(0deg) translateZ(0);
 //     }
 
 //     &:after {
-//       color: gray;
+//       color: $brand-gray;
 //       transform: rotateX(90deg) translateZ(0);
 //     }
 
@@ -180,9 +180,9 @@ form .button {
   width: 130px;
   height: 40px;
   text-decoration: none;
-  color: #00317e;
+  color: $th-brand;
   padding: 5px 25px;
-  border: 2px solid #000;
+  border: 2px solid $black;
   font-family: "Lato", sans-serif;
   font-weight: 500;
   margin: 0 5px;
@@ -208,7 +208,7 @@ form .button {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: $brand-blue-hover;
+    background-color: $brand-blue;
   }
   &:active {
     transform: scale(0.95);

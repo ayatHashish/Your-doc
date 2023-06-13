@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: () => import('./views/page/page.module').then((m) => m.PageModule),
   },
   {
-    path: '',  component: UserlayoutsComponent,
+    path: 'comman',  component: UserlayoutsComponent,
     loadChildren: () => import('./views/comman/comman.module').then((m) => m.CommanModule),
   },
   {

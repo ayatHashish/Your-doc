@@ -24,7 +24,7 @@
                   width:0;
                   height: 2px;
                   border-radius: 2px;
-                  background:$brand-green;
+                  background:$fo-brand;
                   position: absolute;
                   top:calc(80% + 25px) ;
                   left: calc(6% + 30px);
@@ -61,7 +61,7 @@
                         display: -webkit-inline-box;
                         display: -ms-inline-flexbox;
                         display: inline-flex;
-                        color: #fff;
+                        color: $pure-white;
                         text-transform: capitalize;
                         -webkit-transition-duration: 300ms;
                         transition-duration: 300ms;
@@ -72,7 +72,7 @@
 
 
                         &:hover {
-                          color: #fff;
+                          color: $pure-white;
                           transform: scale(1.1);
                       }
                     }

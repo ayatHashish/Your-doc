@@ -173,7 +173,7 @@ p {
         font-size: 50px;
         margin: 0;
         padding: 10px;
-        background: $th-brand;
+        background: $fo-brand;
         color: $pure-white;
         display: flex;
         cursor: pointer;
@@ -226,13 +226,4 @@ i{
   letter-spacing: 0.8px;
 }
 
-.modal-handle {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
-  .modal-dialog {
-    min-width: 30%;
-  }
-}

@@ -20,3 +20,13 @@
 
 
 }
+.modal-handle {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .modal-dialog {
+    min-width: 30%;
+  }
+}
