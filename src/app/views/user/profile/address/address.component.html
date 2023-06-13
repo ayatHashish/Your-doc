@@ -9,11 +9,15 @@
       <!--begin::Action-->
       <a type="button" class="btn btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#newAddress">Add
         New</a>
+
       <!--end::Action-->
     </div>
     <!--begin::card body-->
     <div class="card-body">
       <div class="row gx-9 gy-6">
+
+
+        <div *ngIf="profileaddress.addresses.length > 0">
         <div class="col-xl-6 mb-4" *ngFor="let address of profileaddress.addresses">
           <div class="notice d-flex rounded border-dash h-lg-100 p-6">
             <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
@@ -23,16 +27,22 @@
                 <h6>{{address["country"]}}</h6>
               </div>
               <div class="d-flex align-items-center py-2">
-                <a class="btn btn-sm button_custom" data-bs-toggle="modal" data-bs-target="#editAddress"
+                <a class="btn btn-sm-l button_custom" data-bs-toggle="modal" data-bs-target="#editAddress"
                   (click)='openUpdateModal(address["id"], address["address"], address["state"], address["country"])'> <i
                     class='bx bx-edit-alt'></i> </a>
-                <a class="btn btn-sm button_custom me-3" data-kt-billing-action="card-delete" data-bs-toggle="modal"
+                <a class="btn btn-sm-l button_custom me-3" data-kt-billing-action="card-delete" data-bs-toggle="modal"
                   data-bs-target="#deleteAddress" (click)='openModal(address["id"])'> <i class='bx bx-trash'></i></a>
 
               </div>
             </div>
           </div>
         </div>
+      </div>
+
+
+      <div *ngIf="profileaddress.addresses.length === 0">
+        No Addresses available.
+      </div>
       </div>
     </div>
     <!--end::card body-->

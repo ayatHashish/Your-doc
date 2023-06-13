@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../../../share/services/auth.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CustomValidators } from 'ng2-validation';
 
 @Component({
@@ -12,17 +12,19 @@ import { CustomValidators } from 'ng2-validation';
 
 export class ReAssignPassComponent {
 
-  constructor(private _auth: AuthService, private _ActivatedRoute: ActivatedRoute) { }
-  errorMsg: string = '';
-  id: any
 
-  password = new FormControl(null, CustomValidators.min(8));
-  password_confirmation = new FormControl('', CustomValidators.equalTo(this.password));
+  constructor(private _auth: AuthService, private _ActivatedRoute: ActivatedRoute, private _router: Router, private formBuilder: FormBuilder,) { }
+  errorMsg: string = '';
+  id: any;
+
   passwordChangeForm: FormGroup = new FormGroup({
     user_id: new FormControl(''),
-    password: new FormControl(''),
-    password_confirmation: new FormControl(''),
+    password: new FormControl('', [Validators.required]),
+    password_confirmation: new FormControl('', [Validators.required]),
   })
+
+  get password() { return this.passwordChangeForm.get('password') }
+  get confPass() { return this.passwordChangeForm.get('password_confirmation') }
 
   changePassword() {
     this.id = this._ActivatedRoute.snapshot.params['id'];
@@ -31,19 +33,14 @@ export class ReAssignPassComponent {
     if (this.passwordChangeForm.valid) {
       this._auth.changePasswordUpdata(this.passwordChangeForm.value).subscribe(
         (res) => {
-          console.log('Password updated successfully');
+          console.log(this.passwordChangeForm.value);
         },
         (e) => { this.errorMsg = e.error.error }
+        ,
+        () => this._router.navigateByUrl('auth/login')
       )
+    } else {
+      console.log("yallhwi");
     }
-
-    // if (this.passwordChangeForm.valid) {
-    //   this._auth.changePassword(this.passwordChangeForm.value).subscribe(
-    //     (res) => {
-    //       console.log('Password updated successfully');
-    //     },
-    //     (e) => { this.errorMsg = e.error.error }
-    //   )
-    // }
   }
 }

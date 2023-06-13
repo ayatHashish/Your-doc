@@ -3,6 +3,8 @@
     <section class="details-content">
       <div class="details-wrapper">
   <div class="row">
+
+    <div *ngIf="spacialistes.length >0">
   <div class="col-lg-3" *ngFor="let item of spacialistes">
   <div class="card mb-4">
     <div class="card-body" >
@@ -18,14 +20,17 @@
    </div>
     </div>
   </div>
-
+  </div>
+  <div *ngIf="spacialistes.length === 0">
+    No spacialistes yet
+  </div>
   <div class="col-12">
     <button class="btn-action-m m-auto" (click)="loadItems()">Show More</button>
   </div>
    </div>
     </div>
-  
- 
+
+
 </section>
 </div>
 </div>

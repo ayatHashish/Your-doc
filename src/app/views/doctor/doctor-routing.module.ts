@@ -5,6 +5,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { ModelComponent } from './model/model.component';
 import { SpatialistDostorsComponent } from './spatialist-dostors/spatialist-dostors.component';
 import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'allspcialistes', component: AllSpecialistesComponent },
   { path: 'details/:id', component: DoctorsDetailsComponent },
   { path: 'spcialiset/:id', component: SpatialistDostorsComponent },
+  { path: 'searchresults?', component: SearchResultsComponent },
   { path: 'model', component: ModelComponent },
 
 

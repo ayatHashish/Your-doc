@@ -55,6 +55,7 @@ import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker
     FormsModule,
     CustomFormsModule,
     BsDatepickerModule.forRoot()
+
   ],
   providers: [BsDatepickerConfig],
   exports: [

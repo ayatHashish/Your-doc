@@ -97,7 +97,7 @@
                 <div class="alert alert-danger my-2"
                   *ngIf="confPass?.invalid&&(confPass?.dirty || confPass?.touched || isSubmitted)">
                   <!-- {{name?.errors|json}} -->
-                  <li *ngIf="confPass?.errors?.['required']">password is required</li>
+                  <li *ngIf="confPass?.errors?.['required']">Confirm Password is required</li>
                   <li *ngIf="checkPasswordForm?.invalid">Confirm Password didn't matche</li>
                 </div>
               </div>

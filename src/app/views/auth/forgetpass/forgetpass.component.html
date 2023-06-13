@@ -8,15 +8,21 @@
               <h2>Forget password </h2>
             </div>
             <form [formGroup]= "forgotPasswordForm" (ngSubmit)= "forgetpassword()">
+              <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
               <!-- email -->
               <div class="form-group">
                 <input class="input-group" type="email" formControlName="email" id="email" >
                 <label>Your Email</label>
               </div>
+              <div class="alert alert-danger my-2" *ngIf="email?.invalid &&(email?.dirty || email?.touched)
+              ">
+                <li *ngIf="email?.errors?.['required']">email is required</li>
+                  <li *ngIf="email?.errors?.['email']">invalid format</li>
+              </div>
               <!--  routerLink="/auth/verifycode" -->
               <button type="submit" class="btn-lo fadeIn" >Request password reset</button>
               <div>
-                <a  class="underlineHover" routerLink="/auth/login">Back to login</a>
+                <a  class="underlineHover text-light" routerLink="/auth/login">Back to login</a>
 
               </div>
             </form>

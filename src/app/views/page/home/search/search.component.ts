@@ -12,6 +12,7 @@ import { DoctorsService } from 'src/app/share/services/doctors.service';
 export class SearchComponent {
   nameDoctor: any;
   specialties: any;
+  id: any
   errorMsg = '';
   constructor(
     private _search: DoctorsService,
@@ -20,23 +21,33 @@ export class SearchComponent {
   ) {
     this.getAllSpecialties();
   }
-
   searchForm = new FormGroup({
     doctor_name: new FormControl('', [Validators.required]),
     specialty_id: new FormControl('', [Validators.required]),
   });
-  get doctor_name(){return this.searchForm.get('doctor_name')}
+  get doctor_name() { return this.searchForm.get('doctor_name') }
 
   search() {
-    if(this.searchForm.valid){
+    const doctorName = this.searchForm.value.doctor_name;
+    const specialtyId = this.searchForm.value.specialty_id;
+
+
+    if (this.searchForm.valid) {
       this._search.search(this.searchForm.value).subscribe(
         (res) => {
+          console.log(this.searchForm.value.specialty_id);
+
+          this._router.navigateByUrl(`doctor/searchresults?doctor_name=${doctorName}&id=${specialtyId}`);
+        
           this.nameDoctor = res.data;
-          console.log(res.data);
+          this.id = res.data[0].id
+          console.log(this.id);
         },
-        () => this._router.navigateByUrl('/profile')
+        (e) => {
+          console.log(e.error);
+        }
       );
-    }else{
+    } else {
       this.errorMsg = 'You should type docotr name and choose his specialist.'
     }
   }
@@ -44,6 +55,9 @@ export class SearchComponent {
   getAllSpecialties() {
     this._specialty.allSpatialists().subscribe((res) => {
       this.specialties = res.data;
+
     });
   }
+
+
 }

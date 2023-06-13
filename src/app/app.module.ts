@@ -9,6 +9,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './share/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [AppComponent],
@@ -19,7 +20,8 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
     LayoutsModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    TimepickerModule.forRoot()
+    TimepickerModule.forRoot(),
+    Ng2SearchPipeModule
   ],
 
   providers: [

@@ -12,7 +12,7 @@
       text-transform: capitalize;
       font-weight: 800;
       span {
-        color: $th-brand;
+        color: $fi-brand;
         font-size: 40px;
       }
     }
@@ -26,7 +26,7 @@
     }
     .custom-carousel {
       width: 70%;
-      margin: 7% auto;
+      margin: 7% 0;
       .carousel-item {
         width: 100%;
         height: 100%;
@@ -66,15 +66,15 @@
           text-align: start;
         }
         .go_login {
-          h6{
+          h6 {
             color: $brand-gray;
             font-size: 14px;
           }
           a {
             color: $pure-white;
             cursor: pointer;
-            &:hover{
-              color: $th-brand;
+            &:hover {
+              color: $fi-brand;
             }
           }
         }
@@ -99,8 +99,8 @@
             font-size: 16px;
             transition: all 0.5s ease-in-out;
             &:focus {
-              border: thin solid $th-brand;
-              border-bottom: solid medium $th-brand;
+              border: thin solid $fi-brand;
+              border-bottom: solid medium $fi-brand;
               background-color: $pure-white;
             }
           }
@@ -112,17 +112,25 @@
             top: 10px;
             transition: 0.2s;
           }
-          input:focus ~ label {
-            top: -10px;
-            left: 15px;
-            border-radius: 5px;
-            color: $th-brand;
-            background-color: $pure-white;
-            padding: 0 5px 0 5px;
-          }
 
+input:focus ~ label,
+input:not(:placeholder-shown):not(:focus) ~ label {
+  top: -10px;
+  left: 15px;
+  border-radius: 5px;
+  color: $th-brand;
+  background-color: $pure-white;
+  padding: 0 5px;
+}
 
-
+input:not(:placeholder-shown):valid ~ label {
+  top: -10px;
+  left: 15px;
+  border-radius: 5px;
+  color: $th-brand;
+  background-color: $pure-white;
+  padding: 0 5px;
+}
         }
         .form-check {
           display: flex;
@@ -139,10 +147,9 @@
             color: $pure-white;
           }
           a {
-            color: $th-brand;
+            color: $fi-brand;
           }
         }
-
       }
     }
   }
@@ -155,7 +162,7 @@
         font-size: 20px;
         margin: 5% 0;
         span {
-          color: $th-brand;
+          color: $fi-brand;
           font-size: 20px;
         }
       }

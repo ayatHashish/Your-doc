@@ -54,20 +54,30 @@ background-color: $th-brand;
 }
  .btn-sm{
   padding: 1rem !important;
+  width: 10rem;
+ }
+
+ .btn-sm-l{
+  padding: 1rem !important;
+  width: 3rem;
  }
 .btn-action-add{
-  width: 20%;
+  padding: 1rem !important;
+  width: 7rem;
   margin-left: 10px;
 }
 .btn-action-can{
-  width: 20%;
+  padding: 1rem !important;
+  width: 7rem;
   background-color: transparent;
   color: $black;
   font-size:16px;
 }
 .btn-action-dle{
+  padding: 1rem !important;
+  width: 7rem;
   background-color: $red;
-  width: 20%;
+
   margin-left: 10px;
 }
 .btn-booking{
@@ -83,31 +93,6 @@ background-color: $th-brand;
       opacity: 0.9 !important;
     }
 }
-
-// .btn-action {
-//   margin-left: 15px;
-//   background: $brand-primary;
-//   color: $pure-white;
-//   height: 40px;
-//   padding: 8px 25px;
-//   $pure-white-space: nowrap;
-//   transition: 0.3s;
-//   font-size: 14px;
-//   display: inline-block;
-//   text-decoration: none;
-//   border-radius: 5px;
-
-//   i {
-//     margin: 1px 5px;
-//     scale: (1.1);
-//   }
-
-//   &:hover {
-//     background: #022646;
-//     color: $pure-white;
-//   }
-// }
-
 form .button {
   padding: 0 40px;
   margin-right: 1px;
@@ -128,54 +113,6 @@ form .button {
   }
 }
 
-/* login-form */
-// .login-btn {
-//   position: relative;
-//   display: inline-flex;
-//   width: 150px;
-//   height: 40px;
-
-//   perspective: 1000px;
-
-//   a {
-//     font-size: 19px;
-//     letter-spacing: 1px;
-//     transform-style: preserve-3d;
-//     transform: translateZ(-25px);
-//     transition: transform 0.25s;
-//     font-family: "Montserrat", sans-serif;
-
-//     &:before,
-//     &:after {
-//       position: absolute;
-//       content: "LOGIN";
-//       height: 40px;
-//       width: 150px;
-//       display: flex;
-//       align-items: center;
-//       justify-content: center;
-//       border: 1px solid #1977cc;
-//       box-sizing: border-box;
-//       border-radius: 5px;
-//     }
-
-//     &:before {
-//       color: $pure-white;
-//       background: $brand-gray;
-//       transform: rotateY(0deg) translateZ(0);
-//     }
-
-//     &:after {
-//       color: $brand-gray;
-//       transform: rotateX(90deg) translateZ(0);
-//     }
-
-//     &:hover {
-//       transform: translateZ(-25px) rotateX(-90deg);
-//     }
-//   }
-// }
-
 .custom-btn {
   width: 130px;
   height: 40px;
@@ -194,7 +131,7 @@ form .button {
   text-align: center;
 }
 .btn-lo {
-  background-color: $th-brand;
+  background-color:$fi-brand;
   border: none;
   color: $pure-white;
   padding: 15px 80px;
@@ -208,7 +145,8 @@ form .button {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
   &:hover {
-    background-color: $brand-blue;
+    background-color:$fi-brand-hover;
+
   }
   &:active {
     transform: scale(0.95);

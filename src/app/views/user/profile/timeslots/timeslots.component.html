@@ -18,43 +18,51 @@
       <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active" role="tabpanel"
         aria-labelledby="kt_billing_months">
         <!--begin::Table container-->
-        <div class="table-responsive" *ngFor="let clinic of allSlots">
-          <h5 class="py-3 ms-4 clinic-title">Clinic: <span>{{clinic.clinic_address}}</span></h5>
-          <table class="table table-row-bordered align-middle gy-4 gs-9 table-hover">
-            <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
-              <tr>
-                <td class="min-w-150px">ID</td>
-                <td class="min-w-150px">Day</td>
-                <td class="min-w-150px">Start Time</td>
-                <td class="min-w-150px">End Time</td>
-                <td class="min-w-150px">Action</td>
-              </tr>
-            </thead>
-            <tbody class="fw-semibold text-gray-600" *ngFor="let slot of clinic.slots; let i = index">
-              <tr>
-                <td>#{{i+1}}</td>
-                <td>{{slot.day}}</td>
-                <td>{{slot.start_time}}</td>
-                <td>{{slot.end_time}}</td>
-                <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
-                    (click)='openUpdateModal(slot, clinic.id)'>
-                    <i class='bx bx-edit-alt'></i>
-                  </a>
-                  <a type="button" (click)="openModal(slot.id)" class="btn btn-sm" data-bs-toggle="modal"
-                    data-bs-target="#delete">
-                    <i class='bx bx-trash'></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="table-responsive">
+          <div *ngIf="allSlots.length > 0">
+            <div *ngFor="let clinic of allSlots">
+              <h5 class="py-3 ms-4 clinic-title">Clinic: <span>{{clinic.clinic_address}}</span></h5>
+              <table class="table table-row-bordered align-middle gy-4 gs-9 table-hover">
+                <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
+                  <tr>
+                    <td class="min-w-150px">ID</td>
+                    <td class="min-w-150px">Day</td>
+                    <td class="min-w-150px">Start Time</td>
+                    <td class="min-w-150px">End Time</td>
+                    <td class="min-w-150px">Action</td>
+                  </tr>
+                </thead>
+                <tbody class="fw-semibold text-gray-600">
+                  <tr *ngFor="let slot of clinic.slots; let i = index">
+                    <td>#{{i+1}}</td>
+                    <td>{{slot.day}}</td>
+                    <td>{{slot.start_time}}</td>
+                    <td>{{slot.end_time}}</td>
+                    <td>
+                      <a type="button" class="btn btn-sm-l" data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+                        (click)='openUpdateModal(slot, clinic.id)'>
+                        <i class='bx bx-edit-alt'></i>
+                      </a>
+                      <a type="button" (click)="openModal(slot.id)" class="btn btn-sm-l" data-bs-toggle="modal"
+                        data-bs-target="#delete">
+                        <i class='bx bx-trash'></i>
+                      </a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div  class="p-10"  *ngIf="allSlots.length === 0">
+            No Addresses available.
+          </div>
         </div>
-        <!--end::Table container-->
-      </div>
+</div>
+    </div>
     </div>
     <!--end::Tab Content-->
-  </div>
+
+
 </main>
 
 <!-- Add time -->

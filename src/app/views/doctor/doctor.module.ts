@@ -7,6 +7,7 @@ import { DoctorsDetailsComponent } from './doctors-details/doctors-details.compo
 import { ModelComponent } from './model/model.component';
 import { SpatialistDostorsComponent } from './spatialist-dostors/spatialist-dostors.component';
 import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 
@@ -17,6 +18,7 @@ import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.co
     ModelComponent,
     AllSpecialistesComponent,
     SpatialistDostorsComponent,
+    SearchResultsComponent,
   ],
   imports: [
     CommonModule,
@@ -30,6 +32,7 @@ import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.co
     DoctorsComponent ,
     SpatialistDostorsComponent,
     AllSpecialistesComponent,
+    SearchResultsComponent,
   ]
 })
 export class DoctorModule { }

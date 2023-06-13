@@ -33,10 +33,10 @@
         position: absolute;
         visibility: hidden;
         &:checked ~ .check {
-          border: 5px solid $th-brand;
+          border: 5px solid $fi-brand;
         }
         &:checked ~ .check::before {
-          background: $th-brand;
+          background: $fi-brand;
         }
         &:checked ~ label {
           color: $pure-white;

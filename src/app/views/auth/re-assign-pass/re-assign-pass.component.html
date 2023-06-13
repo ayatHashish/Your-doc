@@ -10,14 +10,26 @@
               <h2>Password Reset</h2>
             </div>
             <form [formGroup]= "passwordChangeForm"  (ngSubmit)="changePassword()">
-              <!-- <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div> -->
+              <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
               <div class="form-group">
                 <input  class="input-group" formControlName="password" id="password"/>
                 <label > New Password</label>
+                <div class="alert alert-danger my-2"
+                *ngIf="password?.invalid&&(password?.dirty || password?.touched )">
+                <!-- {{name?.errors|json}} -->
+                <li *ngIf="password?.errors?.['required']">password is required</li>
+                <li *ngIf="password?.errors?.['pattern']">invalid format</li>
+              </div>
               </div>
               <div class="form-group">
                 <input class="input-group" formControlName="password_confirmation" >
                 <label >Confirm new password</label>
+                <div class="alert alert-danger my-2"
+                *ngIf="confPass?.invalid&&(confPass?.dirty || confPass?.touched )">
+                <!-- {{name?.errors|json}} -->
+                <li *ngIf="confPass?.errors?.['required']">password is required</li>
+                <!-- <li *ngIf="checkPasswordForm?.invalid">Confirm Password didn't matche</li> -->
+              </div>
               </div>
               <button type="submit" class="btn-lo fadeIn" > change password</button>
               <!-- <a type="submit">change password </a> -->

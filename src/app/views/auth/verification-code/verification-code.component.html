@@ -8,27 +8,30 @@
               <h2>Verification code</h2>
             </div>
             <form [formGroup]="verificationCodeForm" (ngSubmit)="verificationCode()">
-              <h2 class="">Enter verification code</h2>
+              <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
+              <h2 class="text-light">Enter verification code</h2>
               <p>A six-digit verification code has been sent to your email.</p>
               <div class="form-group">
                 <div>
-                  <input name="code" formControlName="verification_code" />
-                  <!-- <input name='code' class='code-input' required/>
-                  <input name='code' class='code-input' required/>
-                  <input name='code' class='code-input' required/>
-                  <input name='code' class='code-input' required/>
-                  <input name='code' class='code-input' required/> -->
+                  <input  class="input-group" name="code" formControlName="verification_code" />
+                   <label>Verification Code</label>
+                </div>
+
+                <div class="alert alert-danger my-2" *ngIf="verification?.invalid &&(verification?.dirty || verification?.touched)
+                ">
+                  <li *ngIf="verification?.errors?.['required']">verification-code is required</li>
+                    <li *ngIf="verification?.errors?.['pattern']">verification code must be a six-digit</li>
+
                 </div>
               </div>
               <!-- class="btn-lo fadeIn" -->
-              <button type="submit">
+              <button type="submit" class="btn-lo ">
                 continuation
               </button>
-              <p class="">Didn't get the verification code?</p>
-              <div><a class="underlineHover"> Resend</a></div>
+              <p class="mb-2">Didn't get the verification code?</p>
+              <div  class="mb-2"><a class="underlineHover" routerLink="/auth/forgotPassword">Resend</a></div>
               <div>
-                Back to
-                <a class="underlineHover" routerLink="/auth/login"> login</a>
+                <a  class="underlineHover" routerLink="/auth/login">Back to login</a>
               </div>
             </form>
           </div>

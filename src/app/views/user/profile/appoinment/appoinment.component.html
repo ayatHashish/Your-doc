@@ -13,7 +13,7 @@
       <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active" role="tabpanel"
         aria-labelledby="kt_billing_months">
         <!--begin::Table container-->
-        <div class="table-responsive">
+        <div class="table-responsive" *ngIf="appoinments.length > 0" >
           <!--begin::Table-->
           <table class="table table-row-bordered align-middle gy-4 gs-9">
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
@@ -105,9 +105,16 @@
         <!--end::Table container-->
       </div>
       <!--end::Tab panel-->
+
+
+      <div class="p-10" *ngIf="appoinments.length === 0">
+          No appoinments yet
+        </div>
     </div>
     <!--end::Tab Content-->
   </div>
+
+
 
   <!-- view -->
   <div class="modal fade" id="view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
