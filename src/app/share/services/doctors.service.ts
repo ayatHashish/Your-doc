@@ -7,21 +7,15 @@ import { ActivatedRoute } from '@angular/router';
   providedIn: 'root',
 })
 export class DoctorsService {
-<<<<<<< Updated upstream:src/app/share/services/doctors.service.ts
   id: any
   doctorDetails: any
   private  baseUrl = environment.baseUrl;
   constructor(private _http: HttpClient , private _ActivatedRoute: ActivatedRoute) { }
-=======
-  baseUrl = 'http://ydoctor.atwebpages.com/user/';
-  constructor(private _http: HttpClient) {}
->>>>>>> Stashed changes:projects/user/src/app/share/services/doctors.service.ts
 
   allDoctors(): Observable<any> {
     return this._http.get(this.baseUrl + `${'get_all_doctors'}`);
   }
 
-<<<<<<< Updated upstream:src/app/share/services/doctors.service.ts
   // sendId(id:number,slotId:number)
   //  {
 
@@ -32,9 +26,6 @@ export class DoctorsService {
 
 
   getDoctorsDetails(id:number): Observable<any> {
-=======
-  getDoctorsDetails(id: number): Observable<any> {
->>>>>>> Stashed changes:projects/user/src/app/share/services/doctors.service.ts
     const data = {
       doctor_id: id,
       details: true,
