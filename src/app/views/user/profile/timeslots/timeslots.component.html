@@ -1,12 +1,12 @@
 <main>
-  <div class="card ">
+  <div class="card">
     <div class="card-header cursor-pointer">
       <!--begin::Card title-->
       <div class="card-title m-0">
         <h3 class="m-0"> Time Slots </h3>
       </div>
       <!--begin::Action-->
-      <a type="button" class="btn btn-sm align-self-center" data-bs-toggle="modal" data-bs-target="#addTime">
+      <a type="button" class="btn-action-can long-btn" data-bs-toggle="modal" data-bs-target="#addTime">
         Add Time
       </a>
       <!--end::Action-->
@@ -33,6 +33,7 @@
                   </tr>
                 </thead>
                 <tbody class="fw-semibold text-gray-600">
+                  
                   <tr *ngFor="let slot of clinic.slots; let i = index">
                     <td>#{{i+1}}</td>
                     <td>{{slot.day}}</td>
@@ -53,16 +54,14 @@
               </table>
             </div>
           </div>
-          <div  class="p-10"  *ngIf="allSlots.length === 0">
+          <div class="p-10" *ngIf="allSlots.length === 0">
             No Addresses available.
           </div>
         </div>
-</div>
+      </div>
     </div>
-    </div>
-    <!--end::Tab Content-->
-
-
+  </div>
+  <!--end::Tab Content-->
 </main>
 
 <!-- Add time -->
@@ -81,4 +80,3 @@
   <!-- [ngClass]="isVisible == false ? 'd-block' :'d-none' " -->
   <app-delslots [slotId]="selectedItemId"></app-delslots>
 </div>
-

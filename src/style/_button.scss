@@ -1,16 +1,24 @@
 /* CSS */
-.btn-action, .btn-action-xl ,.btn-action-md,.btn-action-sm,.btn-action-m,.btn-action-sm-0,.btn-action-add,.btn-action-can,.btn-action-dle{
+.btn-action,
+.btn-action-xl,
+.btn-action-md,
+.btn-action-sm,
+.btn-action-m,
+.btn-action-sm-0,
+.btn-action-add,
+.btn-action-can,
+.btn-action-dle {
   display: block; // change it
- border-radius: 5px;
-background-color: $th-brand;
- box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
-   color:$pure-white;
-   padding: 20px;
+  border-radius: 5px;
+  background-color: $th-brand;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .1) 0 2px 5px 0, rgba(0, 0, 0, .07) 0 1px 1px 0;
+  color: $pure-white;
+  padding: 20px;
   appearance: button;
   backface-visibility: hidden;
   border-width: 0;
   text-transform: capitalize;
-   padding: 1rem;
+  padding: 1rem;
   box-sizing: border-box;
   cursor: pointer;
   font-size: 16px;
@@ -23,76 +31,99 @@ background-color: $th-brand;
   touch-action: manipulation;
   width: 100%;
   margin: 10px 0;
-  &:hover{
+
+  &:hover {
     opacity: 0.6;
   }
 }
 
-.btn-action, .btn-action-xl ,.btn-action-md,.btn-action-sm,.btn-action-m,.btn-action-sm-0:disabled {
+.btn-action,
+.btn-action-xl,
+.btn-action-md,
+.btn-action-sm,
+.btn-action-m,
+.btn-action-sm-0:disabled {
   cursor: default;
 }
 
-.btn-action, .btn-action-xl ,.btn-action-md,.btn-action-sm,.btn-action-m,.btn-action-sm-0:focus {
+.btn-action,
+.btn-action-xl,
+.btn-action-md,
+.btn-action-sm,
+.btn-action-m,
+.btn-action-sm-0:focus {
   box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
 }
-.btn-action-xl
-{
+
+.btn-action-xl {
   width: 75%;
 }
-.btn-action-md
-{
+
+.btn-action-md {
   width: 50%;
 }
-.btn-action-sm
-{ width: 35%;
+
+.btn-action-sm {
+  width: 35%;
 }
-.btn-action-m
-{ width: 25%;
+
+.btn-action-m {
+  width: 25%;
 }
-.btn-action-sm-0{
+
+.btn-action-sm-0 {
   width: 15%;
 }
- .btn-sm{
+
+.btn-sm {
   padding: 1rem !important;
   width: 10rem;
- }
+}
 
- .btn-sm-l{
+.btn-sm-l {
   padding: 1rem !important;
   width: 3rem;
- }
-.btn-action-add{
-  padding: 1rem !important;
+}
+
+.btn-action-add {
+  padding: 0.8rem !important;
   width: 7rem;
   margin-left: 10px;
 }
-.btn-action-can{
-  padding: 1rem !important;
+
+.btn-action-can {
+  padding: 0.8rem !important;
   width: 7rem;
   background-color: transparent;
   color: $black;
-  font-size:16px;
+  font-size: 16px;
 }
-.btn-action-dle{
-  padding: 1rem !important;
+
+.btn-action-dle {
+  padding: 0.8rem !important;
   width: 7rem;
   background-color: $red;
-
   margin-left: 10px;
 }
-.btn-booking{
-  background-color: $th-brand;
-    color: $pure-white;
-    font-size: 14px;
-    padding: 13px 20px;
-    width: 35%;
-    border-radius: 5px;
-    &:hover{
-      background-color: $th-brand;
-      color: $pure-white;
-      opacity: 0.9 !important;
-    }
+.long-btn{
+  width: 10rem;
 }
+
+.btn-booking {
+  background-color: $th-brand;
+  color: $pure-white;
+  font-size: 14px;
+  padding: 13px 20px;
+  width: 35%;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: $th-brand;
+    color: $pure-white;
+    opacity: 0.9 !important;
+  }
+}
+
 form .button {
   padding: 0 40px;
   margin-right: 1px;
@@ -130,8 +161,9 @@ form .button {
   display: inline-block;
   text-align: center;
 }
+
 .btn-lo {
-  background-color:$fi-brand;
+  background-color: $fi-brand;
   border: none;
   color: $pure-white;
   padding: 15px 80px;
@@ -144,35 +176,42 @@ form .button {
   width: 100%;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+
   &:hover {
-    background-color:$fi-brand-hover;
+    background-color: $fi-brand-hover;
 
   }
+
   &:active {
     transform: scale(0.95);
   }
 }
+
 @media (max-width: 992px) {
   form .button {
     min-width: 60%;
     font-size: 25px;
   }
 }
+
 @media (max-width: 767px) {
   .btn-action {
     margin: 0 15px 0 0;
     padding: 6px 18px;
   }
+
   form .button {
     width: 20%;
     margin: 20px auto;
   }
 }
+
 @media (max-width: 558px) {
   form .button {
     margin-top: 40px;
     margin-left: 80px;
   }
+
   .btn-lo {
     padding: 15px 10px;
   }

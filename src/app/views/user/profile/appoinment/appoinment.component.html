@@ -13,7 +13,7 @@
       <div id="kt_billing_months" class="card-body p-0 tab-pane fade show active" role="tabpanel"
         aria-labelledby="kt_billing_months">
         <!--begin::Table container-->
-        <div class="table-responsive" *ngIf="appoinments.length > 0" >
+        <div class="table-responsive">
           <!--begin::Table-->
           <table class="table table-row-bordered align-middle gy-4 gs-9">
             <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
@@ -30,31 +30,11 @@
                 <td>Action</td>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>Test</td>
-                <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
-                    <i class="bx bx-show-alt"></i>
-                  </a>
-                </td>
-                <td>
-                  <a type="button" class="btn btn-sm" (click)="acceptBookings(1)"
-                    [ngClass]="role == 'User' ? 'd-none' : ''">
-                    <i class="bx bx-error-circle" *ngIf=""></i>
-                  </a>
-                  <a type="button" class="btn btn-sm" data-bs-target="#cancel" (click)="cancel($event, 1)">
-                    <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
-                  </a>
-                </td>
-              </tr>
-            </tbody>
-            <tbody class="fw-semibold text-gray-600" *ngFor="let appoint of appoinments; let i = index">
-              <tr>
+            <tr class="p-10 text-center" *ngIf="appoinments.length === 0">
+              <td colspan="7">No appointment available</td>
+            </tr>
+            <tbody class="fw-semibold text-gray-600">
+              <tr *ngFor="let appoint of appoinments; let i = index">
                 <td>#{{ i + 1 }}</td>
                 <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">
                   {{ appoint.doctor_name }}
@@ -71,7 +51,6 @@
                   </a>
                 </td>
                 <td>
-                  <!--  -->
                   <a type="button" class="btn btn-sm" (click)="acceptBookings(appoint.id)"
                     [ngClass]="role == 'User' ? 'd-none' : ''">
                     <!-- {{ accept }} -->
@@ -85,7 +64,7 @@
               </tr>
             </tbody>
           </table>
-          <div class="custom_pagination my-3">
+          <div class="custom_pagination my-3" *ngIf="appoinments.length > 10">
             <ul class="pagination">
               <li class="page-item">
                 <a class="page-link" (click)="previousPage()"
@@ -105,17 +84,9 @@
         <!--end::Table container-->
       </div>
       <!--end::Tab panel-->
-
-
-      <div class="p-10" *ngIf="appoinments.length === 0">
-          No appoinments yet
-        </div>
     </div>
     <!--end::Tab Content-->
   </div>
-
-
-
   <!-- view -->
   <div class="modal fade" id="view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
     aria-labelledby="view" aria-hidden="true">

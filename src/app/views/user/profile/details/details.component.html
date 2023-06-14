@@ -8,8 +8,15 @@
       </div>
       <!--end::Card title-->
       <!--begin::Action-->
-      <a routerLink="/user/profile/settings" class="btn btn-sm align-self-center" data-bs-target="#settings">Edit
-        Profile</a>
+      <!-- <button routerLink="/user/profile/settings" role="presentation" class="btn btn-sm align-self-center"
+        data-bs-target="#settings" type="button" role="tab" aria-controls="settings" aria-selected="true"
+        >Edit
+        Profile</button> -->
+      <button routerLink="/user/profile/settings" class="btn-action-add long-btn">Edit
+        Profile</button>
+      <button (click)="navigateToSettingsTab()">Open Settings Tab</button>
+      <button routerLink="/user/profile/settings"  (click)="makeSettingsTabActive()">Make Settings Tab Active</button>
+
       <!--end::Action-->
     </div>
     <!--begin::Card header-->
