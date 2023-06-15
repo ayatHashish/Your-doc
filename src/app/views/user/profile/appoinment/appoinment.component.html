@@ -31,7 +31,23 @@
               </tr>
             </thead>
             <tr class="p-10 text-center" *ngIf="appoinments.length === 0">
-              <td colspan="7">No appointment available</td>
+              <td colspan="5">No appointment available</td>
+              <td>
+                <a type="button" class="btn btn-sm-l btn-cutom" data-bs-toggle="modal" data-bs-target="#view">
+                  <i class="bx bx-show-alt"></i>
+                </a>
+              </td>
+              <td>
+                <a type="button" class="btn btn-sm-l btn-cutom" (click)="acceptBookings(10)"
+                  [ngClass]="role == 'User' ? 'd-none' : ''">
+                  <!-- {{ accept }} -->
+                  <i class="bx bx-error-circle" *ngIf=""></i>
+                </a>
+                <!-- data-bs-toggle="modal" -->
+                <a type="button" class="btn btn-sm-l btn-cutom" data-bs-target="#cancel" (click)="cancel($event, 10)">
+                  <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
+                </a>
+              </td>
             </tr>
             <tbody class="fw-semibold text-gray-600">
               <tr *ngFor="let appoint of appoinments; let i = index">

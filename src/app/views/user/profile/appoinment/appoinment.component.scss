@@ -1,10 +1,36 @@
 .card-header {
   margin-bottom: 0 !important;
 }
+
 .disabled {
-  opacity: 0.5; /* or some other styling */
+  opacity: 0.5;
   pointer-events: none;
 }
-a {
+
+a.btn-cutom {
   cursor: pointer;
+  padding: 7px 10px !important;
+  margin: 0 3px;
+  background-color: #f65c5c1a;
+  color: #f65c5c;
+
+  &:hover {
+    background-color: #f65c5c;
+    color: #feeeeeb3;
+  }
+
+  &:nth-child(1) {
+    background-color: #138fc21a;
+    color: #138fc2;
+
+    &:hover {
+      background-color: #138fc2;
+      color: #feeeeeb3;
+    }
+  }
+
+  i {
+    padding-right: 0 !important;
+    font-size: 16px;
+  }
 }
