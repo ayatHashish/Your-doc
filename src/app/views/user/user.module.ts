@@ -15,7 +15,6 @@ import { AddTimeComponent } from './profile/timeslots/add-time/add-time.componen
 import { ReactiveFormsModule } from '@angular/forms';
 import { ViewAppoinmentComponent } from './profile/appoinment/view-appoinment/view-appoinment.component';
 import { CancelComponent } from './profile/appoinment/cancel/cancel.component';
-import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { FormsModule } from '@angular/forms';
 import { AddNewAddressComponent } from './profile/address/add-new-address/add-new-address.component';
 import { DeleteAddressComponent } from './profile/address/delete-address/delete-address.component';
@@ -25,6 +24,7 @@ import { CustomFormsModule } from 'ng2-validation';
 import { UserBookingComponent } from './user-booking/user-booking.component';
 
 import { BsDatepickerModule, BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
 @NgModule({
   declarations: [

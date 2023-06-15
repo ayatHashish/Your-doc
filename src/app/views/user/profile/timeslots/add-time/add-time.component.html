@@ -18,6 +18,7 @@
                     <div class="col-lg-12 fv-row fv-plugins-icon-container">
                       <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
                         id="address_id" required formControlName="address_id">
+                        <option value="" disabled selected>Select a Clinic</option>
                         <option [value]="address['id']" *ngFor="let address of addresses">
                           {{ address["address"] }}
                         </option>
@@ -33,7 +34,7 @@
                   <div class="form-group">
                     <select class="form-select form-select-solid form-select-lg select2-hidden-accessible" id="day_en"
                       required formControlName="day_en">
-                      <option selected disabled>Select Day</option>
+                      <option value="" disabled selected>Select a Day</option>
                       <option value="{{day}}" *ngFor="let day of daysEN">{{day}}</option>
                     </select>
                   </div>
@@ -45,7 +46,7 @@
                   <div class="form-group">
                     <select class="form-select form-select-solid form-select-lg select2-hidden-accessible" id="day_ar"
                       required formControlName="day_ar">
-                      <option selected disabled>أختر اليوم</option>
+                      <option value="" disabled selected>أختر اليوم</option>
                       <option value="{{day}}" *ngFor="let day of daysAR">{{day}}</option>
                     </select>
                   </div>
@@ -55,7 +56,8 @@
                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="start_time">Start Time</label>
                 <div class="col-md-9">
                   <div class="form-group mt2">
-                    <timepicker formControlName="start_time" [(ngModel)]="startTimeSelected" [arrowkeys]="allowArrowKeys"></timepicker>
+                    <timepicker formControlName="start_time" [(ngModel)]="startTimeSelected"
+                      [arrowkeys]="allowArrowKeys"></timepicker>
                     <div class="fv-plugins-message-container invalid-feedback"></div>
                   </div>
                 </div>
@@ -64,13 +66,27 @@
                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="end_time">End Time</label>
                 <div class="col-md-9">
                   <div class="form-group mt2">
-                    <timepicker formControlName="end_time" [(ngModel)]="endTimeSelected" [arrowkeys]="allowArrowKeys"></timepicker>
+                    <timepicker formControlName="end_time" [(ngModel)]="endTimeSelected" [arrowkeys]="allowArrowKeys">
+                    </timepicker>
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-6 align-items-center">
+                <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="end_time">End Time</label>
+                <div class="col-md-9">
+                  <div class="form-group mt2">
+                    <input type="text" placeholder="Pick your birth date" name="end_time" formControlName="end_time"
+                      class="form-control custom-datepicker form-control-lg form-control-solid" bsDatepicker
+                      [bsValue]="birthDate" [maxDate]="maxDate"
+                      [bsConfig]="{ isAnimated: true, dateInputFormat: 'hh:mm A' }">
+
                     <div class="fv-plugins-message-container invalid-feedback"></div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                <button type="submit" class="btn-action-can">Cancel</button>
+                <button type="reset" class="btn-action-can">Discard</button>
                 <button type="submit" class="btn-action-add  btn_font">Add</button>
               </div>
             </form>
