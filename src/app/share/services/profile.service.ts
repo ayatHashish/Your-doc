@@ -16,4 +16,7 @@ export class ProfileService {
   update(data:any): Observable<any> {
     return this._http.post(this.baseUrl + `${'update_user_info'}`,data)
   }
+  update_password(data:any): Observable<any> {
+    return this._http.post(this.baseUrl + `${'update_user_password'}`,data)
+  }
 }
