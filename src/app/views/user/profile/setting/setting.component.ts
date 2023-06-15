@@ -34,9 +34,6 @@ export class SettingComponent {
     this.profile()
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 10);
 
-    // this.minDate.setDate(this.minDate.getDate() - 1);
-    // this.maxDate.setDate(this.maxDate.getDate() + 7);
-    // this.bsRangeValue = [this.bsValue, this.maxDate];
   }
 
   updatedForm: FormGroup = new FormGroup({
@@ -116,7 +113,6 @@ export class SettingComponent {
     e.stopPropagation();
     this.updateDataJson[`${e.target.name}`] = e.target.value;
   }
-
   updated() {
     if (this.updatedForm.valid) {
       this.isUpdating = false;

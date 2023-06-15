@@ -34,7 +34,7 @@
                   formControlName="password">
                 <div class="alert alert-danger my-2"
                   *ngIf="newPassword?.invalid &&(newPassword?.dirty || newPassword?.touched)">
-                  <li *ngIf="newPassword?.errors?.['min']">Password must be at least 8 characters</li>
+                  <li *ngIf="newPassword?.errors?.['required']">Password must be at least 8 characters</li>
                 </div>
               </div>
               <div class="col-lg-6 fv-row fv-plugins-icon-container">

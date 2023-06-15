@@ -14,17 +14,21 @@ export class DetailsComponent {
   makeSettingsTabActive() {
     const settingsTab = this.elementRef.nativeElement.querySelector('#settings');
     console.log(settingsTab);
-    
+
     this.renderer.addClass(settingsTab, 'show');
     this.renderer.addClass(settingsTab, 'active');
   }
 
 
   navigateToSettingsTab() {
-    // Perform any necessary logic before navigating
     this._router.navigateByUrl('/user/profile/settings');
   }
   // openNewTab() {
   //   window.open('http://localhost:4200/user/profile/settings', '_self');
   // }
+
+
+  goToProfileSettings() {
+    this._router.navigate(['/user/profile/settings']);
+  }
 }

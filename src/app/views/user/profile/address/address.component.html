@@ -16,8 +16,8 @@
     <!--begin::card body-->
     <div class="card-body">
       <div class="row gx-9 gy-6">
-        <div *ngIf="profileaddress.addresses.length > 0">
-          <div class="col-xl-6 mb-4" *ngFor="let address of profileaddress.addresses">
+        <div  class="handel-address"*ngIf="profileaddress.addresses.length > 0">
+          <div class="col-xl-6 mx-1 mb-4" *ngFor="let address of profileaddress.addresses">
             <div class="notice d-flex rounded border-dash h-lg-100 p-6">
               <div class="d-flex flex-stack flex-grow-1 flex-wrap flex-md-nowrap">
                 <div class="mb-3 mb-md-0 fw-semibold">
@@ -35,12 +35,14 @@
               </div>
             </div>
           </div>
-          <div *ngIf="profileaddress.addresses.length === 0">
-            No Addresses available.
-          </div>
         </div>
-        <!--end::card body-->
+
+    <div class="p-10 text-center" *ngIf="profileaddress.addresses.length === 0">
+          No Addresses available.
+        </div>
+
       </div>
+
     </div>
 
   </div>

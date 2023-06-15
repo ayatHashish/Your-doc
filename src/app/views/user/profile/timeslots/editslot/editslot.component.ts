@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { TimeslotService } from 'src/app/share/services/timeslot.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Location } from '@angular/common';
+import { timer } from 'rxjs';
 
 @Component({
   selector: 'app-editslot',
@@ -9,6 +10,7 @@ import { Location } from '@angular/common';
   styleUrls: ['./editslot.component.scss'],
 })
 export class EditslotComponent {
+
   @Input() slotedit: any;
   startTimeSelected = new Date();
   endTimeSelected = new Date();
@@ -22,6 +24,8 @@ export class EditslotComponent {
     private location: Location) { }
 
   editSlotForm = new FormGroup({
+    slot_id: new FormControl(),
+    address_id: new FormControl(),
     day_ar: new FormControl(),
     day_en: new FormControl(),
     start_time: new FormControl(),
@@ -40,25 +44,50 @@ export class EditslotComponent {
   }
   editSlot() {
     if (this.editSlotForm.valid) {
+      // this.updateDataJson.address_id = this.address_id
       this.updateDataJson.slot_id = this.slotedit.id
-      this.updateDataJson.address_id = this.slotedit.address_id
-      console.log(this.updateDataJson);
-
-      this._addTime.updateSlots(this.updateDataJson.value)
-        .subscribe(
-          (res) => {
-            console.log('address updated successfully');
-          },
-          (e) => {
-            this.errorMsg = e.error.error;
-          },
-          ()=> {
-            this.location.go(this.location.path());
-            window.location.reload();
-          }
-        );
+      this._addTime.updateSlots(this.updateDataJson).subscribe(() => {
+        console.log('Address updated successfully');
+        // this.reloadPage();
+      });
+    } else if (this.editSlotForm.dirty) {
+      this.updateDataJson.slot_id = this.slotedit.id
+      this._addTime.updateSlots(this.updateDataJson).subscribe(() => {
+        console.log('Address updated successfully');
+        // this.reloadPage();
+      });
+    } else {
+      console.log('Form not valid');
     }
+
   }
+  // reloadPage() {
+  //   // Add a delay of 500ms before reloading the page
+  //   timer(100).subscribe(() => {
+  //     this.location.go(this.location.path());
+  //     window.location.reload();
+  //   });
+  // }
 
+// editSot() {
+  //   if (this.editSlotForm.valid) {
+  //     this.updateDataJson.slot_id = this.slotedit.id
+  //     this.updateDataJson.address_id = this.slotedit.address_id
+  //     console.log(this.updateDataJson);
 
+  //     this._addTime.updateSlots(this.updateDataJson.value)
+  //       .subscribe(
+  //         (res) => {
+  //           console.log('address updated successfully');
+  //         },
+  //         (e) => {
+  //           this.errorMsg = e.error.error;
+  //         },
+  //         ()=> {
+  //           this.location.go(this.location.path());
+  //           window.location.reload();
+  //         }
+  //       );
+  //   }
+  // }
 }

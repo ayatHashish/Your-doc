@@ -16,7 +16,7 @@
                 <div class="col-md-9">
                   <div class="form-group">
                     <select class="form-select form-select-solid form-select-lg select2-hidden-accessible" id="day_en"
-                      name="day_en" formControlName="day_en" (change)="onchangeInput($event)">
+                      name="day_en" formControlName="day_en"   (input)="onchangeInput($event)">
                       <option value="{{day}}" *ngFor="let day of daysEN">{{day}}</option>
                       <!-- <option
                         *ngFor="let day of daysEN"
@@ -34,7 +34,7 @@
                 <div class="col-md-9">
                   <div class="form-group">
                     <select class="form-select form-select-solid form-select-lg select2-hidden-accessible" id="day_ar"
-                      name="day_ar" formControlName="day_ar" (change)="onchangeInput($event)">
+                      name="day_ar" formControlName="day_ar"   (input)="onchangeInput($event)">
                       <option value="{{day}}" *ngFor="let day of daysAR">{{day}}</option>
                       <!-- <option value="{{ day }}" *ngFor="let day of daysAR">
                         {{ day }}
@@ -47,7 +47,7 @@
                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="start_time">Start Time</label>
                 <div class="col-md-9">
                   <div class="form-group mt2">
-                    <timepicker name="start_time" (change)="onchangeInput($event)" formControlName="start_time"
+                    <timepicker name="start_time"   (input)="onchangeInput($event)" formControlName="start_time"
                       [(ngModel)]="startTimeSelected" [arrowkeys]="allowArrowKeys"></timepicker>
                   </div>
                 </div>
@@ -56,7 +56,7 @@
                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="end_time">End Time</label>
                 <div class="col-md-9">
                   <div class="form-group mt2">
-                    <timepicker formControlName="end_time" name="end_time" (change)="onchangeInput($event)"
+                    <timepicker formControlName="end_time" name="end_time"   (input)="onchangeInput($event)"
                       [(ngModel)]="endTimeSelected" [arrowkeys]="allowArrowKeys"></timepicker>
                   </div>
                 </div>

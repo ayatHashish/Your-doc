@@ -14,10 +14,12 @@ const routes: Routes = [
   { path: 'allspcialistes', component: AllSpecialistesComponent },
   { path: 'details/:id', component: DoctorsDetailsComponent },
   { path: 'spcialiset/:id', component: SpatialistDostorsComponent },
-  {
-    path: 'searchresults?:doctor_name/:specialty_id',
-    component: SearchResultsComponent
-  },
+  { path: 'search/:query', component: SearchResultsComponent },
+  // {
+  //   path: 'searchresults?:doctor_name/:specialty_id',
+  //   component: SearchResultsComponent
+  // }
+
   { path: 'model', component: ModelComponent },
 
 

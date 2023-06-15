@@ -17,16 +17,15 @@ export class AddNewAddressComponent {
 
       private addressComponent: AddressComponent ,
       private location: Location) {}
-  // ngOnInit(): void {
-  //   this._addTime.getAddress().subscribe((res) => {
-  //     this.addresses = res.data;
-  //   });
-  // }
   addNewAddress = new FormGroup({
     address: new FormControl('', [Validators.required]),
     state: new FormControl('', [Validators.required]),
     country: new FormControl('', [Validators.required]),
   });
+
+  get address() { return this.addNewAddress.get('address') }
+  get state() { return this.addNewAddress.get('state') }
+  get country() { return this.addNewAddress.get('country') }
 
   addNewAdress() {
      this._add.addNewAddress(this.addNewAddress.value).subscribe(
@@ -35,6 +34,8 @@ export class AddNewAddressComponent {
      },
      (e) => {
        this.errorMsg = e.error.error;
+       console.log(this.errorMsg );
+
       },
       ()=> {
         this.location.go(this.location.path());
@@ -42,8 +43,6 @@ export class AddNewAddressComponent {
       }
      );
   }
-
-
 }
 
 

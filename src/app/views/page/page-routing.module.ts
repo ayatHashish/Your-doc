@@ -11,7 +11,7 @@ const routes: Routes = [
     children: [
       { path: 'banner', component: BannerComponent },
       { path: 'specialties', component: SpecialtiesComponent },]
-
+     
   },
 
 
