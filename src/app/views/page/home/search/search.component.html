@@ -3,7 +3,7 @@
     <div class="contaner">
     </div>
     <form class="form" [formGroup]="searchForm" (ngSubmit)="search()">
-      <input type="text" placeholder="Doctor Name" formControlName="doctor_name" />
+      <input name="new-search" type="text" placeholder="Doctor Name" formControlName="doctor_name" />
       <select id="mylist" class="specialties-selection" formControlName="specialty_id">
         <option value="" disabled selected>specialty</option>
         <option value="{{specialty.id}}" *ngFor="let specialty of specialties">{{specialty.title}}</option>

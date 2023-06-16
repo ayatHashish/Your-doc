@@ -11,6 +11,11 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
 import { SearchComponent } from './home/search/search.component';
 import { SpecialtiesComponent } from './home/specialties/specialties.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
+import { DoctorPrivacyPolicyComponent } from './doctor-privacy-policy/doctor-privacy-policy.component';
+import { MedicalqustionComponent } from './medicalqustion/medicalqustion.component';
+import { TermsComponent } from './terms/terms.component';
 
 
 
@@ -20,7 +25,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     BannerComponent,
     SearchComponent,
     SpecialtiesComponent,
-
+    AboutUsComponent,
+    MedicalqustionComponent,
+    DoctorPrivacyPolicyComponent,
+    TermsComponent,
+    ContactUsComponent
   ],
 
   imports: [
@@ -33,5 +42,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     DoctorModule,
     ReactiveFormsModule
   ],
+  exports: [
+    AboutUsComponent,
+    MedicalqustionComponent,
+    DoctorPrivacyPolicyComponent,
+    ContactUsComponent,
+    TermsComponent
+  ]
 })
 export class PageModule { }

@@ -27,10 +27,7 @@ export class DoctorsDetailsComponent {
       docName: doctor.name,
       slotId: slot.id
     }
-    // localStorage.setItem('selected', this.selected)
 
-
-    // this.dataService.setData({ doctor['id'], doctor.name, slot.id });
     this.getDatesByday("Monday")
   }
 

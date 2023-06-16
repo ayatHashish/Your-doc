@@ -37,7 +37,6 @@
                 <i class="bx bx-pencil"></i>
                 <input type="file" name="avatar" accept=".png, .jpg, .jpeg" formControlName="avatar"
                   (change)="selectimage($event)" />
-
                 <input type="hidden" name="avatar_remove" />
               </label>
             </div>
@@ -84,7 +83,6 @@
             <div class="fv-plugins-message-container invalid-feedback"></div>
           </div>
         </div>
-
         <div class="row mb-6">
           <label class="col-lg-3 col-form-label required fw-semibold fs-6">
             Phone
@@ -96,29 +94,25 @@
             <div class="fv-plugins-message-container invalid-feedback"></div>
           </div>
         </div>
-
         <!-- start specialty_id -->
         <div class="row mb-6">
           <label class="col-lg-3 col-form-label required fw-semibold fs-6">
             Specialty
           </label>
-
           <div class="col-lg-9">
-            <select class="form-select form-control form-select-solid form-select-lg select2-hidden-accessible" name="spatialist"
-            required formControlName="specialty_id">
-            <!-- <option value="{{specialty.id}}"  *ngFor ="let specialty of specialties">{{specialty.title}}</option> -->
-          </select>
+            <select class="form-select form-control form-select-solid form-select-lg select2-hidden-accessible"
+              name="spatialist" formControlName="specialty_id">
+              <option value="{{specialty.id}}" [selected]="specialty.title === profilesetting.specialist"
+                *ngFor="let specialty of specialties">{{specialty.title}}</option>
+            </select>
             <div class="fv-plugins-message-container invalid-feedback"></div>
           </div>
         </div>
         <!-- end specialty_id -->
-
-
         <div class="row mb-6">
           <label class="col-lg-3 col-form-label required fw-semibold fs-6">
             Gender
           </label>
-
           <div class="col-lg-9">
             <select class="form-select form-control form-select-solid form-select-lg select2-hidden-accessible"
               name="gender" formControlName="gender" (change)="onchangeInput($event)">
@@ -145,9 +139,9 @@
           </div>
         </div>
         <div class="footer-card d-flex justify-content-end mt-5">
-          <button type="reset" class="btn-action-can long-btn me-2" routerLink="details">
+          <!-- <button type="reset" class="btn-action-can long-btn me-2" routerLink="details">
             Discard
-          </button>
+          </button> -->
           <button type="submit" class="btn-action-add long-btn" id="kt_account_profile_details_submit">
             Save Changes
           </button>

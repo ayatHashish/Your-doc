@@ -12,10 +12,6 @@ const routes: Routes = [
     loadChildren: () => import('./views/page/page.module').then((m) => m.PageModule),
   },
   {
-    path: 'comman',  component: UserlayoutsComponent,
-    loadChildren: () => import('./views/comman/comman.module').then((m) => m.CommanModule),
-  },
-  {
     path: 'auth', canActivate: [AuthGuard], component: AuthlayoutComponent,
     loadChildren: () => import('./views/auth/auth.module').then((m) => m.AuthModule),
   },

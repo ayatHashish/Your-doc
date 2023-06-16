@@ -10,19 +10,13 @@ import { DoctorsService } from 'src/app/share/services/doctors.service';
 })
 
 export class SearchComponent {
-
-  searchQuery: any;
-  nameDoctor: any;
   specialties: any;
-  id: any
   errorMsg = '';
-  constructor(
-    private _search: DoctorsService,
-    private _router: Router,
-    private _specialty: DoctorsService
-  ) {
+
+  constructor(private _router: Router, private _specialty: DoctorsService) {
     this.getAllSpecialties();
   }
+
   searchForm = new FormGroup({
     doctor_name: new FormControl('', [Validators.required]),
     specialty_id: new FormControl('', [Validators.required]),
@@ -30,28 +24,12 @@ export class SearchComponent {
   get doctor_name() { return this.searchForm.get('doctor_name') }
 
   search() {
-    const doctorName = this.searchForm.value.doctor_name;
-    const specialtyId = this.searchForm.value.specialty_id;
-
-
-    if (this.searchForm.valid || this.searchQuery) {
-      this._search.search(this.searchForm.value).subscribe(
-        (res) => {
-          console.log(this.searchForm.value.specialty_id);
-          // this.doctorName = params['doctor_name'];
-          // this.specialtyId = params['specialty_id'];
-          // this._router.navigateByUrl(`doctor/searchresults?doctor_name=${doctorName}&id=${specialtyId}`);
-
-          this.nameDoctor = res.data;
-          this.id = res.data[0].id
-          console.log(this.id);
-        },
-        (e) => {
-          console.log(e.error);
-        },
-        ()=>  {
-          this._router.navigate(['/search', this.searchQuery]);
-        }
+    if (this.searchForm.valid) {
+      const doctor_name = this.searchForm.value.doctor_name;
+      const sepcial_id = this.searchForm.value.specialty_id;
+      this._router.navigate(['doctor/search-results'], {
+        queryParams: { doctor_name: doctor_name, sepcial_id: sepcial_id }
+      }
       );
     } else {
       this.errorMsg = 'You should type docotr name and choose his specialist.'
@@ -61,10 +39,7 @@ export class SearchComponent {
   getAllSpecialties() {
     this._specialty.allSpatialists().subscribe((res) => {
       this.specialties = res.data;
-
     });
   }
-
-
 
 }

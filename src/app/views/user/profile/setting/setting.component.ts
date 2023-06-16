@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ProfileService } from 'src/app/share/services/profile.service';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable, Subscriber } from 'rxjs';
+import { DoctorsService } from 'src/app/share/services/doctors.service';
 
 @Component({
   selector: 'app-setting',
@@ -10,7 +11,6 @@ import { Observable, Subscriber } from 'rxjs';
     './setting.component.scss',
     './../details/details.component.scss',
   ],
-
 })
 
 export class SettingComponent {
@@ -29,11 +29,12 @@ export class SettingComponent {
   // bsRangeValue: Date[];
   avatarSrc!: string;
   isUpdating: boolean = true;
+  specialties: any;
 
-  constructor(private _update: ProfileService, public _profileService: ProfileService) {
+  constructor(private _update: ProfileService, public _profileService: ProfileService, private _specialty: DoctorsService) {
     this.profile()
+    this.getAllSpecialties()
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 10);
-
   }
 
   updatedForm: FormGroup = new FormGroup({
@@ -43,14 +44,9 @@ export class SettingComponent {
     phone: new FormControl(null),
     avatar: new FormControl(null),
     gender: new FormControl(null),
+    specialty_id: new FormControl(null),
     birth_date: new FormControl(null),
   });
-
-  // get first_name() { return this.updatedForm.get('first_name') }
-  // get last_name() { return this.updatedForm.get('last_name') }
-  // get email() { return this.updatedForm.get('email') }
-  // get phone() { return this.updatedForm.get('phone') }
-  // get gender() { return this.updatedForm.get('gender') }
 
   profile() {
     this._profileService.profile().subscribe((res) => {
@@ -59,6 +55,13 @@ export class SettingComponent {
       this.avatarSrc = this.profiles.avatar;
     });
   }
+
+  getAllSpecialties() {
+    this._specialty.allSpatialists().subscribe((res) => {
+      this.specialties = res.data;
+    });
+  }
+
 
   //select image and convert it to base64
   selectimage(e: any) {
@@ -113,6 +116,7 @@ export class SettingComponent {
     e.stopPropagation();
     this.updateDataJson[`${e.target.name}`] = e.target.value;
   }
+
   updated() {
     if (this.updatedForm.valid) {
       this.isUpdating = false;
@@ -120,7 +124,7 @@ export class SettingComponent {
         this.isUpdating = true;
         console.log('Data updated successfully');
       });
-    }else{
+    } else {
       console.log('not valid');
     }
   }
