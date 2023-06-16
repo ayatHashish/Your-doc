@@ -11,10 +11,7 @@ import { DoctorsService } from 'src/app/share/services/doctors.service';
 
 export class SearchComponent {
 
-  // doctorName: string;
-  // specialtyId: string;
-
-
+  searchQuery: any;
   nameDoctor: any;
   specialties: any;
   id: any
@@ -37,7 +34,7 @@ export class SearchComponent {
     const specialtyId = this.searchForm.value.specialty_id;
 
 
-    if (this.searchForm.valid) {
+    if (this.searchForm.valid || this.searchQuery) {
       this._search.search(this.searchForm.value).subscribe(
         (res) => {
           console.log(this.searchForm.value.specialty_id);
@@ -52,7 +49,9 @@ export class SearchComponent {
         (e) => {
           console.log(e.error);
         },
-        ()=>  { this._router.navigate(['searchresults', doctorName, specialtyId]) }
+        ()=>  {
+          this._router.navigate(['/search', this.searchQuery]);
+        }
       );
     } else {
       this.errorMsg = 'You should type docotr name and choose his specialist.'
@@ -65,6 +64,7 @@ export class SearchComponent {
 
     });
   }
+
 
 
 }
