@@ -1,10 +1,7 @@
 import { Component, Input, ViewChild } from '@angular/core';
 import { BookingService } from '../../../share/services/booking.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
-import { DoctorsService } from '../../../share/services/doctors.service';
-import { DoctorsDetailsComponent } from '../../doctor/doctors-details/doctors-details.component';
-import { DataServiceService } from '../../../share/services/data-service.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-booking',
@@ -12,48 +9,62 @@ import { DataServiceService } from '../../../share/services/data-service.service
   styleUrls: ['./user-booking.component.scss', '../../doctor/doctors-details/doctors-details.component.scss']
 })
 export class UserBookingComponent {
-  id: any
-  @Input() slotId: any
-  doctorDetails: any
-  data: any;
+  isSubmitted = false;
+  errorMsg = '';
+  doctorDataParsed: any;
+  datesByday = []
+  // DatePicker
+  minDate = new Date();
+  maxDate = new Date();
+  enabledDates: Date[] = [];
 
-  constructor(
-    private _booking: BookingService,
-    private _doctors: DoctorsService,
-    private _ActivatedRoute: ActivatedRoute,
-    private _dataService: DataServiceService) {
-    this.doctorsDetails()
-    this._dataService.selected.subscribe(data => this.data = data);
+  constructor(private _booking: BookingService, private _route: ActivatedRoute, private _router: Router) {
+    // Get doctorData from localStorage and parse it to obj
+    const doctorData = localStorage.getItem('doctorData');
+    if (doctorData) { this.doctorDataParsed = JSON.parse(doctorData); }
+    // Make max date after 2 month from now
+    this.maxDate.setMonth(this.maxDate.getMonth() + 2);
+    // Get enabled Dates using slot day name
+    this.getDatesByday(this.doctorDataParsed.slot_day)
+  }
+
+  getDatesByday(day_name: any) {
+    const data = { day_name: day_name }
+    this._booking.getDatesByday(data).subscribe((res) => {
+      this.datesByday = res.dates
+      // push res into enabledDates
+      const dates = this.datesByday.map(dateString => new Date(dateString));
+      this.enabledDates = dates;
+    });
   }
 
   bookingForm: FormGroup = new FormGroup({
     doctor_id: new FormControl(''),
     slot_id: new FormControl(''),
-    booking_date: new FormControl(''),
-    patient_name: new FormControl(''),
-    age: new FormControl(''),
-    disease_dec: new FormControl(''),
+    booking_date: new FormControl('', [Validators.required,]),
+    patient_name: new FormControl('', [Validators.required,]),
+    age: new FormControl('', [Validators.required,]),
+    disease_dec: new FormControl('', [Validators.required,]),
   });
-  doctorsDetails() {
-    this.id = this._ActivatedRoute.snapshot.params['id'];
-    this._doctors.getDoctorsDetails(this.id).subscribe((res) => {
-      this.doctorDetails = res.data
-    });
-  }
+
+  get date() { return this.bookingForm.get("booking_date") }
+  get patient() { return this.bookingForm.get("patient_name") }
+  get age() { return this.bookingForm.get("age") }
+  get disease_dec() { return this.bookingForm.get("disease_dec") }
+
   bookingFunction() {
+    this.isSubmitted = true;
     if (this.bookingForm.valid) {
       this.bookingForm.patchValue({
-        doctor_id: this.data.id,
-        slot_id: this.data.slotId,
-      })
+        doctor_id: this._route.snapshot.params['id'] / 100,
+        slot_id: this.doctorDataParsed.slot_id,
+      });
 
       this._booking.booking(this.bookingForm.value).subscribe(
-        (res) => {
-          console.log('Booking created successfully!')
-        },
-        (e) => console.error('Error creating booking!')
+        (res) => console.log(res),
+        (e) => this.errorMsg = e.error.error,
+        () => this._router.navigateByUrl('user/profile/appointments'),
       );
     }
-
   }
 }

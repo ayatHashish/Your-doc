@@ -48,6 +48,13 @@ import { TermsComponent } from './terms/terms.component';
     DoctorPrivacyPolicyComponent,
     ContactUsComponent,
     TermsComponent
+
   ]
 })
-export class PageModule { }
+export class PageModule {
+
+
+
+
+
+}

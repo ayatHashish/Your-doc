@@ -34,3 +34,22 @@ a.btn-cutom {
     font-size: 16px;
   }
 }
+
+.action-msg {
+  padding: 0 !important;
+  cursor: default;
+  .accept,
+  .cancel {
+    padding: 6px 10px;
+    border-radius: 5px;
+    margin: 0;
+  }
+  .accept {
+    background-color: #138fc21a;
+    color: #138fc2;
+  }
+  .cancel {
+    background-color: #f65c5c1a;
+    color: #f65c5c;
+  }
+}

@@ -1,0 +1,26 @@
+
+.bred {
+  width: 100%;
+  min-height: 200px;
+  padding-top: 50px;
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  background-image: url(/../../assets/images/header-bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: 100% 350px;
+  .section-title {
+    padding: 50px 0;
+    h2 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+      position: relative;
+      color: white;
+      text-transform: uppercase;
+    }
+  }
+}

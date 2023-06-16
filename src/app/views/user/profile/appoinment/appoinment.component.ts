@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { PageChangedEvent } from 'ngx-bootstrap/pagination';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { BookingService } from 'src/app/share/services/booking.service';
 
 @Component({
@@ -10,26 +9,27 @@ import { BookingService } from 'src/app/share/services/booking.service';
     './../details/details.component.scss',
   ],
 })
+
 export class AppoinmentComponent {
   appoinments: any[] = [];
   currentPage = 1;
   totalPages: number = 10;
-  role:any = ""
-  showIcon = true;
-  cancelText = 'Cancel';
+  role: any = ""
+  bookingDetails: any;
+  isAction = false;
 
-  isCanceled: boolean = false;
-
-  constructor(private _book: BookingService) {
-    this.role= localStorage.getItem("user_role");
+  constructor(private _book: BookingService, private cdr: ChangeDetectorRef) {
+    this.role = localStorage.getItem("user_role");
     this.getAppoinment(this.currentPage);
   }
+
   getAppoinment(page: number) {
     this._book.getMyAppointment(page).subscribe((res) => {
       this.appoinments = res.data;
       this.totalPages = res.count_pages;
     });
   }
+
   nextPage(): void {
     this.currentPage++;
     this.getAppoinment(this.currentPage);
@@ -40,30 +40,29 @@ export class AppoinmentComponent {
       this.getAppoinment(this.currentPage);
     }
   }
- acceptBookings(id: number) {
-  this._book.acceptBooking(id).subscribe(
-    (res) => {
-         console.log('Booking cancelled successfully.');
-    },
-    error => {
-      console.error('Error cancelling booking:', error);
-    },
-    () => {
 
-    }
-  );
-}
+  getBookingDetails(itemId: number) {
+    this._book.bookingDetails(itemId).subscribe(
+      (res) => this.bookingDetails = res.data,
+      (e) => console.log(e)
+    )
+  }
 
-cancel(e: Event,id: number) {
-  e.preventDefault();
-  const target = e.target as HTMLElement;
-  target.innerText = 'Canceling';
-  this._book.cancelBooking(id).subscribe(
-    (res) => {
-        //  this.isCanceled= true
-    },
-  );
-}
+  acceptBooking(id: number) {
+    this._book.acceptBooking(id).subscribe(
+      (res) => this.isAction = true,
+      (error) => console.error('Error cancelling booking:', error),
+      () => window.location.reload()
+    );
+  }
+
+  cancelBooking(id: number) {
+    this._book.cancelBooking(id).subscribe(
+      (res) => this.isAction = true,
+      (error) => console.error('Error cancelling booking:', error),
+      () => window.location.reload()
+    );
+  }
 
 
 }

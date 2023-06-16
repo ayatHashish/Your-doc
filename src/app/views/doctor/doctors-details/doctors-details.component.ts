@@ -9,26 +9,29 @@ import { DataServiceService } from '../../../share/services/data-service.service
   templateUrl: './doctors-details.component.html',
   styleUrls: ['./doctors-details.component.scss']
 })
+
 export class DoctorsDetailsComponent {
   id: any
   doctorDetails: any
-  datesByday: any
-  selected: object = {}
+  role: any = ""
   constructor(
     private _doctors: DoctorsService,
     private _ActivatedRoute: ActivatedRoute,
     private _booking: BookingService,
     private dataService: DataServiceService) {
+
+    this.role = localStorage.getItem("user_role");
     this.doctorsDetails()
   }
-  selectedDoctor(doctor: any, slot: any) {
-    this.selected = {
-      docId: doctor.id,
-      docName: doctor.name,
-      slotId: slot.id
-    }
 
-    this.getDatesByday("Monday")
+  selectedDoctor(doctor_name: string, slot: any) {
+    const obj = {
+      doctor_name: doctor_name,
+      slot_id: slot.id,
+      slot_day: slot.day,
+    }
+    const doctorData = JSON.stringify(obj);
+    localStorage.setItem('doctorData', doctorData);
   }
 
   doctorsDetails() {
@@ -37,12 +40,5 @@ export class DoctorsDetailsComponent {
       this.doctorDetails = res.data
     });
   }
-  getDatesByday(day_name: any) {
-    const date = {
-      day_name: day_name
-    }
-    this._booking.getDatesByday(date).subscribe((res) => {
-      this.datesByday = res.data
-    });
-  }
+
 }

@@ -12,7 +12,6 @@ import { UserBookingComponent } from './user-booking/user-booking.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'profile', pathMatch: 'full' },
-  { path: 'booking', component: UserBookingComponent},
   { path: 'booking/:id', component: UserBookingComponent},
   {
     path: 'profile', component: ProfileComponent,
@@ -24,7 +23,6 @@ const routes: Routes = [
       { path: 'details', component: DetailsComponent },
       { path: 'timeslots', component: TimeslotsComponent },
       { path: 'edit', component: EditslotComponent },
-
     ],
   },
 ];

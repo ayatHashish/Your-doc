@@ -1,49 +1,86 @@
 <main class="main" data-icms-placeholder="main">
   <div class="dynamic-page" data-aos="fade-up" data-aos-duration="1200" data-aos-delay="800">
     <div class="container">
-        <section class="vco-details-content">
-          <div class="container">
-            <div class="details-wrapper">
-              <form [formGroup]="bookingForm" (ngSubmit)="bookingFunction()">
-                <div class="dr-details">
-                  <div class="row">
-                    <div class="col-lg-6 my-3">
-                      <label class="col-form-label fw-semibold fs-6">Doctor Name</label>
-                      <input type="text" disabled class="form-control form-control-solid" value="{{data.docName}}" />
-                    </div>
-                    <div class="col-lg-6 my-3">
-                      <label class="col-form-label fw-semibold fs-6">Patient Name</label>
-                      <input type="text" name="patient_name" formControlName="patient_name"
-                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        placeholder="Patient Name" />
-                    </div>
-                    <div class="col-lg-6 my-3">
-                      <label class="col-form-label fw-semibold fs-6">Date</label>
-                      <input type="date" name="" formControlName="booking_date"
-                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        placeholder="Booking Date" />
-                    </div>
-                    <div class="col-lg-6 my-3">
-                      <label class="col-form-label fw-semibold fs-6">Age</label>
-                      <input type="number" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
-                        formControlName="Age" placeholder="Age" />
-                    </div>
-                    <div class="col-lg-12 my-3">
-                      <label class="col-lg-3 col-form-label fw-semibold fs-6">Disease Dec</label>
-                      <textarea formControlName="disease_dec"
-                        class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"></textarea>
-                    </div>
-                    <div class="col-lg-12 my-3">
-                      <button type="submit" class="btn-action-sm text-center m-auto mt-4">Send</button>
-                    </div>
-                  
-                  </div>
+      <section class="vco-details-content">
+        <div class="container">
+          <div class="details-wrapper">
+            <form [formGroup]="bookingForm" (ngSubmit)="bookingFunction()">
 
+              <div class="alert alert-danger" *ngIf="errorMsg!=''" (input)="errorMsg=''">{{errorMsg}}</div>
+              <div class="dr-details">
+                <div class="row">
+                  <div class="col-lg-6 my-3">
+                    <label class="col-form-label fw-semibold fs-6">Doctor Name</label>
+                    <input type="text" disabled class="form-control form-control-solid"
+                      value="Dr. {{ doctorDataParsed.doctor_name }} - {{ doctorDataParsed.slot_day }}" />
+                  </div>
+                  <div class="col-lg-6 my-3">
+                    <label class="col-form-label fw-semibold fs-6">Date</label>
+                    <input type="text" placeholder="Booking Date" name="booking_date" bsDatepicker
+                      class="form-control custom-datepicker form-control-lg form-control-solid"
+                      formControlName="booking_date" [datesEnabled]="enabledDates"
+                      [bsConfig]="{ isAnimated: true, dateInputFormat: 'Y/MM/DD' }" [minDate]="minDate"
+                      [maxDate]="maxDate" autocomplete="off" />
+                      <div class="alert alert-danger my-2"
+                      *ngIf="date?.invalid&&(date?.dirty || date?.touched || isSubmitted)">
+                      <!-- {{name?.errors|json}} -->
+                      <li *ngIf="date?.errors?.['required']">Booking Date is required</li>
+                    </div>
+
+                  </div>
+                  <div class="col-lg-6 my-3">
+                    <label class="col-form-label fw-semibold fs-6">Patient Name</label>
+                    <input type="text" name="patient_name" formControlName="patient_name"
+                      class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" placeholder="Patient Name" />
+                      <div class="alert alert-danger my-2"
+                      *ngIf="patient?.invalid&&(patient?.dirty || patient?.touched || isSubmitted)">
+                      <!-- {{name?.errors|json}} -->
+                      <li *ngIf="patient?.errors?.['required']">Patient Name is required</li>
+                    </div>
+                  </div>
+                  <div class="col-lg-6 my-3">
+                    <label class="col-form-label fw-semibold fs-6">Age</label>
+                    <input type="number" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                      formControlName="age" placeholder="Age" />
+                      <div class="alert alert-danger my-2"
+                      *ngIf="date?.invalid&&(age?.dirty || age?.touched || isSubmitted)">
+                      <li *ngIf="age?.errors?.['required']">age is required</li>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 my-3">
+                    <label class="col-lg-3 col-form-label fw-semibold fs-6">Disease Dec</label>
+                    <textarea formControlName="disease_dec"
+                      class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"></textarea>
+                      <div class="alert alert-danger my-2"
+                      *ngIf="disease_dec?.invalid&&(disease_dec?.dirty || disease_dec?.touched || isSubmitted)">
+                      <!-- {{name?.errors|json}} -->
+                      <li *ngIf="disease_dec?.errors?.['required']">Disease Dec is required</li>
+                    </div>
+                  </div>
+                  <div class="col-lg-12 my-3">
+                    <button type="submit" class="btn-action-sm text-center m-auto mt-4">
+                      Send
+                    </button>
+                  </div>
                 </div>
-              </form>
-            </div>
+              </div>
+            </form>
           </div>
-        </section>
+        </div>
+      </section>
     </div>
   </div>
 </main>
+
+<!-- Example code od datepicker -->
+<!-- <div class="row">
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text" placeholder="Datepicker" class="form-control custom-datepicker" bsDatepicker [bsValue]="bsValue"
+      [minDate]="minDate" [maxDate]="maxDate" [daysDisabled]="[6,0]" [datesDisabled]="enabledDates"
+      [bsConfig]="{ isAnimated: true, dateInputFormat: 'YYYY-MM-DD' }">
+  </div>
+  <div class="col-xs-12 col-12 col-md-4 form-group">
+    <input type="text" placeholder="Daterangepicker" class="form-control custom-daterangepicker" bsDaterangepicker
+      [(ngModel)]="bsRangeValue" [datesEnabled]="enabledDates" [bsConfig]="{ isAnimated: true }">
+  </div>
+</div> -->

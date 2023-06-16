@@ -45,51 +45,40 @@
 
                     </div>
                   </div>
-
-
                 </div>
                 <div class="row">
-
-                  
                   <div class="col-xl-12 col-lg-6 col-md-12 col-sm-12 col-12"
                     *ngFor="let address of doctorDetails.addresses">
                     <div class="address">
                       <h4 class="headingtitle">Clinic Address : {{ address.clinic_address }}</h4>
                     </div>
-                     <div *ngIf="address.slots.length > 0">
-                    <table class="table">
-                      <thead class="table-light">
-                        <tr class="headingtitle">
-                          <th scope="col">Day</th>
-                          <th scope="col">Start Time</th>
-                          <th scope="col">End Time</th>
-                          <th scope="col">Action</th>
-                        </tr>
-                      </thead>
-
-
-                        <tbody *ngFor="let slot of address.slots">
-                          <tr>
+                    <div>
+                      <table class="table table-row-bordered align-middle gy-4 gs-9 table-striped table-hover">
+                        <thead class="border-bottom border-gray-200 fs-6 text-gray-600 fw-bold bg-light bg-opacity-75">
+                          <tr class="headingtitle">
+                            <th scope="col">Day</th>
+                            <th scope="col">Start Time</th>
+                            <th scope="col">End Time</th>
+                            <th scope="col" [ngClass]="role == 'Doctor' ? 'd-none' : ''">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody class="fw-semibold text-gray-600">
+                          <tr class="p-10 text-center" *ngIf="address.slots.length == 0">
+                            <td colspan="4">No slots yet</td>
+                          </tr>
+                          <tr *ngFor="let slot of address.slots">
                             <td scope="row">{{ slot.day }}</td>
                             <td>{{ slot.start_time }}</td>
                             <td>{{ slot.start_time }}</td>
-                            <td>
-                              <a class="btn-booking mt-5" (click)="
-                                selectedDoctor(
-                                    doctorDetails,
-                                    slot
-                                  )
-                                " routerLink="/user/booking"><i class="bx bx-plus"></i> Booking</a>
+                            <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">
+                              <a class="btn-booking mt-5" (click)="selectedDoctor(doctorDetails.name, slot)"
+                                routerLink="/user/booking/{{doctorDetails.id * 100}}"><i
+                                  class="bx bx-plus"></i>Booking</a>
                             </td>
                           </tr>
                         </tbody>
-
-                    </table>
+                      </table>
                     </div>
-
-                      <div class="p-10" *ngIf="address.slots.length === 0">
-                        No slots yet
-                      </div>
                   </div>
                 </div>
               </div>

@@ -30,26 +30,10 @@
                 <td>Action</td>
               </tr>
             </thead>
-            <tr class="p-10 text-center" *ngIf="appoinments.length === 0">
-              <td colspan="5">No appointment available</td>
-              <td>
-                <a type="button" class="btn btn-sm-l btn-cutom" data-bs-toggle="modal" data-bs-target="#view">
-                  <i class="bx bx-show-alt"></i>
-                </a>
-              </td>
-              <td>
-                <a type="button" class="btn btn-sm-l btn-cutom" (click)="acceptBookings(10)"
-                  [ngClass]="role == 'User' ? 'd-none' : ''">
-                  <!-- {{ accept }} -->
-                  <i class="bx bx-error-circle" *ngIf=""></i>
-                </a>
-                <!-- data-bs-toggle="modal" -->
-                <a type="button" class="btn btn-sm-l btn-cutom" data-bs-target="#cancel" (click)="cancel($event, 10)">
-                  <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
-                </a>
-              </td>
-            </tr>
             <tbody class="fw-semibold text-gray-600">
+              <tr class="p-10 text-center" *ngIf="appoinments.length === 0">
+                <td colspan="7">No appointment available</td>
+              </tr>
               <tr *ngFor="let appoint of appoinments; let i = index">
                 <td>#{{ i + 1 }}</td>
                 <td [ngClass]="role == 'Doctor' ? 'd-none' : ''">
@@ -62,20 +46,33 @@
                 <td>{{ appoint.booking_date }}</td>
                 <td>{{ appoint.status }}</td>
                 <td>
-                  <a type="button" class="btn btn-sm" data-bs-toggle="modal" data-bs-target="#view">
+                  <a type="button" class="btn btn-sm-l btn-cutom" data-bs-toggle="modal" data-bs-target="#view"
+                    (click)="getBookingDetails(appoint.id)">
                     <i class="bx bx-show-alt"></i>
                   </a>
                 </td>
                 <td>
-                  <a type="button" class="btn btn-sm" (click)="acceptBookings(appoint.id)"
-                    [ngClass]="role == 'User' ? 'd-none' : ''">
-                    <!-- {{ accept }} -->
-                    <i class="bx bx-error-circle" *ngIf=""></i>
-                  </a>
-                  <!-- data-bs-toggle="modal" -->
-                  <a type="button" class="btn btn-sm" data-bs-target="#cancel" (click)="cancel($event, appoint.id)">
-                    <i class="bx bx-x-circle" [style.display]="!showIcon ? 'none' : 'block'"></i>
-                  </a>
+                  <div class="btn action-msg"
+                    [ngClass]="appoint.status === 'pending' ? 'd-none':'' || isAction != false ? 'd-none':'' ">
+                    <p class="accept" [ngClass]="appoint.status === 'accept' ? '':'d-none'">
+                      <i class="bx bx-check-circle"></i>
+                      Accepted
+                    </p>
+                    <p class="cancel" [ngClass]="appoint.status === 'reject' ? '':'d-none'">
+                      <i class="bx bx-x-circle"></i>
+                      Canceled
+                    </p>
+                  </div>
+                  <div [ngClass]="appoint.status === 'pending' ? '':'d-none' || isAction == false ? 'd-none':'' ">
+                    <a type="button" class="btn btn-sm-l btn-cutom" (click)="acceptBooking(appoint.id)"
+                      [ngClass]="role == 'User' ? 'd-none' : ''">
+                      <i class="bx bx-check-circle"></i>
+                    </a>
+                    <a type="button" class="btn btn-sm-l btn-cutom" data-bs-target="#cancel"
+                      (click)="cancelBooking(appoint.id)">
+                      <i class="bx bx-x-circle"></i>
+                    </a>
+                  </div>
                 </td>
               </tr>
             </tbody>
@@ -97,7 +94,6 @@
           </div>
           <!--end::Table-->
         </div>
-        <!--end::Table container-->
       </div>
       <!--end::Tab panel-->
     </div>
@@ -107,7 +103,7 @@
   <div class="modal fade" id="view" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" #myModal
     aria-labelledby="view" aria-hidden="true">
     <!-- [ngClass]="isVisible == false ? 'd-block' :'d-none' " -->
-    <app-view-appoinment></app-view-appoinment>
+    <app-view-appoinment [bookingDetails]="bookingDetails"></app-view-appoinment>
   </div>
 
   <!-- cansel -->

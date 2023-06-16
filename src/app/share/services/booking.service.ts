@@ -12,26 +12,29 @@ export class BookingService {
   constructor(private _http: HttpClient) { }
 
 
-  booking(data:object): Observable<any> {
-
+  booking(data: object): Observable<any> {
     return this._http.post(this.baseUrl + `${'booking'}`, data)
   }
-  bookingDetails(data: any): Observable<any> {
-    return this._http.post(this.baseUrl + `${'booking_details'}`, data)
+
+  bookingDetails(id: any): Observable<any> {
+    return this._http.post(this.baseUrl + `${'booking_details'}`, { booking_id: id })
   }
 
   cancelBooking(id: number): Observable<any> {
     const body = { booking_id: id };
     return this._http.post(this.baseUrl + `${'cancel_booking'}`, body)
   }
+
   acceptBooking(id: number): Observable<any> {
     const body = { booking_id: id };
     return this._http.post(this.baseUrl + `${'accept_booking'}`, body)
   }
+
   // other way with get
   getMyAppointment(pageNum: number): Observable<any> {
     return this._http.get(this.baseUrl + `get_my_appointments?page=${pageNum}`)
   }
+
   // first Way with post
   getDatesByday(data: any): Observable<any> {
     return this._http.post(this.baseUrl + `get_dates_by_day`, data)

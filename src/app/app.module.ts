@@ -22,6 +22,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ReactiveFormsModule,
     TimepickerModule.forRoot(),
     Ng2SearchPipeModule
+
   ],
 
   providers: [

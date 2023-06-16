@@ -1,4 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-medicalqustion',
@@ -6,6 +8,8 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./medicalqustion.component.scss'],
 })
 export class MedicalqustionComponent {
+    pageUrl: String = ""
+  pageTitle: any = ""
   ngAfterViewInit() {
     const buttons = document.querySelectorAll('button');
 
@@ -22,6 +26,16 @@ export class MedicalqustionComponent {
         }
         button.parentElement.classList.toggle('active');
       });
+    });
+  }
+
+  constructor(private router: Router) {
+    router.events.pipe(
+      filter(res => res instanceof NavigationEnd)
+    ).subscribe(res => {
+      this.pageUrl = Object.values(res)[1];
+      this.pageTitle = this.pageUrl.split('/')[2];
+      // console.log(this.pageUrl);
     });
   }
 }

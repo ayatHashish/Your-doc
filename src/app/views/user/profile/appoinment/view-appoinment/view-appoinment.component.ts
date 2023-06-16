@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-view-appoinment',
@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./view-appoinment.component.scss']
 })
 export class ViewAppoinmentComponent {
+  @Input() bookingDetails: any;
+  role: any = ""
 
+  constructor() { this.role = localStorage.getItem("user_role"); }
 }
