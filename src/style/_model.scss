@@ -1,12 +1,26 @@
 .modal-content {
   .modal-header {
     border-bottom: none !important;
+    background:$th-brand !important;
+    color: $pure-white !important;
+    align-items: baseline !important;
+    h2{
+       color: $pure-white !important;
+    }
     .btn-close {
       margin-right: 5px !important;
-      margin-top: 14px !important;
+      color: $pure-white !important;
+
     }
   }
   .modal-body {
+
+    .row{
+      align-items: baseline;
+     label{
+
+}
+    }
     p,
     h3 {
       padding-top: 10px;
@@ -29,4 +43,9 @@
   .modal-dialog {
     min-width: 30%;
   }
+}
+
+
+.del-color{
+  background-color:$red !important;
 }

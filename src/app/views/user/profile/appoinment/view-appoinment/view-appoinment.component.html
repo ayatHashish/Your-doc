@@ -1,21 +1,69 @@
 <main class="modal-handle">
   <div class="modal-dialog modal-dialog-centered align-center">
     <div class="modal-content ">
-      <div class="modal-header" style="background: #09c">
+      <div class="modal-header">
         <h2>Booking Details</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="time-slot-page">
           <div class="container">
-            <p [ngClass]="role == 'Doctor' ? 'd-none' : ''">Doctor {{bookingDetails.doctor_name}}</p>
-            <p [ngClass]="role == 'User' ? 'd-none' : ''">User {{bookingDetails.user_name}}</p>
-            <p>{{bookingDetails.booking_day}}</p>
-            <p>{{bookingDetails.booking_date}}</p>
-            <p>{{bookingDetails.status}}</p>
-            <p>{{bookingDetails.patient_name}}</p>
-            <p>{{bookingDetails.patient_age}}</p>
-            <p>{{bookingDetails.disease_dec}}</p>
+            <div class="row">
+              <div class="col-4">
+                <label> Doctor :</label>
+              </div>
+              <div class="col-8">
+                <p>{{bookingDetails.booking_day}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label [ngClass]="role == 'User' ? 'd-none' : ''"> User</label>
+              </div>
+              <div class="col-8">
+                <p [ngClass]="role == 'User' ? 'd-none' : ''"> {{bookingDetails.user_name}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label>Booking Date :</label>
+              </div>
+              <div class="col-8">
+                <p>{{bookingDetails.booking_date}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label>status :</label>
+              </div>
+              <div class="col-8">
+                <p>{{bookingDetails.status}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label> Patient Name :</label>
+              </div>
+              <div class="col-8">
+                <p>{{bookingDetails.patient_name}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label>Patient Age :</label>
+              </div>
+              <div class="col-8">
+                <p>{{bookingDetails.patient_age}}</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-4">
+                <label> Disease :</label>
+              </div>
+              <div class="col-8">
+                <p>{{bookingDetails.disease_dec}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
