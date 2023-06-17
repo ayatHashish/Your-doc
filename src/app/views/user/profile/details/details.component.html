@@ -39,7 +39,7 @@
         </div>
       </div>
       <!--end::Input group-->
-      <div class="row mb-7">
+      <div class="row mb-7"  [ngClass]="role == 'User' ? 'd-none' : ''">
         <label class="col-lg-3 fw-semibold text-muted">
           specialty
         </label>

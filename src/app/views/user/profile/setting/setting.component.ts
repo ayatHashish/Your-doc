@@ -30,8 +30,9 @@ export class SettingComponent {
   avatarSrc!: string;
   isUpdating: boolean = true;
   specialties: any;
-
+  role: any = ""
   constructor(private _update: ProfileService, public _profileService: ProfileService, private _specialty: DoctorsService) {
+    this.role = localStorage.getItem("user_role");
     this.profile()
     this.getAllSpecialties()
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 10);

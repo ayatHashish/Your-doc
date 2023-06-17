@@ -8,8 +8,12 @@ import { ElementRef, Renderer2 } from '@angular/core';
   styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent {
+
+  role: any = ""
   @Input() profileDetails: any;
-  constructor(private _router: Router, private elementRef: ElementRef, private renderer: Renderer2) { }
+  constructor(private _router: Router, private elementRef: ElementRef, private renderer: Renderer2) {
+    this.role = localStorage.getItem("user_role");
+  }
 
   makeSettingsTabActive() {
     const settingsTab = this.elementRef.nativeElement.querySelector('#settings');
@@ -19,16 +23,4 @@ export class DetailsComponent {
     this.renderer.addClass(settingsTab, 'active');
   }
 
-
-  navigateToSettingsTab() {
-    this._router.navigateByUrl('/user/profile/settings');
-  }
-  // openNewTab() {
-  //   window.open('http://localhost:4200/user/profile/settings', '_self');
-  // }
-
-
-  goToProfileSettings() {
-    this._router.navigate(['/user/profile/settings']);
-  }
 }

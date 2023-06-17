@@ -1,5 +1,5 @@
 import { Component, Input, ViewChild } from '@angular/core';
-import { Location, Time } from '@angular/common';
+import { Location } from '@angular/common';
 import { TimeslotService } from 'src/app/share/services/timeslot.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { TimeslotsComponent } from '../timeslots.component';
@@ -16,18 +16,12 @@ import { format } from 'date-fns';
 export class AddTimeComponent {
   @ViewChild('myModal') myModal: any;
   @Input() myData: any;
-
-  birthDate!: Date;
-  maxDate = new Date();
-  minDate = new Date();
-  enabledDates!: Date[];
-
-
   addresses: [] = [];
   errorMsg = '';
   allowArrowKeys = true;
   startTimeSelected = new Date();
   endTimeSelected = new Date();
+  creatSlotForm: FormGroup;
   daysEN = [
     'Saturday',
     'Sunday',
@@ -46,9 +40,10 @@ export class AddTimeComponent {
     'الخميس',
     'الجمعه',
   ];
-  creatSlotForm: FormGroup;
 
-  constructor(private _addTime: TimeslotService, private timeslotsComponent: TimeslotsComponent, private location: Location) {
+  constructor(private _addTime: TimeslotService,
+    private timeslotsComponent: TimeslotsComponent,
+    private location: Location) {
     this.creatSlotForm = new FormGroup({
       address_id: new FormControl('', [Validators.required]),
       day_ar: new FormControl('', [Validators.required]),
@@ -57,6 +52,7 @@ export class AddTimeComponent {
       end_time: new FormControl('', [Validators.required]),
     });
   }
+
   ngOnInit(): void {
     this._addTime.getAddress().subscribe((res) => {
       this.addresses = res.data;

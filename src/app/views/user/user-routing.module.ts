@@ -22,7 +22,7 @@ const routes: Routes = [
       { path: 'settings', component: SettingComponent },
       { path: 'details', component: DetailsComponent },
       { path: 'timeslots', component: TimeslotsComponent },
-      { path: 'edit', component: EditslotComponent },
+      // { path: 'edit', component: EditslotComponent },
     ],
   },
 ];

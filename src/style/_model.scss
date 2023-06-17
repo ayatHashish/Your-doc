@@ -10,16 +10,11 @@
     .btn-close {
       margin-right: 5px !important;
       color: $pure-white !important;
-
     }
   }
   .modal-body {
-
     .row{
       align-items: baseline;
-     label{
-
-}
     }
     p,
     h3 {
@@ -31,8 +26,8 @@
     align-items: end;
     justify-content: end;
   }
-
-
+  .del-color{
+    background-color:$red !important;}
 }
 .modal-handle {
   height: 100vh;
@@ -46,6 +41,3 @@
 }
 
 
-.del-color{
-  background-color:$red !important;
-}

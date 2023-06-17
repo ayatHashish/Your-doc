@@ -7,10 +7,10 @@ import { environment } from '../../../environments/environment';
 })
 export class TimeslotService {
 
-  private  baseUrl = environment.baseUrl;
+  private baseUrl = environment.baseUrl;
   constructor(private _http: HttpClient) { }
 
-  getAllSlots(): Observable<any> {
+  getMySlots(): Observable<any> {
     return this._http.get(this.baseUrl + `${'get_my_slots'}`)
   }
   addSlot(data: any): Observable<any> {

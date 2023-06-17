@@ -44,7 +44,6 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
     DeleteAddressComponent,
     EditAddressComponent,
     UserBookingComponent,
-
   ],
   imports: [
     ShareModule,
@@ -55,7 +54,6 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
     FormsModule,
     CustomFormsModule,
     BsDatepickerModule.forRoot()
-
   ],
   providers: [BsDatepickerConfig],
   exports: [
