@@ -16,6 +16,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DoctorPrivacyPolicyComponent } from './doctor-privacy-policy/doctor-privacy-policy.component';
 import { MedicalqustionComponent } from './medicalqustion/medicalqustion.component';
 import { TermsComponent } from './terms/terms.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 
 
@@ -29,7 +30,8 @@ import { TermsComponent } from './terms/terms.component';
     MedicalqustionComponent,
     DoctorPrivacyPolicyComponent,
     TermsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    SearchResultsComponent,
   ],
 
   imports: [
@@ -47,7 +49,8 @@ import { TermsComponent } from './terms/terms.component';
     MedicalqustionComponent,
     DoctorPrivacyPolicyComponent,
     ContactUsComponent,
-    TermsComponent
+    TermsComponent,
+      SearchResultsComponent,
 
   ]
 })

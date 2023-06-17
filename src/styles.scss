@@ -179,9 +179,9 @@ p {
         display: flex;
         cursor: pointer;
         border-radius: 3px;
-i{
-  font-size: 22px;
-}
+        i {
+          font-size: 22px;
+        }
         &:hover {
           opacity: 0.8;
         }
@@ -221,15 +221,10 @@ i{
   }
 }
 
-
-.form-check:not(.form-switch)
-.form-check-input[type=checkbox] {
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
   background-size: 100% 100% !important;
 }
 
-
-
-.sehtak{
+.sehtak {
   border-radius: 10px;
-
 }

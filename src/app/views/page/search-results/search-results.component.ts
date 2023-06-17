@@ -5,7 +5,7 @@ import { DoctorsService } from 'src/app/share/services/doctors.service';
 @Component({
   selector: 'app-search-results',
   templateUrl: './search-results.component.html',
-  styleUrls: ['./search-results.component.scss','../doctors/doctors.component.scss']
+  styleUrls: ['./search-results.component.scss','../../doctor/doctors/doctors.component.scss']
 })
 export class SearchResultsComponent {
   searchQuery: any;

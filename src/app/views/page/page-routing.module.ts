@@ -8,6 +8,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { DoctorPrivacyPolicyComponent } from './doctor-privacy-policy/doctor-privacy-policy.component';
 import { MedicalqustionComponent } from './medicalqustion/medicalqustion.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full', },
@@ -23,7 +24,7 @@ const routes: Routes = [
   { path: 'medical-questions', component: MedicalqustionComponent },
   { path: 'doctors-policy', component: DoctorPrivacyPolicyComponent },
   { path: 'contact', component: ContactUsComponent },
-
+  { path: 'search-results', component: SearchResultsComponent },
 ];
 
 @NgModule({

@@ -6,7 +6,7 @@ import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorsDetailsComponent } from './doctors-details/doctors-details.component';
 import { SpatialistDostorsComponent } from './spatialist-dostors/spatialist-dostors.component';
 import { AllSpecialistesComponent } from './all-specialistes/all-specialistes.component';
-import { SearchResultsComponent } from './search-results/search-results.component';
+
 
 
 
@@ -14,10 +14,9 @@ import { SearchResultsComponent } from './search-results/search-results.componen
   declarations: [
     DoctorsDetailsComponent,
     DoctorsComponent,
-
     AllSpecialistesComponent,
     SpatialistDostorsComponent,
-    SearchResultsComponent,
+
   ],
   imports: [
     CommonModule,
@@ -28,10 +27,10 @@ import { SearchResultsComponent } from './search-results/search-results.componen
   ,
   exports: [
     DoctorsDetailsComponent,
-    DoctorsComponent ,
+    DoctorsComponent,
     SpatialistDostorsComponent,
     AllSpecialistesComponent,
-    SearchResultsComponent,
+  
   ]
 })
 export class DoctorModule { }

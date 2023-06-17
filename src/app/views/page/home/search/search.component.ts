@@ -27,7 +27,7 @@ export class SearchComponent {
     if (this.searchForm.valid) {
       const doctor_name = this.searchForm.value.doctor_name;
       const sepcial_id = this.searchForm.value.specialty_id;
-      this._router.navigate(['doctor/search-results'], {
+      this._router.navigate(['search-results'], {
         queryParams: { doctor_name: doctor_name, sepcial_id: sepcial_id }
       }
       );
