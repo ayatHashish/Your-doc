@@ -2,12 +2,15 @@
   <div class="modal-dialog modal-dialog-centered align-center">
     <div class="modal-content">
       <div class="modal-header">
+
+        <h2> Add Address</h2>
+
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         <div class="time-slot-page">
           <div class="container">
-            <form [formGroup]="addNewAddress"  (ngSubmit)="addNewAdress()">
+            <form [formGroup]="addNewAddress" (ngSubmit)="addNewAdress()">
               <div class="alert alert-danger" *ngIf="errorMsg != ''" (input)="errorMsg = ''">
                 {{ errorMsg }}
               </div>
@@ -16,11 +19,12 @@
                 <div class="col-lg-9">
                   <div class="row">
                     <div class="col-lg-12 fv-row fv-plugins-icon-container">
-                    <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0" formControlName="address">
-                    <div class="alert alert-danger my-2"
-                  *ngIf="address?.invalid &&(address?.dirty || address?.touched)">
-                  <li *ngIf="address?.errors?.['required']">Address is required</li>
-                </div>
+                      <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                        formControlName="address">
+                      <div class="alert alert-danger my-2"
+                        *ngIf="address?.invalid &&(address?.dirty || address?.touched)">
+                        <li *ngIf="address?.errors?.['required']">Address is required</li>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -30,11 +34,11 @@
                 <div class="col-lg-9">
                   <div class="row">
                     <div class="col-lg-12 fv-row fv-plugins-icon-container">
-                      <input type="text"  class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="state">
-                      <div class="alert alert-danger my-2"
-                      *ngIf="state?.invalid &&(state?.dirty || state?.touched)">
-                      <li *ngIf="state?.errors?.['required']">state is required</li>
-                    </div>
+                      <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                        formControlName="state">
+                      <div class="alert alert-danger my-2" *ngIf="state?.invalid &&(state?.dirty || state?.touched)">
+                        <li *ngIf="state?.errors?.['required']">state is required</li>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -44,17 +48,18 @@
                 <div class="col-lg-9">
                   <div class="row">
                     <div class="col-lg-12 fv-row fv-plugins-icon-container">
-                      <input type="text"class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"formControlName="country">
+                      <input type="text" class="form-control form-control-lg form-control-solid mb-3 mb-lg-0"
+                        formControlName="country">
                       <div class="alert alert-danger my-2"
-                      *ngIf="country?.invalid &&(country?.dirty || country?.touched)">
-                      <li *ngIf="country?.errors?.['required']">country is required</li>
-                    </div>
+                        *ngIf="country?.invalid &&(country?.dirty || country?.touched)">
+                        <li *ngIf="country?.errors?.['required']">country is required</li>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="modal-footer">
-                 <button type="reset" class="btn-action-can">Cancle</button>
+                <button type="reset" class="btn-action-can">Cancle</button>
                 <button type="submit" class="btn-action-add">Add</button>
               </div>
             </form>
