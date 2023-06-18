@@ -8,7 +8,6 @@ import { SecurityComponent } from './profile/security/security.component';
 import { AddressComponent } from './profile/address/address.component';
 import { DetailsComponent } from './profile/details/details.component';
 import { AppoinmentComponent } from './profile/appoinment/appoinment.component';
-import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
 import { EditslotComponent } from './profile/timeslots/editslot/editslot.component';
 import { DelslotsComponent } from './profile/timeslots/delslots/delslots.component';
 import { AddTimeComponent } from './profile/timeslots/add-time/add-time.component';
@@ -19,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { AddNewAddressComponent } from './profile/address/add-new-address/add-new-address.component';
 import { DeleteAddressComponent } from './profile/address/delete-address/delete-address.component';
 import { EditAddressComponent } from './profile/address/edit-address/edit-address.component';
+import { TimeslotsComponent } from './profile/timeslots/timeslots.component';
 
 import { CustomFormsModule } from 'ng2-validation';
 import { UserBookingComponent } from './user-booking/user-booking.component';

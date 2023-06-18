@@ -1,5 +1,4 @@
-import { Component, Input } from '@angular/core';
-import { BookingService } from 'src/app/share/services/booking.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-cancel',

@@ -2,7 +2,6 @@
   <div class="modal-dialog modal-dialog-centered align-center">
     <div class="modal-content">
       <div class="modal-header">
-        <h2> Add slots</h2>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -20,9 +19,9 @@
                       <select class="form-select form-select-solid form-select-lg select2-hidden-accessible"
                         id="address_id" required formControlName="address_id">
                         <option value="" disabled selected>Select a Clinic</option>
-                        <!-- <option [value]="address['id']" *ngFor="let address of addresses">
+                        <option [value]="address['id']" *ngFor="let address of addresses">
                           {{ address["address"] }}
-                        </option> -->
+                        </option>
                       </select>
                       <div class="fv-plugins-message-container invalid-feedback"></div>
                     </div>
@@ -56,15 +55,34 @@
               <div class="row mb-6 align-items-center">
                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="start_time">Start Time</label>
                 <div class="col-md-9">
-                  <timepicker formControlName="start_time" [(ngModel)]="startTimeSelected" [arrowkeys]="allowArrowKeys"></timepicker>
-
+                  <div class="form-group mt2">
+                    <timepicker formControlName="start_time" [(ngModel)]="startTimeSelected"
+                      [arrowkeys]="allowArrowKeys"></timepicker>
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
                 </div>
               </div>
               <div class="row mb-6 align-items-center">
                 <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="end_time">End Time</label>
                 <div class="col-md-9">
-                  <timepicker formControlName="end_time" [(ngModel)]="endTimeSelected" [arrowkeys]="allowArrowKeys"></timepicker>
+                  <div class="form-group mt2">
+                    <timepicker formControlName="end_time" [(ngModel)]="endTimeSelected" [arrowkeys]="allowArrowKeys">
+                    </timepicker>
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-6 align-items-center">
+                <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="end_time">End Time</label>
+                <div class="col-md-9">
+                  <div class="form-group mt2">
+                    <input type="text" placeholder="Pick your birth date" name="end_time" formControlName="end_time"
+                      class="form-control custom-datepicker form-control-lg form-control-solid" bsDatepicker
+                      [bsValue]="birthDate" [maxDate]="maxDate"
+                      [bsConfig]="{ isAnimated: true, dateInputFormat: 'hh:mm A' }">
 
+                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                  </div>
                 </div>
               </div>
               <div class="modal-footer">

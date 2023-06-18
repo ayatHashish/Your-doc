@@ -56,8 +56,4 @@ import { SearchResultsComponent } from './search-results/search-results.componen
 })
 export class PageModule {
 
-
-
-
-
 }

@@ -63,6 +63,4 @@ export class AppoinmentComponent {
       () => window.location.reload()
     );
   }
-
-
 }

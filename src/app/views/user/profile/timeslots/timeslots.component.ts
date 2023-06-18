@@ -9,17 +9,18 @@ import { TimeslotService } from 'src/app/share/services/timeslot.service';
 
 export class TimeslotsComponent {
   @Input() sharetimeslots: any;
+  allSlots: any;
   selectedItemId: any;
   item: any;
-  allClinics: any;
 
-  constructor(private _timeSlots: TimeslotService) {
-    this._timeSlots.getMySlots().subscribe((res) => {
-      this.allClinics = res.data;
-    });
+  constructor(private _addTime: TimeslotService) { this.allTime() }
+
+  allTime() {
+    this._addTime.getMySlots().subscribe(
+      (result) => { this.allSlots = result.data },
+      (e) => { this.allSlots = e.data },
+    );
   }
-
-  allTime() { }
 
   openModal(itemId: number) {
     this.selectedItemId = itemId;
@@ -30,5 +31,6 @@ export class TimeslotsComponent {
     this.item['address_id'] = address_id;
     // console.log(this.item);
   }
+
 
 }
