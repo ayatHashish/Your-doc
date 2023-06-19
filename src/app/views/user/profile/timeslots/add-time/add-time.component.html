@@ -72,19 +72,6 @@
                   </div>
                 </div>
               </div>
-              <div class="row mb-6 align-items-center">
-                <label class="col-lg-3 col-form-label required fw-semibold fs-6" for="end_time">End Time</label>
-                <div class="col-md-9">
-                  <div class="form-group mt2">
-                    <input type="text" placeholder="Pick your birth date" name="end_time" formControlName="end_time"
-                      class="form-control custom-datepicker form-control-lg form-control-solid" bsDatepicker
-                      [bsValue]="birthDate" [maxDate]="maxDate"
-                      [bsConfig]="{ isAnimated: true, dateInputFormat: 'hh:mm A' }">
-
-                    <div class="fv-plugins-message-container invalid-feedback"></div>
-                  </div>
-                </div>
-              </div>
               <div class="modal-footer">
                 <button type="reset" class="btn-action-can">Discard</button>
                 <button type="submit" class="btn-action-add  btn_font">Add</button>
