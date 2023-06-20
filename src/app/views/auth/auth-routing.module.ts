@@ -10,7 +10,7 @@ import { VerificationCodeComponent } from './verification-code/verification-code
 const routes: Routes = [
 
   {path: '',  redirectTo: 'login', pathMatch: 'full',},
-  {path: 'login', component: LoginComponent,  },
+  {path: 'login', component: LoginComponent  },
   { path: 'signup', component: RegisterComponent,},
   { path: 'forgotPassword', component: ForgetpassComponent,},
   { path: 'verifycode',component: VerificationCodeComponent,},

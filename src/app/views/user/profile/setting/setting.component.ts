@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ProfileService } from 'src/app/share/services/profile.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Observable, Subscriber } from 'rxjs';
+import { Observable, Subscriber, timer } from 'rxjs';
 import { DoctorsService } from 'src/app/share/services/doctors.service';
 
 @Component({
@@ -31,13 +31,14 @@ export class SettingComponent {
   isUpdating: boolean = true;
   specialties: any;
   role: any = ""
+  addressedit: any;
+  location: any;
   constructor(private _update: ProfileService, public _profileService: ProfileService, private _specialty: DoctorsService) {
     this.role = localStorage.getItem("user_role");
     this.profile()
     this.getAllSpecialties()
     this.maxDate.setFullYear(this.maxDate.getFullYear() - 10);
   }
-
   updatedForm: FormGroup = new FormGroup({
     first_name: new FormControl(null),
     last_name: new FormControl(null),
@@ -48,7 +49,6 @@ export class SettingComponent {
     specialty_id: new FormControl(null),
     birth_date: new FormControl(null),
   });
-
   profile() {
     this._profileService.profile().subscribe((res) => {
       this.profiles = res.data
@@ -56,14 +56,11 @@ export class SettingComponent {
       this.avatarSrc = this.profiles.avatar;
     });
   }
-
   getAllSpecialties() {
     this._specialty.allSpatialists().subscribe((res) => {
       this.specialties = res.data;
     });
   }
-
-
   //select image and convert it to base64
   selectimage(e: any) {
     // console.log(e);
@@ -118,15 +115,56 @@ export class SettingComponent {
     this.updateDataJson[`${e.target.name}`] = e.target.value;
   }
 
+  // updated() {
+  //   if (this.updatedForm.valid) {
+  //     this.isUpdating = false;
+  //     this._update.update(this.updateDataJson).subscribe((res) => {
+  //       this.isUpdating = true;
+  //       console.log('Data updated successfully');
+  //     });
+  //   } else {
+  //     console.log('not valid');
+  //   }
+  // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   updated() {
     if (this.updatedForm.valid) {
       this.isUpdating = false;
-      this._update.update(this.updateDataJson).subscribe((res) => {
+
+      this._update.update(this.updateDataJson).subscribe(() => {
         this.isUpdating = true;
-        console.log('Data updated successfully');
+        console.log('Address updated successfully');
+        this.reloadPage();
+      });
+    } else if (this.updatedForm.dirty) {
+      this.isUpdating = true;
+      this._update.update(this.updateDataJson).subscribe(() => {
+        console.log('Address updated successfully');
+        this.reloadPage();
       });
     } else {
-      console.log('not valid');
+      console.log('Form not valid');
     }
+
+  }
+  reloadPage() {
+    // Add a delay of 500ms before reloading the page
+    timer(100).subscribe(() => {
+      this.location.go(this.location.path());
+      window.location.reload();
+    });
   }
 }
